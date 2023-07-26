@@ -1,0 +1,1508 @@
+//ARCHIVO DE SCROLLS DE ROCKANDRO
+//CREADO POR MANUELRAA EL 10 DE ABRIL DEL 2012
+
+
+// Piedras RockAndRO!
+//============================================================ 
+// Otorga la piedra seleccionada
+function	script	F_CashItemPiedras	{
+
+
+	switch(prompt("Muscovite:Citrin:Rose Quartz:Peridot:Turquoise:Pyroxene:Biotite:Phlogopite:Mithril:Piece of Shield:Old Hilt:Bloody Edge:Blade of Darkness:Gym Pass:Will of Red Darkness"))
+	{
+		case 1: getitem 7292,1; close; // Muscovite
+		case 2: getitem 7295,1; close; // Citrin
+		case 3: getitem 7293,1; close; // Rose Quartz
+		case 4: getitem 7289,1; close; // Peridot
+		case 5: getitem 7294,1; close; // Turquoise
+		case 6: getitem 7296,1; close; // Pyroxene
+		case 7: getitem 7297,1; close; // Biotite
+		case 8: getitem 7290,1; close; // Phlogopite
+		case 9: getitem 7757,1; close; // Mithril
+		case 10: getitem 7108,1; close; // Piece of Shield
+		case 11: getitem 7022,1; close; // Old Hilt
+		case 12: getitem 7024,1; close; // Bloody Edge
+		case 13: getitem 7023,1; close; // Blade of Darkness
+		case 14: getitem 7776,1; close; // Gym Pass
+		case 15: getitem 7566,1; close; // Will Of Red Darkness
+		case 255: getitem 19100,1; close; // Regresa el Scroll
+	}
+}
+
+// Essences RockAndRO!
+//============================================================ 
+// Otorga la essencia seleccionada
+function	script	F_CashItemEssences	{
+	switch(prompt("Fire Essence:Earth Essence:Water Essence:Wind Essence:Dusk Glown:Dawn Essence:Cold Moonlight:Hazy Starlight"))
+	{
+		case 1: getitem 19203,1; close; // Fire Essence
+		case 2: getitem 19204,1; close; // Earth Essence
+		case 3: getitem 19202,1; close; // Water Essence
+		case 4: getitem 19201,1; close; // Wind Essence
+		case 5: getitem 7835,1; close; // Dusk Glown
+		case 6: getitem 7836,1; close; // Dawn Essence
+		case 7: getitem 7837,1; close; // Cold Moonlight
+		case 8: getitem 7838,1; close; // Hazy Starlight
+		case 255: getitem 19130,1; close; // Regresa el Scroll
+	}
+}
+
+// Armors de RockAndRO!
+//============================================================ 
+// Otorga el armor seleccionado
+function	script	F_ScrollArmor	{
+	switch(prompt("Armors Magicos:Armors Fisicos:Armors Duales"))
+	{	
+		case 1: switch(prompt("Platinum Armor:Hell Armor of Volcano:Poseidon Armor of Ocean:Huracan Armor:Gaia Earth Armor:Darkness Armor of Benefit:Celestial Armor of Protection:Deadly Armor:Underworld Protector:Venom Protector"))
+				{
+				case 1: getitem2 18231,1,1,10,0,0,0,0,0; close; // Platinum Armor
+				case 2: getitem2 18002,1,1,10,0,0,0,0,0; close; // Hell Armor of Volcano
+				case 3: getitem2 18003,1,1,10,0,0,0,0,0; close; // Poseidon Armor of Ocean
+				case 4: getitem2 18004,1,1,10,0,0,0,0,0; close; // Huracan Armor
+				case 5: getitem2 18005,1,1,10,0,0,0,0,0; close; // Gaia Earth Armor
+				case 6: getitem2 18006,1,1,10,0,0,0,0,0; close; // Darkness Armor of Benefit
+				case 7: getitem2 18007,1,1,10,0,0,0,0,0; close; // Celestial Armor of Protection
+				case 8: getitem2 18008,1,1,10,0,0,0,0,0; close; // Deadly Armor
+				case 9: getitem2 18009,1,1,10,0,0,0,0,0; close; // Underworld Protector
+				case 10: getitem2 18010,1,1,10,0,0,0,0,0; close; // Venom Protector
+				case 255: getitem 19131,1; close; // Regresa el Scroll
+				}
+				
+		case 2: switch(prompt("Platinum Armor:Hell Armor of Volcano:Poseidon Armor of Ocean:Huracan Armor:Gaia Earth Armor:Darkness Armor of Benefit:Celestial Armor of Protection:Deadly Armor:Underworld Protector:Venom Protector"))
+				{
+				case 1: getitem2 18001,1,1,10,0,0,0,0,0; close; // Platinum Armor
+				case 2: getitem2 18232,1,1,10,0,0,0,0,0; close; // Hell Armor of Volcano
+				case 3: getitem2 18233,1,1,10,0,0,0,0,0; close; // Poseidon Armor of Ocean
+				case 4: getitem2 18234,1,1,10,0,0,0,0,0; close; // Huracan Armor
+				case 5: getitem2 18235,1,1,10,0,0,0,0,0; close; // Gaia Earth Armor
+				case 6: getitem2 18236,1,1,10,0,0,0,0,0; close; // Darkness Armor of Benefit
+				case 7: getitem2 18237,1,1,10,0,0,0,0,0; close; // Celestial Armor of Protection
+				case 8: getitem2 18238,1,1,10,0,0,0,0,0; close; // Deadly Armor
+				case 9: getitem2 18239,1,1,10,0,0,0,0,0; close; // Underworld Protector
+				case 10: getitem2 18240,1,1,10,0,0,0,0,0; close; // Venom Protector
+				case 255: getitem 19131,1; close; // Regresa el Scroll
+				}
+		case 3: switch(prompt("Blinded Brynhild neutral:Fire Crimson Robe:Aqua Robe:Huracan Forest Robe:Earth Golden Lord Robe:Dark Diablos Armor:Holy Divine Cloth:Ghost Elite Armor:Underworld Naga Armor:Venom Scruffy Coat"))
+				{
+				case 1: getitem2 18091,1,1,10,0,0,0,0,0; close; // Blinded Brynhild neutral
+				case 2: getitem2 18097,1,1,10,0,0,0,0,0; close; // Fire Crimson Robe
+				case 3: getitem2 18090,1,1,10,0,0,0,0,0; close; // Aqua_Robe
+				case 4: getitem2 18096,1,1,10,0,0,0,0,0; close; // Huracan_Forest_Robe
+				case 5: getitem2 18098,1,1,10,0,0,0,0,0; close; // Earth_Golden_Lord_Robe
+				case 6: getitem2 18092,1,1,10,0,0,0,0,0; close; // Dark_Diablos_Armor
+				case 7: getitem2 18095,1,1,10,0,0,0,0,0; close; // Holy_Divine_Cloth
+				case 8: getitem2 18093,1,1,10,0,0,0,0,0; close; // Ghost_Elite_Armor
+				case 9: getitem2 18094,1,1,10,0,0,0,0,0; close; // Underworld_Naga_Armor
+				case 10: getitem2 18089,1,1,10,0,0,0,0,0; close; // Venom_Scruffy_Coat
+				case 255: getitem 19131,1; close; // Regresa el Scroll
+				}		
+				
+		case 255: getitem 19131,1; close; // Regresa el Scroll
+	}
+}
+
+// Garments RockAndRO!
+//============================================================ 
+// Otorga el garment seleccionado
+function	script	F_ScrollGarment	{
+	switch(prompt("Valis Manteau:Earths Muffler:Ifrits Jacket:Manteau of Sky:Water Cape:Ectoplasm:Diablos Manteau:Mummys Bandage:Ghouls Breath:Novie Manteau:Goibne's Spaulders v2:Morrigane's Manteau v2:Morpheus's Shawl v2:Falcon Muffler v2:Eagle Wing v2:Skeleton Manteau v2:Somber Novice Hood v2:Survivor's Manteau v2"))
+	{
+		case 1: getitem2 18020,1,1,10,0,0,0,0,0; close; // Valis Manteau
+		case 2: getitem2 18026,1,1,10,0,0,0,0,0; close; // Earths Muffler
+		case 3: getitem2 18027,1,1,10,0,0,0,0,0; close; // Ifrits Jacket
+		case 4: getitem2 18028,1,1,10,0,0,0,0,0; close; // Manteau of Sky
+		case 5: getitem2 18029,1,1,10,0,0,0,0,0; close; // Water Cape
+		case 6: getitem2 18030,1,1,10,0,0,0,0,0; close; // Ectoplasm
+		case 7: getitem2 18220,1,1,10,0,0,0,0,0; close; // Diablos Manteau
+		case 8: getitem2 18221,1,1,10,0,0,0,0,0; close; // Mummys Bandage
+		case 9: getitem2 18222,1,1,10,0,0,0,0,0; close; // Ghouls Breath
+		case 10: getitem2 18016,1,1,10,0,0,0,0,0; close; // Novie Manteau
+		case 11: getitem2 18023,1,1,10,0,0,0,0,0; close; // Goibne's_Spaulders
+		case 12: getitem2 18022,1,1,10,0,0,0,0,0; close; // Morrigane's Manteau v2
+		case 13: getitem2 18021,1,1,10,0,0,0,0,0; close; // Morpheus's Shawl v2
+		case 14: getitem2 18019,1,1,10,0,0,0,0,0; close; // Falcon Muffler v2
+		case 15: getitem2 18018,1,1,10,0,0,0,0,0; close; // Eagle Wing v2
+		case 16: getitem2 18015,1,1,10,0,0,0,0,0; close; // Skeleton Manteau v2
+		case 17: getitem2 18014,1,1,10,0,0,0,0,0; close; // Somber Novice Hood v2
+		case 18: getitem2 18013,1,1,10,0,0,0,0,0; close; // Survivor's Manteau v2
+		case 255: getitem 19132,1; close; // Regresa el Scroll
+	}
+}
+
+// Shoes RockAndRO!
+//============================================================ 
+// Otorga los shoes seleccionados
+function	script	F_ScrollShoes	{
+	switch(prompt("Sleipnir:Combat Greaves:Ifrits Shoes:Aqua Boots:Sky Walker:Stone Age:Boots of Doom:Freddy Kruger Shackles:Arbok Boots:Gengars Shoes:Novice Shoes Plus"))
+	{
+		case 1: getitem2 18054,1,1,10,0,0,0,0,0; close; // Sleipnir
+		case 2: getitem2 18260,1,1,10,0,0,0,0,0; close; // Combat Greaves
+		case 3: getitem2 18261,1,1,10,0,0,0,0,0; close; // Ifrit's Shoes
+		case 4: getitem2 18262,1,1,10,0,0,0,0,0; close; // Aqua Boots
+		case 5: getitem2 18263,1,1,10,0,0,0,0,0; close; // Sky Walker
+		case 6: getitem2 18264,1,1,10,0,0,0,0,0; close; // Stone Age
+		case 7: getitem2 18266,1,1,10,0,0,0,0,0; close; // Boots of Doom
+		case 8: getitem2 18267,1,1,10,0,0,0,0,0; close; // Freddy Kruger Shackle's
+		case 9: getitem2 18268,1,1,10,0,0,0,0,0; close; // Arbok Boots
+		case 10: getitem2 18269,1,1,10,0,0,0,0,0; close; // Gengar's Shoes
+		case 11: getitem2 18058,1,1,10,0,0,0,0,0; close; // Novice Shoes Plus
+		case 255: getitem 19133,1; close; // Regresa el Scroll
+	}
+}
+
+
+// Shield RockAndRO!
+//============================================================ 
+// Otorga el shield seleccionado
+function	script	F_ScrollShield	{
+	switch(prompt("Shield Reflect:Supreme Guard:Sacred Mission Plus:Valkyrie's Shield Plus:Angelic Guard Plus:Ahura Mazdah Plus:Novice Shield Plus"))
+	{
+		case 1: getitem2 18031,1,1,10,0,0,0,0,0; close; // Shield Reflect
+		case 2: getitem2 18032,1,1,10,0,0,0,0,0; close; // Supreme Guard
+		case 3: getitem2 18033,1,1,10,0,0,0,0,0; close; // Sacred Mission Plus
+		case 4: getitem2 18035,1,1,10,0,0,0,0,0; close; // Valkyrie's Shield Plus
+		case 5: getitem2 18036,1,1,10,0,0,0,0,0; close; // Angelic Guard Plus
+		case 6: getitem2 18037,1,1,10,0,0,0,0,0; close; // Ahura Mazdah Plus
+		case 7: getitem2 18034,1,1,10,0,0,0,0,0; close; // Novice Shield Plus
+		case 255: getitem 19134,1; close; // Regresa el Scroll
+	}
+}
+
+
+// Set de Armas RockAndRO!
+//============================================================ 
+// Otorga el Set de Arma seleccionado
+function	script	F_ScrollSetArma	{
+	switch(prompt("Espadas1h:Espadas2h:Maces:Books:Staves:Spears:Axes:Dagas:Kataresv2::Bows:Puños:Instrumentos:Whips:Taekwon Weapons:Gunslinger Weapons:Shurikens:Novice Weapons"))
+	{
+	
+		if (!checkweight(16041,10))
+		{ 
+		mes "^3355FFEspera un momento!";
+		mes "No puedo ofrecerte mis";
+		mes "servicios porque estás ";
+		mes "cargando muchas cosas.";
+		mes "Pon algunos items en el Storage.";
+		getitem 19135,1;
+		close;
+		}
+
+
+		case 1:
+			if (!checkweight(16001,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16001,1,1,10,0,0,0,0,0; getitem2 16002,1,1,10,0,0,0,0,0; getitem2 16003,1,1,10,0,0,0,0,0; getitem2 16004,1,1,10,0,0,0,0,0; getitem2 16005,1,1,10,0,0,0,0,0; getitem2 16006,1,1,10,0,0,0,0,0; getitem2 16007,1,1,10,0,0,0,0,0; getitem2 16008,1,1,10,0,0,0,0,0; getitem2 16009,1,1,10,0,0,0,0,0; getitem2 20002,1,1,10,0,0,0,0,0; close; // Espadas1h
+		case 2:
+			if (!checkweight(16011,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16011,1,1,10,0,0,0,0,0; getitem2 16012,1,1,10,0,0,0,0,0; getitem2 16013,1,1,10,0,0,0,0,0; getitem2 16014,1,1,10,0,0,0,0,0; getitem2 16015,1,1,10,0,0,0,0,0; getitem2 16016,1,1,10,0,0,0,0,0; getitem2 16017,1,1,10,0,0,0,0,0; getitem2 16018,1,1,10,0,0,0,0,0; getitem2 16019,1,1,10,0,0,0,0,0; getitem2 20003,1,1,10,0,0,0,0,0; close; // Espadas2h
+		case 3:
+			if (!checkweight(16021,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16021,1,1,10,0,0,0,0,0; getitem2 16022,1,1,10,0,0,0,0,0; getitem2 16023,1,1,10,0,0,0,0,0; getitem2 16024,1,1,10,0,0,0,0,0; getitem2 16025,1,1,10,0,0,0,0,0; getitem2 16026,1,1,10,0,0,0,0,0; getitem2 16027,1,1,10,0,0,0,0,0; getitem2 16028,1,1,10,0,0,0,0,0; getitem2 16029,1,1,10,0,0,0,0,0; getitem2 20004,1,1,10,0,0,0,0,0; close; // Maces
+		case 4:
+			if (!checkweight(16031,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16031,1,1,10,0,0,0,0,0; getitem2 16032,1,1,10,0,0,0,0,0; getitem2 16033,1,1,10,0,0,0,0,0; getitem2 16034,1,1,10,0,0,0,0,0; getitem2 16035,1,1,10,0,0,0,0,0; getitem2 16036,1,1,10,0,0,0,0,0; getitem2 16037,1,1,10,0,0,0,0,0; getitem2 16050,1,1,10,0,0,0,0,0; getitem2 16060,1,1,10,0,0,0,0,0; getitem2 20005,1,1,10,0,0,0,0,0; close; // Books
+		case 5:
+			if (!checkweight(16038,6))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16038,1,1,10,0,0,0,0,0; getitem2 16039,1,1,10,0,0,0,0,0; getitem2 16040,1,1,10,0,0,0,0,0; getitem2 20006,1,1,10,0,0,0,0,0; getitem2 20014,1,1,10,0,0,0,0,0; getitem2 20015,1,1,10,0,0,0,0,0; close; // Staves
+		case 6:
+			if (!checkweight(16041,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16041,1,1,10,0,0,0,0,0; getitem2 16042,1,1,10,0,0,0,0,0; getitem2 16043,1,1,10,0,0,0,0,0; getitem2 16044,1,1,10,0,0,0,0,0; getitem2 16045,1,1,10,0,0,0,0,0; getitem2 16046,1,1,10,0,0,0,0,0; getitem2 16047,1,1,10,0,0,0,0,0; getitem2 16048,1,1,10,0,0,0,0,0; getitem2 16049,1,1,10,0,0,0,0,0; getitem2 20007,1,1,10,0,0,0,0,0; close; // Spears
+		case 7:
+			if (!checkweight(16051,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16051,1,1,10,0,0,0,0,0; getitem2 16052,1,1,10,0,0,0,0,0; getitem2 16053,1,1,10,0,0,0,0,0; getitem2 16054,1,1,10,0,0,0,0,0; getitem2 16055,1,1,10,0,0,0,0,0; getitem2 16056,1,1,10,0,0,0,0,0; getitem2 16057,1,1,10,0,0,0,0,0; getitem2 16058,1,1,10,0,0,0,0,0; getitem2 16059,1,1,10,0,0,0,0,0; getitem2 20008,1,1,10,0,0,0,0,0; close; // Axes
+		case 8:
+			if (!checkweight(16061,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16061,1,1,10,0,0,0,0,0; getitem2 16062,1,1,10,0,0,0,0,0; getitem2 16063,1,1,10,0,0,0,0,0; getitem2 16064,1,1,10,0,0,0,0,0; getitem2 16065,1,1,10,0,0,0,0,0; getitem2 16066,1,1,10,0,0,0,0,0; getitem2 16067,1,1,10,0,0,0,0,0; getitem2 16068,1,1,10,0,0,0,0,0; getitem2 16069,1,1,10,0,0,0,0,0; getitem2 20009,1,1,10,0,0,0,0,0; close; // Dagas
+		case 9:
+			if (!checkweight(16071,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16071,1,1,10,0,0,0,0,0; getitem2 16072,1,1,10,0,0,0,0,0; getitem2 16073,1,1,10,0,0,0,0,0; getitem2 16074,1,1,10,0,0,0,0,0; getitem2 16075,1,1,10,0,0,0,0,0; getitem2 16076,1,1,10,0,0,0,0,0; getitem2 16077,1,1,10,0,0,0,0,0; getitem2 16078,1,1,10,0,0,0,0,0; getitem2 16079,1,1,10,0,0,0,0,0; getitem2 20010,1,1,10,0,0,0,0,0; close; // Katares
+		/*case 10:
+			if (!checkweight(16071,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16071,1,1,10,0,0,0,0,0; getitem2 16072,1,1,10,0,0,0,0,0; getitem2 16073,1,1,10,0,0,0,0,0; getitem2 16074,1,1,10,0,0,0,0,0; getitem2 16075,1,1,10,0,0,0,0,0; getitem2 16076,1,1,10,0,0,0,0,0; getitem2 16077,1,1,10,0,0,0,0,0; getitem2 16078,1,1,10,0,0,0,0,0; getitem2 16079,1,1,10,0,0,0,0,0; getitem2 20010,1,1,10,0,0,0,0,0; close; // Kataresv3
+		*/
+		case 11:
+			if (!checkweight(16081,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16081,1,1,10,0,0,0,0,0; getitem2 16082,1,1,10,0,0,0,0,0; getitem2 16083,1,1,10,0,0,0,0,0; getitem2 16084,1,1,10,0,0,0,0,0; getitem2 16085,1,1,10,0,0,0,0,0; getitem2 20011,1,1,10,0,0,0,0,0; close; // Bows
+		case 12:
+			if (!checkweight(16091,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16091,1,1,10,0,0,0,0,0; getitem2 16092,1,1,10,0,0,0,0,0; getitem2 16093,1,1,10,0,0,0,0,0; getitem2 16094,1,1,10,0,0,0,0,0; getitem2 16095,1,1,10,0,0,0,0,0; getitem2 16096,1,1,10,0,0,0,0,0; getitem2 16097,1,1,10,0,0,0,0,0; getitem2 16098,1,1,10,0,0,0,0,0; getitem2 16099,1,1,10,0,0,0,0,0; getitem2 20012,1,1,10,0,0,0,0,0; close; // Puños
+		case 13:
+			if (!checkweight(17001,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 17001,1,1,10,0,0,0,0,0; getitem2 17002,1,1,10,0,0,0,0,0; getitem2 17003,1,1,10,0,0,0,0,0; getitem2 17004,1,1,10,0,0,0,0,0; getitem2 17005,1,1,10,0,0,0,0,0; getitem2 17006,1,1,10,0,0,0,0,0; getitem2 17007,1,1,10,0,0,0,0,0; getitem2 17008,1,1,10,0,0,0,0,0; getitem2 17009,1,1,10,0,0,0,0,0; getitem2 20001,1,1,10,0,0,0,0,0; close; // Instrumentos
+		case 14:
+			if (!checkweight(17011,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 17011,1,1,10,0,0,0,0,0; getitem2 17012,1,1,10,0,0,0,0,0; getitem2 17013,1,1,10,0,0,0,0,0; getitem2 17014,1,1,10,0,0,0,0,0; getitem2 17015,1,1,10,0,0,0,0,0; getitem2 17016,1,1,10,0,0,0,0,0; getitem2 17017,1,1,10,0,0,0,0,0; getitem2 17018,1,1,10,0,0,0,0,0; getitem2 17019,1,1,10,0,0,0,0,0; getitem2 20013,1,1,10,0,0,0,0,0; close; // Whips
+		case 15:
+			if (!checkweight(16101,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 16101,1,1,10,0,0,0,0,0; getitem2 16102,1,1,10,0,0,0,0,0; getitem2 16103,1,1,10,0,0,0,0,0; getitem2 16104,1,1,10,0,0,0,0,0; getitem2 16105,1,1,10,0,0,0,0,0; getitem2 16106,1,1,10,0,0,0,0,0; getitem2 16107,1,1,10,0,0,0,0,0; getitem2 16108,1,1,10,0,0,0,0,0; getitem2 16109,1,1,10,0,0,0,0,0; getitem2 19121,1,1,10,0,0,0,0,0; close; // Taekwon Weapons
+		case 16:
+			if (!checkweight(19119,20))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 17021,1,1,10,0,0,0,0,0; getitem2 17022,1,1,10,0,0,0,0,0; getitem2 19110,1,1,10,0,0,0,0,0; getitem2 19111,1,1,10,0,0,0,0,0; getitem2 17023,1,1,10,0,0,0,0,0; getitem2 17024,1,1,10,0,0,0,0,0; getitem2 19112,1,1,10,0,0,0,0,0; getitem2 19113,1,1,10,0,0,0,0,0; getitem2 17025,1,1,10,0,0,0,0,0; getitem2 17026,1,1,10,0,0,0,0,0; getitem2 19114,1,1,10,0,0,0,0,0; getitem2 19115,1,1,10,0,0,0,0,0; getitem2 17027,1,1,10,0,0,0,0,0; getitem2 17028,1,1,10,0,0,0,0,0; getitem2 19116,1,1,10,0,0,0,0,0; getitem2 19117,1,1,10,0,0,0,0,0; getitem2 17029,1,1,10,0,0,0,0,0; getitem2 17030,1,1,10,0,0,0,0,0; getitem2 19118,1,1,10,0,0,0,0,0; getitem2 19119,1,1,10,0,0,0,0,0; close; // Gunslinger Weapons
+		case 17:
+			if (!checkweight(17031,10))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 17031,1,1,10,0,0,0,0,0; getitem2 17032,1,1,10,0,0,0,0,0; getitem2 17033,1,1,10,0,0,0,0,0; getitem2 17034,1,1,10,0,0,0,0,0; getitem2 17035,1,1,10,0,0,0,0,0; getitem2 17036,1,1,10,0,0,0,0,0; getitem2 17037,1,1,10,0,0,0,0,0; getitem2 17038,1,1,10,0,0,0,0,0; getitem2 17039,1,1,10,0,0,0,0,0; getitem2 19120,1,1,10,0,0,0,0,0; close; // Shurikens
+		case 18:
+			if (!checkweight(17041,6))
+			{ 
+				mes "^3355FFEspera un momento!";
+				mes "No puedo ofrecerte mis";
+				mes "servicios porque estás ";
+				mes "cargando muchas cosas.";
+				mes "Pon algunos items en el Storage.";
+				getitem 19135,1;
+				close;
+			}
+			getitem2 17041,1,1,10,0,0,0,0,0; getitem2 17042,1,1,10,0,0,0,0,0; getitem2 17043,1,1,10,0,0,0,0,0; getitem2 17044,1,1,10,0,0,0,0,0; getitem2 17045,1,1,10,0,0,0,0,0; getitem2 17049,1,1,10,0,0,0,0,0; close; // Novice Weapons
+		case 255: getitem 19135,1; close; // Regresa el Scroll
+	}
+
+}
+
+
+
+// Set de Espadas RockAndRO!
+//============================================================ 
+// Otorga el Set de Espadas seleccionado
+function	script	F_ScrollEspadas	{
+	switch(prompt("Oridecon Sword:Fireblend v2:Ice Falchion v2:Wind Blade:Gaia Sword:Excalibur v2:Mysteltainn v2:Dimension Blade:Infernal Sword:Venom Sword"))
+	{
+		case 1: getitem2 16001,1,1,10,0,0,0,0,0; close; // Oridecon Sword
+		case 2: getitem2 16002,1,1,10,0,0,0,0,0; close; // Fireblend v2
+		case 3: getitem2 16003,1,1,10,0,0,0,0,0; close; // Ice Falchion v2
+		case 4: getitem2 16004,1,1,10,0,0,0,0,0; close; // Wind Blade
+		case 5: getitem2 16005,1,1,10,0,0,0,0,0; close; // Gaia Sword
+		case 6: getitem2 16006,1,1,10,0,0,0,0,0; close; // Excalibur v2
+		case 7: getitem2 16007,1,1,10,0,0,0,0,0; close; // Mysteltainn v2
+		case 8: getitem2 16008,1,1,10,0,0,0,0,0; close; // Dimension Blade
+		case 9: getitem2 16009,1,1,10,0,0,0,0,0; close; // Infernal Sword
+		case 10: getitem2 20002,1,1,10,0,0,0,0,0; close; // Venom Sword
+		case 255: getitem 19136,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+// Set de Espadas2h RockAndRO!
+//============================================================ 
+// Otorga el Set de Espadas2h seleccionado
+function	script	F_ScrollEspadas2h	{
+	switch(prompt("Masamune v2:Ifrit Sword:Shiva Sword:Typhoon Sword:Titan Sword:Eden Sword:Odin Sword:Dimension Slayer:Infernal Slayer:Vandal Sable"))
+	{
+		case 1: getitem2 16011,1,1,10,0,0,0,0,0; close; // Masamune v2
+		case 2: getitem2 16012,1,1,10,0,0,0,0,0; close; // Ifrit Sword
+		case 3: getitem2 16013,1,1,10,0,0,0,0,0; close; // Shiva Sword
+		case 4: getitem2 16014,1,1,10,0,0,0,0,0; close; // Typhoon Sword
+		case 5: getitem2 16015,1,1,10,0,0,0,0,0; close; // Titan Sword
+		case 6: getitem2 16016,1,1,10,0,0,0,0,0; close; // Eden Sword
+		case 7: getitem2 16017,1,1,10,0,0,0,0,0; close; // Odin Sword
+		case 8: getitem2 16018,1,1,10,0,0,0,0,0; close; // Dimension Slayer
+		case 9: getitem2 16019,1,1,10,0,0,0,0,0; close; // Infernal Slayer
+		case 10: getitem2 20003,1,1,10,0,0,0,0,0; close; // Venom Sword
+		case 255: getitem 19137,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+// Set de Maces RockAndRO!
+//============================================================ 
+// Otorga el Set de Maces seleccionado
+function	script	F_ScrollMaces	{
+	switch(prompt("Iron Driver v2:Tidal Mace:Quadrille v2:Spike v2:Lava Mace:Mjolnir v2:Grand Cross v2:Dimensional Mace:Infernal Mace:Venom Driver v2"))
+	{
+		case 1: getitem2 16021,1,1,10,0,0,0,0,0; close; // Iron Driver v2
+		case 2: getitem2 16022,1,1,10,0,0,0,0,0; close; // Tidal Mace
+		case 3: getitem2 16023,1,1,10,0,0,0,0,0; close; // Quadrille v2
+		case 4: getitem2 16024,1,1,10,0,0,0,0,0; close; // Spike v2
+		case 5: getitem2 16025,1,1,10,0,0,0,0,0; close; // Lava Mace
+		case 6: getitem2 16026,1,1,10,0,0,0,0,0; close; // Mjolnir v2
+		case 7: getitem2 16027,1,1,10,0,0,0,0,0; close; // Grand Cross v2
+		case 8: getitem2 16028,1,1,10,0,0,0,0,0; close; // Dimensional Mace
+		case 9: getitem2 16029,1,1,10,0,0,0,0,0; close; // Infernal Mace
+		case 10: getitem2 20004,1,1,10,0,0,0,0,0; close; // Venom Driver v2
+		case 255: getitem 19138,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+// Set de Books RockAndRO!
+//============================================================ 
+// Otorga el Set de Books seleccionado
+function	script	F_ScrollBooks	{
+	switch(prompt("Sage's Diary v2:Vulcano Book:Deluge Book:Magnetic Earth Book:Armageddom Book:Whirlwind Book:Holy Bible:Dimensional Book:Infernal Book:Venom Book"))
+	{
+		case 1: getitem2 16031,1,1,10,0,0,0,0,0; close; // Sage's Diary v2
+		case 2: getitem2 16032,1,1,10,0,0,0,0,0; close; // Vulcano Book
+		case 3: getitem2 16033,1,1,10,0,0,0,0,0; close; // Deluge Book
+		case 4: getitem2 16034,1,1,10,0,0,0,0,0; close; // Magnetic Earth Book
+		case 5: getitem2 16035,1,1,10,0,0,0,0,0; close; // Armageddom Book
+		case 6: getitem2 16036,1,1,10,0,0,0,0,0; close; // Whirlwind Book
+		case 7: getitem2 16037,1,1,10,0,0,0,0,0; close; // Holy Bible
+		case 8: getitem2 16050,1,1,10,0,0,0,0,0; close; // Dimensional Book
+		case 9: getitem2 16060,1,1,10,0,0,0,0,0; close; // Infernal Book
+		case 10: getitem2 20005,1,1,10,0,0,0,0,0; close; // Venom Book
+		case 255: getitem 19139,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+// Set de Staves RockAndRO!
+//============================================================ 
+// Otorga el Set de Staves seleccionado
+function	script	F_ScrollStaves	{
+	switch(prompt("Soul Staff v2:Wizardry Staff v2:Infernal Staff:Venom Staff v2:Unbreakable Staff v2:Staff of the Beast v2"))
+	{
+		case 1: getitem2 16038,1,1,10,0,0,0,0,0; close; // Soul Staff v2
+		case 2: getitem2 16039,1,1,10,0,0,0,0,0; close; // Wizardry Staff v2
+		case 3: getitem2 16040,1,1,10,0,0,0,0,0; close; // Infernal Staff
+		case 4: getitem2 20006,1,1,10,0,0,0,0,0; close; // Venom Staff v2
+		case 5: getitem2 20014,1,1,10,0,0,0,0,0; close; // Unbreakable Staff v2
+		case 6: getitem2 20015,1,1,10,0,0,0,0,0; close; // Staff of the Beast v2
+		case 255: getitem 19140,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+
+// Set de Spears RockAndRO!
+//============================================================ 
+// Otorga el Set de Spears seleccionado
+function	script	F_ScrollSpears	{
+	switch(prompt("Longinus's Spear v2:Gungnir v2:Leviathan:Gae Bolg v2:HellFire v2:Zephyrus v2:Brionac v2:Dimension Spear:Infernal Spear:Venom Spear v2"))
+	{
+		case 1: getitem2 16041,1,1,10,0,0,0,0,0; close; // Longinus's Spear v2
+		case 2: getitem2 16042,1,1,10,0,0,0,0,0; close; // Gungnir v2
+		case 3: getitem2 16043,1,1,10,0,0,0,0,0; close; // Leviathan
+		case 4: getitem2 16044,1,1,10,0,0,0,0,0; close; // Gae Bolg v2
+		case 5: getitem2 16045,1,1,10,0,0,0,0,0; close; // HellFire v2
+		case 6: getitem2 16046,1,1,10,0,0,0,0,0; close; // Zephyrus v2
+		case 7: getitem2 16047,1,1,10,0,0,0,0,0; close; // Brionac v2
+		case 8: getitem2 16048,1,1,10,0,0,0,0,0; close; // Dimension Spear
+		case 9: getitem2 16049,1,1,10,0,0,0,0,0; close; // Infernal Spear
+		case 10: getitem2 20007,1,1,10,0,0,0,0,0; close; // Venom Spear v2
+		case 255: getitem 19141,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+// Set de Axes RockAndRO!
+//============================================================ 
+// Otorga el Set de Axes seleccionado
+function	script	F_ScrollAxes	{
+	switch(prompt("War Axe v2:Windhawk v2:Bloody Axe v2:Sabbath v2:Light Epsilon v2:Slaughter v2:Aqua Axe v2:Dimension Axe:Infernal Axe:Venom Axe v2"))
+	{
+		case 1: getitem2 16051,1,1,10,0,0,0,0,0; close; // War Axe v2
+		case 2: getitem2 16052,1,1,10,0,0,0,0,0; close; // Windhawk v2
+		case 3: getitem2 16053,1,1,10,0,0,0,0,0; close; // Bloody Axe v2
+		case 4: getitem2 16054,1,1,10,0,0,0,0,0; close; // Sabbath v2
+		case 5: getitem2 16055,1,1,10,0,0,0,0,0; close; // Light Epsilon v2
+		case 6: getitem2 16056,1,1,10,0,0,0,0,0; close; // Slaughter v2
+		case 7: getitem2 16057,1,1,10,0,0,0,0,0; close; // Aqua Axe v2
+		case 8: getitem2 16058,1,1,10,0,0,0,0,0; close; // Dimension Axe
+		case 9: getitem2 16059,1,1,10,0,0,0,0,0; close; // Infernal Axe
+		case 10: getitem2 20008,1,1,10,0,0,0,0,0; close; // Venom Axe v2
+		case 255: getitem 19142,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+
+// Set de Dagas RockAndRO!
+//============================================================ 
+// Otorga el Set de Axes seleccionado
+function	script	F_ScrollDagas	{
+	switch(prompt("Lightweight Dagger:Shadow Dagger:Grimtooth v2:Holy Dagger:Kindling Dagger v2:Obsidian Dagger v2:Fisherman's Dagger v2:Dimension Dagger:Infernal Dagger:Venom Dagger"))
+	{
+		case 1: getitem2 16061,1,1,10,0,0,0,0,0; close; // Lightweight Dagger
+		case 2: getitem2 16062,1,1,10,0,0,0,0,0; close; // Shadow Dagger
+		case 3: getitem2 16063,1,1,10,0,0,0,0,0; close; // Grimtooth v2
+		case 4: getitem2 16064,1,1,10,0,0,0,0,0; close; // Holy Dagger
+		case 5: getitem2 16065,1,1,10,0,0,0,0,0; close; // Kindling Dagger v2
+		case 6: getitem2 16066,1,1,10,0,0,0,0,0; close; // Obsidian Dagger v2
+		case 7: getitem2 16067,1,1,10,0,0,0,0,0; close; // Fisherman's Dagger v2
+		case 8: getitem2 16068,1,1,10,0,0,0,0,0; close; // Dimension Dagger
+		case 9: getitem2 16069,1,1,10,0,0,0,0,0; close; // Infernal Dagger
+		case 10: getitem2 20009,1,1,10,0,0,0,0,0; close; // Venom Dagger
+		case 255: getitem 19143,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+// Set de Katares v2 RockAndRO!
+//============================================================ 
+// Otorga el Set de Katares v2 seleccionado
+function	script	F_ScrollKataresV2	{
+	switch(prompt("Katar of Frozen Icicle v2:Katar of Quaking v2:Katar of Raging Blaze v2:Katar of Piercing Wind v2:Holy Touch v2:Loki's Talon v2:Unholy Touch v2:Dimension Katar v2:Infernal Katar v2:Venom Katar v2"))
+	{
+		case 1: getitem2 16071,1,1,10,0,0,0,0,0; close; // Katar of Frozen Icicle v2
+		case 2: getitem2 16072,1,1,10,0,0,0,0,0; close; // Katar of Quaking v2
+		case 3: getitem2 16073,1,1,10,0,0,0,0,0; close; // Katar of Raging Blaze v2
+		case 4: getitem2 16074,1,1,10,0,0,0,0,0; close; // Katar of Piercing Wind v2
+		case 5: getitem2 16075,1,1,10,0,0,0,0,0; close; // Holy Touch
+		case 6: getitem2 16076,1,1,10,0,0,0,0,0; close; // Loki's Talon
+		case 7: getitem2 16077,1,1,10,0,0,0,0,0; close; // Unholy Touch v2
+		case 8: getitem2 16078,1,1,10,0,0,0,0,0; close; // Dimension Katar
+		case 9: getitem2 16079,1,1,10,0,0,0,0,0; close; // Infernal Katar
+		case 10: getitem2 20010,1,1,10,0,0,0,0,0; close; // Venom Katar
+		case 255: getitem 19144,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+// Katares v3 RockAndRO!
+//============================================================ 
+// Otorga el katar v3 seleccionado
+function	script	F_ScrollKataresV3	{
+	switch(prompt("Katar of Frozen Icicle v3:Katar of Quaking v3:Katar of Raging Blaze v3:Katar of Piercing Wind v3:Holy Touch v3:Loki's Talon v3:Unholy Touch v3:Dimension Katar v3:Infernal Katar v3:Venom Katar v3"))
+	{
+		case 1: getitem2 16110,1,1,10,0,0,0,0,0; close; // Katar of Frozen Icicle v3
+		case 2: getitem2 16111,1,1,10,0,0,0,0,0; close; // Katar of Quaking v3
+		case 3: getitem2 16112,1,1,10,0,0,0,0,0; close; // Katar of Raging Blaze v3
+		case 4: getitem2 16113,1,1,10,0,0,0,0,0; close; // Katar of Piercing Wind v3
+		case 5: getitem2 16114,1,1,10,0,0,0,0,0; close; // Holy Touch v3
+		case 6: getitem2 16115,1,1,10,0,0,0,0,0; close; // Loki's Talon v3
+		case 7: getitem2 16116,1,1,10,0,0,0,0,0; close; // Unholy Touch v3
+		case 8: getitem2 16117,1,1,10,0,0,0,0,0; close; // Dimension Katar v3
+		case 9: getitem2 16118,1,1,10,0,0,0,0,0; close; // Infernal Katar v3
+		case 10: getitem2 20119,1,1,10,0,0,0,0,0; close; // Venom Katar v3
+		case 255: getitem 19145,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+
+// Set de Bows RockAndRO!
+//============================================================ 
+// Otorga el Set de Bows seleccionado
+function	script	F_ScrollBows	{
+	switch(prompt("Celestial Bow:Ballista v2:Luna Bow v2:Dragon Bow:Infernal Bow:Venom Bow"))
+	{
+		case 1: getitem2 16081,1,1,10,0,0,0,0,0; close; // Celestial Bow
+		case 2: getitem2 16082,1,1,10,0,0,0,0,0; close; // Ballista v2
+		case 3: getitem2 16083,1,1,10,0,0,0,0,0; close; // Luna Bow v2
+		case 4: getitem2 16084,1,1,10,0,0,0,0,0; close; // Dragon Bow
+		case 5: getitem2 16085,1,1,10,0,0,0,0,0; close; // Infernal Bow
+		case 6: getitem2 20011,1,1,10,0,0,0,0,0; close; // Venom Bow
+		case 255: getitem 19146,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+
+// Set de Puños RockAndRO!
+//============================================================ 
+// Otorga el Set de Puños seleccionado
+function	script	F_ScrollPuños	{
+	switch(prompt("Diamond Knuckle:Sapphire Knuckle:Stone Knuckle:Ruby Knuckle:Garm Claw v2:Kaiser Knuckle v2:Opal Knuckle:Dimensional Fist:Infernal Fist:Venom Fist"))
+	{
+		case 1: getitem2 16091,1,1,10,0,0,0,0,0; close; // Diamond Knuckle
+		case 2: getitem2 16092,1,1,10,0,0,0,0,0; close; // Sapphire Knuckle
+		case 3: getitem2 16093,1,1,10,0,0,0,0,0; close; // Stone Knuckle
+		case 4: getitem2 16094,1,1,10,0,0,0,0,0; close; // Ruby Knuckle
+		case 5: getitem2 16095,1,1,10,0,0,0,0,0; close; // Garm Claw v2
+		case 6: getitem2 16096,1,1,10,0,0,0,0,0; close; // Kaiser Knuckle v2
+		case 7: getitem2 16097,1,1,10,0,0,0,0,0; close; // Opal Knuckle
+		case 8: getitem2 16098,1,1,10,0,0,0,0,0; close; // Dimensional Fist
+		case 9: getitem2 16099,1,1,10,0,0,0,0,0; close; // Infernal Fist
+		case 10: getitem2 20012,1,1,10,0,0,0,0,0; close; // Venom Fist
+		case 255: getitem 19147,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+
+// Set de Instrumentos RockAndRO!
+//============================================================ 
+// Otorga el Set de Instrumento seleccionado
+function	script	F_ScrollInstrumentos	{
+	switch(prompt("Queen:Rock Guitar:Burning Guitar:Sumerged Guitar:Chaos Guitar:Electric Guitar:Legend:Dimensional Guitar:Infernal Guitar:Venom Guitar"))
+	{
+		case 1: getitem2 17001,1,1,10,0,0,0,0,0; close; // Queen
+		case 2: getitem2 17002,1,1,10,0,0,0,0,0; close; // Rock Guitar
+		case 3: getitem2 17003,1,1,10,0,0,0,0,0; close; // Burning Guitar
+		case 4: getitem2 17004,1,1,10,0,0,0,0,0; close; // Sumerged Guitar
+		case 5: getitem2 17005,1,1,10,0,0,0,0,0; close; // Chaos Guitar
+		case 6: getitem2 17006,1,1,10,0,0,0,0,0; close; // Electric Guitar
+		case 7: getitem2 17007,1,1,10,0,0,0,0,0; close; // Legend
+		case 8: getitem2 17008,1,1,10,0,0,0,0,0; close; // Dimensional Guitar
+		case 9: getitem2 17009,1,1,10,0,0,0,0,0; close; // Infernal Guitar
+		case 10: getitem2 20001,1,1,10,0,0,0,0,0; close; // Venom Guitar
+		case 255: getitem 19148,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+// Set de Whips RockAndRO!
+//============================================================ 
+// Otorga el Set de Whips seleccionado
+function	script	F_ScrollWhips	{
+	switch(prompt("Queen Whip v2:Ice Whip:Electric Wire v2:Flame Whip:Earth Whip:Angel Whip:Demon Whip:Dimension Whip:Infernal Whip:Venom Whip"))
+	{
+		case 1: getitem2 17011,1,1,10,0,0,0,0,0; close; // Queen Whip v2
+		case 2: getitem2 17012,1,1,10,0,0,0,0,0; close; // Ice Whip
+		case 3: getitem2 17013,1,1,10,0,0,0,0,0; close; // Electric Wire v2
+		case 4: getitem2 17014,1,1,10,0,0,0,0,0; close; // Flame Whip
+		case 5: getitem2 17015,1,1,10,0,0,0,0,0; close; // Earth Whip
+		case 6: getitem2 17016,1,1,10,0,0,0,0,0; close; // Angel Whip
+		case 7: getitem2 17017,1,1,10,0,0,0,0,0; close; // Demon Whip
+		case 8: getitem2 17018,1,1,10,0,0,0,0,0; close; // Dimension Whip
+		case 9: getitem2 17019,1,1,10,0,0,0,0,0; close; // Infernal Whip
+		case 10: getitem2 20013,1,1,10,0,0,0,0,0; close; // Venom Whip
+		case 255: getitem 19149,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+
+// Set de Armas de Taekwon RockAndRO!
+//============================================================ 
+// Otorga el Set de Armas de Taekwon seleccionado
+function	script	F_ScrollTaekwon	{
+	switch(prompt("Nemesis v2:SunLight:Neptune:Tornado:Earthquake:Starlight:Moonlight:Corpse:Nightmare:Toxic"))
+	{
+		case 1: getitem2 16101,1,1,10,0,0,0,0,0; close; // Nemesis v2
+		case 2: getitem2 16102,1,1,10,0,0,0,0,0; close; // SunLight
+		case 3: getitem2 16103,1,1,10,0,0,0,0,0; close; // Neptune
+		case 4: getitem2 16104,1,1,10,0,0,0,0,0; close; // Tornado
+		case 5: getitem2 16105,1,1,10,0,0,0,0,0; close; // Earthquake
+		case 6: getitem2 16106,1,1,10,0,0,0,0,0; close; // Starlight
+		case 7: getitem2 16107,1,1,10,0,0,0,0,0; close; // Moonlight
+		case 8: getitem2 16108,1,1,10,0,0,0,0,0; close; // Corpse
+		case 9: getitem2 16109,1,1,10,0,0,0,0,0; close; // Nightmare
+		case 10: getitem2 19121,1,1,10,0,0,0,0,0; close; // Toxic
+		case 255: getitem 19150,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+
+
+// Set de Armas de Gunslingers RockAndRO!
+//============================================================ 
+// Otorga el Set de Armas de Gunslingers seleccionado
+function	script	F_ScrollGuns	{
+	switch(prompt("Fenrir:Darkness:Infernal Revolver:Vandal Shooter:Tiamat:Judgment:Infernal Rifle:Venom Carbine:Beowulf:Chaos:Black Rose V2:Gatekeeper V2:Cerberus:Calamity:Infernal Drifter:Vandal Butcher:Dragon:Catastrophe:Inferno V2:Vandal Destroyer"))
+	{
+		case 1: getitem2 17021,1,1,10,0,0,0,0,0; close; // Fenrir
+		case 2: getitem2 17022,1,1,10,0,0,0,0,0; close; // Darkness
+		case 3: getitem2 19110,1,1,10,0,0,0,0,0; close; // Infernal Revolver
+		case 4: getitem2 19111,1,1,10,0,0,0,0,0; close; // Vandal Shooter
+		case 5: getitem2 17023,1,1,10,0,0,0,0,0; close; // Tiamat
+		case 6: getitem2 17024,1,1,10,0,0,0,0,0; close; // Judgment
+		case 7: getitem2 19112,1,1,10,0,0,0,0,0; close; // Infernal Rifle
+		case 8: getitem2 19113,1,1,10,0,0,0,0,0; close; // Venom Carbine
+		case 9: getitem2 17025,1,1,10,0,0,0,0,0; close; // Beowulf
+		case 10: getitem2 17026,1,1,10,0,0,0,0,0; close; // Chaos
+		case 11: getitem2 19114,1,1,10,0,0,0,0,0; close; // Black Rose V2
+		case 12: getitem2 19115,1,1,10,0,0,0,0,0; close; // Gatekeeper V2
+		case 13: getitem2 17027,1,1,10,0,0,0,0,0; close; // Cerberus
+		case 14: getitem2 17028,1,1,10,0,0,0,0,0; close; // Calamity
+		case 15: getitem2 19116,1,1,10,0,0,0,0,0; close; // Infernal Drifter
+		case 16: getitem2 19117,1,1,10,0,0,0,0,0; close; // Vandal Butcher
+		case 17: getitem2 17029,1,1,10,0,0,0,0,0; close; // Dragon
+		case 18: getitem2 17030,1,1,10,0,0,0,0,0; close; // Catastrophe
+		case 19: getitem2 19118,1,1,10,0,0,0,0,0; close; // Inferno V2
+		case 20: getitem2 19119,1,1,10,0,0,0,0,0; close; // Vandal Destroyer
+		case 255: getitem 19151,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+
+
+// Set de Shurikens RockAndRO!
+//============================================================ 
+// Otorga el Set de Shurikens seleccionado
+function	script	F_ScrollShurikens	{
+	switch(prompt("Reikon:Suiton:Doton:Kage:Katon:Fuuton:Tenrai:Infernal Shuriken:Dimension Shuriken:Vandal Shuriken"))
+	{
+		case 1: getitem2 17031,1,1,10,0,0,0,0,0; close; // Reikon
+		case 2: getitem2 17032,1,1,10,0,0,0,0,0; close; // Suiton
+		case 3: getitem2 17033,1,1,10,0,0,0,0,0; close; // Doton
+		case 4: getitem2 17034,1,1,10,0,0,0,0,0; close; // Kage
+		case 5: getitem2 17035,1,1,10,0,0,0,0,0; close; // Katon
+		case 6: getitem2 17036,1,1,10,0,0,0,0,0; close; // Fuuton
+		case 7: getitem2 17037,1,1,10,0,0,0,0,0; close; // Tenrai
+		case 8: getitem2 17038,1,1,10,0,0,0,0,0; close; // Infernal Shuriken
+		case 9: getitem2 17039,1,1,10,0,0,0,0,0; close; // Dimension Shuriken
+		case 10: getitem2 19120,1,1,10,0,0,0,0,0; close; // Vandal Shuriken
+		case 255: getitem 19152,1; close; // Regresa el Scroll
+		
+	}
+}
+
+
+
+
+
+// Set de Armas de Super Novice RockAndRO!
+//============================================================ 
+// Otorga el Set de Armas de Super Novice seleccionado
+function	script	F_ScrollNovice	{
+	switch(prompt("Neutral Rod:Earth Rod:Shadow Rod:Holy Rod:Venom Rod:Mini Ballista v2"))
+	{
+		case 1: getitem2 17041,1,1,10,0,0,0,0,0; close; // Neutral Rod
+		case 2: getitem2 17042,1,1,10,0,0,0,0,0; close; // Earth Rod
+		case 3: getitem2 17043,1,1,10,0,0,0,0,0; close; // Shadow Rod
+		case 4: getitem2 17044,1,1,10,0,0,0,0,0; close; // Holy Rod
+		case 5: getitem2 17045,1,1,10,0,0,0,0,0; close; // Venom Rod
+		case 6: getitem2 17049,1,1,10,0,0,0,0,0; close; // Mini Ballista v2
+		case 255: getitem 19153,1; close; // Regresa el Scroll
+		
+	}
+}
+
+// Set de Katares v3 RockAndRO!
+//============================================================ 
+// Otorga el Set de Katares v3 
+function	script	F_ScrollSetV3	{
+	if (!checkweight(16110,10))
+	{
+		mes "^3355FFEspera un momento!";
+		mes "No puedo ofrecerte mis";
+		mes "servicios porque estás ";
+		mes "cargando muchas cosas.";
+		mes "Pon algunos items en el Storage.";
+		getitem 19159,1;
+		close;
+	}
+	getitem2 16110,1,1,10,0,0,0,0,0; 
+	getitem2 16111,1,1,10,0,0,0,0,0; 
+	getitem2 16112,1,1,10,0,0,0,0,0; 
+	getitem2 16113,1,1,10,0,0,0,0,0; 
+	getitem2 16114,1,1,10,0,0,0,0,0; 
+	getitem2 16115,1,1,10,0,0,0,0,0; 
+	getitem2 16116,1,1,10,0,0,0,0,0; 
+	getitem2 16117,1,1,10,0,0,0,0,0; 
+	getitem2 16118,1,1,10,0,0,0,0,0; 
+	getitem2 20119,1,1,10,0,0,0,0,0; 
+	end; // Katares V3
+}
+// Alas VIP RockAndRO!
+//============================================================ 
+// Otorga las alas seleccionadas
+function	script	F_DarAlasVIP_A	{
+	switch(prompt("Broken Wings:Devils Lorny Wings:Galaxy Wings:Mini Blue Buterfly:Mini Green Buterfly:Mini Purple Buterfly:Mini Yellow Buterfly:Purple Antiquiting Wings:Red Antique:Skull Bag"))
+	{
+		case 1: getitem 15298,1; close; // Broken Wings
+		case 2: getitem 15297,1; close; // Devils Lorny
+		case 3: getitem 10040,1; close; // Galaxy
+		case 4: getitem 15138,1; close; // Mini Blue
+		case 5: getitem 15139,1; close; // Mini Green
+		case 6: getitem 15141,1; close; // Mini Purple
+		case 7: getitem 15143,1; close; // Mini Yellow
+		case 8: getitem 15299,1; close; // Purple Antiquiting
+		case 9: getitem 15296,1; close; // Red Antique
+		case 10: getitem 10049,1; close; // Skull Bag
+		case 255: getitem 19309,1; close; // Regresa el Scroll
+	}
+}
+
+function	script	F_DarAlasVIP_B	{
+	switch(prompt("Mini White Butterfly Wings:Shaman Wings:Satan Wings:Thousand Wings:Green Dragon Wings:Tribal Wings:Tale wings:Burning Crystal Wings:Aqua Wings:Magic Butterfly Wings:Ethereal Wings:BlueButterfly Wings"))
+	{
+		case 1: getitem 15142,1; close; // Mini White
+		case 2: getitem 15233,1; close; // Shaman
+		case 3: getitem 15234,1; close; // Satan
+		case 4: getitem 15274,1; close; // Thousand
+		case 5: getitem 15263,1; close; // Green Dragon
+		case 6: getitem 15275,1; close; // Tribal
+		case 7: getitem 15232,1; close; // Tale
+		case 8: getitem 9691,1; close; // Burning Crystal
+		case 9: getitem 15110,1; close; // Aqua
+		case 10: getitem 15137,1; close; // Magic Butterfly
+		case 11: getitem 15217,1; close; // Ethereal
+		case 12: getitem 15224,1; close; // Blue Butterfly
+		case 255: getitem 19310,1; close; // Regresa el Scroll
+	}
+}
+
+function	script	F_DarAlasVIP_C	{
+	switch(prompt("Archangel Wings:Artic Inferno Wings:Artic Wings:Aztec Wings:Black Devil Wings:Black Fenix Wings:Black Supreme Angel Wings:Blood Death Wings:Blood Seal Wings:Blue Leaf Wings:Butterfly Wings:Chaos Wings:Color Wings:Crystal Wings:Dark Android Wings:Dark Angel Wings:Dark Dragon Wings:Dark Mechanical Wings:Devil Wings:Dr. Octopus Wings:Elemental Wings:Epithap Wings:Feather Ying Yang Wings:Fenix Wings:Frosty Wings:Ghotics Wings:Goddess Wings:Golden Wings:Heart Wings:Icarus Wings:Ikki Wings:Ikki Wings v2:Kubiriki Sword:Lava Wings:Magic Board:Mini Pink Buterfly Wings:Naruto Wings:Pink Fallen Angel Wings:Poring Ring:Red Fallen Angel Wings:Supreme Angel Wings:Supreme Crane Wings:Sword Wings:Trascendent Wings:Twilight Wings:Valkyrie Wings:White Devil Wings:Ying Yang Wings"))
+	{
+		case 1: getitem 15069,1; close; // Archangel Wings
+		case 2: getitem 15056,1; close; // Artic Inferno Wings
+		case 3: getitem 15006,1; close; // Artic Wings
+		case 4: getitem 15200,1; close; // Aztec Wings
+		case 5: getitem 15127,1; close; // Black Devil Wings
+		case 6: getitem 15119,1; close; // Black Fenix Wings
+		case 7: getitem 15212,1; close; // Black Supreme
+		case 8: getitem 15201,1; close; // Blood Death Wings
+		case 9: getitem 15075,1; close; // Blood Seal Wings
+		case 10: getitem 15207,1; close; // Blue Leag Wings
+		case 11: getitem 15017,1; close; // Butterfly Wings
+		case 12: getitem 15175,1; close; // Chaos Wings
+		case 13: getitem 15208,1; close; // Color Wings
+		case 14: getitem 15176,1; close; // Crystal Wings
+		case 15: getitem 15177,1; close; // Dark Android
+		case 16: getitem 9698,1; close; // Dark Angel
+		case 17: getitem 15203,1; close; // Dark Dragon
+		case 18: getitem 15045,1; close; // Dark Mechanicals
+		case 19: getitem 15016,1; close; // Devil Wings
+		case 20: getitem 9997,1; close; // Dr. Octopus
+		case 21: getitem 15131,1; close; // Elemental
+		case 22: getitem 9824,1; close; // Epitaph
+		case 23: getitem 15179,1; close; // Feather Ying Yang
+		case 24: getitem 15002,1; close; // Fenix Wings
+		case 25: getitem 15209,1; close; // Frosty Wings
+		case 26: getitem 15049,1; close; // Ghotic Wings
+		case 27: getitem 15097,1; close; // Goddess Wings
+		case 28: getitem 15103,1; close; // Golden Wings
+		case 29: getitem 15078,1; close; // Heart Wings
+		case 30: getitem 15182,1; close; // Icarus Wings
+		case 31: getitem 15136,1; close; // Ikki Wings
+		case 32: getitem 10047,1; close; // Ikki v2 Wings
+		case 33: getitem 10042,1; close; // Kubiriki Wings
+		case 34: getitem 15184,1; close; // Lava Wings
+		case 35: getitem 9967,1; close; // Magic Board Wings
+		case 36: getitem 15216,1; close; // Mini Pink Wings
+		case 37: getitem 15181,1; close; // Naruto Wings
+		case 38: getitem 15112,1; close; // Pink Fallen Wings
+		case 39: getitem 15187,1; close; // Poring Wings
+		case 40: getitem 15018,1; close; // Red Fallen Angel Wings
+		case 41: getitem 15211,1; close; // Supreme Angel Wings
+		case 42: getitem 9999,1; close; // Supreme Crane Wings
+		case 43: getitem 9984,1; close; // Sword Wings
+		case 44: getitem 15096,1; close; // Trascendent Wings
+		case 45: getitem 15150,1; close; // Twilight Wings
+		case 46: getitem 15061,1; close; // Valkyrie Wings
+		case 47: getitem 15151,1; close; // White Devil Wings
+		case 48: getitem 15020,1; close; // Ying Yang Wings
+		case 255: getitem 19311,1; close; // Regresa el Scroll
+	}
+}
+
+// Hats VIP RockAndRO!
+//============================================================ 
+// Otorga el HAT seleccionadas
+function	script	F_DarHatsVIP_A	{
+	switch(prompt("Blue Stellar Hat:Capricorn Crown:Gladiator Helm:God Saiyan Hat:Grand Whisper:Head Protect:Platinum Valky Helm:Uruhara Hat"))
+	{
+		case 1: getitem2 15665,1,1,10,0,0,0,0,0; close; // Blue Stellar Hat
+		case 2: getitem2 15619,1,1,10,0,0,0,0,0; close; // Capricorn Crown
+		case 3: getitem2 15659,1,1,10,0,0,0,0,0; close; // Gladiator Helm
+		case 4: getitem2 15280,1,1,10,0,0,0,0,0; close; // God Saiyan Hat
+		case 5: getitem2 15656,1,1,10,0,0,0,0,0; close; // Grand Whisper
+		case 6: getitem2 15653,1,1,10,0,0,0,0,0; close; // Head Protect
+		case 7: getitem2 15664,1,1,10,0,0,0,0,0; close; // Platinum Valky Helm
+		case 8: getitem2 15618,1,1,10,0,0,0,0,0; close; // Uruhara Hat
+		case 255: getitem 19312,1; close; // Regresa el Scroll
+	}
+}
+
+function	script	F_DarHatsVIP_B	{
+	switch(prompt("Airth Goat Helm:Archangel Helm:Astronaut Helm:Black Airth Goat:Black Archangel Helm:Black Helm:Black Valkyrie Helm:Black Valkyrie Randgris Helm:Bloody Garm Helm:Bloody Valkyrie Helm:Blue Helm:Bone Helm:Celestial Crown:Gemini Crown:Chinese Helm:Creed Helm:Cyan Viking Helm:Dark Bashilrum:Dark Helm:Desert Prince:Desolation Helm:Divine Horns:Dragon Helm:Dragon Master Helm:Evil Druid Hat:Flying Angel Wings:Flying Lucifer Wings:Fusion Helm:Gold Helm:Golden Horns:Hades Helm:Helm Of God:Hokage Hat:Ice Wolf Helm:Kazekage Hat:Lala Cap:Leo Diadem v1:Leo Diadem v2:Lucifer Helm:Mama Mia Cap:Maya Helm:Morrigane’s Helm:Penacho de Moctezuma:Phoenix Helm:Pisces Crown:Rastaman Hat:Red Helm:Red Viking Helm:Rider Cap:Royal Crown:Saiyan Head:Samurai Helm:Skeleton Helm:Son Goanda Helm:Tiraya Bonnet:Torch Cap:True Valkyrie Helm:Valkyrie Randgris Helm:Viking Helm:Wanderer Sakkat:Zero Helm:Vagabond Wolf:Regresa el Scroll"))
+		
+	{
+		case 1: getitem2 9638,1,1,10,0,0,0,0,0; close; // Airth Goat Helm
+		case 2: getitem2 9650,1,1,10,0,0,0,0,0; close; // Archangel Helm
+		case 3: getitem2 9749,1,1,10,0,0,0,0,0; close; // Astronaut Helm
+		case 4: getitem2 9728,1,1,10,0,0,0,0,0; close; // Black Airth Goat
+		case 5: getitem2 9750,1,1,10,0,0,0,0,0; close; // Black Archangel Helm
+		case 6: getitem2 9602,1,1,10,0,0,0,0,0; close; // Black Helm
+		case 7: getitem2 9658,1,1,10,0,0,0,0,0; close; // Black Valkyrie Helm
+		case 8: getitem2 9839,1,1,10,0,0,0,0,0; close; // Black Randgris Helm
+		case 9: getitem2 9865,1,1,10,0,0,0,0,0; close; // Bloody Garm Helm
+		case 10: getitem2 9629,1,1,10,0,0,0,0,0; close; // Bloody Valkyrie Helm
+		case 11: getitem2 9801,1,1,10,0,0,0,0,0; close; // Blue Helm
+		case 12: getitem2 9686,1,1,10,0,0,0,0,0; close; // Bone Helm
+		case 13: getitem2 9998,1,1,10,0,0,0,0,0; close; // Celestial Crown
+		case 14: getitem2 9914,1,1,10,0,0,0,0,0; close; // Gemini Crown
+		case 15: getitem2 9817,1,1,10,0,0,0,0,0; close; // Chinese Helm
+		case 16: getitem2 9924,1,1,10,0,0,0,0,0; close; // Creed Helm
+		case 17: getitem2 9927,1,1,10,0,0,0,0,0; close; // Cyan Viking Helm
+		case 18: getitem2 20052,1,1,10,0,0,0,0,0; close; // Dark Bashilrum
+		case 19: getitem2 10051,1,1,10,0,0,0,0,0; close; // Dark Helm
+		case 20: getitem2 15621,1,1,10,0,0,0,0,0; close; // Desert Prince
+		case 21: getitem2 9990,1,1,10,0,0,0,0,0; close; // Desolation Helm
+		case 22: getitem2 9819,1,1,10,0,0,0,0,0; close; // Divine Horns
+		case 23: getitem2 9613,1,1,10,0,0,0,0,0; close; // Dragon Helm
+		case 24: getitem2 15223,1,1,10,0,0,0,0,0; close; // Dragon Master Helm
+		case 25: getitem2 9770,1,1,10,0,0,0,0,0; close; // Evil Druid Hat
+		case 26: getitem2 5210,1,1,10,0,0,0,0,0; close; // Flying Angel Wings
+		case 27: getitem2 9681,1,1,10,0,0,0,0,0; close; // Flying Lucifer Wings
+		case 28: getitem2 9994,1,1,10,0,0,0,0,0; close; // Fusion Helm
+		case 29: getitem2 9623,1,1,10,0,0,0,0,0; close; // Gold Helm
+		case 30: getitem2 9827,1,1,10,0,0,0,0,0; close; // Golden Horns
+		case 31: getitem2 20053,1,1,10,0,0,0,0,0; close; // Hades Helm
+		case 32: getitem2 15625,1,1,10,0,0,0,0,0; close; // Helm Of God
+		case 33: getitem2 15626,1,1,10,0,0,0,0,0; close; // Hokage Hat
+		case 34: getitem2 9608,1,1,10,0,0,0,0,0; close; // Ice Wolf Helm
+		case 35: getitem2 15627,1,1,10,0,0,0,0,0; close; // Kazekage Hat
+		case 36: getitem2 9975,1,1,10,0,0,0,0,0; close; // Lala Cap
+		case 37: getitem2 9894,1,1,10,0,0,0,0,0; close; // Leo Diadem v1
+		case 38: getitem2 10046,1,1,10,0,0,0,0,0; close; // Leo Diadem v2
+		case 39: getitem2 9680,1,1,10,0,0,0,0,0; close; // Lucifer Helm
+		case 40: getitem2 9992,1,1,10,0,0,0,0,0; close; // Mama Mia Cap
+		case 41: getitem2 9627,1,1,10,0,0,0,0,0; close; // Maya Helm
+		case 42: getitem2 9659,1,1,10,0,0,0,0,0; close; // Morrigane’s Helm
+		case 43: getitem2 9632,1,1,10,0,0,0,0,0; close; // Penacho de Moctezuma
+		case 44: getitem2 9609,1,1,10,0,0,0,0,0; close; // Phoenix Helm
+		case 45: getitem2 9926,1,1,10,0,0,0,0,0; close; // Pisces Crown
+		case 46: getitem2 15143,1,1,10,0,0,0,0,0; close; // Rastaman Hat
+		case 47: getitem2 9987,1,1,10,0,0,0,0,0; close; // Red Helm
+		case 48: getitem2 9930,1,1,10,0,0,0,0,0; close; // Red Viking Helm
+		case 49: getitem2 9895,1,1,10,0,0,0,0,0; close; // Rider Cap
+		case 50: getitem2 9846,1,1,10,0,0,0,0,0; close; // Royal Crown
+		case 51: getitem2 10048,1,1,10,0,0,0,0,0; close; // Saiyan Head
+		case 52: getitem2 9718,1,1,10,0,0,0,0,0; close; // Samurai Helm
+		case 53: getitem2 9852,1,1,10,0,0,0,0,0; close; // Skeleton Helm
+		case 54: getitem2 9983,1,1,10,0,0,0,0,0; close; // Son Goanda Helm
+		case 55: getitem2 9853,1,1,10,0,0,0,0,0; close; // Tiraya Bonnet
+		case 56: getitem2 9854,1,1,10,0,0,0,0,0; close; // Torch Cap
+		case 57: getitem2 9628,1,1,10,0,0,0,0,0; close; // True Valkyrie Helm
+		case 58: getitem2 9611,1,1,10,0,0,0,0,0; close; // Valkyrie Randgris Helm
+		case 59: getitem2 9864,1,1,10,0,0,0,0,0; close; // Viking Helm
+		case 60: getitem2 9921,1,1,10,0,0,0,0,0; close; // Wanderer Sakkat
+		case 61: getitem2 9886,1,1,10,0,0,0,0,0; close; // Zero Helm
+		case 62: getitem2 10050,1,1,10,0,0,0,0,0; close; // Zero Helm
+		case 255: getitem 19313,1; close; // Regresa el Scroll
+	}
+}
+
+function	script	F_DarHatsTipoVIP	{
+	switch(prompt("Yelm Lunar-tipo dark:Plate Cat:Taurus Helm:Seraphin Hat-tipo snipper:Fire Cowboy:Kasairin Hat:Bullock Helm-tipo capricorn:King of King:Iron Helm:Pincer Hat-tipo uruhara:Libra Hat:Chinese Crown:Baphomet Hat-tipo Airth Goat:Crab Helm:Goat Horns:Psycho Rabbit:Zorro Hat:Rastaman Hat:Anubis Helm-tipo archangel:Master Tailor:Sea King Helm:White Boys Cap:Adventure Hat-tipo valky:Jesper Crest:Love Bear Hat:Mario Flying Cap:Robot Hat:Black Chax Hat-tipo ice wolf:Bone Head Hat:Ghost Musketeer Hat:Pisces Diadem:Wolf Man Hat:Angry Kitty Hat-tipo lucifer:Dark Snake Lord:General Hat:Green Crown:Coif Hat-tipo samurai:Golden Crown:Helm of Abbys:Samurai X Helm:War Horns:Apache Hat-tipo morrigane:Dinasty Mask:Luxury Hat:Mistic Horns:Skull Hood"))
+		
+	{
+		case 1: getitem2 15662,1,1,10,0,0,0,0,0; close; // Yelm Lunar-tipo dark
+		case 2: getitem2 15655,1,1,10,0,0,0,0,0; close; // Plate Cat-tipo dark
+		case 3: getitem2 15650,1,1,10,0,0,0,0,0; close; // Taurus Helm-tipo dark
+		case 4: getitem2 15648,1,1,10,0,0,0,0,0; close; // Seraphin Hat-tipo snipper
+		case 5: getitem2 15652,1,1,10,0,0,0,0,0; close; // Fire Cowboy-tipo snipper
+		case 6: getitem2 15649,1,1,10,0,0,0,0,0; close; // Kasairin Hat-tipo snipper
+		case 7: getitem2 5300,1,1,10,0,0,0,0,0; close; // Bullock Helm-tipo capricorn
+		case 8: getitem2 15651,1,1,10,0,0,0,0,0; close; // King of King-tipo capricorn
+		case 9: getitem2 15660,1,1,10,0,0,0,0,0; close; // Iron Helm-tipo capricorn
+		case 10: getitem2 15666,1,1,10,0,0,0,0,0; close; // Pincer Hat-tipo uruhara
+		case 11: getitem2 15658,1,1,10,0,0,0,0,0; close; // Libra Hat-tipo uruhara
+		case 12: getitem2 5152,1,1,10,0,0,0,0,0; close; // Chinese Crown-tipo uruhara
+		case 13: getitem2 9806,1,1,10,0,0,0,0,0; close; // Baphomet Hat-tipo Airth Goat
+		case 14: getitem2 9867,1,1,10,0,0,0,0,0; close; // Crab Helm-tipo Airth Goat
+		case 15: getitem2 9771,1,1,10,0,0,0,0,0; close; // Goat Horns-tipo Airth Goat
+		case 16: getitem2 9837,1,1,10,0,0,0,0,0; close; // Psycho Rabbit-tipo Airth Goat
+		case 17: getitem2 9859,1,1,10,0,0,0,0,0; close; // Zorro Hat-tipo Airth Goat
+		case 18: getitem2 9986,1,1,10,0,0,0,0,0; close; // Rastaman Hat-tipo Airth Goat
+		case 19: getitem2 9861,1,1,10,0,0,0,0,0; close; // Anubis Helm-tipo archangel
+		case 20: getitem2 9778,1,1,10,0,0,0,0,0; close; // Master Tailor-tipo archangel
+		case 21: getitem2 9785,1,1,10,0,0,0,0,0; close; // Sea King Helm-tipo archangel
+		case 22: getitem2 9683,1,1,10,0,0,0,0,0; close; // White Boys Cap-tipo archangel
+		case 23: getitem2 9741,1,1,10,0,0,0,0,0; close; // Adventure Hat-tipo valkyrie
+		case 24: getitem2 9872,1,1,10,0,0,0,0,0; close; // Jesper Crest-tipo valkyrie
+		case 25: getitem2 9776,1,1,10,0,0,0,0,0; close; // Love Bear Hat-tipo valkyrie
+		case 26: getitem2 9873,1,1,10,0,0,0,0,0; close; // Mario Flying Cap-tipo valkyrie
+		case 27: getitem2 9881,1,1,10,0,0,0,0,0; close; // Robot Hat-tipo valkyrie
+		case 28: getitem2 9863,1,1,10,0,0,0,0,0; close; // Black Chax Hat-tipo ice wolf
+		case 29: getitem2 9813,1,1,10,0,0,0,0,0; close; // Bone Head Hat-tipo ice wolf
+		case 30: getitem2 9870,1,1,10,0,0,0,0,0; close; // Ghost Musketeer Hat-tipo ice wolf
+		case 31: getitem2 9878,1,1,10,0,0,0,0,0; close; // Pisces Diadem-tipo ice wolf
+		case 32: getitem2 9858,1,1,10,0,0,0,0,0; close; // Wolf Man Hat-tipo ice wolf
+		case 33: getitem2 9742,1,1,10,0,0,0,0,0; close; // Angry Kitty Hat-tipo lucifer
+		case 34: getitem2 9707,1,1,10,0,0,0,0,0; close; // Dark Snake Lord Hat-tipo lucifer
+		case 35: getitem2 9826,1,1,10,0,0,0,0,0; close; // General Hat-tipo lucifer
+		case 36: getitem2 9871,1,1,10,0,0,0,0,0; close; // Green Crown-tipo lucifer
+		case 37: getitem2 9694,1,1,10,0,0,0,0,0; close; // Coif Hat-tipo samurai
+		case 38: getitem2 9752,1,1,10,0,0,0,0,0; close; // Golden Crown-tipo samurai
+		case 39: getitem2 9828,1,1,10,0,0,0,0,0; close; // Helm of Abbys-tipo samurai
+		case 40: getitem2 9784,1,1,10,0,0,0,0,0; close; // Samurai X Helm-tipo samurai
+		case 41: getitem2 9857,1,1,10,0,0,0,0,0; close; // War Horns-tipo samurai
+		case 42: getitem2 9862,1,1,10,0,0,0,0,0; close; // Apache Hat-tipo morrigane
+		case 43: getitem2 9818,1,1,10,0,0,0,0,0; close; // Dinasty Mask-tipo morrigane
+		case 44: getitem2 9777,1,1,10,0,0,0,0,0; close; // Luxury Hat-tipo morrigane
+		case 45: getitem2 9836,1,1,10,0,0,0,0,0; close; // Mistic Horns-tipo morrigane
+		case 46: getitem2 9883,1,1,10,0,0,0,0,0; close; // Skull Hood-tipo morrigane
+		case 255: getitem 19314,1; close; // Regresa el Scroll
+	}
+}
+
+// Garment VIP RockAndRO!
+//============================================================ 
+// Otorga el Garment seleccionadas
+function	script	F_DarGarmentVIP	{
+	switch(prompt("Neutral:Fire:Water:Earth:Wind:Ghost:Undead:Poison:Shadow"))
+	{
+		case 1: getitem2 18024,1,1,10,0,0,0,0,0; close; // Neutral
+		case 2: getitem2 18241,1,1,10,0,0,0,0,0; close; // Fuego
+		case 3: getitem2 18242,1,1,10,0,0,0,0,0; close; // Agua
+		case 4: getitem2 18243,1,1,10,0,0,0,0,0; close; // Tierra
+		case 5: getitem2 18244,1,1,10,0,0,0,0,0; close; // Vierto
+		case 6: getitem2 18245,1,1,10,0,0,0,0,0; close; // Ghost
+		case 7: getitem2 18246,1,1,10,0,0,0,0,0; close; // Undead
+		case 8: getitem2 18247,1,1,10,0,0,0,0,0; close; // Poison
+		case 9: getitem2 18249,1,1,10,0,0,0,0,0; close; // Shadow
+		case 255: getitem 19315,1; close; // Regresa el Scroll
+	}
+}
+
+// Shoes VIP RockAndRO!
+//============================================================ 
+// Otorga el Footgear seleccionadas
+function	script	F_DarShoesVIP	{
+	switch(prompt("Vidar's Boots Plus:Goibne's Greaves Plus:Valkyrie's Shoes Plus"))
+	{
+		case 1: 
+		if (!checkweight(18060,1))
+		{ 
+		mes "Tienes sobre peso, guarda algunos items en tu storage.";
+		getitem 19316,1;
+		close;
+		}
+		getitem2 18060,1,1,10,0,0,0,0,0; close; // Neutral
+		
+		case 2: 
+		if (!checkweight(18061,1))
+		{ 
+		mes "Tienes sobre peso, guarda algunos items en tu storage.";
+		getitem 19316,1;
+		close;
+		}
+		getitem2 18061,1,1,10,0,0,0,0,0; close; // Fuego
+		
+		case 3: 
+		if (!checkweight(18062,1))
+		{ 
+		mes "Tienes sobre peso, guarda algunos items en tu storage.";
+		getitem 19316,1;
+		close;
+		}
+		getitem2 18062,1,1,10,0,0,0,0,0; close; // Agua
+		
+		case 255: getitem 19316,1; close; // Regresa el Scroll
+	}
+}
+//accesorios vip
+//========================================================
+// otorga el accesorio elegido
+function	script	F_DarAcceVIP	{
+	switch(prompt("Nile rose v2:Morpheus’s Bracelet v2:Morrigane’s Pendant v2:Glove of Orleans v2:Horn of the Buffalo v2"))
+	{
+		case 1: getitem2 18088,1,1,0,0,0,0,0,0; close; // Nile rose v2
+		case 2: getitem2 18078,1,1,0,0,0,0,0,0; close; // Morpheus’s Bracelet v2
+		case 3: getitem2 18079,1,1,0,0,0,0,0,0; close; // Morrigane’s Pendant v2
+		case 4: getitem2 18083,1,1,0,0,0,0,0,0; close; //Glove of Orleans v2
+		case 5: getitem2 18084,1,1,0,0,0,0,0,0; close; //Horn of the Buffalo v2
+		
+		case 255: getitem 19318,1; close; // Regresa el Scroll
+	}
+}
+// Spirit Of Spirit
+//========================================================
+// otorga Spirit of Spirit
+/*function	script	F_DarSoSVIP	{
+   switch(prompt("Spirit Of Spirit"))
+   {
+   getitem	18208,1;close;
+   case 255: getitem 19317,1; close;//regresa el scroll
+   }
+} */
+  
+//Spirit de profesion
+
+//========================================================
+// otorga el spirit elegido
+function	script	F_DarSpiritQUEST	{
+	switch(prompt("Asassin:Swordman:Acolito:Mage:Archer:Merchant:Light Spirit:Shadow Spirit:Ninja:Gunslinger:Rogue:Novice"))
+	{
+		case 1: getitem2 18200,1,1,0,0,0,0,0,0; close; // Assasin
+		case 2: getitem2 18201,1,1,0,0,0,0,0,0; close; // Swordman
+		case 3: getitem2 18202,1,1,0,0,0,0,0,0; close; // Acolito
+		case 4: getitem2 18203,1,1,0,0,0,0,0,0; close; // Mage
+		case 5: getitem2 18204,1,1,0,0,0,0,0,0; close; // Archer
+		case 6: getitem2 18205,1,1,0,0,0,0,0,0; close; // Merchant
+		case 7: getitem2 18206,1,1,0,0,0,0,0,0; close; // Light Spirit
+		case 8: getitem2 18207,1,1,0,0,0,0,0,0; close; // Shadow Spirit
+		case 9: getitem2 18209,1,1,0,0,0,0,0,0; close; // Ninja
+		case 10: getitem2 18210,1,1,0,0,0,0,0,0; close; // Gunslinger
+		case 11: getitem2 18211,1,1,0,0,0,0,0,0; close; // Rogue
+		case 12: getitem2 18212,1,1,0,0,0,0,0,0; close; // Novice
+		case 255: getitem 19319,1; close; // Regresa el Scroll
+	}
+}
+// MIDS vip
+//===========================================================
+// otorga el mid seleccionado
+function	script	F_DarMidsVIP_A	{
+	switch(prompt("Headphones:Black glasses:white glasses:Obito glasses:Black Hane Ribbon:Cyan Hane Ribbon:Blue Hane Ribbon:Gold Hane Ribbon:Purple Hane Ribbon:Green Hane Ribbon:White Hane Ribbon"))
+	{
+		case 1: getitem 9897,1; close; // Headphones
+		case 2: getitem 9898,1; close; // Black glasses
+		case 3: getitem 15901,1; close; //white glasses
+		case 4: getitem 9923,1; close; // Obito glasses
+		case 5: getitem 9959,1; close; // BLACK HANE RIBBON
+		case 6: getitem 9961,1; close; // CYAN HANE RIBBON
+		case 7: getitem 9960,1; close; // BLUE HANE RIBBON
+		case 8: getitem 9962,1; close; // GOLD HANE RIBBON
+		case 9: getitem 9965,1; close; // purple hane ribbon
+		case 10: getitem 9963,1; close; //green hane ribbon
+		case 11: getitem 9966,1; close; // white hane ribbon
+		case 255: getitem 19320,1; close; // regresa el scroll
+	}
+}
+
+function	script	F_DarMidsVIP_B	{
+	switch(prompt("Power of Thor:Gold Power Thor:Red Power Thor:Angel Ears:Kakashi Mask:Neptune Protector:Rinnegane:Valkyrie Ears:Vesper Mask:Victory Wings:Romantic Leaf v2:Sharingan:white Chakra:Red Ckackra:Gold Aura:Blue Chakra:Pink Chackra:Green Chakra:Kiubbi Chackra:Black Tie:Odin Mask:Mask of Goddess:Ears of Ifrit:Sage Ring"))
+	{
+		case 1: getitem 9879,1; close; // Power of Thor
+		case 2: getitem 15663,1; close; // Gold Power Thor
+		case 3: getitem 15667,1; close; // Red Power Thor
+		case 4: getitem 9601,1; close; // Angel Ears
+		case 5: getitem 20060,1; close; // Kakashi Mask
+		case 6: getitem 9925,1; close; // Neptune Protector
+		case 7: getitem 9981,1; close; // Rinnegane
+		case 8: getitem 9855,1; close; // Valkyrie Ears
+		case 9: getitem 9920,1; close; // Vesper Mask
+		case 10: getitem 9856,1; close; // Victory Wings
+		case 11: getitem 9901,1; close; // Romantic Leaf v2
+		case 12: getitem 9982,1; close; // Sharingan
+		case 13: getitem 15281,1; close; // white Chakra
+		case 14: getitem 9971,1; close; // Red Ckackra
+		case 15: getitem 15204,1; close; // Gold Aura
+		case 16: getitem 9968,1; close; // blue chakra
+		case 17: getitem 9970,1; close; // pink-chackra
+		case 18: getitem 9969,1; close; // green-chakra
+		case 19: getitem 10043,1; close; // kiubbi chackra
+		case 20: getitem 15189,1; close; // Black Tie
+		case 21: getitem 9877,1; close; // Odin Mask
+		case 22: getitem 9835,1; close; // Mask of Goddess
+		case 23: getitem 9823,1; close; // Ears of Ifrit
+		case 24: getitem 9783,1; close; // Sage Ring 
+		case 255: getitem 19321,1; close; // Regresa el Scroll
+	}
+}
+
+function	script	F_DarMidsVIP_C	{
+	switch(prompt("Lentes 3D:Golden Hornament:Hockey Mask:Morpheus Hoodv2:Elf Ears:observer v2"))
+	{
+		case 1: getitem 9600,1; close; // Lentes 3D
+		case 2: getitem 9772,1; close; // Golden Hornament
+		case 3: getitem 9723,1; close; // Hockey Mask
+		case 4: getitem 9724,1; close; // Morpheus Hoodv2
+		case 5: getitem 9769,1; close; // Elf Ears
+		case 6: getitem 9722,1; close; // observer v2
+		
+		case 255: getitem 19322,1; close; // Regresa el Scroll
+	}
+}
+// Narutos quest
+//=====================================================
+//otorga el naruto elegido
+function	script	F_DarNarutoQuest	{
+	switch(prompt("Sasuke's Fire Protector:Temari's Wind Protector:Choji's Water Protector:Shikamaru's Shadow Protector:Gaara's Earth Protector:Tsunade's Holy Protector:Kakashi's Protector:Naruto's Protector:Sakura's Protector:Shino's Venom Protector:Rock Lee's Neutral Protector:Orochimaru's Ghost Protector:Sai's Undead Protector"))
+	{
+		case 1: getitem 3001,1; close; // Sasuke's Fire Protector
+		case 2: getitem 3002,1; close; // Temari's Wind Protector
+		case 3: getitem 3003,1; close; // Choji's Water Protector 
+		case 4: getitem 3004,1; close; // Shikamaru's Shadow Protector
+		case 5: getitem 3005,1; close; // Gaara's Earth Protector
+		case 6: getitem 3006,1; close; // Tsunade's Holy Protector
+		case 7: getitem 3007,1; close; // Kakashi's Protector
+		case 8: getitem 3008,1; close; // Naruto's Protector
+		case 9: getitem 3009,1; close; // Sakura's Protector
+		case 10: getitem 3010,1; close; // Shino's Venom Protector
+		case 11: getitem 3011,1; close; // Rock Lee's Neutral Protector
+		case 12: getitem 3012,1; close; // Orochimaru's Ghost Protector
+		case 13: getitem 3013,1; close; // Sai's Undead Protector
+		
+		case 255: getitem 19323,1; close; // Regresa el Scroll
+	}
+}
+//Alas tipo Vip
+//=======================================================
+//otorga las alas elegidas
+function	script	F_DarAlasTipo	{
+	switch(prompt("Ice Wings-Tipo Ice:Kanai Death Wings-Tipo Lucifer:DarkBlue Fairy Wings-Tipo Archangel:DarkGreen Fairy Wings:DarkRed Fairy Wings:DarkYellow Fairy Wings:DarkPink Fairy Wings:DarkBlack Fairy Wings:Bloody Saikos Wings-Tipo Valkyrie:Blue Bloody Saikos Wings:Pink Bloody Saikos Wings:Green Bloody Saikos Wings:Skel Wings-Tipo Air goath:Gbaw Wings-Tipo Morrigane:Dark Claw Wings-Tipo Samurai:green dark Claw Wings:pink dark Claw Wings:yellow dark Claw Wings:black dark Claw Wings:blue dark Claw Wings:Lorny Wings-Tipo Dark Helm:Baracuda Wings-Tipo Sniper Googles:Red Magical Wings-Tipo Capricorn Helm:Blue Horse Wings-Tipo Uruhara helm"))
+	{
+	    case 1: getitem 15225,1; close; // Ice Wings-Tipo Ice
+		case 2: getitem 15226,1; close; // Kanai Death Wings-Tipo Lucifer
+		case 3: getitem 15227,1; close; // DarkBlue Fairy Wings-Tipo Archangel
+		case 4: getitem 15251,1; close; // DarkGreen Fairy Wings-Tipo Archangel
+		case 5: getitem 15253,1; close; // DarkRed Fairy Wings-Tipo Archangel
+		case 6: getitem 15254,1; close; // DarkYellow Fairy Wings-Tipo Archangel
+		case 7: getitem 15252,1; close; // DarkPink Fairy Wings-Tipo Archangel
+		case 8: getitem 15250,1; close; // DarkBlack Fairy Wings-Tipo Archangel
+		case 9: getitem 15228,1; close; // Bloody Saikos Wings-Tipo Valkyrie
+		case 10: getitem 15255,1; close; // Blue Bloody Saikos Wings-Tipo Valkyrie
+		case 11: getitem 15257,1; close; // Pink Bloody Saikos Wings-Tipo Valkyrie
+		case 12: getitem 15256,1; close; // Green Bloody Saikos Wings-Tipo Valkyrie
+		case 13: getitem 15229,1; close; // Skel Wings-Tipo Air goath
+		case 14: getitem 15230,1; close; // Gbaw Wings-Tipo Morrigane
+		case 15: getitem 15231,1; close; // Dark Claw Wings-Tipo Samurai
+		case 16: getitem 15243,1; close; // green dark Claw Wings-Tipo Samurai
+		case 17: getitem 15244,1; close; // pink dark Claw Wings-Tipo Samurai
+		case 18: getitem 15245,1; close; // yellow dark Claw Wings-Tipo Samurai
+		case 19: getitem 15241,1; close; // black dark Claw Wings-Tipo Samurai
+		case 20: getitem 15242,1; close; // blue dark Claw Wings-Tipo Samurai
+		case 21: getitem 15270,1; close; // Lorny Wings-Tipo Dark Helm
+		case 22: getitem 15259,1; close; // Baracuda Wings-Tipo Sniper Googles
+		case 23: getitem 15273,1; close; // Red Magical Wings-Tipo Capricorn Helm
+		case 24: getitem 15260,1; close; // Blue Horse Wings-Tipo Uruhara helm
+		
+		
+		case 255: getitem 19324,1; close; // Regresa el Scroll
+	}
+}
+
+//Mvp cards
+//===================================================================
+//Otorga la card MVP seleccionada
+function	script	F_DarMVPcard_A	{
+      switch(prompt("Entweihen:Naght Sieger:Boitata:Fire Resistance:Earth Resistance:Magical Dodge:Tao Gunka:Clown:Gypsy:Champion:Stalker:Creator:Paladin:Professor:Gloom Under Night:Fallen Bishop Hibram:Ifrit:Golden Thief Bug"))
+	{
+	 	case 1: getitem 4451,1; close; // Entweihen
+		case 2: getitem 4462,1; close; // Naght Sieger
+		case 3: getitem 4463,1; close; // Boitata
+		case 4: getitem 4464,1; close; // Fire Resistance
+		case 5: getitem 4465,1; close; // Earth Resistance
+		case 6: getitem 4466,1; close; // Magical Dodge
+		case 7: getitem 4302,1; close; // Tao Gunka
+		case 8: getitem 4454,1; close; // Clown
+		case 9: getitem 4455,1; close; // Gypsy
+		case 10: getitem 4456,1; close; // Champion
+		case 11: getitem 4457,1; close; // Stalker
+		case 12: getitem 4458,1; close; // Creator
+		case 13: getitem 4459,1; close; // Paladin
+		case 14: getitem 4460,1; close; // Professor 
+		case 15: getitem 4408,1; close; //Gloom Under Night
+		case 16: getitem 4441,1; close; // Fallen Bishop Hibram
+		case 17: getitem 4430,1; close; // Ifrit
+		case 18: getitem 4128,1; close; // Golden Thief Bug
+		case 255: getitem 19325,1; close; // Regresa el Scroll
+	}
+}
+
+function	script	F_DarMVPcard_B	{
+      switch(prompt("Kiel D-01:RSX 0806:Mvp Armor:Mvp Shield:Mvp Arma 1:Mvp Arma 2:Mvp Accesorio ATK:Mvp Accesorio DEF:Incantation Samurai:High Wizard Katherine"))
+	{
+		case 1: getitem 4403,1; close; // Kiel D-01
+		case 2: getitem 4342,1; close; // RSX 0806
+		case 3: getitem 9201,1; close; // Mvp Armor
+		case 4: getitem 9202,1; close; // Mvp Shield
+		case 5: getitem 9203,1; close; // Mvp Arma 1
+		case 6: getitem 9204,1; close; // Mvp Arma 2
+		case 7: getitem 9205,1; close; // Mvp Accesorio ATK
+		case 8: getitem 9206,1; close; // Mvp Accesorio DEF
+		case 9: getitem 4263,1; close; // Incantation Samurai
+		case 10: getitem 4365,1; close; // High Wizard Katherine
+		case 255: getitem 19326,1; close; // Regresa el Scroll
+	}
+}
+
+function	script	F_DarMVPcard_C	{
+      switch(prompt("Amon Ra:Assassin Cross:Osiris:Maya:Stormy Knight:Dark Lord:Lord Knight:Sniper Cecil:Phreeoni:Maya Purple:Atroce:Drake:Berzebub:Turtle General:Moonlight Flower:Lady Tanee:Doppelganger:Whitesmith:High Priest:Evil Snake:Mistress:Dracula:Orc Hero:Detale:Bacsojin:Baphomet:Garm:General Egnizem Cenia:Ktullanux:Pharaon:Valky Randgris:Vesper"))
+	{		
+		case 1: getitem 4236,1; close; // Amon Ra
+		case 2: getitem 4359,1; close; // Assassin Cross
+		case 3: getitem 4144,1; close; // Osiris 
+		case 4: getitem 4146,1; close; // Maya
+		case 5: getitem 4318,1; close; // Stormy Knight
+		case 6: getitem 4168,1; close; // Dark Lord
+		case 7: getitem 4357,1; close; // Lord Knight 
+		case 8: getitem 4367,1; close; // Sniper Cecil
+		case 9: getitem 4121,1; close; // Phreeoni
+		case 10: getitem 4198,1; close; // Maya Purple
+		case 11: getitem 4425,1; close; // Atroce 
+		case 12: getitem 4137,1; close; // Drake
+		case 13: getitem 4145,1; close; // Berzebub
+		case 14: getitem 4305,1; close; // Turtle General
+		case 15: getitem 4131,1; close; // Moonlight Flower 
+		case 16: getitem 4376,1; close; // Lady Tanee
+		case 17: getitem 4142,1; close; // Doppelganger 
+		case 18: getitem 4361,1; close; // Whitesmith 
+		case 19: getitem 4363,1; close; // High Priest 
+		case 20: getitem 4330,1; close; // Evil Snake
+		case 21: getitem 4132,1; close; // Mistress
+		case 22: getitem 4134,1; close; // Dracula
+		case 23: getitem 4143,1; close; // Orc Hero  
+		case 24: getitem 4386,1; close; // Detale
+		case 25: getitem 4372,1; close; //bacsojin
+		case 26: getitem 4147,1; close; // baphomet
+		case 27: getitem 4324,1; close; //garm
+		case 28: getitem 4352,1; close; //general egnizem cenia
+		case 29: getitem 4419,1; close; //ktullanux
+		case 30: getitem 4148,1; close; //pharaon
+		case 31: getitem 4407,1; close; //valky randgris
+		case 32: getitem 4374,1; close; //vesper
+		case 255: getitem 19327,1; close; // Regresa el Scroll
+	}
+}
+
+//Cartas miniboss
+//==============================================================
+//Otorga la carta de miniboss seleccionada
+       	function	script	F_DarMiniBossCard	{
+      switch(prompt("Tyrfing:Angeling:Arc Angeling:Bow Guardian:Byorgue:Chimera:Dark Illusion:Deviling:Executioner:Galion:Geminis 58:Ghostring:Hydrolancer:Kasa:Mutant Dragonoid:Mysteltain:Sword Guardian:Toad:Salamander"))
+	{
+	    case 1: getitem 4254,1; close; // tyrfing	
+		case 2: getitem 4054,1; close; // angeling  
+		case 3: getitem 4241,1; close; // archangelin
+		case 4: getitem 4428,1; close; // bow guardian  
+		case 5: getitem 4426,1; close; // byorgue
+		case 6: getitem 4300,1; close; // chimera  
+		case 7: getitem 4169,1; close; // dark ilusion
+		case 8: getitem 4174,1; close; // deviling  
+		case 9: getitem 4250,1; close; // executioner
+		case 10: getitem 4423,1; close; // galion  
+		case 11: getitem 4354,1; close; // gemini s58
+		case 12: getitem 4047,1; close; // ghostring  
+		case 13: getitem 4384,1; close; // hydrolancer
+		case 14: getitem 4431,1; close; // kasa  
+		case 15: getitem 4203,1; close; // mutant dragonoid
+		case 16: getitem 4207,1; close; // mysteltain  
+		case 17: getitem 4427,1; close; // sword guardian
+		case 18: getitem 4306,1; close; // toad
+		case 19: getitem 4429,1; close; // salamander
+		case 255: getitem 19328,1; close; // Regresa el Scroll
+	}
+}
+//Cartas normales
+//================================================================
+//Otorga la carta de mobs normal seleccionada
+    	function	script	F_DarNormalCard	{
+        switch(prompt("Anubis:Aqua Elemental:Argiope:Anaconda:Bathory:Banshee:Centipede:Cornus:Cornutus:Cookie:Civil Cervant:Deviruchi:Dustiness:Draco:Dark Shadow:Dark Pinguicula:Dokebi:Deathword:Drainiliar:Drosera:Elder Willow:Evil Druid:Elder:False Angel:Firelock Soldier:Giant Hornet:Ghoul:Giearth:Hode:Hill Wind:Hydra:Isis:Jakk:Kaho:Leaf Cat:Leib Olmai:Luciola Vespa:Laurell Weinder:Marionette:Marse:Myst:Marc:Mandragora:Minorous:Mobster:Orc Zombie:Orc Skeleton:Owl Duke:Owl Baron:Permeter:Pasana:Pitman:Raydric:Steel Chon Chon:Swordfish:Soul Taker:Santa Poring:Skel Worker:Strouf:Tatacho:Thara Frog:The Paper:Vadon:Zipper Bear"))
+    {    
+		case 1: getitem 4138,1; close; // anubis	
+		case 2: getitem 4443,1; close; // aqua elemental  
+		case 3: getitem 4114,1; close; // argiope
+		case 4: getitem 4062,1; close; // anaconda  
+		case 5: getitem 4119,1; close; // bathory
+		case 6: getitem 4438,1; close; // banshee  
+		case 7: getitem 4447,1; close; // centipede
+		case 8: getitem 4448,1; close; // cornus  
+		case 9: getitem 4061,1; close; // cornutus
+		case 10: getitem 4293,1; close; // cookie  
+		case 11: getitem 4202,1; close; // civil cervant
+		case 12: getitem 4122,1; close; // deviruchi  
+		case 13: getitem 4056,1; close; // dustiness
+		case 14: getitem 4444,1; close; // draco  
+		case 15: getitem 4449,1; close; // dark shadow
+		case 16: getitem 4450,1; close; // dark pinguicula  
+		case 17: getitem 4098,1; close; // dokebi
+		case 18: getitem 4388,1; close; // deathword
+		case 19: getitem 4069,1; close; // drainiliar
+		case 20: getitem 4421,1; close; // drosera	
+		case 21: getitem 4052,1; close; // elder willow  
+		case 22: getitem 4141,1; close; // evil druid
+		case 23: getitem 4251,1; close; // elder  
+		case 24: getitem 4316,1; close; // false angel
+		case 25: getitem 4160,1; close; // firelock soldier  
+		case 26: getitem 4271,1; close; // giant hornet
+		case 27: getitem 4110,1; close; // ghoul  
+		case 28: getitem 4087,1; close; // giearth
+		case 29: getitem 4081,1; close; // hode  
+		case 30: getitem 4345,1; close; // hill wind
+		case 31: getitem 4035,1; close; // hydra  
+		case 32: getitem 4116,1; close; // isis
+		case 33: getitem 4109,1; close; // jakk  
+		case 34: getitem 4065,1; close; // kaho
+		case 35: getitem 4195,1; close; // leaf cat  
+		case 36: getitem 4188,1; close; // leib olmai
+		case 37: getitem 4445,1; close; // luciola vespa
+		case 38: getitem 4350,1; close; // laurell weinder
+		case 39: getitem 4113,1; close; // marionette	
+		case 40: getitem 4095,1; close; // marse  
+		case 41: getitem 4108,1; close; // myst
+		case 42: getitem 4105,1; close; // marc  
+		case 43: getitem 4030,1; close; // mandragora
+		case 44: getitem 4126,1; close; // minorous  
+		case 45: getitem 4317,1; close; // mobster
+		case 46: getitem 4071,1; close; // orc zombie  
+		case 47: getitem 4085,1; close; // orc skeleton
+		case 48: getitem 4237,1; close; // owl duke  
+		case 49: getitem 4238,1; close; // owl baron
+		case 50: getitem 4311,1; close; // permeter  
+		case 51: getitem 4099,1; close; // pasana
+		case 52: getitem 4335,1; close; // pitman  
+		case 53: getitem 4133,1; close; // raydric
+		case 54: getitem 4042,1; close; // steel chon chon  
+		case 55: getitem 4089,1; close; // swordfish
+		case 56: getitem 4461,1; close; // soul taker
+		case 57: getitem 4005,1; close; // santa poring
+		case 58: getitem 4092,1; close; // skel worker	
+		case 59: getitem 4111,1; close; // strouf  
+		case 60: getitem 4442,1; close; // tatacho
+		case 61: getitem 4058,1; close; // thara frog  
+		case 62: getitem 4172,1; close; // the paper
+		case 63: getitem 4049,1; close; // vadon  
+		case 64: getitem 4281,1; close; // zipper bear		
+		case 255: getitem 19329,1; close; // Regresa el Scroll
+	}
+}

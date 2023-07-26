@@ -1,0 +1,18 @@
+invek,148,173,6	script	Borrador de Puntos	766,{
+
+set .@n$, "[ Removedor de Puntos ]";
+
+	mes .@n$;
+	mes "Hola, vengo de un lugar muy lejano el cual fue destruido , y he venido para ayudaros con los SkillPoints.";
+	mes "Dime en que puedo ayudarte?";
+	next;
+	if ( select ("Quitame Puntos","Salir") == 1 ) {
+		set SkillPoint,0;
+		close;
+	}
+	else {
+	mes .@n$;
+	mes "Adiós, vuelve cuando quieras.";
+	close;
+	}
+}

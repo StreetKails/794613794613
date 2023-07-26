@@ -1,0 +1,183 @@
+//-------------------------------------------------- MAZOS --------------------------------------------------
+
+//Mazo Neutral
+function	script	F_mazo_neutral	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+skill 365,5;skill 468,5;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Agua
+function	script	F_mazo_agua	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 14,7;
+bonus bAtkEle,Ele_Water;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+
+//Mazo Tierra
+function	script	F_mazo_tierra	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 90,5;
+bonus bAtkEle,Ele_Earth;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Shadow
+function	script	F_mazo_shadow	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 340,8;
+bonus bAtkEle,Ele_Dark;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Fuego
+function	script	F_mazo_fuego	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 19,7;
+bonus bAtkEle,Ele_Fire;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Viento
+function	script	F_mazo_viento	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 20,7;
+bonus bAtkEle,Ele_Wind;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Holy
+function	script	F_mazo_holy	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+bonus2 bSkillAtk,156,50;
+skill 545,10;
+bonus bAtkEle,Ele_Holy;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Ghost
+function	script	F_mazo_ghost	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 13,8;
+bonus bAtkEle,Ele_Ghost;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Undead
+function	script	F_mazo_undead	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 400,3;
+bonus bAtkEle,Ele_Undead;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Poison
+function	script	F_mazo_poison	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus2 bSkillAtk,156,250;
+bonus bMatkRate,50;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+bonus bAtkEle,Ele_Poison;
+skill 547,7;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}

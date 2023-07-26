@@ -1,0 +1,100 @@
+aquaf_g,57,83,3	script	Baldur+6	826,{
+
+mes "^CCOOOO[Baldur]^000000";
+mes "Fui asesinado en el Ragnarok pero los dioses me revivieron a cambio de la mitad de mis poderes, aun asi puedo forjar tus armas a +6 sin averiarlas";
+next;
+mes "Estás interesado?";
+menu "Si, quiero refinar",L_Refine,"Que necesito?",L_Materials,"No gracias",-;
+next;
+mes "Hasta pronto, aqui estaré cuando te decidas...";
+close;
+
+L_Refine:
+if((countitem(7757) < 2) || (countitem(7019) < 10) || (countitem(7443) < 20) || (countitem(984) < 100) || (countitem(985) < 100) || (countitem(7166) < 100) || (countitem(7321) < 100) || (countitem(7315) < 100) || (countitem(999) < 100) || (Zeny < 300000000)) goto noitems;
+mes "Ok, veo que ya tienes todo lo que te he pedido...";
+next;
+mes "Ahora, dime que item te gustaría refinar?";
+setarray .@position$[1], "Head","Body","Left hand","Right hand","Robe","Shoes","Accessory 1","Accessory 2","Head 2","Head 3";
+	set .@menu$,"";
+	for( set .@i,1; .@i <= 10; set .@i,.@i+1 )
+	{
+		if( getequipisequiped(.@i) )
+			set .@menu$, .@menu$ + .@position$[.@i] + "-" + "[" + getequipname(.@i) + "]";
+
+		set .@menu$, .@menu$ + ":";
+	}
+set .@part,select(.@menu$);
+	if(!getequipisequiped(.@part)) {
+		mes "[Baldur]";
+		mes "Hmm, creo que no tienes";
+		mes "Items equipados que";
+		mes "se puedan refinar.";
+		emotion 6;
+		close;
+	}
+	//Check if the item is refinable...
+	if(!getequipisenableref(.@part)) {
+		mes "[Baldur]";
+		mes "Hmm, no creo que pueda";
+		mes "refinar este tipo de item...";
+		close;
+	}
+	//Check to see if the items is already +10
+	if(getequiprefinerycnt(.@part) >= 6) {
+		mes "[Baldur]";
+		mes "No puedo refinar más este item...";
+		mes "podría romperlo, no tengo tanto";
+		mes "poder.";
+		close;
+	}
+//Check to see if the items is over +4
+	if(getequiprefinerycnt(.@part) < 5) {
+		mes "[Baldur]";
+		mes "Este item, aun no alcanza el +5";
+		mes "necesario, para poder trabajar";
+		mes "con él.";
+		close;
+	}
+set .@refineitemid, getequipid(.@part); // save id of the item
+set .@refinerycnt, getequiprefinerycnt(.@part); //save refinery count
+successrefitem .@part;
+Emotion e_heh;
+delitem 7757,2;
+delitem 7019,10;
+delitem 7443,20;
+delitem 984,100;
+delitem 985,100;
+delitem 7166,100;
+delitem 7321,100;
+delitem 7315,100;
+delitem 999,100;
+set Zeny,Zeny-300000000;
+next;
+mes "Aqui tienes... todo ha sido un exito!";
+close;
+
+L_Materials:
+mes "^CCOOOO[Baldur]^000000";
+mes "Bueno... tengo una lista de items que debes conseguir para que pueda trabajar en el refinamiento de tu equipo";
+next;
+mes "^CCOOOO[Baldur]^000000";
+mes "Necesitas tener en tu inventario:";
+mes "2  ^CC0000Mithril^000000";
+mes "10  ^CC0000Loki's Whispers^000000";
+mes "20  ^CC0000Three-Headed Dragon's Head^000000";
+mes "100 ^CC0000Oridecon^000000";
+mes "100 ^CC0000Elunium^000000";
+mes "100 ^CC0000Crystal Fragment^000000";
+mes "100 ^CC0000Dark Crystal Fragment^000000";
+mes "100 ^CC0000Steel^000000";
+mes "100 ^CC0000Soft Silk^000000";
+mes "300 ^CC0000Millones Zeny^000000";
+close;
+
+noitems:
+next;
+mes "^CCOOOO[Baldur]^000000";
+mes "Aun no puedo trabajar contigo, no tienes los items necesarios... vuelve cuando los tengas";
+close;
+
+}

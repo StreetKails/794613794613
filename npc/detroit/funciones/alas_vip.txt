@@ -1,0 +1,980 @@
+//Alas Tipo VIP
+function	script	F_AlasTipoVIP	{
+	bonus bHit,50;
+	bonus bMaxHPrate,10;
+	bonus bMatkRate,10;
+	bonus bAtkRate,10;
+	bonus bAllStats,10;
+	bonus2 bSubEle,Ele_Neutral,20;
+	bonus2 bSubEle,Ele_Poison,20;
+	bonus2 bSubEle,Ele_Holy,20;
+	bonus2 bSubEle,Ele_Dark,20;
+	bonus2 bSubEle,Ele_Fire,20;
+	bonus2 bSubEle,Ele_Water,20;
+	bonus2 bSubEle,Ele_Wind,20;
+	bonus2 bSubEle,Ele_Earth,20;
+	bonus2 bSubEle,Ele_Undead,20;
+	bonus2 bSubEle,Ele_Ghost,20;
+	
+	// Valkyrie shield || Novice Shield || Angelic Guard
+	if( isequipped(18035) || isequipped(18034) || isequipped(18036) ) {
+
+		bonus2 bSubEle,Ele_Neutral,-10;
+		bonus2 bSubEle,Ele_Poison,-10;
+		bonus2 bSubEle,Ele_Holy,-10;
+		bonus2 bSubEle,Ele_Dark,-10;
+		bonus2 bSubEle,Ele_Fire,-10;
+		bonus2 bSubEle,Ele_Water,-10;
+		bonus2 bSubEle,Ele_Wind,-10;
+		bonus2 bSubEle,Ele_Earth,-10;
+		bonus2 bSubEle,Ele_Undead,-10;
+		bonus2 bSubEle,Ele_Ghost,-10;
+	}
+
+	// Combos con Hats Quest
+	// Hat de STR
+	else if ( isequipped(30530) && (isequipped(30531)|| isequipped(30532)|| isequipped(30533)||
+		isequipped(30534)|| isequipped(30535)|| isequipped(30536)|| isequipped(30537)|| isequipped(31034)|| isequipped(31035)|| isequipped(31036)|| isequipped(31037)|| isequipped(31038)|| isequipped(31039)|| isequipped(31040)|| isequipped(31041)|| isequipped(31042)|| isequipped(20874)|| isequipped(20875)|| isequipped(20876)|| isequipped(20877)|| isequipped(20878)|| isequipped(20879)|| isequipped(20880)|| isequipped(20881)|| isequipped(20882)) ) {
+		bonus bFlee,25;
+		bonus bAspdRate,10;
+		bonus bSplashAddRange,2;
+	}
+	// Tipo Archangel
+	else if ( (isequipped(15227) || isequipped(15250) || isequipped(15251) || isequipped(15252) || isequipped(15253) || isequipped(15254)) && (isequipped(9785) || isequipped(9683)|| isequipped(9861)|| isequipped(9778)) ) {
+		bonus bMatkRate,5;
+		bonus3 bMagicDamageReturn2,100,1,10;bonus3 bMagicDamageReturn2,100,0,10;
+	}
+	// Tipo Black Valky
+	else if ( (isequipped(15228) || isequipped(15255) || isequipped(15256) || isequipped(15257)) && (isequipped(9873) || isequipped(9741)|| isequipped(9872)|| isequipped(9776)|| isequipped(9881)) ) {
+		bonus bMatkRate,10;
+		bonus2 bSubEle,Ele_Fire,5;
+	}
+	// Tipo Ice Wolf
+	else if ( isequipped(15225) && (isequipped(9813) || isequipped(9858)|| isequipped(9863)|| isequipped(9870)|| isequipped(9878)) ) {
+		bonus bMatkRate,10;
+		bonus2 bSubEle,Ele_Water,5;
+	}
+	// Tipo Lucifer
+	else if ( isequipped(15226) && (isequipped(9826) || isequipped(9871)|| isequipped(9707)|| isequipped(9742)) ) {
+		bonus bAtkRate,7;
+		bonus2 bAddEle,Ele_Holy,10;
+		bonus2 bAddEle,Ele_Dark,10;
+	}
+	// Tipo Morriganes
+	else if ( isequipped(15230) && (isequipped(9818) || isequipped(9836)|| isequipped(9777)|| isequipped(9883)|| isequipped(9862)) ) {
+		bonus2 bHPDrainRate,100,30;
+		bonus2 bSPDrainRate,100,30;
+		bonus bCritAtkRate,10;
+		if(Class==4016||Class==4038) {bonus2 bSpDrainRate,-50,-15;};
+	}
+	// Tipo Samurai
+	else if ( (isequipped(15231) || isequipped(15241) ||isequipped(15242) ||isequipped(15243) ||isequipped(15244) ||isequipped(15245)) && (isequipped(9784) || isequipped(9857)|| isequipped(9828)|| isequipped(9694)|| isequipped(9752)) ) {
+		bonus2 bIgnoreDefRate, RC_Demihuman, 15;
+		bonus bAtkRate,5;
+	}
+	// tipo dark helm
+	else if (isequipped(15270) && (isequipped(15662) || isequipped(15655) ||isequipped(15650)) ) {bonus bAtkRange,2;skill 357,2;}
+	
+	//tipo sniper googles
+	else if (isequipped(15259) && (isequipped(15648) || isequipped(15652) ||isequipped(15649)) ) {
+	bonus2 bSubRace,RC_DemiHuman,5;
+	bonus bAtkRate,10;
+	bonus bFlee2,5;
+}
+	//tipo capricorn helm
+	else if (isequipped(15273) && (isequipped(5300) || isequipped(15651) ||isequipped(15660)) ) {
+	bonus2 bSubRace,RC_DemiHuman,5;
+	bonus bMatkRate,10;
+	bonus bFlee2,5;
+}
+	//tipo uruhara
+	else if (isequipped(15260) && (isequipped(15666) || isequipped(15658) ||isequipped(5152)) ) {
+	bonus bdispellresist,80;
+	bonus2 bAddRace,RC_DemiHuman,10;
+}	
+	return;
+}
+
+
+//F_HatQuestSTR
+function	script	F_HatQuestSTR	{
+	bonus bStr,65;
+	bonus bAgi,30;
+	bonus bMaxHPrate,20;
+	bonus bAtkRate,10;
+return;
+}
+
+//F_HatQuestDEX
+function	script	F_HatQuestDEX	{
+	bonus bDex,65;
+	bonus bAgi,40;
+	bonus bMaxHPrate,20;
+	bonus bAtkRate,10;
+return;
+}
+
+//F_HatQuestINT
+function	script	F_HatQuestINT	{
+	bonus bInt,65;
+	bonus bDex,35;
+	bonus bMaxHPrate,20;
+	bonus bMatkRate,10;
+return;
+}
+
+
+
+//Alas Quest
+function	script	F_AlasQuest	{
+	bonus bHit,100;
+	bonus bMaxHPrate,15;
+	bonus bMatkRate,13;
+	bonus bAtkRate,13;
+	bonus bStr,70;
+	bonus bInt,70;
+	bonus bDex,70;
+	bonus bAgi,30;
+	bonus2 bSubEle,Ele_Neutral,15;
+	bonus2 bSubEle,Ele_Poison,15;
+	bonus2 bSubEle,Ele_Holy,15;
+	bonus2 bSubEle,Ele_Dark,15;
+	bonus2 bSubEle,Ele_Fire,15;
+	bonus2 bSubEle,Ele_Water,15;
+	bonus2 bSubEle,Ele_Wind,15;
+	bonus2 bSubEle,Ele_Earth,15;
+	bonus2 bSubEle,Ele_Undead,15;
+	bonus2 bSubEle,Ele_Ghost,15;
+	if((isequipped(18035) || isequipped(18034) || isequipped(18036)) && ((getequiprefinerycnt(3) >= 7)) ) {
+		bonus bAllStats,2;
+		if (isequipped(18035) || isequipped(18034)) {
+			bonus bMaxHPrate,2;			
+		};
+		bonus2 bSubEle,Ele_Neutral,-5;
+		bonus2 bSubEle,Ele_Poison,-5;
+		bonus2 bSubEle,Ele_Holy,-5;
+		bonus2 bSubEle,Ele_Dark,-5;
+		bonus2 bSubEle,Ele_Fire,-5;
+		bonus2 bSubEle,Ele_Water,-5;
+		bonus2 bSubEle,Ele_Wind,-5;
+		bonus2 bSubEle,Ele_Earth,-5;
+		bonus2 bSubEle,Ele_Undead,-5;
+		bonus2 bSubEle,Ele_Ghost,-5;
+	};
+	if((isequipped(18035) || isequipped(18034) || isequipped(18036)) && ((getequiprefinerycnt(3) <= 6)) ) {
+		bonus2 bSubEle,Ele_Neutral,-7;
+		bonus2 bSubEle,Ele_Poison,-7;
+		bonus2 bSubEle,Ele_Holy,-7;
+		bonus2 bSubEle,Ele_Dark,-7;
+		bonus2 bSubEle,Ele_Fire,-7;
+		bonus2 bSubEle,Ele_Water,-7;
+		bonus2 bSubEle,Ele_Wind,-7;
+		bonus2 bSubEle,Ele_Earth,-7;
+		bonus2 bSubEle,Ele_Undead,-7;
+		bonus2 bSubEle,Ele_Ghost,-7;
+	};
+	// Combos con Hats Quest
+	 if ( isequipped(30530) && isequipped(30531)|| isequipped(30532)|| isequipped(30533)||	isequipped(30534)|| isequipped(30535)|| isequipped(30536)|| isequipped(30537)|| isequipped(31034)|| isequipped(31035)|| isequipped(31036)|| isequipped(31037)|| isequipped(31038)|| isequipped(31039)|| isequipped(31040)|| isequipped(31041)|| isequipped(31042)|| isequipped(20874)|| isequipped(20875)|| isequipped(20876)|| isequipped(20877)|| isequipped(20878)|| isequipped(20879)|| isequipped(20880)|| isequipped(20881)|| isequipped(20882) ) {
+		bonus bAtkRate,10;
+		bonus bStr,25;
+	}
+
+	 if ( isequipped(30970) && isequipped(30971)|| isequipped(30972)|| isequipped(30973)||	isequipped(30974)|| isequipped(30975)|| isequipped(30976)|| isequipped(30756)|| isequipped(30757)|| isequipped(30758)|| isequipped(30759)|| isequipped(30760)|| isequipped(30761)|| isequipped(30762)|| isequipped(30763)|| isequipped(30985)|| isequipped(30986)|| isequipped(30987)|| isequipped(30988)|| isequipped(30989)|| isequipped(30990)|| isequipped(30991) ) {
+		bonus bAtkRate,10;
+		bonus bDex,25;
+	}
+
+	 if ( isequipped(32086) && isequipped(32087)|| isequipped(32088)|| isequipped(32089)||	isequipped(32090)|| isequipped(32091)|| isequipped(32092)|| isequipped(32093)|| isequipped(20858)|| isequipped(20859)|| isequipped(20860)|| isequipped(20861)|| isequipped(20862)|| isequipped(20863)|| isequipped(20864)|| isequipped(20865)|| isequipped(20749)|| isequipped(20750)|| isequipped(20751)|| isequipped(20752)|| isequipped(20753)|| isequipped(20754)|| isequipped(20755) ) {
+		bonus bMatkRate,10;
+		bonus bInt,25;
+	}
+
+return;
+}
+
+//alas quest especial fox tail
+function	script	F_questevento	{
+bonus bFlee,20;
+bonus bMaxHPrate,10;
+bonus bMatkRate,5;
+bonus bAtkRate,5;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;
+bonus2 bSubEle,Ele_Poison,20;
+bonus2 bSubEle,Ele_Holy,20;
+bonus2 bSubEle,Ele_Dark,20;
+bonus2 bSubEle,Ele_Fire,20;
+bonus2 bSubEle,Ele_Water,20;
+bonus2 bSubEle,Ele_Wind,20;
+bonus2 bSubEle,Ele_Earth,20;
+bonus2 bSubEle,Ele_Undead,20;
+bonus2 bSubEle,Ele_Ghost,20;
+	
+// Valkyrie shield || Novice Shield || Angelic Guard
+if( isequipped(18035) || isequipped(18034) || isequipped(18036) ) {
+
+bonus2 bSubEle,Ele_Neutral,-10;
+bonus2 bSubEle,Ele_Poison,-10;
+bonus2 bSubEle,Ele_Holy,-10;
+bonus2 bSubEle,Ele_Dark,-10;
+bonus2 bSubEle,Ele_Fire,-10;
+bonus2 bSubEle,Ele_Water,-10;
+bonus2 bSubEle,Ele_Wind,-10;
+bonus2 bSubEle,Ele_Earth,-10;
+bonus2 bSubEle,Ele_Undead,-10;
+bonus2 bSubEle,Ele_Ghost,-10;
+	}
+return;
+}
+
+function	script	F_AlasVipBase	{
+	bonus bMaxHPrate,10;
+	bonus bMatkRate,10;
+	bonus bAtkRate,10;
+	bonus bAllStats,10;
+	bonus2 bSubEle,Ele_Neutral,20;
+	bonus2 bSubEle,Ele_Poison,20;
+	bonus2 bSubEle,Ele_Holy,20;
+	bonus2 bSubEle,Ele_Dark,20;
+	bonus2 bSubEle,Ele_Fire,20;
+	bonus2 bSubEle,Ele_Water,20;
+	bonus2 bSubEle,Ele_Wind,20;
+	bonus2 bSubEle,Ele_Earth,20;
+	bonus2 bSubEle,Ele_Undead,20;
+	bonus2 bSubEle,Ele_Ghost,20;
+	// Novice shield, Valkyrie's shield, Angelic guard
+	if(isequipped(18035) || isequipped(18034) || isequipped(18036)){
+		bonus2 bSubEle,Ele_Neutral,-10;
+		bonus2 bSubEle,Ele_Poison,-10;
+		bonus2 bSubEle,Ele_Holy,-10;
+		bonus2 bSubEle,Ele_Dark,-10;
+		bonus2 bSubEle,Ele_Fire,-10;
+		bonus2 bSubEle,Ele_Water,-10;
+		bonus2 bSubEle,Ele_Wind,-10;
+		bonus2 bSubEle,Ele_Earth,-10;
+		bonus2 bSubEle,Ele_Undead,-10;
+		bonus2 bSubEle,Ele_Ghost,-10;
+	}
+return;
+}
+function	script	F_MiniPurple	{
+callfunc "F_AlasVipBase";
+skill 29,10;
+skill 34,10;
+skill 113,2;
+bonus5 bAutoSpell,42,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus3 bHpRatioAtkRace,RC_NonBoss,700000,6000;
+return;
+}
+
+function	script	F_brokenwing	{
+callfunc "F_AlasVipBase";
+bonus bPerfectHitAddRate,10;
+skill 135,5;
+bonus2 bResEff,Eff_Bleeding,10000;
+bonus2 bResEff,Eff_Blind,10000;
+bonus2 bResEff,Eff_Stone,10000;
+bonus2 bResEff,Eff_Freeze,10000;
+bonus2 bResEff,Eff_Sleep,10000;
+bonus2 bResEff,Eff_Poison,10000;
+bonus2 bResEff,Eff_DPoison,10000;
+bonus2 bResEff,Eff_Curse,10000;
+bonus2 bResEff,Eff_Confusion,10000;
+bonus2 bResEff,Eff_Stun,10000;
+bonus2 bResEff,Eff_Silence,10000;
+if(isequipped(15653)){ 		//combo con Head Protect
+bonus bAtkRate,5;
+bonus2 bSubSize,1,5; bonus2 bSubSize,0,5;
+bonus2 bHPDrainRate,200,10;
+bonus2 bSPDrainRate,200,10;
+if(Class==Job_Rogue||Class==Job_Stalker||Class==Job_Baby_Rogue) {bonus2 bHPDrainRate,-199,-39;};   //Con Stalker no Otorga Recuperacion de Hp
+if(Class==4016||Class==4038) {bonus2 bSpDrainRate,-150,-20;}; //champion 5% de curar el 20% del dano como SP
+} 
+return;
+}
+
+function	script	F_Galaxy	{
+	callfunc "F_AlasVipBase";
+bonus bMatkRate,5;
+bonus bAtkRate,5;
+bonus bMagicAtkDef,15;
+bonus bMiscAtkDef,15;
+bonus bMagicFlee,1000;
+bonus5 bAutoSpellWhenHit,464,3,100,BF_WEAPON|BF_MAGIC|BF_LONG|BF_MISC,0;
+bonus5 bAutoSpellWhenHit,464,3,200,BF_WEAPON|BF_MAGIC|BF_MISC,0;
+return;
+}
+
+function	script	F_MiniBlue	{
+callfunc "F_AlasVipBase";
+bonus bMatkRate,5;
+bonus3 bMagicHpDrainRateRace,RC_DemiHuman,200,50;
+bonus3 bMagicHpDrainRateRace,RC_NonBoss,100,50;
+bonus bFlee2,10;
+bonus2 bSubRace,RC_DemiHuman,5;
+if(isequipped(9914) || isequipped(9998)) {bonus3 bMagicHpDrainRateRace,RC_NonBoss,-50,-50;bonus3 bMagicHpDrainRateRace,RC_Boss,-50,-50;};
+
+return;
+}
+
+function	script	F_skullbag	{
+callfunc "F_AlasVipBase";
+bonus bHit,50;
+skill 29,10;
+skill 34,10;
+skill 113,3;
+bonus2 bAddEle,Ele_Poison,30; bonus2 bAddEle,Ele_Undead,30;
+return;
+}
+
+function	script	F_MiniGreenButterfly	{
+callfunc "F_AlasVipBase";
+bonus bAtkRate,5;
+skill 29,10;
+skill 34,10;
+bonus5 bAutoSpell,"PR_LEXAETERNA",1,30,BF_WEAPON|BF_SHORT|BF_LONG|BF_MISC,1;
+skill  9,7;
+return;
+}
+
+function	script	F_DevilsLorny	{
+callfunc "F_AlasVipBase";
+bonus bMatkRate,5;
+bonus bAtkRate,5;
+skill 404,1;
+skill 157,1;
+if(Class==15 || Class==4016|| Class==4038){
+skill 9,5;
+}else {
+		skill 373,5;
+	}
+
+return;
+}
+
+function	script	F_RedAntique	{
+callfunc "F_AlasVipBase";
+bonus bMatkRate,10;
+bonus3 bHpRatioMAtkRace,RC_NonBoss,600000,6000;
+bonus bDelayRate,-10;
+skill 29,10;
+skill 34,10;
+return;
+}
+
+function	script	F_MiniYellowBut	{
+callfunc "F_AlasVipBase";
+bonus2 bAddRace,RC_DemiHuman,15;
+bonus bNearAtkDef,10;
+bonus bLongAtkDef,10;
+bonus bMagicAtkDef,10;
+bonus bMiscAtkDef,10;
+bonus bDelayRate,-5;
+bonus bCastrate,-100;
+return;
+}
+
+function	script	F_BurningCrystal	{
+	callfunc "F_AlasVipBase";
+	// +10% de probrabilidad de esquivar un ataque mágico.
+	bonus bMagicFlee,1000;
+	// 10% de reducción de daño.
+	bonus bNearAtkDef,10;
+	bonus bLongAtkDef,10;
+	bonus bMagicAtkDef,10;
+	bonus bMiscAtkDef,10;
+	bonus2 bResEff,Eff_Bleeding,10000;
+	bonus2 bResEff,Eff_Blind,10000;
+	bonus2 bResEff,Eff_Stone,10000;
+	bonus2 bResEff,Eff_Freeze,10000;
+	bonus2 bResEff,Eff_Sleep,10000;
+	bonus2 bResEff,Eff_Poison,10000;
+	bonus2 bResEff,Eff_DPoison,10000;
+	bonus2 bResEff,Eff_Curse,10000;
+	bonus2 bResEff,Eff_Confusion,10000;
+	bonus2 bResEff,Eff_Stun,10000;
+	bonus2 bResEff,Eff_Silence,10000;
+	return;
+}
+
+function	script	F_MagicButter	{
+	callfunc "F_AlasVipBase";
+	
+	skill "SM_MOVINGRECOVERY",1;
+	bonus bCastrate,-100;
+	skill "SM_RECOVERY",5;
+	if(BaseClass != Job_Swordman && Class != Job_Taekwon){
+		bonus bHPrecovRate, 300;
+	}
+
+	return;
+}
+
+function	script	F_AquaWings	{
+	callfunc "F_AlasVipBase";
+	//Escudo que salta cuando vayas amorir
+	bonus bFlee2,10;
+	bonus bNearAtkDef,10;
+	return;
+}
+
+function	script	F_EtherealWings	{
+	callfunc "F_AlasVipBase";
+	bonus bPerfectHitAddRate,10;
+	bonus bHit,100;
+	return;
+}
+
+function	script	F_BlueButterfly	{
+	callfunc "F_AlasVipBase";
+	// +1% de daño mágico a todas las razas(excepto mvps) por cada 8,000 de HP a partir de 900,000 de HP.
+	bonus3 bHpRatioMAtkRace,RC_NonBoss,700000,6000;
+	bonus bMatkRate,10;
+	return;
+}
+
+//======================================================== ALAS VIPS ========================================================
+//Phoenix Wings / Black Phoenix Wings
+function	script	F_phoenixwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 462,10;skill 375,2;
+if(Class==15 || Class==4016){
+skill 9,5;
+};
+if(Class!=15 && Class!=4016){
+skill 374,1;
+};
+bonus2 bSubRace,0,20;bonus2 bSubRace,1,20;bonus2 bSubRace,2,20;bonus2 bSubRace,3,20;bonus2 bSubRace,4,20;bonus2 bSubRace,5,20;bonus2 bSubRace,6,20;bonus2 bSubRace,7,5;bonus2 bSubRace,8,20;bonus2 bSubRace,9,20;
+return;
+}
+
+//Epitaph Wings / Elemental Wings
+function	script	F_epitaphwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 4,5;skill 9,5;skill 463,7;
+bonus5 bAutoSpellWhenHit,464,3,100,BF_WEAPON|BF_MAGIC|BF_LONG|BF_MISC,0;
+bonus5 bAutoSpellWhenHit,464,3,200,BF_WEAPON|BF_MAGIC|BF_MISC,0;
+return;
+}
+
+//Devil Wings / Artic Inferno Wings
+function	script	F_devilwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 490,5;skill 547,7;
+bonus5 bAutoSpell,482,2,40,BF_MAGIC,0;
+return;
+}
+
+//Red Fallen Angel Wings
+function	script	F_redfallenwings	{
+
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 252,5;bonus bHit,50;
+bonus3 bAutoSpellWhenHit,289,3,20;
+if(isequipped(9914)) {bonus bShortWeaponDamageReturn,-5;};
+return;
+}
+
+//Ying Yang Wings
+function	script	F_yingyangwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bResEff,Eff_Bleeding,10000;
+bonus2 bResEff,Eff_Blind,10000;
+bonus2 bResEff,Eff_Stone,10000;
+bonus2 bResEff,Eff_Freeze,10000;
+bonus2 bResEff,Eff_Sleep,10000;
+bonus2 bResEff,Eff_Poison,10000;
+bonus2 bResEff,Eff_DPoison,10000;
+bonus2 bResEff,Eff_Curse,10000;
+bonus2 bResEff,Eff_Confusion,10000;
+bonus2 bResEff,Eff_Stun,10000;
+bonus2 bResEff,Eff_Silence,10000;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 361,3;
+bonus bDef,7;bonus bMDef,7;
+return;
+}
+
+
+//Artic Wings
+function	script	F_articwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 89,5;skill 537,5;
+bonus2 bResEff,Eff_Freeze,10000;
+return;
+}
+
+//Mechanical Wings
+function	script	F_mechanicalwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 135,5;skill 404,1;skill 28,8;
+return;
+}
+
+//Ghotic Wings / Destruction Wings
+function	script	F_ghoticwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 384,3;
+return;
+}
+
+//Heart Wings / Dark Angel Wings
+function	script	F_heartwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus3 bMagicDamageReturn2,100,1,20;bonus3 bMagicDamageReturn2,100,0,20;
+bonus5 bAutoSpellWhenHit,289,3,40,BF_MAGIC|BF_MISC,1;
+if(isequipped(9914)) {bonus3 bMagicDamageReturn2,-100,1,-5;bonus3 bMagicDamageReturn2,-100,0,-5;};
+return;
+}
+
+//Transcendent Wings
+function	script	F_transwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus3 bAutoSpell,476,5,100;
+bonus2 bSPVanishRate,50,10;
+bonus2 bSpDrainRate,50,5;
+bonus5 bAutoSpell,78,1,200,BF_WEAPON|BF_SHORT|BF_LONG|BF_MISC,1;
+return;
+}
+
+//Goddess Wings / Blood Seal Wings
+function	script	F_goddesswings	{
+bonus2 bAddRace,RC_Angel,25;
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+//if(getiteminfo(getequipid(EQI_HAND_R),11) == 3){bonus2 bHPDrainRate,-100,-50;};
+bonus2 bHPDrainRate,100,50;bonus2 bSPDrainRate,100,50;	//10% de chance, 50% de daño
+if(isequipped(17025)) {bonus2 bHPDrainRate,-50,-40;};
+if(isequipped(9914) || isequipped(9998)) {bonus2 bHPDrainRate,-50,-50;bonus2 bSPDrainRate,-50,-50;};
+if(Class==4016||Class==4038) {bonus2 bSpDrainRate,-50,-30;};
+if(Class==Job_Knight||Class==Job_Lord_Knight||Class==Job_Rogue||Class==Job_Stalker) {bonus2 bHPDrainRate,-80,-25;bonus2 bSPDrainRate,-80,-25;};
+return;
+}
+
+//Valkyrie Wings
+function	script	F_valkyriewings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 73,5;
+bonus2 bAddEffWhenHit,Eff_Stone,500;bonus2 bAddEffWhenHit,Eff_Freeze,500;bonus2 bAddEffWhenHit,Eff_Stun,500;bonus2 bAddEffWhenHit,Eff_Sleep,500;bonus2 bAddEffWhenHit,Eff_Curse,500;bonus2 bAddEffWhenHit,Eff_Confusion,500;bonus2 bAddEffWhenHit,Eff_Poison,500;bonus2 bAddEffWhenHit,Eff_Bleeding,500;bonus2 bAddEffWhenHit,Eff_Blind,500;bonus2 bAddEffWhenHit,Eff_Silence,500;
+bonus5 bAutoSpellWhenHit,92,3,80,BF_WEAPON|BF_MISC|BF_MAGIC,1;
+return;
+}
+
+//Ikki Wings
+function	script	F_ikkiwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus bLongWeaponDamageReturn,20;
+bonus bNoKnockback,0;
+if(isequipped(9914)) {bonus bLongWeaponDamageReturn,-5;};
+return;
+}
+
+//=========================================================================COMBINACIONES VIP=====================================================================================
+//Supreme Angel Wings
+function	script	F_supangelwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 73,5;
+bonus bNoKnockback,0;
+return;
+}
+
+//Lava Wings
+function	script	F_lavawings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus bLongWeaponDamageReturn,20;
+if(isequipped(9914)) {bonus bLongWeaponDamageReturn,-5;};
+bonus2 bAddEffWhenHit,Eff_Stone,500;bonus2 bAddEffWhenHit,Eff_Freeze,500;bonus2 bAddEffWhenHit,Eff_Stun,500;bonus2 bAddEffWhenHit,Eff_Sleep,500;bonus2 bAddEffWhenHit,Eff_Curse,500;bonus2 bAddEffWhenHit,Eff_Confusion,500;bonus2 bAddEffWhenHit,Eff_Poison,500;bonus2 bAddEffWhenHit,Eff_Bleeding,500;bonus2 bAddEffWhenHit,Eff_Blind,500;bonus2 bAddEffWhenHit,Eff_Silence,500;
+bonus5 bAutoSpellWhenHit,92,3,80,BF_WEAPON|BF_MISC|BF_MAGIC,1;
+return;
+}
+
+//Color Wings
+function	script	F_colorwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 389,2;skill 463,7;skill 361,3;
+return;
+}
+
+//Color Dr Octopus
+function	script	F_droctopus	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bResEff,Eff_Bleeding,10000;
+bonus2 bResEff,Eff_Blind,10000;
+bonus2 bResEff,Eff_Stone,10000;
+bonus2 bResEff,Eff_Freeze,10000;
+bonus2 bResEff,Eff_Sleep,10000;
+bonus2 bResEff,Eff_Poison,10000;
+bonus2 bResEff,Eff_DPoison,10000;
+bonus2 bResEff,Eff_Curse,10000;
+bonus2 bResEff,Eff_Confusion,10000;
+bonus2 bResEff,Eff_Stun,10000;
+bonus2 bResEff,Eff_Silence,10000;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus bDef,7;bonus bMDef,7;
+skill 389,2;
+return;
+}
+
+//Naruto
+function	script	F_narutowings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 252,5;
+bonus2 bAddEffWhenHit,Eff_Stone,500;bonus2 bAddEffWhenHit,Eff_Freeze,500;bonus2 bAddEffWhenHit,Eff_Stun,500;bonus2 bAddEffWhenHit,Eff_Sleep,500;bonus2 bAddEffWhenHit,Eff_Curse,500;bonus2 bAddEffWhenHit,Eff_Confusion,500;bonus2 bAddEffWhenHit,Eff_Poison,500;bonus2 bAddEffWhenHit,Eff_Bleeding,500;bonus2 bAddEffWhenHit,Eff_Blind,500;bonus2 bAddEffWhenHit,Eff_Silence,500;
+bonus5 bAutoSpellWhenHit,92,3,80,BF_WEAPON|BF_MISC|BF_MAGIC,1;
+if(isequipped(9914)) {bonus bShortWeaponDamageReturn,-5;};
+return;
+}
+
+//Dark Android Wings
+function	script	F_androidwings	{
+
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus2 bSPVanishRate,50,10;
+bonus2 bSpDrainRate,50,5;
+return;
+}
+
+//Supreme Crane Wing
+function	script	F_cranewings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus2 bSPVanishRate,50,10;
+bonus2 bSpDrainRate,50,5;
+bonus5 bAutoSpell,78,1,100,BF_WEAPON|BF_SHORT|BF_LONG|BF_MISC,1;
+return;
+}
+
+//Sword
+function	script	F_swordwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bResEff,Eff_Bleeding,10000;
+bonus2 bResEff,Eff_Blind,10000;
+bonus2 bResEff,Eff_Stone,10000;
+bonus2 bResEff,Eff_Freeze,10000;
+bonus2 bResEff,Eff_Sleep,10000;
+bonus2 bResEff,Eff_Poison,10000;
+bonus2 bResEff,Eff_DPoison,10000;
+bonus2 bResEff,Eff_Curse,10000;
+bonus2 bResEff,Eff_Confusion,10000;
+bonus2 bResEff,Eff_Stun,10000;
+bonus2 bResEff,Eff_Silence,10000;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 384,3;
+return;
+}
+
+//Dark Dragon
+function	script	F_darkdragon	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus3 bMagicDamageReturn2,100,1,20;bonus3 bMagicDamageReturn2,100,0,20;
+if(isequipped(9914)) {bonus3 bMagicDamageReturn2,-100,1,-5;bonus3 bMagicDamageReturn2,-100,0,-5;};
+bonus5 bAutoSpellWhenHit,92,3,80,BF_WEAPON|BF_MISC|BF_MAGIC,1;
+return;
+}
+
+//Blood Death Wings
+function	script	F_bdeathwings	{
+
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus3 bAutoSpell,476,5,100;
+skill 135,5;
+return;
+}
+
+//Crystal Wings
+function	script	F_crystalwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 490,5;skill 537,5;
+bonus5 bAutoSpellWhenHit,464,3,100,BF_WEAPON|BF_MAGIC|BF_LONG|BF_MISC,0;
+bonus5 bAutoSpellWhenHit,464,3,200,BF_WEAPON|BF_MAGIC|BF_MISC,0;
+return;
+}
+
+//Chaos Wings
+function	script	F_chaoswings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 404,1;skill 540,6;skill 4,3;
+return;
+}
+
+//Aztecs Wings
+function	script	F_aztecswingz	{
+skill "NJ_KOUENKA",5;skill "MG_SRECOVERY",7;skill "MG_ENERGYCOAT",1;
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus3 bMagicHpDrainRateRace,RC_DemiHuman,200,50;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus3 bMagicHpDrainRateRace,RC_NonBoss,100,50;
+bonus3 bMagicHpDrainRateRace,RC_Boss,100,50;
+if(isequipped(9914) || isequipped(9998)) {bonus3 bMagicHpDrainRateRace,RC_NonBoss,-50,-50;bonus3 bMagicHpDrainRateRace,RC_Boss,-50,-50;};
+return;
+}
+
+//Frosty Wings
+function	script	F_frostywings	{
+
+bonus bMaxHPrate,10;
+bonus bMatkRate,25;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+return;
+}
+
+//Icarus Wings
+function	script	F_icaruswings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill "SM_MOVINGRECOVERY",1;
+bonus bHPrecovRate,(MaxSp /250);
+bonus bCastrate,-100;
+return;
+}
+
+//Twilight Wings
+function	script	F_twilightwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+//bonus5 bAutoSpell,"PR_LEXAETERNA",1,50,BF_WEAPON|BF_SHORT|BF_LONG|BF_MISC,1;
+bonus5 bAutoSpell,"AL_DECAGI",10,20,BF_WEAPON|BF_SHORT|BF_LONG|BF_MISC,1;
+bonus5 bAutoSpell,"NSC_DECBLESSING",10,20,BF_WEAPON|BF_SHORT|BF_LONG|BF_MISC,1;
+skill "CH_CHAINCRUSH",4;
+if(isequipped(4456)) {bonus2 bSkillAtk,"CH_CHAINCRUSH",-60;};
+return;
+}
+
+//Feather Ying Yang Wings
+function	script	F_featyingwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus3 bHpRatioAtkRace,RC_NonBoss,650000,6000;
+return;
+}
+
+//Mini Butterfly Wings
+function	script	F_mini_wings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,5;
+bonus bAtkRate,5;
+bonus bAllStats,10;
+bonus2 bHPDrainRate,100,25;bonus2 bSPDrainRate,100,25;	//10% de chance, 25% de daño
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+bonus2 bResEff,Eff_Bleeding,10000;
+bonus2 bResEff,Eff_Blind,10000;
+bonus2 bResEff,Eff_Stone,10000;
+bonus2 bResEff,Eff_Freeze,10000;
+bonus2 bResEff,Eff_Sleep,10000;
+bonus2 bResEff,Eff_Poison,10000;
+bonus2 bResEff,Eff_DPoison,10000;
+bonus2 bResEff,Eff_Curse,10000;
+bonus2 bResEff,Eff_Confusion,10000;
+bonus2 bResEff,Eff_Stun,10000;
+bonus2 bResEff,Eff_Silence,10000;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+if(isequipped(17025)) {bonus2 bHPDrainRate,-50,-20;};
+if(isequipped(9914) || isequipped(9998)) {bonus2 bHPDrainRate,-50,-10;bonus2 bSPDrainRate,-50,-10;};
+if(Class==4016||Class==4038||Class==15) {bonus2 bSpDrainRate,-50,-20;};
+if(Class==Job_Knight||Class==Job_Lord_Knight||Class==Job_Rogue||Class==Job_Stalker||Class==4030||Class==4040||Class==4014) {bonus2 bHPDrainRate,-80,-20;bonus2 bSPDrainRate,-80,-20;};
+return;
+}
+//shaman wings
+function	script	F_shaman_wings	{
+bonus bMaxHPrate,10;
+bonus bHit,50;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bHPDrainRate,100,50;bonus2 bSPDrainRate,100,50;	//10% de chance, 50% de daño
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+// Novice shield, Valkyrie's shield, Angelic guard
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)){bonus2 bSubEle,Ele_Neutral,-10;	bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+if(isequipped(17025)) {bonus2 bHPDrainRate,-50,-40;};
+if(isequipped(9914) || isequipped(9998)) {bonus2 bHPDrainRate,-100,-50;bonus2 bSPDrainRate,-100,-50;};
+if(Class==4016||Class==4038||Class==15) {bonus2 bSpDrainRate,-50,-30;};
+if(Class==4018||Class==17||Class==4040) && (isequipped(16061) || isequipped(16062) || isequipped(16063)|| isequipped(16064 ||isequipped(16065) || isequipped(16066) || isequipped(16067) || isequipped(16068) || isequipped(16069) || isequipped(20009))){bonus2 bHPDrainRate,-100,-50;bonus2 bSPDrainRate,-100,-50;};
+if(Class==Job_Knight||Class==Job_Lord_Knight){bonus2 bHPDrainRate,-100,-50;bonus2 bSPDrainRate,-100,-50;};
+return;
+}
+//satan wings
+function	script	F_satan_wings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,15;
+bonus bAtkRate,15;
+bonus bAllStats,15;
+bonus2 bSubSize,1,5; 
+bonus2 bSubSize,0,5;
+skill 135,5;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+// Novice shield, Valkyrie's shield, Angelic guard
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)){bonus2 bSubEle,Ele_Neutral,-10;	bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+return;
+}
+//mini white buterfly wings
+function	script	F_mini_white	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus bFlee2,10;
+bonus bFlee,100;
+bonus5 bAutoSpellWhenHit,464,3,100,BF_WEAPON|BF_MAGIC|BF_LONG|BF_MISC,0;
+bonus5 bAutoSpellWhenHit,464,3,200,BF_WEAPON|BF_MAGIC|BF_MISC,0;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+// Novice shield, Valkyrie's shield, Angelic guard
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)){bonus2 bSubEle,Ele_Neutral,-10;	bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+//combo
+if(isequipped(9895)|| isequipped(15621)){bonus2 bSubRace,RC_Demihuman,7;bonus bFlee2,5;};
+return;
+}
+//gold seraph wings
+function	script	F_gold_seraph	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,20;// +10
+bonus bDelayRate,-10;
+bonus bAllStats,10;
+skill 361,5;//agregue
+bonus bSpeedRate,5;//agregue
+//skill 545,7;
+//skill 547,7;
+bonus5 bAutoSpellWhenHit,366,5,10,BF_WEAPON|BF_MAGIC|BF_SHORT|BF_LONG|BF_MISC,0;//agregue
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 
+bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 
+bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+return;
+}	

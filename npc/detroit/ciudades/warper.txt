@@ -1,0 +1,203 @@
+-	script	Warp NPC::warpra	902,{cutin "kh_kiel01",2;
+	mes "[Warp NPC]";
+	mes "Hola!!,";
+	mes "Yo te puedo llevar a cualquier lugar en todo RockAndRO";
+	mes "Donde Deseas Ir?";
+	next;
+	menu "^0000DF Ultimo Mapa ^000000",lastwarp,"^B05D00 Ciudades ^000000",stadt,"^B05D00 Calabozos ^000000",dungeon,"^90AF00 Armeria VIP ^000000",vip,"^90AF00 Zona de Quest ^000000",questt,"^500F00 Ciudad de Merchants ^000000[" + getmapusers("pvp_y_1-4") + " Players]",merch,"Salir",negar;
+	
+	stadt:
+	menu "Prontera[" + getmapusers("prontera") + " Players]" ,wprontera,"Alberta[" + getmapusers("alberta") + " Players]",walberta,"Aldebaran[" + getmapusers("aldebaran") + " Players]",waldebaran,"Amatsu[" + getmapusers("amatsu") + " Players]",wamatsu,"Another World[" + getmapusers("mid_camp") + " Players]",wanother,"Ayothaya[" + getmapusers("ayothaya") + " Players]",wayothaya,"Brasilis[" + getmapusers("brasilis") + " Players]",wbrasilis,"Comodo[" + getmapusers("comodo") + " Players]",wcomodo,"Dewata[" + getmapusers("dewata") + " Players]",wdewata,"Dicastes[" + getmapusers("dicastes01") + " Players]",wdicastes,"Einbroch[" + getmapusers("einbroch") + " Players]",weinbroch,"Geffen[" + getmapusers("geffen") + " Players]",wgeffen,"Gonryun[" + getmapusers("gonryun") + " Players]",wgonryun,"Hugel[" + getmapusers("hugel") + " Players]",whugel,"Izlude[" + getmapusers("izlude") + " Players]",wizlude,"Lighthalzen[" + getmapusers("lighthalzen") + " Players]",wlight,"Louyang[" + getmapusers("louyang") + " Players]",wlouyang,"Lutie[" + getmapusers("xmas") + " Players]",wxmas,"Mora[" + getmapusers("mora") + " Players]",wmora,"Morroc[" + getmapusers("morocc") + " Players]",wmorroc,"Moscovia[" + getmapusers("moscovia") + " Players]",wmoscovia,"Niflheim[" + getmapusers("niflheim") + " Players]",wniflheim,"Rachel[" + getmapusers("rachel") + " Players]",wrachel,"Payon[" + getmapusers("payon") + " Players]",wpayon,"Umbala[" + getmapusers("umbala") + " Players]",wumbala,"Unnamed Island[" + getmapusers("nameless_i") + " Players]",wuisland,"Veins[" + getmapusers("veins") + " Players]",wveins,"Yuno[" + getmapusers("yuno") + " Players]",wyuno,"Jardin de Prontera[" + getmapusers("prt_fild08") + " Players]" ,wpronterafld,"Splendide[" + getmapusers("splendide") + " Players]" ,wsplendide;
+
+	dungeon:
+	menu "Abyss Lakes",dabyss,"Amatsu Dungeon",damatsu,"Anthell",dant,"Arsinoe",darsin,"Ayothaya Dungeun",dayotha,"Bibilan Dungeon",dbibilan,"Biolab",dbio,"Coal Mine (Dead Pit)",dcoal,"Dewata Dungeon",dwata,"Einbech Dungeon",dein,"Culvert",dculvert,"Gefenia",dgefenia,"Glast Heim",dglast,"Gonryun Dungeon",dgonryun,"Ice Dungeon",dice,"Juperos",djuperos,"Kiel Dungeon",dkiel,"Magma-Dungeon",dmagma,"Malangdo Dungeon",mlddungeon,"Moscovia Dungeon",moscodun,"Nydhugger",nydhugger,"Bosque Laberinto",dlaberinto,"Recinto Sagrado de Freya",dfreya,"Orc-Dungeon",dorc,"Payon-Dungeon",dpayon,"Playa de Comodo",dfocas,"Pyramids",dpyramids,"Odin Temple",dodin,"Sphinx",dsphinx,"Sunken Ship",dsunken,"Thanatos Tower",dthana,"Thor Volcano",dvolcano,"Turtle Dungeon",dturtle,"Cursed Unnamed Island",duisland;
+
+
+//----------------Ciudades----------------\\
+
+wprontera:	warp "prontera.gat",	156,	176;	callfunc "LastMapSave";
+wpronterafld:	warp "prt_fild08.gat",	144,	358;	callfunc "LastMapSave";
+walberta:	warp "alberta.gat",	138,	57;	callfunc "LastMapSave";
+waldebaran:	warp "aldebaran.gat",	145,	120;	callfunc "LastMapSave";
+wamatsu:	warp "amatsu.gat",	197,	86;	callfunc "LastMapSave";
+wanother:	warp "mid_camp.gat",	218,	234;	callfunc "LastMapSave";
+wayothaya:	warp "ayothaya.gat",	218,	176;	callfunc "LastMapSave";
+wmora:	warp "mora.gat",	109,	103;	callfunc "LastMapSave";
+wcomodo:   	warp "comodo.gat",	188,	161;    callfunc "LastMapSave";
+wdewata:	warp	"dewata.gat", 230,	48;	callfunc "LastMapSave";
+wdicastes:	warp "dicastes01.gat",	227,	204;	callfunc "LastMapSave";
+weinbroch:	warp "einbroch.gat",	64,	200;	callfunc "LastMapSave";
+wgonryun:	warp "gonryun.gat",	150,    130; 	callfunc "LastMapSave";
+wgeffen:	warp "geffen.gat",	119,	66;	callfunc "LastMapSave";
+whugel:	warp "hugel.gat",	113,	155;	callfunc "LastMapSave";
+wizlude:	warp "izlude.gat",	128,	111;	callfunc "LastMapSave";
+wlight:	warp "lighthalzen.gat",	158,	92;	callfunc "LastMapSave";
+wlouyang:	warp "louyang.gat",	210,	108;	callfunc "LastMapSave";
+wmorroc:	warp "morocc.gat",	159,	93;	callfunc "LastMapSave";
+wmoscovia:	warp "moscovia.gat",	186,	228;	callfunc "LastMapSave";
+wniflheim:	warp "niflheim.gat",	35,	161;	callfunc "LastMapSave";
+wrachel:	warp "rachel.gat",	113,	137;	callfunc "LastMapSave";
+wpayon:		warp "payon.gat",	178,	98;	callfunc "LastMapSave";
+wumbala:	warp "umbala.gat",	130,    130; 	callfunc "LastMapSave";
+wuisland:	warp "nameless_i.gat",	212,	185;	callfunc "LastMapSave";
+wxmas:		warp "xmas.gat",	148,	131;	callfunc "LastMapSave";
+wveins:   	warp "veins.gat",	181,	83;	callfunc "LastMapSave";
+wyuno:   	warp "yuno.gat",	160,	168;    callfunc "LastMapSave";
+wbrasilis:	warp "brasilis.gat",	195,	220;	callfunc "LastMapSave";
+wsplendide:	warp "splendide.gat",	198,	170;	callfunc "LastMapSave";
+
+//----------------Dungeons----------------\\
+
+dabyss:	warp "abyss_01.gat",	258,	271;	callfunc "LastMapSave";
+damatsu:	warp "ama_dun01.gat",	228,	10;	callfunc "LastMapSave";
+dant:		warp "anthell01.gat",	37,	261;	callfunc "LastMapSave";
+darsin:	warp "intro_01.gat",	21,	21;	callfunc "LastMapSave";
+dayotha:	warp "ayo_dun01.gat",	150,	149;	callfunc "LastMapSave";
+dbibilan:	warp "izlu2dun.gat",	106,	88;	callfunc "LastMapSave";
+dbio:	warp "lhz_dun01.gat",157,283;	callfunc "LastMapSave";
+dculvert:	warp "prt_fild05.gat",	273,	210;	callfunc "LastMapSave";
+dcoal:		warp "mjolnir_02.gat",	81,	359;	callfunc "LastMapSave";
+dwata:	warp	"dew_fild01.gat",	58,65;	callfunc	"LastMapSave";
+dein:	warp "einbech.gat",136,248;	callfunc "LastMapSave";
+dglast:		warp "glast_01.gat",	368,	303;	callfunc "LastMapSave";
+dgefenia:		warp "gefenia01.gat",	211,	169;	callfunc "LastMapSave";
+dgonryun:	warp "gonryun.gat",	160,    195; 	callfunc "LastMapSave";
+dice:	warp "ra_fild01.gat",	233,    328; 	callfunc "LastMapSave";
+djuperos:		warp "jupe_core.gat",149,148;		callfunc "LastMapSave";
+dkiel:	warp "kh_dun01.gat",	196,	49;	callfunc "LastMapSave";
+dmagma:		warp "yuno_fild03.gat",	39,	140;	callfunc "LastMapSave";
+mlddungeon:	warp	"mal_dun01.gat",	34,	234;	callfunc "LastMapSave";	
+moscodun:		warp "mosk_dun01.gat",	203,	273;	callfunc "LastMapSave";
+dlaberinto:	warp "prt_maze01.gat",177,10;	callfunc "LastMapSave";
+dorc:		warp "gef_fild10.gat",	70,	332;	callfunc "LastMapSave";
+dpayon:		warp "pay_arche.gat",	43,	132;	callfunc "LastMapSave";
+dfreya:	warp "ra_san01.gat",	114,	140;	callfunc "LastMapSave";
+dfocas:		warp "cmd_fild02.gat",	252,	171;	callfunc "LastMapSave";
+dpyramids:	warp "moc_ruins.gat",	62,	162;	callfunc "LastMapSave";
+dodin:		warp "odin_tem01.gat",99,145;		callfunc "LastMapSave";
+dsphinx:	warp "moc_fild19.gat",	107,	100;	callfunc "LastMapSave";
+dsunken:	warp "alb2trea.gat",	75,	98;	callfunc "LastMapSave";
+dthana:	warp "tha_scene01.gat",131,221;	callfunc "LastMapSave";
+dvolcano:	warp "ve_fild03.gat",168,236;	callfunc "LastMapSave";
+dturtle:	warp "tur_dun01.gat",	149,	238;	callfunc "LastMapSave";
+duisland:	warp "nameless_n.gat",	254,	231;	callfunc "LastMapSave";
+nydhugger:	warp "nyd_dun01.gat",	62,	124;	callfunc "LastMapSave";
+
+
+
+
+
+
+
+questt:
+	warp "quiz_02.gat",147,379;
+	close;
+
+vip:	
+	warp "quiz_02.gat",32,346;
+	close;
+
+merch:
+	switch( rand(3) ) {
+		case 0:	warp "pvp_y_1-4",22,235;
+			break;
+		case 1:	warp "pvp_y_1-4",84,169;
+			break;
+		case 2:	warp "pvp_y_1-4",52,153;
+			break;
+		}
+	close;
+
+
+
+
+
+
+negar:
+	mes "Suerte!! ....vuelve cuando quieras...";
+	cutin "",255;
+	close;
+
+
+
+lastwarp:
+	if (warpmap$ == "") {
+		mes "No has visitado ningun mapa conmigo.";
+		close;
+	} // End if
+	close2;
+	warp ""+warpmap$+".gat",warpmapx,warpmapy;
+	end;
+
+
+}
+
+
+
+function	script	LastMapSave	{
+getmapxy(warpmap$,warpmapx,warpmapy,0,strcharinfo(0));
+end;
+}
+
+
+
+quiz_02,134,364,0	warp	shopping01	1,1,quiz_02,134,348
+quiz_02,143,357,0	warp	shopping01#1	1,1,quiz_02,161,348
+quiz_02,151,338,0	warp	shopping01#2	1,1,quiz_02,134,348
+quiz_02,123,357,0	warp	shopping01#3	1,1,quiz_02,134,366
+quiz_02,171,338,0	warp	shopping01#4	1,1,quiz_02,160,366
+quiz_02,160,364,0	warp	shopping01#5	1,1,quiz_02,161,348
+
+
+alb2trea.gat,73,101,4	duplicate(warpra)	Warp NPC#1	902
+pvp_y_1-4.gat,19,234,4	duplicate(warpra)	Warp NPC#2	902
+quiz_02.gat,147,387,4	duplicate(warpra)	Warp NPC#3	902
+quiz_02.gat,134,357,4	duplicate(warpra)	Warp NPC#4	902
+quiz_02.gat,161,339,4	duplicate(warpra)	Warp NPC#5	902
+ayothaya.gat,212,173,4	duplicate(warpra)	Warp NPC#6	902
+alberta.gat,31,240,4	duplicate(warpra)	Warp NPC#7	902
+aldebaran.gat,145,118,4	duplicate(warpra)	Warp NPC#8	902
+amatsu.gat,192,81,1	duplicate(warpra)	Warp NPC#9	902
+ama_fild01.gat,178,325,1	duplicate(warpra)	Warp NPC#10	902
+comodo.gat,194,158,4	duplicate(warpra)	Warp NPC#11	902
+gef_fild10.gat,71,339,4	duplicate(warpra)	Warp NPC#12	902
+geffen.gat,110,66,4	duplicate(warpra)	Warp NPC#13	902
+glast_01.gat,370,308,4	duplicate(warpra)	Warp NPC#14	902
+gonryun.gat,161,123,4	duplicate(warpra)	Warp NPC#15	902
+gonryun.gat,164,196,4	duplicate(warpra)	Warp NPC#16	902
+izlude.gat,131,116,4	duplicate(warpra)	Warp NPC#17	902
+izlu2dun.gat,104,82,4	duplicate(warpra)	Warp NPC#18	902
+louyang.gat,210,106,4	duplicate(warpra)	Warp NPC#19	902
+mjolnir_02.gat,85,363,4	duplicate(warpra)	Warp NPC#20	902
+moc_fild04.gat,207,331,4	duplicate(warpra)	Warp NPC#21	902
+moc_fild19.gat,106,97,4	duplicate(warpra)	Warp NPC#22	902
+moc_ruins.gat,64,166,4	duplicate(warpra)	Warp NPC#23	902
+morocc.gat,154,97,4	duplicate(warpra)	Warp NPC#24	902
+niflheim.gat,32,161,4	duplicate(warpra)	Warp NPC#25	902
+pay_arche.gat,39,135,4	duplicate(warpra)	Warp NPC#26	902
+payon.gat,182,103,4	duplicate(warpra)	Warp NPC#27	902
+prontera.gat,161,190,4	duplicate(warpra)	Warp NPC#28	902
+prt_fild05.gat,273,215,4	duplicate(warpra)	Warp NPC#29	902
+tur_dun01.gat,148,239,4	duplicate(warpra)	Warp NPC#30	902
+umbala.gat,132,130,4	duplicate(warpra)	Warp NPC#31	902
+xmas.gat,140,137,4	duplicate(warpra)	Warp NPC#32	902
+yuno.gat,137,162,4	duplicate(warpra)	Warp NPC#33	902
+yuno_fild03.gat,37,135,4	duplicate(warpra)	Warp NPC#34	902
+//prt_maze01.gat,179,9,4	duplicate(warpra)	Warp NPC#35	902
+veins.gat,184,91,4	duplicate(warpra)	Warp NPC#35	902
+nameless_i.gat,188,197,4	duplicate(warpra)	Warp NPC#36	902
+mid_camp.gat,207,234,4	duplicate(warpra)	Warp NPC#37	902
+moscovia.gat,235,198,4	duplicate(warpra)	Warp NPC#38	902
+rachel.gat,108,130,4	duplicate(warpra)	Warp NPC#39	902
+//6@tower.gat,167,134,4	duplicate(warpra)	Warp NPC#40	902
+brasilis.gat,184,220,4	duplicate(warpra)	Warp NPC#40	902
+alberta.gat,129,53,4	duplicate(warpra)	Warp NPC#41	902
+mora.gat,110,95,4	duplicate(warpra)	Warp NPC#42	902
+hugel.gat,112,161,4	duplicate(warpra)	Warp NPC#43	902
+dicastes01.gat,198,196,4	duplicate(warpra)	Warp NPC#44	902
+ve_fild03.gat,164,237,4	duplicate(warpra)	Warp NPC#45	902
+lighthalzen,163,84,4	duplicate(warpra)	Warp NPC#46	902
+prt_fild08,146,365,4	duplicate(warpra)	Warp NPC#47	902
+
+
+invek,146,174,4	duplicate(warpra)	Warp NPC#47	902

@@ -1,0 +1,505 @@
+//===================================
+// Estilista con Favoritos
+// por Tirfing [http//organix.sytes.net]
+//===================================
+
+prontera.gat,170,181,6	script	Estilista	122,{
+	mes "[^CC0000Estilista^000000]";
+	mes "Saludos, Soy un estilista que ha visitado un grán número de ciudades de todo Detroit RO aprendiendo diferentes estilos.";
+next;
+	mes "[^CC0000Estilista^000000]";
+	mes "Puedo cambiar tu peinado, teñir tu pelo o cambiar el color de tu ropa...";
+next;
+	mes "[^CC0000Estilista^000000]";
+	mes "Que te parece, deseas comenzar a cambiar to look?";
+next;
+menu "Claro, quiero verme bien",principio,"No me interesa",olvida;
+close;
+
+principio:
+	mes "[^CC0000Estilista^000000]";
+	mes "¡¡Perfecto!!";
+	mes "¿Que te gustaria cambiar?";
+next;
+menu "Cambiar Peinado",peinado,"Teñir mi Pelo",pelo,"Cambiar Ropa",ropa,"Nada más",nada;
+
+peinado:
+	mes "[^CC0000Estilista^000000]";
+	mes "¿Conoces el peinado que quieres o prefieres ir mirando peinados?";
+next;
+menu "Mirar Peinados",Pmirando,"Conozco el Peinado",Pconozco,"Mis Peinados Favoritos",PfavoritosL,"Volver",principio;
+close;
+
+Pmirando:
+		set EstiloPelo,-1;
+		mes "[^CC0000Estilista^000000]";
+		mes "De acuerdo, Avisame cuando veas el peinado que te gusta.";
+next;
+
+Pmirando2:
+set EstiloPelo,EstiloPelo+1;
+setlook 1,EstiloPelo;
+mes "Este es el peinado número ^FF9009 "+EstiloPelo+" ^000000.";
+if (EstiloPelo <= 0) menu "Peinado Siguiente",Pmirando2,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",PfavoritosS,"Volver",principio;
+if (EstiloPelo == 70) menu "Volver a Mirarlos",Pmirando,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",PfavoritosS,"Volver",principio;
+if (EstiloPelo <= 69) menu "Peinado Siguiente",Pmirando2,"Peinado Anterior",Pmirando3,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",PfavoritosS,"Volver",principio;
+close;
+
+Pmirando3:
+set EstiloPelo,EstiloPelo-1;
+setlook 1,EstiloPelo;
+mes "Este es el peinado número ^FF9009 "+EstiloPelo+" ^000000.";
+if (EstiloPelo <= 0) menu "Peinado Siguiente",Pmirando2,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",PfavoritosS,"Volver",principio;
+if (EstiloPelo == 70) menu "Volver a Mirarlos",Pmirando,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",PfavoritosS,"Volver",principio;
+if (EstiloPelo <= 69) menu "Peinado Siguiente",Pmirando2,"Peinado Anterior",Pmirando3,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",PfavoritosS,"Volver",principio;
+close;
+
+Pconozco:
+input EstiloPelo;
+if (EstiloPelo >= 71)goto noexiste;
+if (EstiloPelo <= 0)goto noexiste;
+setlook 1,EstiloPelo;
+next;
+	mes "[^CC0000Estilista^000000]";
+	mes "¿Es este el estilo de pelo que buscabas?";
+next;
+menu "Quedarme Este",aplicar,"Escoger Otro",Pconozco;
+close;
+
+PfavoritosL:
+	mes "[^CC0000Estilista^000000]";
+	mes "Peinados Favoritos de "+ strcharinfo(0)+"";
+next;
+menu "^0B0B61Peinado Guardado^000000 1 - Peinado ^CC0000" +EstiloPelo1+ "^000000",PfavoritoL1,"^0B0B61Peinado Guardado^000000 2 - Peinado ^CC0000" +EstiloPelo2+ "^000000",PfavoritoL2,"^0B0B61Peinado Guardado^000000 3 - Peinado ^CC0000" +EstiloPelo3+ "^000000",PfavoritoL3,"^0B0B61Peinado Guardado^000000 4 - Peinado ^CC0000" +EstiloPelo4+ "^000000",PfavoritoL4,"Volver",principio;
+close;
+
+PfavoritoL1:
+set EstiloPelo,EstiloPelo1;
+setlook 1,EstiloPelo;
+goto principio;
+close;
+
+PfavoritoL2:
+set EstiloPelo,EstiloPelo2;
+setlook 1,EstiloPelo;
+goto principio;
+close;
+
+PfavoritoL3:
+set EstiloPelo,EstiloPelo3;
+setlook 1,EstiloPelo;
+goto principio;
+close;
+
+PfavoritoL4:
+set EstiloPelo,EstiloPelo4;
+setlook 1,EstiloPelo;
+goto principio;
+close;
+
+PfavoritosS:
+next;
+	mes "[^CC0000Estilista^000000]";
+	mes "Peinados Favoritos de "+ strcharinfo(0)+"";
+next;
+menu "^0B0B61Peinado Guardado^000000 1 - Peinado ^CC0000" +EstiloPelo1+ "^000000",PfavoritoS1,"^0B0B61Peinado Guardado^000000 2 - Peinado ^CC0000" +EstiloPelo2+ "^000000",PfavoritoS2,"^0B0B61Peinado Guardado^000000 3 - Peinado ^CC0000" +EstiloPelo3+ "^000000",PfavoritoS3,"^0B0B61Peinado Guardado^000000 4 - Peinado ^CC0000" +EstiloPelo4+ "^000000",PfavoritoS4,"Volver",Pmirando2;;
+close;
+
+PfavoritoS1:
+set EstiloPelo1,EstiloPelo;
+	mes "[^CC0000Estilista^000000]";
+	mes "El peinado ha sido guardado.";
+goto Pmirando2;
+close;
+
+PfavoritoS2:
+set EstiloPelo2,EstiloPelo;
+	mes "[^CC0000Estilista^000000]";
+	mes "El peinado ha sido guardado.";
+goto Pmirando2;
+close;
+
+PfavoritoS3:
+set EstiloPelo3,EstiloPelo;
+	mes "[^CC0000Estilista^000000]";
+	mes "El peinado ha sido guardado.";
+goto Pmirando2;
+close;
+
+PfavoritoS4:
+set EstiloPelo4,EstiloPelo;
+	mes "[^CC0000Estilista^000000]";
+	mes "El peinado ha sido guardado.";
+goto Pmirando2;
+close;
+
+//--------------- Colores de Pelo -------------
+//=============================================
+
+
+pelo:
+	mes "[^CC0000Estilista^000000]";
+	mes "¿Conoces el tinte que quieres o prefieres ir mirando colores?";
+next;
+menu "Mirar Tintes",Cmirando,"Conozco el Tinte",Cconozco,"Mis Tintes Favoritos",CfavoritosL,"Volver",principio;
+close;
+
+Cmirando:
+		set ColorPelo,-1;
+		mes "[^CC0000Estilista^000000]";
+		mes "De acuerdo, Avisame cuando veas el tinte que te gusta.";
+next;
+
+Cmirando2:
+set ColorPelo,ColorPelo+1;
+setlook 6,ColorPelo;
+mes "Este es el tinte número ^FF9009 "+ColorPelo+" ^000000.";
+if (ColorPelo <= 0) menu "Tinte Siguiente",Cmirando2,"Me Gusta Este",aplicar,"Añadir a Tintes Favoritos",CfavoritosS,"Volver",principio;
+if (ColorPelo >= 255) menu "Volver a Mirarlos",Cmirando,"Me Gusta Este",aplicar,"Añadir a Tintes Favoritos",CfavoritosS,"Volver",principio;
+if (ColorPelo <= 254) menu "Tinte Siguiente",Cmirando2,"Tinte Anterior",Cmirando3,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",CfavoritosS,"Volver",principio;
+close;
+
+Cmirando3:
+set ColorPelo,ColorPelo-1;
+setlook 6,ColorPelo;
+mes "Este es el tinte número ^FF9009 "+ColorPelo+" ^000000.";
+if (ColorPelo <= 0) menu "Tinte Siguiente",Cmirando2,"Me Gusta Este",aplicar,"Añadir a Tintes Favoritos",CfavoritosS,"Volver",principio;
+if (ColorPelo >= 255) menu "Volver a Mirarlos",Cmirando,"Me Gusta Este",aplicar,"Añadir a Tintes Favoritos",CfavoritosS,"Volver",principio;
+if (ColorPelo <= 254) menu "Tinte Siguiente",Cmirando2,"Tinte Anterior",Cmirando3,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",CfavoritosS,"Volver",principio;
+close;
+
+Cconozco:
+input ColorPelo;
+if (ColorPelo >= 256)goto noexiste;
+if (ColorPelo <= 0)goto noexiste;
+setlook 6,ColorPelo;
+next;
+	mes "[^CC0000Estilista^000000]";
+	mes "¿Es este el tinte de pelo que buscabas?";
+next;
+menu "Quedarme Este",aplicar,"Escoger Otro",Cconozco;
+close;
+
+CfavoritosL:
+	mes "[^CC0000Estilista^000000]";
+	mes "Tintes Favoritos de "+ strcharinfo(0)+"";
+next;
+menu "^0B0B61Tinte Guardado^000000 1 - Tinte ^CC0000" +ColorPelo1+ "^000000",CfavoritoL1,"^0B0B61Tinte Guardado^000000 2 - Tinte ^CC0000" +ColorPelo2+ "^000000",CfavoritoL2,"^0B0B61Tinte Guardado^000000 3 - Tinte ^CC0000" +ColorPelo1+ "^000000",CfavoritoL3,"^0B0B61Tinte Guardado^000000 4 - Tinte ^CC0000" +ColorPelo4+ "^000000",CfavoritoL4,"Volver",principio;
+close;
+
+CfavoritoL1:
+set ColorPelo,ColorPelo1;
+setlook 6,ColorPelo;
+goto principio;
+close;
+
+CfavoritoL2:
+set ColorPelo,ColorPelo2;
+setlook 6,ColorPelo;
+goto principio;
+close;
+
+CfavoritoL3:
+set ColorPelo,ColorPelo3;
+setlook 6,ColorPelo;
+goto principio;
+close;
+
+CfavoritoL4:
+set ColorPelo,ColorPelo4;
+setlook 6,ColorPelo;
+goto principio;
+close;
+
+CfavoritosS:
+next;
+	mes "[^CC0000Estilista^000000]";
+	mes "Tintes Favoritos de "+ strcharinfo(0)+"";
+next;
+menu "^0B0B61Tinte Guardado^000000 1 - Tinte ^CC0000" +ColorPelo1+ "^000000",CfavoritoS1,"^0B0B61Tinte Guardado^000000 2 - Tinte ^CC0000" +ColorPelo2+ "^000000",CfavoritoS2,"^0B0B61Tinte Guardado^000000 3 - Tinte ^CC0000" +ColorPelo3+ "^000000",CfavoritoS3,"^0B0B61Tinte Guardado^000000 4 - Tinte ^CC0000" +ColorPelo4+ "^000000",CfavoritoS4,"Volver",Cmirando2;
+close;
+
+CfavoritoS1:
+set ColorPelo1,ColorPelo;
+	mes "[^CC0000Estilista^000000]";
+	mes "El tinte ha sido guardado.";
+goto Cmirando2;
+close;
+
+CfavoritoS2:
+set ColorPelo2,ColorPelo;
+	mes "[^CC0000Estilista^000000]";
+	mes "El tinte ha sido guardado.";
+goto Cmirando2;
+close;
+
+CfavoritoS3:
+set ColorPelo3,ColorPelo;
+	mes "[^CC0000Estilista^000000]";
+	mes "El tinte ha sido guardado.";
+goto Cmirando2;
+close;
+
+CfavoritoS4:
+set ColorPelo4,ColorPelo;
+	mes "[^CC0000Estilista^000000]";
+	mes "El tinte ha sido guardado.";
+goto Cmirando2;
+close;
+
+
+
+//--------------- Colores de Ropa -------------
+//=============================================
+
+
+ropa:
+	mes "[^CC0000Estilista^000000]";
+	mes "¿Conoces el tinte de ropa que quieres o prefieres ir mirando colores?";
+next;
+menu "Mirar Tintes",Rmirando,"Conozco el Tinte",Rconozco,"Mis Tintes Favoritos",RfavoritosL,"Volver",principio;
+close;
+
+Rmirando:
+		set ColorRopa,-1;
+		mes "[^CC0000Estilista^000000]";
+		mes "De acuerdo, Avisame cuando veas el tinte que te gusta.";
+next;
+
+Rmirando2:
+set ColorRopa,ColorRopa+1;
+setlook 7,ColorRopa;
+mes "Este es el tinte número ^FF9009 "+ColorRopa+" ^000000.";
+if (ColorRopa <= 0) menu "Tinte Siguiente",Rmirando2,"Me Gusta Este",aplicar,"Añadir a Tintes Favoritos",RfavoritosS,"Volver",principio;
+if (ColorRopa >= 426) menu "Volver a Mirarlos",Rmirando,"Me Gusta Este",aplicar,"Añadir a Tintes Favoritos",RfavoritosS,"Volver",principio;
+if (ColorRopa <= 425) menu "Tinte Siguiente",Rmirando2,"Tinte Anterior",Rmirando3,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",RfavoritosS,"Volver",principio;
+close;
+
+Rmirando3:
+set ColorRopa,ColorRopa-1;
+setlook 7,ColorRopa;
+mes "Este es el tinte número ^FF9009 "+ColorRopa+" ^000000.";
+if (ColorRopa <= 0) menu "Tinte Siguiente",Rmirando2,"Me Gusta Este",aplicar,"Añadir a Tintes Favoritos",RfavoritosS,"Volver",principio;
+if (ColorRopa >= 426) menu "Volver a Mirarlos",Rmirando,"Me Gusta Este",aplicar,"Añadir a Tintes Favoritos",RfavoritosS,"Volver",principio;
+if (ColorRopa <= 425) menu "Tinte Siguiente",Rmirando2,"Tinte Anterior",Rmirando3,"Me Gusta Este",aplicar,"Añadir a Peinados Favoritos",RfavoritosS,"Volver",principio;
+close;
+
+Rconozco:
+input ColorRopa;
+if (ColorRopa >= 427)goto noexiste;
+if (ColorRopa <= 0)goto noexiste;
+setlook 7,ColorRopa;
+next;
+	mes "[^CC0000Estilista^000000]";
+	mes "¿Es este el tinte de ropa que buscabas?";
+next;
+menu "Quedarme Este",aplicar,"Escoger Otro",Rconozco;
+close;
+
+RfavoritosL:
+	mes "[^CC0000Estilista^000000]";
+	mes "Ropas Favoritas de "+ strcharinfo(0)+"";
+next;
+menu "^0B0B61Tinte Guardado^000000 1 - Tinte ^CC0000" +ColorRopa1+ "^000000",RfavoritoL1,"^0B0B61Tinte Guardado^000000 2 - Tinte ^CC0000" +ColorRopa2+ "^000000",RfavoritoL2,"^0B0B61Tinte Guardado^000000 3 - Tinte ^CC0000" +ColorRopa1+ "^000000",RfavoritoL3,"^0B0B61Tinte Guardado^000000 4 - Tinte ^CC0000" +ColorRopa4+ "^000000",RfavoritoL4,"Volver",principio;
+close;
+
+RfavoritoL1:
+set ColorRopa,ColorRopa1;
+setlook 7,ColorRopa;
+goto principio;
+close;
+
+RfavoritoL2:
+set ColorRopa,ColorRopa2;
+setlook 7,ColorRopa;
+goto principio;
+close;
+
+RfavoritoL3:
+set ColorRopa,ColorRopa3;
+setlook 7,ColorRopa;
+goto principio;
+close;
+
+RfavoritoL4:
+set ColorRopa,ColorRopa4;
+setlook 7,ColorRopa;
+goto principio;
+close;
+
+RfavoritosS:
+next;
+	mes "[^CC0000Estilista^000000]";
+	mes "Ropas Favoritas de "+ strcharinfo(0)+"";
+next;
+menu "^0B0B61Tinte Guardado^000000 1 - Tinte ^CC0000" +ColorRopa1+ "^000000",RfavoritoS1,"^0B0B61Tinte Guardado^000000 2 - Tinte ^CC0000" +ColorRopa2+ "^000000",RfavoritoS2,"^0B0B61Tinte Guardado^000000 3 - Tinte ^CC0000" +ColorRopa3+ "^000000",RfavoritoS3,"^0B0B61Tinte Guardado^000000 4 - Tinte ^CC0000" +ColorRopa4+ "^000000",RfavoritoS4,"Volver",Rmirando2;
+close;
+
+RfavoritoS1:
+set ColorRopa1,ColorRopa;
+	mes "[^CC0000Estilista^000000]";
+	mes "El tinte ha sido guardado.";
+goto Rmirando2;
+close;
+
+RfavoritoS2:
+set ColorRopa2,ColorRopa;
+	mes "[^CC0000Estilista^000000]";
+	mes "El tinte ha sido guardado.";
+goto Rmirando2;
+close;
+
+RfavoritoS3:
+set ColorRopa3,ColorRopa;
+	mes "[^CC0000Estilista^000000]";
+	mes "El tinte ha sido guardado.";
+goto Rmirando2;
+close;
+
+RfavoritoS4:
+set ColorRopa4,ColorRopa;
+	mes "[^CC0000Estilista^000000]";
+	mes "El tinte ha sido guardado.";
+goto Rmirando2;
+close;
+
+olvida:
+	mes "[^CC0000Estilista^000000]";
+	mes "Tu te lo pierdes.";
+close;
+
+nada:
+	mes "[^CC0000Estilista^000000]";
+	mes "Espero que te guste tu nuevo look.";
+close;
+
+aplicar:
+	mes "[^CC0000Estilista^000000]";
+	mes "De acuerdo, pues así se queda.";
+next;
+goto principio;
+close;
+
+noexiste:
+next;
+	mes "[^CC0000Estilista^000000]";
+	mes "Creo que te has equivocado de número.";
+next;
+goto principio;
+close;
+
+nodinero:
+	mes "[^CC0000Estilista^000000]";
+	mes "Lo siento, Con tu dinero actual no podrías pagar ninguno de mis servicios.";
+close;
+}
+
+//6@tower.gat,139,127,4 (estilista	duplicate(Estilista)	Estilista#0	122
+veins.gat,189,107,6	duplicate(Estilista)	Estilista#1	122
+rachel.gat,114,110,6	duplicate(Estilista)	Estilista#2	122
+nameless_i.gat,177,200,5	duplicate(Estilista)	Estilista#3	122
+moscovia.gat,252,180,5	duplicate(Estilista)	Estilista#4	122
+morocc.gat,176,68,5	duplicate(Estilista)	Estilista#5	122
+aldebaran.gat,132,110,5	duplicate(Estilista)	Estilista#6	122
+geffen.gat,146,65,5	duplicate(Estilista)	Estilista#7	122
+payon.gat,202,117,5	duplicate(Estilista)	Estilista#8	122
+ayothaya.gat,202,200,5	duplicate(Estilista)	Estilista#9	122
+gonryun.gat,143,134,5	duplicate(Estilista)	Estilista#10	122
+louyang.gat,191,118,6	duplicate(Estilista)	Estilista#11	122
+lighthalzen.gat,138,99,6	duplicate(Estilista)	Estilista#12	122
+prt_fild08.gat,134,358,6	duplicate(Estilista)	Estilista#13	122
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//===== rAthena Script =======================================
+//= Atcommand @dance
+//===== By: ==================================================
+//= Easycore
+//===== Current Version: =====================================
+//= 1.0
+//===== Compatible With: =====================================
+//= rAthena Project
+//===== Description: =========================================
+//= A script port version of source mod @dance
+//===== Additional Comments: =================================
+//= 1.0 Initial script.
+//============================================================
+
+-	script	Atcmd_Dance	-1,{
+
+OnInit:
+	bindatcmd("dance","Atcmd_Dance::OnAtcommand");
+	end;
+
+OnAtcommand:
+	if (.@atcmd_numparameters < 1 || !(.@n = atoi(.@atcmd_parameters$))) {
+		message(strcharinfo(0),"Usage: @dance <1-9>");
+		message(strcharinfo(0),"Usage: @dance failed.");
+		end;
+	}
+	switch(.@n) {
+		case 1:
+			specialeffect2(EF_PRESSEDBODY); break;
+		case 2:
+			specialeffect2(EF_SPINEDBODY); break;
+		case 3:
+			specialeffect2(EF_KICKEDBODY); break;
+		case 4:
+			specialeffect2(EF_QUAKEBODY); break;
+		case 5:
+			specialeffect2(EF_QUAKEBODY2); break;
+		case 6:
+			specialeffect2(EF_SPINEDBODY2); break;
+		case 7:
+			specialeffect2(EF_CASTSPIN); break;
+		case 8:
+			specialeffect2(EF_BABYBODY_BACK); break;
+		case 9:
+			specialeffect2(EF_QUAKEBODY3); break;
+		default:
+			message(strcharinfo(0),"Usage: @dance <1-9>");
+			message(strcharinfo(0),"Usage: @dance failed.");
+			break;
+	}
+	end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

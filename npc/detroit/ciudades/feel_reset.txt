@@ -1,0 +1,117 @@
+prontera.gat,149,190,4	script	Feel Reset NPC	831,{cutin "nyuang_2",2;
+mes "[^0000FFReset NPC^000000]";
+mes "=Oh, hola. Que puedo hacer por tí?";
+next;
+menu "Resetear tus Skills/Stats",L_Reset,"Remover Puntos de Skill Extra",L_Remove, "Resetear Mapas de Star Gladiator",L_feelReset;
+
+L_Reset:
+mes "Resetear stats: ^9933FF2,000,000z^000000";
+mes "Resetear skills: ^9933FF2,000,000z^000000";
+mes "Resetear stats y skills: ^9933FF3,500,000z^000000";
+menu "Resetear ^0000FFStats^000000",L0,"Resetear ^0000FFSkills^000000",L1,"Resetear ^0000FFAmbos^000000",L2,"Salir",L_End;
+
+L0:
+if (Zeny > 2000000)
+{
+ResetStatus;
+set Zeny, Zeny - 2000000;
+specialeffect2 71;
+cutin "nyuang_3",2;
+goto L_End;
+}
+else
+{
+
+goto L_NoZeny;
+}
+L1:
+if (Zeny > 2000000)
+{
+ResetSkill;
+set Zeny, Zeny - 2000000;
+specialeffect2 71;
+cutin "nyuang_3",2;
+
+goto L_End;
+}
+else
+{
+
+goto L_NoZeny;
+}
+L2:
+if (Zeny > 3500000)
+{
+ResetSkill;
+ResetStatus;
+set Zeny,Zeny - 3500000;
+specialeffect2 72;
+cutin "nyuang_3",2;
+
+goto L_End;
+}
+else
+{
+
+goto L_NoZeny;
+}
+L_NoZeny:
+next;
+mes "[^0000FFReset NPC^000000]";
+mes "Creo que no tienes el zeny necesario...";
+cutin "nyuang_4",2;
+close2;
+cutin "",255;
+end;
+L_End:
+next;
+mes "[^0000FFReset NPC^000000]";
+mes "Ok, que tengas un bonito dia.";
+cutin "nyuang_3",2;
+close2;
+cutin "",255;
+end;
+
+L_Remove:
+mes "Estás seguro que quieres eliminar tus puntos extras?";
+menu "Si",-,"No",L_End;
+
+next;
+mes "[^0000FFReset NPC^000000]";
+mes "Ok, los removeré ahora.";
+set skillpoint, skillpoint - skillpoint;
+goto L_End;
+
+L_feelReset:
+if (Class != Job_Star_Gladiator) goto L_NotSG;
+mes "Resetearé tus mapas designados";
+next;
+atcommand "@feelreset";
+goto L_End;
+
+L_NotSG:
+mes "Lo siento pero solo trabajo con Star Gladiator";
+goto L_End;
+
+}
+
+
+nameless_i.gat,159,184,5	duplicate(Feel Reset NPC)	Feel Reset NPC#2	877
+rachel.gat,82,144,4	duplicate(Feel Reset NPC)	Feel Reset NPC#3	877
+moscovia.gat,268,199,2	duplicate(Feel Reset NPC)	Feel Reset NPC#4	877
+veins.gat,201,92,4	duplicate(Feel Reset NPC)	Feel Reset NPC#5	877
+izlude.gat,122,120,4	duplicate(Feel Reset NPC)	Feel Reset NPC#6	877
+gonryun.gat,154,142,4	duplicate(Feel Reset NPC)	Feel Reset NPC#7	877
+ayothaya.gat,212,199,4	duplicate(Feel Reset NPC)	Feel Reset NPC#8	877
+payon.gat,162,67,4	duplicate(Feel Reset NPC)	Feel Reset NPC#9	877
+morocc.gat,188,92,4	duplicate(Feel Reset NPC)	Feel Reset NPC#10	877
+brasilis.gat,213,200,4	duplicate(Feel Reset NPC)	Feel Reset NPC#11	877
+amatsu.gat,220,109,4	duplicate(Feel Reset NPC)	Feel Reset NPC#12	877
+xmas.gat,141,126,4	duplicate(Feel Reset NPC)	Feel Reset NPC#13	877
+dicastes01.gat,213,178,4	duplicate(Feel Reset NPC)	Feel Reset NPC#14	877
+mora.gat,89,90,4	duplicate(Feel Reset NPC)	Feel Reset NPC#15	877
+louyang.gat,198,124,4	duplicate(Feel Reset NPC)	Feel Reset NPC#16	877
+aldebaran.gat,153,123,4	duplicate(Feel Reset NPC)	Feel Reset NPC#17	877
+geffen.gat,101,36,6	duplicate(Feel Reset NPC)	Feel Reset NPC#18	877
+lighthalzen,168,73,5	duplicate(Feel Reset NPC)	Feel Reset NPC#19	877
+prt_fild08,178,374,5	duplicate(Feel Reset NPC)	Feel Reset NPC#20	877	

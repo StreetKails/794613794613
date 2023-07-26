@@ -1,0 +1,248 @@
+//Puño Neutral
+function	script	F_puno_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+bonus bBaseAtk,350;
+bonus2 bSkillAtk,271,-40;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus2 bSkillHeal,28,50;
+bonus5 bAutoSpell,469,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+return;
+}
+
+
+//Puño Agua
+function	script	F_puno_agua	{
+bonus2 bSkillAtk,271,-40;
+bonus bBaseAtk,350;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus2 bSkillHeal,28,50;
+bonus5 bAutoSpell,537,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+skill 14,5;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+bonus bAtkEle,Ele_Water;
+return;
+}
+
+
+//Puño Tierra
+function	script	F_puno_tierra	{
+bonus2 bSkillAtk,271,-40;
+bonus bBaseAtk,350;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus5 bAutoSpell,90,3,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+bonus2 bSkillHeal,28,50;
+skill 90,5;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+bonus bAtkEle,Ele_Earth;
+return;
+}
+
+
+//Puño Fuego
+function	script	F_puno_fuego	{
+bonus2 bSkillAtk,271,-40;
+bonus bBaseAtk,350;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus2 bSkillHeal,28,50;
+skill 19,5;
+bonus5 bAutoSpell,534,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+bonus bAtkEle,Ele_Fire;
+return;
+}
+
+
+//Puño Shadow
+function	script	F_puno_shadow	{
+bonus2 bSkillAtk,271,-40;
+bonus bBaseAtk,350;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus2 bSkillHeal,28,50;
+skill 340,8;
+bonus5 bAutoSpell,340,6,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+bonus bAtkEle,Ele_Dark;
+return;
+}
+
+
+//Puño Viento
+function	script	F_puno_viento	{
+bonus2 bSkillAtk,271,-40;
+bonus bBaseAtk,350;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus2 bSkillHeal,28,50;
+skill 20,5;
+bonus5 bAutoSpell,540,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+bonus bAtkEle,Ele_Wind;
+return;
+}
+
+
+//Puño Holy
+function	script	F_puno_holy	{
+bonus2 bSkillAtk,271,-40;
+bonus bBaseAtk,350;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus2 bSkillHeal,28,50;
+skill 20,5;
+bonus5 bAutoSpell,540,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+bonus bAtkEle,Ele_Holy;
+return;
+}
+
+
+//Puño Ghost
+function	script	F_puno_ghost	{
+bonus2 bSkillAtk,271,-40;
+bonus bBaseAtk,350;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus2 bSkillHeal,28,50;
+skill 13,8;
+bonus5 bAutoSpell,13,6,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+bonus bAtkEle,Ele_Ghost;
+return;
+}
+
+
+//Puño Undead
+function	script	F_puno_undead	{
+bonus2 bSkillAtk,271,-40;
+bonus bBaseAtk,350;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus2 bSkillHeal,28,50;
+skill 400,3;
+bonus5 bAutoSpell,400,3,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+bonus bAtkEle,Ele_Undead;
+return;
+}
+
+
+//Puño Poison
+function	script	F_puno_poison	{
+bonus2 bSkillAtk,271,-40;
+bonus bBaseAtk,350;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus bSPDrainValue,15;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+if(readparam(bInt)>=150){
+bonus bMatk,4000;
+bonus2 bSkillHeal,28,50;
+skill 547,5;
+bonus5 bAutoSpell,547,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+};
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+bonus bAtkEle,Ele_Poison;
+return;
+}

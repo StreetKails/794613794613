@@ -1,0 +1,170 @@
+// Death NPC
+//================================================
+//== Made By: ====================================
+//= Sinoco.
+//= Fixed Many mistakes in the scripts by Kreic
+//= / Dest (the same person, differents nicks)
+//== Version: ====================================
+//= v1.2
+//== Compatibility: ==============================
+//= Any eAthena SVN
+//== Credits: ====================================
+//= Terces - Helping me fix errors
+//== Description: ================================
+//= Will tell you how many people
+//= you have killed and how many
+//= times you die.
+//== Changelog: ==================================
+//= v1 - Added how many people you killed
+//= v1.1 - Fixed two errors
+//= v1.2 - Added disabling/enabling features
+//= v1.21 - Some changes by kreic, some bugs fixed
+//= now is working well
+//= Translated by kreic
+//================================================
+
+-	script	OnPCKillEvent	-1,{
+
+	set KILLEDPLAYERS,KILLEDPLAYERS+1;
+	end;
+
+}
+
+
+prontera,178,148,3	script	DeathNPC	832,{
+
+
+if($already == 1) goto L_Starts;
+if(($kills == 0) && ($death == 0) && ($minimumgm == 0)) {
+	set $kills,1; //Enables/Disables Kill Logging
+	set $deaths,1; //Enables/Disables Death Check
+	set $minimumgm,99; //Minimum GM Level to edit customizations
+	set $already,1; //if this "sets" has already being activated
+}
+
+
+
+L_Starts:
+if(getgmlevel() >= $minimumgm) goto L_gm;
+
+mes "[Death]";
+	mes "¿Que quieres hacer?";
+	next;
+	if(($kills == 1) && ($deaths == 1)) {
+	menu "¿Cuantos jugadores he matado?",L_killed,"¿Cuantas veces he muerto?",L_die,"Nada",-;
+	close;
+
+}
+	if(($kills == 1) && ($deaths == 0)) {
+	menu "¿Cuantos jugadores he matado?",L_killed,"Nada",-;
+	close;
+
+}
+
+	if(($kills == 0) && ($deaths == 1)) {
+	menu "¿Cuantas veces he muerto?",L_die,"Nada",-;
+	close;
+
+}
+
+	if(($kills == 0) && ($deaths == 0)) {
+	mes "Todas las opciones fueron desactivadas por un GM";
+	close;
+
+}
+
+L_killed:
+
+	mes "[Death]";
+	mes "Has matado "+KILLEDPLAYERS+"";
+	next;
+	mes "Regresa luego";
+	close;
+
+L_die:
+
+	mes "[Death]";
+	mes "Has muerto "+PC_DIE_COUNTER+" + 1 ^^ veces";
+	next;
+	if (PC_DIE_COUNTER == 0) goto L_congrats;
+	next;
+	mes "Por que el + 1? o.O";
+	next;
+	mes "De verdad no sabes?";
+	emotion e_gg;
+	next;
+	mes "Por esto!!!!";
+	emotion e_heh;
+	percentheal -100,-100;
+	close;
+
+L_congrats:
+
+	mes "[Death]";
+	mes "Wow! No has muerto una sola vez!";
+
+L_gm:
+
+	mes "[Death]";
+	mes "¿Que quieres hacer?";
+	next;
+	if(($kills == 1) && ($deaths == 1)) {
+	menu "¿Cuantos jugadores he matado?",L_killed,"¿Cuantas veces he muerto?",L_die,"Editar opciones",L_edit,"Nada",-;
+	close;
+
+}
+	if(($kills == 1) && ($deaths == 0)) {
+	menu "¿Cuantos jugadores he matado?",L_killed,"Editar opcioens",L_edit,"Nada",-;
+	close;
+
+}
+
+	if(($kills == 0) && ($deaths == 1)) {
+	menu "¿Cuantas veces he muerto?",L_die,"Editar opciones",L_edit,"Nada",-;
+	close;
+
+}
+
+L_edit:
+	mes "[Death]";
+	mes "Selecciona una opcion...";
+	next;
+	menu "Activar/Desactivar Log de asesinados",L_killl,"Activar/Desactivar Log de muertes",L_deathl,"Cambiar Lvl Minimo de GM",L_mgm;
+
+L_killl:
+
+	mes "[Death]";
+	if($kills == 1) {
+	set $kills,0;
+	mes "Log de asesinatos desactivado...";
+	close;
+	} else {
+	set $kills,1;
+	mes "Log de asesinatos activado";
+	close;
+	}
+
+L_deathl:
+
+	mes "[Death]";
+	if($deaths == 1) {
+	set $deaths,0;
+	mes "Log de muertes desactivada...";
+	close;
+	} else {
+	set $deaths,1;
+	mes "Log de muertes activada...";
+	close;
+	}
+
+L_mgm:
+
+	mes "[Death]";
+	mes "Por favor marca el Minlvl de GM que quieres...";
+	next;
+	input @mgm;
+	set $minimumgm,@mgm;
+	close;
+
+
+}

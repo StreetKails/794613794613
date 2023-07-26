@@ -1,0 +1,51 @@
+function	script	inicio_novice_armor	{
+bonus2 bHPRegenRate,1000,500;bonus bAtkRange,3;bonus bSplashAddRange,2;
+if (Class != Job_Novice) &&(BaseLevel ==70 ){
+bonus2 bHPRegenRate,-1000,-500;bonus bAtkRange,-3;bonus bSplashAddRange,-2;
+}
+return;
+}
+
+function	script	inicio_novice_vali	{
+bonus bStr,20;bonus bVit,20;bonus bInt,20;bonus bAgi,20;bonus bDex,20;bonus bLuk,20;
+if (Class != Job_Novice) &&(BaseLevel ==70 ){
+bonus bStr,-20;bonus bVit,-20;bonus bInt,-20;bonus bAgi,-20;bonus bDex,-20;bonus bLuk,-20;
+}
+return;
+}
+
+
+function	script	inicio_novice_shoes	{
+bonus bMaxHPrate,20;bonus bMaxSPrate,20;bonus bSPrecovRate,30;bonus bSpeedRate,30;
+if (Class != Job_Novice) &&(BaseLevel ==70 ){
+bonus bMaxHPrate,-20;bonus bMaxSPrate,-20;bonus bSPrecovRate,-30;bonus bSpeedRate,-30;
+}
+return;
+}
+
+
+function	script	inicio_novice_shield	{
+bonus bDef,20;bonus bMDef,20;bonus2 bSubEle,Ele_Neutral,15;bonus2 bSubEle,Ele_Poison,15;bonus2 bSubEle,Ele_Holy,15;bonus2 bSubEle,Ele_Dark,15;bonus2 bSubEle,Ele_Fire,15;bonus2 bSubEle,Ele_Water,15;bonus2 bSubEle,Ele_Wind,15;bonus2 bSubEle,Ele_Earth,15;bonus2 bSubEle,Ele_Undead,15;bonus2 bSubEle,Ele_Ghost,15;
+if (Class != Job_Novice) &&(BaseLevel ==70 ){
+bonus bDef,-20;bonus bMDef,-20;bonus2 bSubEle,Ele_Neutral,-15;bonus2 bSubEle,Ele_Poison,-15;bonus2 bSubEle,Ele_Holy,-15;bonus2 bSubEle,Ele_Dark,-15;bonus2 bSubEle,Ele_Fire,-15;bonus2 bSubEle,Ele_Water,-15;bonus2 bSubEle,Ele_Wind,-15;bonus2 bSubEle,Ele_Earth,-15;bonus2 bSubEle,Ele_Undead,-15;bonus2 bSubEle,Ele_Ghost,-15;
+}
+return;
+}
+ 
+
+function	script	inicio_novice_alas	{
+bonus bHit,200;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus bAtkRate,15;bonus bAllStats,15;bonus2 bSubEle,Ele_Neutral,40;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if (Class != Job_Novice) &&(BaseLevel ==70 ){
+bonus bHit,-200;bonus bMaxHPrate,-10;bonus bMatkRate,-15;bonus bAtkRate,-15;bonus bAllStats,-15;bonus2 bSubEle,Ele_Neutral,-40;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;
+}
+return;
+}
+ 
+
+function	script	inicio_novice_hat	{ 
+bonus bCritAtkRate,50;bonus bAspdRate,60;bonus bCastrate,-80;bonus bMatkRate,25;
+if (Class != Job_Novice) &&(BaseLevel ==70 ){
+bonus bCritAtkRate,-50;bonus bAspdRate,-60;bonus bCastrate,80;bonus bMatkRate,-25;
+}
+return;
+}

@@ -1,0 +1,452 @@
+//EQI_HEAD_TOP (1)  - Upper head gear
+//EQI_ARMOR (2)     - Armor (Where you keep your Jackets and Robes)
+//EQI_HAND_L (3)    - What is in your Left hand.
+//EQI_HAND_R (4)    - What is in your Right hand.
+//EQI_GARMENT (5)   - The garment slot (Mufflers, Hoods, Manteaus)
+//EQI_SHOES (6)     - What foot gear the player has on.
+//EQI_ACC_L (7)     - Accessory 1.
+//EQI_ACC_R (8)     - Accessory 2.
+//EQI_HEAD_MID (9)  - Middle Headgear (masks and glasses)
+//EQI_HEAD_LOW (10) - Lower Headgear (beards, some masks)
+
+//====================== Lady Tanee Card =========================
+function	script	F_Tanee	{
+
+	set .@c, callfunc("contar_cartas",6,4376);
+
+	if(.@c == 1){
+		bonus bMaxHPrate,24;
+	} 
+
+	if(.@c == 2){
+		bonus bMaxHPrate,21;
+	} 
+
+	if(.@c == 3){
+		bonus bMaxHPrate,18;
+	}
+
+	if(.@c == 4){
+		bonus bMaxHPrate,15;
+	}
+
+	return;
+}
+
+//====================== Naght Sieger Card ========================
+function	script	F_Naght	{
+
+	set .@c, callfunc("contar_cartas", EQI_ARMOR,4462);
+	
+	if(.@c == 1){
+		bonus2 bMagicAddEle,Ele_Holy,20;
+		bonus2 bMagicAddEle,Ele_Dark,20;
+	}
+	
+	return;
+}
+
+//====================== Lord Knight Card ========================
+function	script	F_LKnight	{
+
+	set .@c, callfunc("contar_cartas", 1,4357);
+	set .@c, .@c + callfunc("contar_cartas", 9,4357);
+	set .@c, .@c + callfunc("contar_cartas",10,4357);
+	
+	if(.@c == 1){
+		skill "LK_BERSERK",1;
+		bonus bMaxHPrate,-50;
+		bonus bAtkRate,-30;
+		bonus2 bSPDrainRate,-1000,-100;
+	}
+	
+	return;
+}
+//====================== Clown Card ==============================
+
+function	script	F_Clown	{
+
+	set .@c,callfunc("contar_cartas",3,4454);
+	set .@d,callfunc("contar_cartas",4,4454);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus bAspdRate,10;
+		bonus bDelayrate,-5;
+	}
+	return;	
+}
+
+//======================== Gypsy Card ========================
+
+function	script	F_Gypsy	{
+
+	set .@c,callfunc("contar_cartas",3,4455);
+	set .@d,callfunc("contar_cartas",4,4455);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus bDex,10;
+		bonus bHit,40;
+		bonus bAtkRate,15;
+	}	
+	return;	
+}
+
+//====================== Champion Card =====================
+
+function	script	F_Champion	{
+
+	set .@c,callfunc("contar_cartas",3,4456);
+	set .@d,callfunc("contar_cartas",4,4456);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus bAtkRate,15;
+		skill "MO_TRIPLEATTACK",10;
+		skill "CH_CHAINCRUSH",5;
+		bonus4 bAutoSpell,"CH_TIGERFIST",5,50,1;
+		bonus2 bSkillAtk,"CH_CHAINCRUSH",-60;
+	}	
+	return;	
+}
+
+//=================== Stalker Card ===========================
+
+function	script	F_Stalker	{
+
+	set .@c,callfunc("contar_cartas",7,4457);
+	set .@d,callfunc("contar_cartas",8,4457);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus bAgi,10;
+		bonus bLuk,5;
+		bonus bFlee2,5;
+	}	
+	return;	
+}
+
+//=================== Creator Card ===========================
+
+function	script	F_Creator	{
+
+	set .@c,callfunc("contar_cartas",3,4458);
+	set .@d,callfunc("contar_cartas",4,4458);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus bInt,10;
+		bonus bVit,5;
+		bonus2 bSkillHeal,"AL_HEAL",10;
+		bonus2 bSkillHeal,"PR_SANCTUARY",10;
+		bonus2 bSkillHeal,"AM_POTIONPITCHER",10;
+		bonus2 bSkillHeal,"CR_SLIMPITCHER",10;
+	}	
+	return;
+}
+
+//================ Paladin Card ===========================
+
+function	script	F_Paladin	{
+
+	set .@c,callfunc("contar_cartas",6,4459);
+	
+	if(.@c == 1){
+		bonus bMaxHPrate,15;
+		bonus bHPrecovRate,10;
+	}	
+	return;
+}
+
+//============== Professor Card =============================
+
+function	script	F_Professor	{
+
+	set .@c,callfunc("contar_cartas",2,4460);
+	
+	if(.@c == 1){
+		bonus2 bSkillAtk,"MG_COLDBOLT",10;
+		bonus2 bSkillAtk,"MG_FIREBOLT",10;
+		bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",10;
+		bonus2 bSkillAtk,"NSC_HOLYBOLT",10;
+		bonus2 bSkillAtk,"NSC_VENOMBOLT",10;
+	}	
+	return;
+}
+
+//============= Carta Shield Regalo 2011 ==================
+
+function	script	F_ShieldRegalo	{
+
+	set .@c,callfunc("contar_cartas",3,9202);
+	
+	if(.@c == 1){
+		bonus2 bSubRace,RC_DemiHuman,8;
+		bonus2 bSubSize,1,8;
+	}
+	return;
+}
+
+//============== Carta Armor Regalo 2011 ==================
+
+function	script	F_ArmorRegalo	{
+
+	set .@c,callfunc("contar_cartas",2,9201);
+	set .@d,callfunc("contar_cartas",2,4302);
+	
+	if(.@c == 1 && .@d == 0){
+		bonus bMaxHPrate,20;
+		bonus bHPrecovRate,20;
+		bonus4 bAutoSpellWhenHit,463,5,30,0;
+	}
+	return;
+}
+
+//============== Carta Acce ATK Regalo 2011 ====================
+
+function	script	F_AcceATK	{
+
+	set .@c,callfunc("contar_cartas",7,9205);
+	set .@d,callfunc("contar_cartas",8,9205);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus bAtkRate,5;
+		bonus bHit,50;
+	}
+	return;
+}
+
+//================= Carta Acce DEF Regalo 2011 ==================
+
+function	script	F_AcceDEF	{
+
+	set .@c,callfunc("contar_cartas",7,9206);
+	set .@d,callfunc("contar_cartas",8,9206);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus bNearAtkDef,5;
+		bonus bLongAtkDef,5;
+		bonus bMagicAtkDef,5;
+		bonus bMiscAtkDef,5;
+		bonus bFlee,50;
+	}
+	return;
+}
+
+//================== Moonlight Flower ======================
+
+function	script	F_Moonlight_Flower	{
+
+	if(isequipped(9793)) return;
+
+	set .@c,callfunc("contar_cartas",6,4131);
+	
+	if(.@c == 1){
+		if(agitcheck() || agitcheck2()){
+			bonus bSpeedAddRate,15;
+			
+		}
+		else {
+			bonus bSpeedAddRate,20;
+		}
+		
+		if(checkriding()){
+			bonus bSpeedAddRate,-10;
+		}
+	}
+	return;
+}
+
+//===================== Ifrit ===========================
+
+function	script	F_Ifrit	{
+
+	set .@c,callfunc("contar_cartas",7,4430);
+	set .@d,callfunc("contar_cartas",8,4430);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus bBaseAtk,(JobLevel/2);
+		bonus bCritical,(JobLevel/4);
+		bonus bHit,(JobLevel/2);
+	}
+	return;
+}
+
+//==================== Baphomet ===========================
+
+function	script	F_Baphomet	{
+
+	set .@c,callfunc("contar_cartas",3,4147);
+	set .@d,callfunc("contar_cartas",4,4147);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus bHit,50; 
+		bonus bSplashRange,4;
+	}
+	return;
+}
+
+//==================== Bacsojin ===========================
+
+function	script	F_Bacsojin	{
+
+	set .@c,callfunc("contar_cartas",7,4372);
+	set .@d,callfunc("contar_cartas",8,4372);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus2 bSkillHeal,"AL_HEAL",10;
+		bonus2 bSkillHeal,"PR_SANCTUARY",10;
+		bonus2 bSkillHeal,"AM_POTIONPITCHER",10;
+		bonus2 bSkillHeal,478,10;
+	}
+	return;
+}
+
+//===================== Orc Lord ==========================
+
+function	script	F_Orc_Lord	{
+
+	set .@c,callfunc("contar_cartas",2,4135);
+	
+	if(.@c == 1){
+		bonus bShortWeaponDamageReturn,10;
+	}
+	return;
+}
+
+//====================== Ktullanux =========================
+
+function	script	F_Ktullanux	{
+
+	set .@c,callfunc("contar_cartas",2,4419);
+	
+	if(.@c == 1){
+		bonus3 bMagicDamageReturn2,100,1,10;
+		bonus3 bMagicDamageReturn2,100,0,10;
+	}
+	return;
+}
+
+//======================= Tao Gunka ==========================
+
+function	script	F_Taogunka	{
+
+	set .@c,callfunc("contar_cartas",2,4302);
+	
+	if(.@c == 1){
+		bonus bMaxHPrate,30;
+	}
+	return;
+}
+
+//================= Fallen Bishop Card  =======================
+
+function	script	F_Fallen	{
+
+	set .@c,callfunc("contar_cartas",3,4441);
+	set .@d,callfunc("contar_cartas",4,4441);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus2 bMagicAddRace,RC_DemiHuman,30; 
+	}
+	return;
+}
+
+//==================== Gloom Under Night ==========================
+
+function	script	F_Gloom	{
+
+	set .@c,callfunc("contar_cartas",2,4408);
+	
+	if(.@c == 1){
+		bonus2 bAddEle,Ele_Holy,30;
+		bonus2 bAddEle,Ele_Dark,30;
+		bonus2 bAddRace,RC_Angel,30;
+		bonus2 bAddRace,RC_Demon,30; 
+	}
+	return;
+}
+
+//================== Sniper Shecil Card ============================
+
+function	script	F_Sniper	{
+
+	set .@c,callfunc("contar_cartas",3,4367);
+	set .@d,callfunc("contar_cartas",4,4367);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus3 bMagicHpDrainRateRace,RC_DemiHuman,100,50;
+		bonus2 bHPDrainRate,100,50;
+		bonus bAgi,10;
+		if (Class==Job_Knight||Class==Job_Lord_Knight||Class==Job_Rogue||Class==Job_Stalker||Class==Job_Baby_Rogue||Class==Job_Baby_Knight||Class==Job_Lord_Knight2||Class==Job_Baby_Knight2) {
+			bonus bAtkRate,5;
+			bonus2 bHPDrainRate,-50,-25;
+		};
+	}
+	return;
+}
+
+//=================== High Wizard Card ==========================
+
+function	script	F_Hwizard	{
+
+	if(isequipped(9853)) return;
+
+	set .@c,callfunc("contar_cartas",3,4365);
+	set .@d,callfunc("contar_cartas",4,4365);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus2 bIgnoreMDefRate,RC_NonBoss,50;
+	}
+	return;
+}
+
+//================== Incantation Samurai Card ===================
+
+function	script	F_Inca	{
+
+	if(isequipped(9718) || isequipped(9847) || isequipped(9848) || isequipped(9849) || isequipped(9850) || isequipped(9851) || isequipped(9784) || isequipped(9857) || isequipped(9828) || isequipped(9694) || isequipped(9752))
+		return;
+
+	set .@c,callfunc("contar_cartas",3,4263);
+	set .@d,callfunc("contar_cartas",4,4263);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+	return;
+}
+
+//======================== Kiel Card ================================
+
+function	script	F_Kiel	{
+
+	set .@c,callfunc("contar_cartas",3,4403);
+	set .@d,callfunc("contar_cartas",4,4403);
+	
+	if(.@c == 1 && .@d == 1 || .@c == 1 && .@d == 0 || .@c == 0 && .@d == 1){
+		if(BaseClass == Job_Ninja) bonus bDelayRate,-10;
+		else bonus bDelayRate,-15;
+	}
+	return;
+}
+
+//========================= Maya Card ===============================
+
+function	script	F_Maya	{
+
+	set .@c,callfunc("contar_cartas",3,4146);
+	
+	if(.@c == 1){
+		bonus3 bMagicDamageReturn2,100,1,10;
+		bonus3 bMagicDamageReturn2,100,0,10;
+	}
+	return;
+}
+
+function	script	contar_cartas	{
+	
+	//getarg(0) Equip position
+	//getarg(1) Card ID
+	set .@c,0;
+	for(set .@i,0;.@i<4;set .@i,.@i+1){
+		if(getequipcardid(getarg(0),.@i) == getarg(1)) set .@c,.@c+1;
+	}
+	return .@c;
+}

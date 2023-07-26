@@ -1,0 +1,42 @@
+//ars_fild01,0,0,0,0	monster	Egg Specter	2797,200,0,0,0
+//ars_fild01,0,0,0,0	monster	Quiem	2907,100,0,0,0
+//ars_fild01,0,0,0,0	monster	Maiden Ghost	2899,150,0,0,0
+
+//ars_dun01,0,0,0,0	monster	Dark Jokker	2773,15,0,0,0
+//ars_dun01,0,0,0,0	monster	Dark Hollow	2880,70,0,0,0
+//ars_dun01,0,0,0,0	monster	Dark Lady	2881,30,0,0,0
+//ars_dun01,0,0,0,0	monster	Crow	2879,35,0,0,0
+
+//ars_fild05,0,0,0,0	monster	Bear	2870,70,0,0,0
+//ars_fild05,0,0,0,0	monster	Master Mong	2775,200,0,0,0
+//ars_fild05,0,0,0,0	monster	Master JK	2893,150,0,0,0
+
+//ars_fild08,0,0,0,0	monster	Goma	2798,140,0,0,0
+//ars_fild08,0,0,0,0	monster	Snow Man	2804,130,0,0,0
+//ars_fild08,0,0,0,0	monster	Snow Kid	2803,110,0,0,0
+//ars_fild08,0,0,0,0	monster	Snow Bunny	2802,120,0,0,0
+
+//Entrada Calabozo
+//ars_fild08,0,0,0,0	monster	Snow Kid	2803,110,0,0,0
+//ars_fild08,0,0,0,0	monster	Snow Bunny	2802,120,0,0,0
+
+
+//Zona de BGS Y DEMAS Monster de muestra
+sec_in02,147,183,0,0	monster	Ice Gloom	2822,2,0,0,0
+sec_in02,147,183,0,0	monster	Ice Queen	2823,1,0,0,0
+sec_in02,163,183,0,0	monster	Spicy Dragon	2864,1,0,0,0
+sec_in02,163,183,0,0	monster	Spicy Dragon	2866,2,0,0,0
+sec_in02,159,165,0,0	monster	Ice Boitata	2519,5,0,0,0
+sec_in02,181,173,0,0	monster	Fabilsag	2883,2,0,0,0
+sec_in02,176,180,0,0	monster	Arachne	2867,2,0,0,0
+sec_in02,180,151,0,0	monster	Crow	2879,1,0,0,0
+sec_in02,180,151,0,0	monster	Dark Lady	2881,3,0,0,0
+sec_in02,166,145,0,0	monster	God Poring	2818,1,0,0,0
+
+
+
+novice,0,0,0,0	monster	Poring	1002,20,0,0,0
+novice,0,0,0,0	monster	Lovering	2002,20,0,0,0
+novice,0,0,0,0	monster	Red Applering	2834,20,0,0,0
+
+

@@ -1,0 +1,71 @@
+function	script	f_kataresv3	{
+
+//getargo(0) es el elemento del katar
+
+switch(getarg(0)){
+case Ele_Neutral:
+	bonus2 bAddEff,Eff_Stun,500;
+	break;
+case Ele_Water:
+	bonus bAtkEle,Ele_Water;
+	bonus2 bAddEff,Eff_Freeze,500;
+	break;
+case Ele_Earth:
+	bonus bAtkEle,Ele_Earth;
+	bonus2 bAddEff,Eff_Stone,500;
+	break;
+case Ele_Fire:
+	bonus bAtkEle,Ele_Fire;
+	bonus2 bAddEff,Eff_Bleeding,500;
+	break;
+case Ele_Wind:
+	bonus bAtkEle,Ele_Wind;
+	bonus2 bAddEff,Eff_Sleep,500;
+	break;
+case Ele_Poison:
+	bonus bAtkEle,Ele_Poison;
+	bonus2 bAddEff,Eff_Poison,500;
+	break;
+case Ele_Holy:
+	bonus bAtkEle,Ele_Holy;
+	bonus2 bAddEff,Eff_Blind,500;
+	break;
+case Ele_Dark:
+	bonus bAtkEle,Ele_Dark;
+	bonus2 bAddEff,Eff_Silence,500;
+	break;
+case Ele_Ghost:
+	bonus bAtkEle,Ele_Ghost;
+	bonus2 bAddEff,Eff_Confusion,500;
+	break;
+case Ele_Undead:
+	bonus bAtkEle,Ele_Undead;
+	bonus2 bAddEff,Eff_Curse,500;
+}
+
+bonus bBaseAtk,400;
+bonus2 bSkillAtk,"AS_VENOMKNIFE",400;
+bonus2 bSkillAtk,"AS_SPLASHER",500;
+bonus2 bSkillAtk,"ASC_METEORASSAULT",100;
+bonus2 bSkillAtk,"ASC_BREAKER",-10;
+bonus2 bSkillAtk,"AS_GRIMTOOTH",25;
+
+if(!(getiteminfo(getequipid(EQI_HAND_L),11) == 1))
+	bonus2 bSkillAtk,"AS_SONICBLOW",40;
+
+bonus bAtkRate,-15;
+bonus bHit,100;
+bonus bCritical,10;
+bonus bCritAtkRate,15;
+bonus bNoGemStone,0;
+
+if(isequipped(18200)|| isequipped(18208)) {
+	bonus bAtkRate,10;
+	bonus bFlee,50;
+	bonus bHit,50;
+	bonus2 bSkillAtk,"AS_SONICBLOW",15;
+	bonus2 bSkillAtk,"ASC_METEORASSAULT",15;
+	bonus2 bSkillAtk,"AS_GRIMTOOTH",15;
+}
+
+}

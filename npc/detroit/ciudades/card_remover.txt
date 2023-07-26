@@ -1,0 +1,207 @@
+aquaf_g,73,76,1	script	Removedor de cartas	58,{
+
+UPGRADEROOT:
+	mes "[^0000FFSkiny^000000]";
+	mes "Buen día joven. Yo tengo el poder de quitar las cartas que has puesto en tu equipo.";
+	mes "¿Te gusta esta idea?";
+	next;
+	menu "Si, me gusta.",REMOVEMENU,
+	     "¿Cuál es el precio?",REMOVEPRICE,
+	     "No gracias.",CLOSEOUT;
+
+REMOVEPRICE:
+	mes "[^0000FFSkiny^000000]";
+	mes "Tiene un costo de ^FF00004,000,000^000000 zeny, más ^FF0000250,000^000000 zeny por cada carta en el item. Además necesito un ^FF0000Star Crumb^000000 y una ^FF0000Yellow Gemstone^000000.";
+	next;
+	menu "Muy bien, hagámoslo.",REMOVEMENU,"No gracias.",CLOSEOUT;
+
+REMOVEMENU:
+	mes "[^0000FFSkiny^000000]";
+	mes "Bien. ¿Sobre que item quieres que trabaje?";
+	next;
+	menu "Mejor no.",CLOSEOUT,
+	     getequipname(1),SLOT1,
+	     getequipname(2),SLOT2,
+	     getequipname(3),SLOT3,
+	     getequipname(4),SLOT4,
+	     getequipname(5),SLOT5,
+	     getequipname(6),SLOT6,
+	     getequipname(7),SLOT7,
+	     getequipname(8),SLOT8,
+	     getequipname(9),SLOT9,
+	     getequipname(10),SLOT10;
+
+SLOT1:
+	set @part,1;
+	goto CARDNUMCHECK;
+
+SLOT2:
+	set @part,2;
+	goto CARDNUMCHECK;
+
+SLOT3:
+	set @part,3;
+	goto CARDNUMCHECK;
+
+SLOT4:
+	set @part,4;
+	goto CARDNUMCHECK;
+
+SLOT5:
+	set @part,5;
+	goto CARDNUMCHECK;
+
+SLOT6:
+	set @part,6;
+	goto CARDNUMCHECK;
+
+SLOT7:
+	set @part,7;
+	goto CARDNUMCHECK;
+
+SLOT8:
+	set @part,8;
+	goto CARDNUMCHECK;
+
+SLOT9:
+	set @part,9;
+	goto CARDNUMCHECK;
+
+SLOT10:
+	set @part,10;
+	goto CARDNUMCHECK;
+
+CARDNUMCHECK:
+	if(getequipcardcnt(@part) == 0) goto DENYCARDCOUNT;
+	set @cardcount,getequipcardcnt(@part);
+
+	// Ensure there is room for the items.
+	if (!checkweight(1202,(@cardcount+1))) { 
+		mes "^3355FFEspera un momento!";
+		mes "No puedo ofrecerte mis";
+		mes "servicios porque estás ";
+		mes "cargando muchas cosas.";
+		mes "Pon algunos items en el Storage.";
+		close;
+	}
+
+	if(@cardcount > 1) goto CARDNUMMULTIMSG;
+	mes "[^0000FFSkiny^000000]";
+	mes "This item has " + @cardcount + " card compounded on it. To perform my magic, I will need 5,000,000 zeny, a ^0000FFStar Crumb^000000, and a ^0000FFYellow Gemstone^000000.";
+	goto CARDNUMPOSTMSG;
+CARDNUMMULTIMSG:
+	mes "[^0000FFSkiny^000000]";
+	mes "Este item tiene " + @cardcount + " cartas puestas. Para realizar mi magia, Necesitaré ^0000FF" + (4000000+(@cardcount * 250000)) + "^000000 zeny, un ^0000FFStar Crumb^000000, y una ^0000FFYellow Gemstone^000000.";
+CARDNUMPOSTMSG:
+	next;
+	menu "Adelante.",REMOVECARD, //REMOVECARDWARNING,
+	     "Ni loco.",CLOSEOUT;
+
+//REMOVECARDWARNING:
+//	mes "[^0000FFSkiny^000000]";
+//	mes "Before I begin, I must warn you--I may fail. If I do, I may destroy the cards, the item, or both. I do not give refunds. That being said, which is more important to you: The cards, or the item?";
+//	next;
+//	menu "I changed my mind about this.",CLOSEOUT,"The item.",PRIORITYITEM,"The cards.",PRIORITYCARD;
+
+//PRIORITYITEM:
+//	set @failtype,1;
+//	goto REMOVECARD;
+
+//PRIORITYCARD:
+//	set @failtype,2;
+//	goto REMOVECARD;
+
+REMOVECARD:
+	mes "[^0000FFSkiny^000000]";
+	mes "Bien. Empecemos.";
+	if((zeny < (4000000+(@cardcount * 250000))) || (countitem(1000) < 1) || (countitem(715) < 1)) goto DENYMATERIAL;
+	set zeny,zeny - (4000000+(@cardcount * 250000));
+	delitem 1000,1;
+	delitem 715,1;
+// Replace the constants in the next 3 lines with failure chance values defined in refine_db.txt
+// First value = Total failure chance (item and cards destroyed)
+// Second value = Partial failure chance (one or the other is destroyed, player decides which one is safe)
+// Third value = Harmless failure chance (all that's lost is your investment)
+
+//	set @failchance,rand(100);
+//	if(@failchance < 2) goto FAILREMOVECARD0;
+//	if((@failchance < 8) && (@failtype == 1)) goto FAILREMOVECARD1;
+//	if((@failchance < 8) && (@failtype == 2)) goto FAILREMOVECARD2;
+//	if(@failchance < 10) goto FAILREMOVECARD3;
+	successremovecards @part;
+	next;
+	mes "[^0000FFSkiny^000000]";
+	mes "Todo salio bien. Aquí tienes tus cards y tu item. Adiós.";
+	close;
+
+/*FAILREMOVECARD0:
+	failedremovecards @part,0;
+	next;
+	mes "[^0000FFSkiny^000000]";
+	mes "The process was a total failure. I am afraid the item and the cards were destroyed.";
+	close;
+
+FAILREMOVECARD1:
+	failedremovecards @part,1;
+	next;
+	mes "[^0000FFSkiny^000000]";
+	mes "While I have managed to remove the cards from the item, they were destroyed in the process. The item, however, is okay.";
+	close;
+
+FAILREMOVECARD2:
+	failedremovecards @part,2;
+	next;
+	mes "[^0000FFSkiny^000000]";
+	mes "Most unfortunate. I succeeded at removing the cards, but the item itself was destroyed in the process.";
+	close;
+
+FAILREMOVECARD3:
+	failedremovecards @part,3;
+	next;
+	mes "[^0000FFSkiny^000000]";
+	mes "I have failed to remove the cards. Luckily, however, both the item and the cards are still okay.";
+	close;
+*/
+DENYCARDCOUNT:
+	mes "[^0000FFSkiny^000000]";
+	mes "Hijo.... No hay cartas puestas en este item. No puedo hacer nada con el, lo siento.";
+	close;
+
+DENYMATERIAL:
+	next;
+	mes "[^0000FFSkiny^000000]";
+	mes "Niño, no tienes todo lo que necesito para poder trabajar. Regresa cuando lo tengas.";
+	close;
+
+CLOSEOUT:
+	mes "[^0000FFSkiny^000000]";
+	mes "Muy Bien. Regresa cuando necesites mis servicios.";
+	close;
+}
+
+//nameless_i.gat,250,143,5	duplicate(Skiny)	Skiny#a	78
+//moscovia.gat,248,145,5	duplicate(Skiny)	Skiny#b	78
+//rachel.gat,86,150,5	duplicate(Skiny)	Skiny#c	78
+//veins.gat,186,41,5	duplicate(Skiny)	Skiny#d	78
+//alberta.gat,100,37,5	duplicate(Skiny)	Skiny#e	78
+//izlude.gat,103,117,5	duplicate(Skiny)	Skiny#f	78
+//pvp_y_1-4.gat,61,182,5	duplicate(Skiny)	Skiny#g	78
+//louyang,185,103,5	duplicate(Skiny)	Skiny#h	78
+//gonryun,137,112,5	duplicate(Skiny)	Skiny#i	78
+//ayothaya,203,208,5	duplicate(Skiny)	Skiny#j	78
+//payon,193,126,5	duplicate(Skiny)	Skiny#k	78
+//morocc,186,75,5	duplicate(Skiny)	Skiny#l	78
+//amatsu,255,108,5	duplicate(Skiny)	Skiny#m	78
+//brasilis,217,201,5	duplicate(Skiny)	Skiny#n	78
+//xmas,130,113,5	duplicate(Skiny)	Skiny#o	78
+//dicastes01,189,230,5	duplicate(Skiny)	Skiny#p	78
+//mora,101,112,5	duplicate(Skiny)	Skiny#q	78
+//aldebaran,115,145,5	duplicate(Skiny)	Skiny#r	78
+//geffen,113,30,5	duplicate(Skiny)	Skiny#s	78
+//lighthalzen,139,82,5	duplicate(Skiny)	Skiny#t	78
+//ra_temin,19,318,4	duplicate(Skiny)	Skiny#u	78	
+//prt_fild08,142,346,4	duplicate(Skiny)	Skiny#v	78
+
+
+
+geffenia_in,348,244,6	shop	Tienda de materiales	726,986:30000,1005:2,1010:200,726:6000,725:6000,1000:4500,729:6000,717:6000,716:6000,715:6000

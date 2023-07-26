@@ -1,0 +1,39 @@
+prontera,164,171,5	script	Cristal Room	998,{
+
+mes "[^0055AACristal Room^000000]";
+mes"Bienvenido. . .";
+mes"¿Deseas visitar la Cristal Room para obtener los preciados Cristal Coin?";
+menu"No",l_no,"Si,porfavor",l_si;
+
+l_no:
+mes "[^0055AACristal Room^000000]";
+mes". . .";
+close;
+
+l_si:
+mes "[^0055AACristal Room^000000]";
+mes"Ready . . .";
+next;
+mes "[^0055AACristal Room^000000]";
+mes"Set";
+misceffect	317;
+next;
+mes"GO!";
+
+
+	warp	"ordeal_1-2",0,0;
+	close;
+	
+	}
+	
+	
+// Natural Monsters v1.0
+ordeal_1-2,0,0,0,0	monster	Crystal	1951,400,0,0,0
+ordeal_1-2,0,0,0,0	monster	Crystal	1954,350,0,0,0
+ordeal_1-2,0,0,0,0	monster	Crystal	1953,350,0,0,0
+ 
+// Map Flags v1.0
+ordeal_1-2	mapflag	nobranch
+ordeal_1-2	mapflag	nomemo
+ordeal_1-2	mapflag	nopenalty
+

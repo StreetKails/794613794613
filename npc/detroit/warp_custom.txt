@@ -1,0 +1,181 @@
+
+//================================= Geffen Dungeon ============================================================================================================
+
+gef_dun02,215,67,0	warp	gefd03#1	2,1,gef_dun03,203,200
+gef_dun03,203,204,0	warp	gefd03-1#1	2,1,gef_dun02,215,63
+
+schg_cas07,282,100,0	warp	Warpbg#1	1,1,schg_cas07,275,100
+
+schg_cas07,279,100,0	warp	Warpbg#2	1,1,schg_cas07,296,100
+
+//================================= Thanatos Tower ============================================================================================================
+//=============================================================================================================================================================
+
+// Thanatos Tower Level 2 (tha_t02)
+tha_t03,217,165,0	warp	WarpThana2a#1	1,1,tha_t02,227,157
+tha_t02,227,160,0	warp	WarpThana3a#1	1,1,tha_t03,220,161
+
+// Thanatos Tower Level 3 (tha_t03)
+tha_t03,59,140,0	warp	WarpThana3a#2	1,1,tha_t04,60,142
+tha_t04,60,137,0	warp	WarpThana3b#1	1,1,tha_t03,59,135
+
+// Thanatos Tower Level 4 (tha_t04)
+tha_t04,81,36,0	warp	WarpThana4a#1a	1,1,tha_t05,62,8
+tha_t05,61,6,0	warp	WarpThana4a#1b	1,1,tha_t04,86,36
+
+// Thanatos Tower Level 5 (tha_t05)
+tha_t05,62,157,0	warp	WarpThana5#1a	1,1,tha_t05,213,97
+tha_t05,208,97,0	warp	WarpThana5cubs	1,1,tha_t05,62,162
+tha_t05,185,235,0	warp	WarpThana5#1c	1,1,tha_t06,206,11
+thana_step,174,288,0	warp	WarpThana6#1a	1,1,tha_t08,28,43
+thana_step,173,372,0	warp	WarpThana6#1b	1,1,tha_t07,30,166
+tha_t07,114,166,0	warp	WarpThana6#1c	1,1,thana_step,69,287
+
+// Thanatos Tower Level 6 (tha_t06)
+tha_t06,61,6,0	warp	WarpThana6#1	1,1,tha_t07,110,165
+// Thanatos Step (thana_step)
+
+// Thanatos Tower lvl 7 (tha_t07)
+tha_t07,27,167,0	warp	WarpThanastep#1	1,1,thana_step,169,372
+
+// Thanatos Step (thana_step)
+thana_step,68,290,0	warp	WarpThana7#1	1,1,tha_t07,110,165
+
+// Thanatos Tower Level 8 (tha_t08)
+tha_t08,24,44,0	warp	WarpThanastep#2	1,1,thana_step,170,288
+tha_t08,114,43,0	warp	WarpThana8a#1	1,1,thana_step,30,223
+
+
+// Thanatos Step (tha_t08)
+thana_step,32,166,0	warp	WarpThana8b#1	1,1,tha_t09,20,96
+thana_step,28,226,0	warp	WarpThana8a#2	1,1,tha_t08,110,43
+
+// Thanatos Tower Level 9 (tha_t09)
+tha_t09,92,146,0	warp	WarpThana9b#1	1,1,thana_step,180,223
+tha_t09,16,94,0	warp	WarpThana9a#1	1,1,thana_step,36,166
+
+// Thanatos step (thana_step)
+thana_step,178,226,0	warp	WarpThana9a#2	1,1,tha_t09,87,146
+thana_step,182,166,0	warp	WarpThana10a#1	1,1,tha_t10,155,100
+
+// Thanatos Tower Level 10 (tha_t10)
+tha_t10,170,138,0	warp	WarpThana10b#1	1,1,thana_step,14,73
+tha_t10,159,110,0	warp	WarpThana10b#2	1,1,thana_step,187,166
+
+
+// Thanatos step (thana_step)
+thana_step,12,77,0	warp	WarpThana11a#1	1,1,tha_t11,165,138
+
+
+// Thanatos Tower Level 11 (tha_t11)
+thana_step,15,15,0	warp	WarpThana11a#2	1,1,tha_t11,50,17
+tha_t11,92,36,0	warp	WarpThana11b#1	1,1,thana_step,180,73
+tha_t11,54,15,0	warp	WarpThana11b#2	1,1,thana_step,19,15
+
+// Thanatos Step (thana_step)
+thana_step,178,77,0	warp	WarpThana11a#3	1,1,tha_t11,87,36
+
+// Thanatos Tower Level 12 (tha_t12)
+thana_step,181,15,0	warp	WarpThana12a#1	1,1,tha_t12,115,16
+tha_t12, 123,15,0	warp	WarpThanastep1#1	1,1,thana_step,186,15
+
+//Nydhugger
+nyd_dun01,210,241,0	warp	nyddun#01	1,1,nyd_dun02,56,267
+nyd_dun02,56,264,0	warp	nyddun#02	1,1,nyd_dun01,208,240
+
+//Arsinoe Continent
+//intro_01,21,6,0	warp	intro_ac#1	1,1,ars_fild01,10,259
+//ars_fild01,4,259,0	warp	intro_ac#2	1,1,intro_01,22,12
+
+//ars_fild01,181,22,0	warp	arsdun#1	1,1,ars_dun01,124,38
+//ars_dun01,123,31,0	warp	arsdun#2	1,1,ars_fild01,181,28
+
+//ars_fild01,278,9,0	warp	arsfild#1	1,1,ars_fild04,356,321
+//ars_fild04,356,329,0	warp	arsfild#2	1,1,ars_fild01,277,11
+
+//ars_fild01,294,245,0	warp	arsfild#3	1,1,ars_fild05,75,389
+//ars_fild05,75,396,0	warp	arsfild#4	1,1,ars_fild01,289,245
+
+//ars_fild05,367,4,0	warp	arsfild#5	1,1,ars_fild08,11,170
+//ars_fild08,5,170,0	warp	arsfild#6	1,1,ars_fild05,366,12
+
+//ars_fild08,392,286,0	warp	arsfild#7	1,1,ars_fild16,11,370
+//ars_fild16,5,370,0	warp	arsfild#8	1,1,ars_fild08,383,288
+
+//ars_fild16,372,349,0	warp	arsfild#9	1,1,ars_fild20,289,85
+//ars_fild20,287,86,0	warp	arsfild#10	1,1,ars_fild16,365,344
+
+aquaf_g,93,58,0	warp	arsfild#10	1,1,prontera,156,182
+
+
+//far_cave01 72 11 // INICIO
+
+//Dungeon intensidad Media
+
+far_cave01,72,11,0	warp	farcave#0	1,1,farvir,139,115
+
+
+far_cave01,17,144,0	warp	farcave#1	1,1,far_cave00,235,101
+far_cave00,238,101,0	warp	farcave#2	1,1,far_cave01,23,144
+
+
+far_cave01,238,123,0	warp	farcave#3	1,1,far_cave02,13,143
+far_cave02,9,143,0	warp	farcave#4	1,1,far_cave01,233,123
+
+far_cave02,239,171,0	warp	farcave#5	1,1,far_cave03,52,235
+far_cave03,52,239,0	warp	farcave#6	1,1,far_cave02,234,171
+
+
+// monster
+//2803,Snowkid,Snow Kid
+//2804,Snowman,Snow Man
+//2839,Penguin,Penguin
+//2894,Koom,Koom
+//2621,Frozen_Corpse
+//2662,Ugly_Corpse
+//2519,iceboitata
+//2779,savage_mimic
+//2822,IceGloom,Ice Gloom
+
+//MvP
+//2823,icequeen,The Queen of Amalthea
+
+//casp_dun02
+
+//2845,DivineDragon
+//2609,Werepot
+
+
+//MvP
+//2864,Spicy Dragon,Spicy Dragon
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Zona Quest
+
+quiz_02,59,356,0	warp	quest#1	1,1,quiz_02,59,368
+quiz_02,59,364,0	warp	quest#2	1,1,quiz_02,59,353
+
+quiz_02,32,364,0	warp	quest#3	1,1,quiz_02,32,353
+quiz_02,32,357,0	warp	quest#4	1,1,quiz_02,32,368
+
+//Herreria 
+
+
+prontera,144,171,0	warp	herreria#3	1,1,aquaf_g,88,58
+geffenia_in,346,250,0	warp	herreria#4	1,1,geffenia_in,251,286
+
+geffenia_in,261,315,0	warp	herreria#5	1,1,geffenia_in,177,295
+geffenia_in,177,292,0	warp	herreria#6	1,1,geffenia_in,261,312
+
+

@@ -1,0 +1,578 @@
+quiz_02,167,393,5	script	Build Taekwon	819,{
+
+
+if(Class==4046 || Class==4047 || Class==4049) {
+	if (isequipped(16101) || isequipped(16102) || isequipped(16103) || isequipped(16104) || isequipped(16105) || isequipped(16106) || isequipped(16107) || isequipped(16108) || isequipped(16109) || isequipped(19121)) {
+		mes "Bienaventurado seas Maestro. Eres uno de los pocos Taekwon que llega a verme.";
+		mes "Como ya sabras, somos una de las profesiones mas completas de todo RO!";
+		mes "Podemos ser tanto de INT como de STR, todo depende de nuestro gusto";
+		next;
+		mes "Que deseas Hacer?";
+		menu "Asignar bonus de armas",-,"Asignar bonus Spirit of Spirits",LSoS;
+		if(Class!=4046) goto tkboy;
+		mes "Yo soy el encargado asignarle un bonus a tus armas para que se acomplen a la build que eligas";
+		mes "Solo dime, prefieres ser un Taekwon Magico o uno Fisico?";
+		menu "Magico",magia,"Fisico",fisico;
+		
+		magia:
+			set taekmagico,1;
+			set taekfisico,0;
+			next;
+			mes "Listo! Ahora tus armas daran un bonus MAGICO";
+			next;
+			mes "si tienes equipado Light Spirit te dara lo siguiente:";
+			mes "Matk + 20% , rango de ataque + 3 ";
+			mes "si tienes equipado Shadow Spirit te dara lo siguiente:";
+			mes "Flee + 70, Perfect Dodge + 5, MaxHP + 10%, 5% resistencia a mobs Medio y Largo.";
+			close;
+
+		fisico:
+			set taekmagico,0;
+			set taekfisico,1;
+			next;
+			mes "Listo! Ahora tus armas daran un bonus FISICO";
+			next;
+			mes "si tienes equipado Light Spirit te dara lo siguiente:";
+			mes "Hit + 50, Atk + 10%, rango de ataque + 3 .";
+			mes "si tienes equipado Shadow Spirit te dara lo siguiente:";
+			mes "Flee + 70, Perfect Dodge + 5, MaxHP + 10%, 5% resistencia a mobs Medio y Largo.";
+			close;
+		
+		LSoS://Spirit of Spirits
+			if(isequipped(18208)){
+				mes "Que bonus quieres para tu Spirit of Spirits?";
+				menu "Light's Spirit",LLight,"Shadow's Spirit",LShadow;
+				
+				LLight: 
+					set lightSpirit,1;
+					set shadowSpirit,0;
+					next;
+					mes "Listo! Ahora tu Spirit of Spirits dara los bonus del Light's Spirit";
+					close;
+				LShadow:
+					set lightSpirit,0;
+					set shadowSpirit,1;
+					next;
+					mes "Listo! Ahora tu Spirit of Spirits dara los bonus del Shadow's Spirit";
+					close;
+			
+			mes "No tienes equipado el Spirit of Spirits";
+			mes "Vuelve cuando te lo equipes";
+			close;
+	}
+
+	mes "Lo siento pero no tienes equipada alguna arma para Taekwon de Quest";
+	next;
+	mes "Vuelve cuando te la equipes para poder trabajar";
+	close;
+}
+
+mes "Lo siento, solo trabajo con players tipo Taekwon, ";
+close;
+
+tkboy:
+	mes "Esta opcion solo esta disponible para Taekwon";
+	close;
+};
+}
+
+
+//Taekwon Neutral
+function	script	F_taekwon_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnstripableWeapon,0;
+skill 263,10;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 468,1;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+bonus5 bAutoSpell,469,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+bonus5 bAutoSpell,365,1,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus5 bAutoSpell,365,1,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus bMaxHPrate,10;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+bonus5 bAutoSpell,469,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Fuego
+function	script	F_taekwon_fuego	{
+skill 263,10;
+bonus bAtkEle,Ele_Fire;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 19,7;bonus5 bAutoSpell,19,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+skill 42,6;
+bonus5 bAutoSpell,42,4,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+skill 42,6;
+bonus5 bAutoSpell,42,4,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bAddRace,RC_NonBoss,10;
+bonus2 bAddRace,RC_Boss,10;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+bonus bMaxHPrate,10;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 19,7;bonus5 bAutoSpell,19,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Agua
+function	script	F_taekwon_agua	{
+skill 263,10;
+bonus bAtkEle,Ele_Water;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+skill 358,1;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 14,7;bonus5 bAutoSpell,14,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+skill 358,1;
+bonus2 bHPDrainRate,100,50;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+skill 358,1;
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+   // Alas de temporada con bonus de Goddess.
+  ( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )) {bonus2 bHPDrainRate,-100,-50;};
+bonus2 bHPDrainRate,100,50;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bHPRegenRate,1000,500;
+bonus bMaxHPrate,10;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 14,7;bonus5 bAutoSpell,14,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Viento
+function	script	F_taekwon_viento	{
+skill 263,10;
+bonus bAtkEle,Ele_Wind;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 20,7;bonus5 bAutoSpell,20,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+bonus bAtkRange,2;
+bonus bSplashRange,2;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus bAtkRange,2;
+bonus bSplashRange,2;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus bMaxHPrate,10;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bLongAtkDef,10;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 20,7;bonus5 bAutoSpell,20,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Tierra
+function	script	F_taekwon_tierra	{
+skill 263,10;
+bonus bAtkEle,Ele_Earth;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 90,3;bonus5 bAutoSpell,90,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+bonus2 bAddRace,RC_DemiHuman,10;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus2 bAddRace,RC_DemiHuman,10;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus bMaxHPrate,30;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 90,3;bonus5 bAutoSpell,90,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Holy
+function	script	F_taekwon_holy	{
+skill 263,10;
+bonus bAtkEle,Ele_Holy;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 545,7;bonus5 bAutoSpell,545,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+bonus bMagicAtkDef,20;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus bMagicAtkDef,20;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus3 bMagicDamageReturn2,100,1,10;bonus3 bMagicDamageReturn2,100,0,10;
+bonus bMaxHPrate,10;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 545,7;bonus5 bAutoSpell,545,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Shadow
+function	script	F_taekwon_shadow	{
+skill 263,10;
+bonus bAtkEle,Ele_Dark;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 340,8;bonus5 bAutoSpell,340,6,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+bonus2 bSPVanishRate,100,5;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus2 bSPVanishRate,100,5;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bAddSkillBlow,468,2;
+bonus bMaxHPrate,10;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 340,8;bonus5 bAutoSpell,340,6,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Undead
+function	script	F_taekwon_undead	{
+skill 263,10;
+bonus bAtkEle,Ele_Undead;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 400,3;bonus5 bAutoSpell,400,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+bonus5 bAutoSpell,342,1,10,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus5 bAutoSpell,342,1,10,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus bFlee2,20;
+bonus bMaxHPrate,10;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 400,3;bonus5 bAutoSpell,400,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Ghost
+function	script	F_taekwon_ghost	{
+skill 263,10;
+bonus bAtkEle,Ele_Ghost;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 13,8;bonus5 bAutoSpell,13,6,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+bonus2 bAddRace,RC_Boss,40;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus2 bAddRace,RC_Boss,40;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus bMaxHPrate,10;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bNearAtkDef,10;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 13,8;bonus5 bAutoSpell,13,6,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Poison
+function	script	F_taekwon_poison	{
+skill 263,10;
+bonus bAtkEle,Ele_Poison;
+//Taekwon Master
+if(Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+if(taekmagico==1){
+bonus2 bMagicAddRace,RC_DemiHuman,-20;
+bonus2 bSkillAtk,469,-35;
+bonus bInt,readparam(bInt)/5;
+bonus bAtkRate,-40;bonus bBaseAtk,-900;
+skill 28,8;
+skill 547,7;bonus5 bAutoSpell,547,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+if(taekfisico==1){
+bonus bStr,readparam(bStr)/2;
+bonus bBaseAtk,300;bonus bAtkRate,25;
+skill 52,7;
+bonus2 bSkillAtk,52,30;
+bonus5 bAutoSpell,52,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+};
+//Star Gladiator
+if(Class==Job_Star_Gladiator){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+skill 52,7;
+bonus2 bSkillAtk,52,30;
+bonus5 bAutoSpell,52,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus bMaxHPrate,10;
+bonus2 bSkillAtk,469,-10;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+bonus bShortWeaponDamageReturn,10;
+skill 547,7;bonus5 bAutoSpell,547,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if((isequipped(18207) && !isequipped(18208)) || (isequipped(18208) && shadowSpirit)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHPrate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if((isequipped(18206) && !isequipped(18208)) || (isequipped(18208) && lightSpirit)){bonus bMatkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+
+//6@tower.gat,132,74,6	duplicate(Build Taekwon)	Build Taekwon#1	819

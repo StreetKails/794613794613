@@ -1,0 +1,269 @@
+//Lanza Neutral
+function	script	F_lanza_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Stun,500;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,5,-150;bonus5 bAutoSpell,469,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}
+
+
+//Lanza Agua
+function	script	F_lanza_agua	{
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Freeze,500;
+bonus bAtkEle,Ele_Water;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,5,-150;bonus5 bAutoSpell,537,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}
+
+
+//Lanza Tierra
+function	script	F_lanza_tierra	{
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Stone,500;
+bonus bAtkEle,Ele_Earth;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,5,-150;bonus5 bAutoSpell,90,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}
+
+
+//Lanza Fuego
+function	script	F_lanza_fuego	{
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Bleeding,500;
+bonus bAtkEle,Ele_Fire;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,5,-150;bonus5 bAutoSpell,534,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}
+
+
+//Lanza Viento
+function	script	F_lanza_viento	{
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus bAtkRange,3;
+bonus bAtkEle,Ele_Wind;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,540,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}
+
+
+//Lanza Holy
+function	script	F_lanza_holy	{
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Blind,500;
+bonus bAtkEle,Ele_Holy;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,5,-150;bonus5 bAutoSpell,545,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}
+
+
+//Lanza Shadow
+function	script	F_lanza_shadow	{
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Silence,500;
+bonus bAtkEle,Ele_Dark;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,5,-150;bonus5 bAutoSpell,340,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}
+
+
+//Lanza Ghost
+function	script	F_lanza_ghost	{
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Confuse,500;
+bonus bAtkEle,Ele_Ghost;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,5,-150;bonus5 bAutoSpell,13,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}
+
+
+//Lanza Undead
+function	script	F_lanza_undead	{
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Curse,500;
+bonus bAtkEle,Ele_Undead;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,5,-150;bonus5 bAutoSpell,400,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}
+
+
+//Lanza Poison
+function	script	F_lanza_poison	{
+skill 258,10;
+bonus2 bSkillAtk,56,70;
+bonus2 bSkillAtk,59,30;
+bonus2 bSkillAtk,397,250;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Poison,500;
+bonus bAtkEle,Ele_Poison;
+bonus2 bHPDrainRate,50,50;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,5,-150;bonus5 bAutoSpell,547,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,150;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+if ( isequipped(15223) ) { // Dragon Master Helm
+		bonus2 bIgnoreDefRate,RC_DemiHuman,0;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}	
+return;
+}

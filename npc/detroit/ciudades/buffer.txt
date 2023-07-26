@@ -1,0 +1,26 @@
+//===== eAthena Script =======================================================================
+//= Script Que Contiene Skill para buffear
+//===== By: =================================================================================
+//= Luis Tapia (Conwaidd)
+//===== Current Version: ======================================================================
+//= 1.0.0
+//==========================================================================================
+
+prontera.gat,147,185,6	script	Healer	811,{
+//Variables
+set @effect, 1; // 0 para desabilitar los effecto si da lag
+set @heal, 1; // 0 para que no cure
+
+sc_start 32,  240000, 10;  // Increase Agi
+sc_start 30, 240000, 10; // Blessing
+
+
+if(@effect == 1) skilleffect 29,0; // Increase Agi
+if(@effect == 1) skilleffect 34,0; // Blessing
+
+if(@heal == 1) percentheal 100,100;
+}
+
+
+
+farvir,137,125,5	duplicate(Healer)	Healer#far	811

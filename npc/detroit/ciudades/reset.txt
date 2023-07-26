@@ -1,0 +1,68 @@
+//===== rAthena Script =======================================
+//= Reset NPC
+//===== By: ==================================================
+//= rAthena Dev Team
+//===== Current Version: =====================================
+//= 1.3
+//===== Compatible With: =====================================
+//= rAthena SVN
+//===== Description: =========================================
+//= Resets skills, stats, or both.
+//===== Additional Comments: =================================
+//= 1.0 First Version
+//= 1.1 Optimized for the greater good. [Kisuka]
+//= 1.2 Cleaning [Euphy]
+//= 1.3 All statuses removed upon skill reset. [Euphy]
+//============================================================
+
+prontera,149,192,4	script	Reset Girl	877,{
+
+	set .@ResetStat,5000000;	// Zeny Por Stats reset.
+	set .@ResetSkill,5000000;	// Zenys por el reset de skill
+	set .@ResetBoth,10000000;	// Zenys para resetear todo.
+
+	mes "[Reset Girl]";
+	mes "Hola yo soy la chicha reset..";
+	mes "Reset Stats: "+ .@ResetStat +"z";
+	mes "Reset Skills: "+ .@ResetSkill +"z";
+	mes "Reset Both: "+ .@ResetBoth +"z";
+	mes "Porfavor selecciona tu servicio.:";
+	next;
+	switch(select("^FF3355Reset Skills:Reset Stats:Resetear todo^000000:Cancelar")) {
+	case 1:
+		mes "[Reset Girl]";
+		if (Zeny < .@ResetSkill) {
+			mes "Perdon no tienes mas dinero..";
+			close;
+		}
+		set Zeny, Zeny-.@ResetSkill;
+		sc_end SC_ALL;
+		ResetSkill;
+		mes "Estas listo";
+		close;
+	case 2:
+		mes "[Reset Girl]";
+		if (Zeny < .@ResetStat) {
+			mes "No tienes dinero... D:";
+			close;
+		}
+		set Zeny, Zeny-.@ResetStat;
+		ResetStatus;
+		mes "Estas listo !!";
+		close;
+	case 3:
+		mes "[Reset Girl]";
+		if (Zeny < .@ResetBoth) {
+			mes "No tienes dinero D:";
+			close;
+		}
+		set Zeny, Zeny-.@ResetBoth;
+		sc_end SC_ALL;
+		ResetSkill;
+		ResetStatus;
+		mes "Estas listo !!";
+		close;
+	case 4:
+		close;
+	}
+}

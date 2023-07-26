@@ -1,0 +1,271 @@
+prontera.gat,165,196,5	script	Mighty Novice	941,{
+
+
+
+if(class == 23 || class == 4045)
+{
+	mes "Veo que eres un Super Novice..!";
+	next;
+	if(isequipped(18016))
+	{
+	mes "Y tienes equipado el Novice Manteau..!!!";
+	next;
+	mes "Yo tengo el poder para hacer que tu Manteau te protega del elemento que tu decidas!";
+	next;
+	mes "Solo dime el elemento y yo lo hare..!";
+	next;
+	switch(select("Neutral","Fuego","Agua","Viento","Tierra","Shadow","Undead","Poison","Ghost"))
+	{
+
+		case 1:
+		set elemento,1;
+		mes "Perfecto, de ahora en adelante tu garmet sera neutral.";
+		close;
+
+		case 2:
+		set elemento,2;
+		mes "Perfecto, de ahora en adelante tu garmet sera fuego.";
+		close;
+
+		case 3:
+		set elemento,3;
+		mes "Perfecto, de ahora en adelante tu garmet sera agua.";
+		close;
+
+		case 4:
+		set elemento,4;
+		mes "Perfecto, de ahora en adelante tu garmet sera viento.";
+		close;
+
+		case 5:
+		set elemento,5;
+		mes "Perfecto, de ahora en adelante tu garmet sera tierra.";
+		close;
+
+		case 6:
+		set elemento,6;
+		mes "Perfecto, de ahora en adelante tu garmet sera shadow.";
+		close;
+
+		case 7:
+		set elemento,7;
+		mes "Perfecto, de ahora en adelante tu garmet sera undead.";
+		close;
+
+		case 8:
+		set elemento,8;
+		mes "Perfecto, de ahora en adelante tu garmet sera poison.";
+		close;
+
+		case 9:
+		set elemento,9;
+		mes "Perfecto, de ahora en adelante tu garmet sera ghost.";
+		close;
+
+	}
+
+	} else {
+		mes "Lastima que no tienes el Novice Manteau equipado...";
+		close;
+		}
+
+} else {
+	mes "Lo siento pero no eres un Super Novice.";
+	close;
+	}
+
+}
+
+
+//6@tower.gat,158,146,2	duplicate(Mighty Novice)	Mighty Novice#1	941
+
+
+
+
+function	script	F_novice_garment	{
+
+	if(elemento==1){
+		if(isequipped(18058) && (isequipped(18231) || isequipped(18001)|| isequipped(18091))) {
+			bonus2 bSubEle,Ele_Neutral,20;
+			bonus bMaxHPrate,10;
+			bonus bMaxSPrate,10;
+			bonus2 bAddEle,Ele_Neutral,20;
+			bonus bHit,70;
+			bonus2 bResEff,Eff_Bleeding,10000;
+			
+			if(isequipped(3011)){
+				bonus bAllStats,7;
+			}
+		}
+		else
+			bonus2 bSubEle,Ele_Neutral,15;
+			
+		return;
+	}
+
+	if(elemento==2){
+		if(isequipped(18058) && (isequipped(18002) || isequipped(18232)|| isequipped(18097))) {
+			bonus2 bSubEle,Ele_Fire,20;
+			bonus bMaxHPrate,10;
+			bonus bMaxSPrate,10;
+			bonus2 bAddEle,Ele_Fire,20;
+			bonus2 bAddRace,RC_NonBoss,10;
+			bonus2 bAddRace,RC_Boss,10;
+			bonus2 bAddRace2,5,10; //guardians
+			bonus2 bMagicAddRace,RC_DemiHuman,10;
+			bonus2 bResEff,Eff_Stone,10000;
+			
+			if(isequipped(3001)){
+				bonus bAllStats,7;
+			}
+		}
+		else
+			bonus2 bSubEle,Ele_Fire,15;
+			
+		return;
+	}
+
+	if(elemento==3){
+		if(isequipped(18058) && (isequipped(18003) || isequipped(18233)|| isequipped(18090))) {
+			bonus2 bSubEle,Ele_Water,20;
+			bonus bMaxHPrate,10;
+			bonus bMaxSPrate,10;
+			bonus2 bAddEle,Ele_Water,20;
+			bonus2 bHPRegenRate,1000,500;
+			bonus2 bSPRegenRate,50,1000;
+			bonus2 bResEff,Eff_Sleep,10000;
+			
+			if(isequipped(3003)){
+				bonus bAllStats,7;
+			}
+		}
+		else
+			bonus2 bSubEle,Ele_Water,15;
+			
+		return;
+	}
+	
+	if(elemento==4){
+		if(isequipped(18058) && (isequipped(18004) || isequipped(18234)|| isequipped(18096))) {
+			bonus2 bSubEle,Ele_Wind,20;
+			bonus bMaxHPrate,10;
+			bonus bMaxSPrate,10;
+			bonus2 bAddEle,Ele_Wind,20;
+			bonus bAtkRange,3;
+			bonus2 bResEff,Eff_Freeze,10000;
+			
+			if(isequipped(3002)){
+				bonus bAllStats,7;
+			}
+		}
+		else
+			bonus2 bSubEle,Ele_Wind,15;
+			
+		return;
+	}
+
+
+	if(elemento==5){
+		if(isequipped(18058) && (isequipped(18005) || isequipped(18235)|| isequipped(18098))) {
+			bonus2 bSubEle,Ele_Earth,20;
+			bonus bMaxHPrate,10;
+			bonus bMaxSPrate,10;
+			bonus2 bAddEle,Ele_Earth,20;
+			bonus2 bSubSize,1,10;
+			bonus2 bSubSize,0,10;
+			sc_start SC_SLOWPOISON,90000000,10;
+			
+			if(isequipped(3005)){
+				bonus bAllStats,7;
+			}
+		}
+		else
+			bonus2 bSubEle,Ele_Earth,15;
+			
+		return;
+	}
+
+
+	if(elemento==6){
+		if(isequipped(18058) && (isequipped(18006) || isequipped(18236)|| isequipped(18092))) {
+			bonus2 bSubEle,Ele_Dark,20;
+			bonus bMaxHPrate,10;
+			bonus bMaxSPrate,10;
+			bonus2 bAddEle,Ele_Dark,20;
+			bonus2 bAddEle,Ele_Holy,15;
+			bonus bSplashAddRange,2;
+			sc_start SC_SLOWPOISON,90000000,10;
+			
+			if(isequipped(3004)){
+				bonus bAllStats,7;
+			}
+		}
+		else
+			bonus2 bSubEle,Ele_Dark,15;
+			
+		return;
+	}
+
+
+	if(elemento==7){
+		if(isequipped(18058) && (isequipped(18009) || isequipped(18239)|| isequipped(18094))) {
+			bonus2 bSubEle,Ele_Undead,20;
+			bonus bMaxHPrate,10;
+			bonus bMaxSPrate,10;
+			bonus2 bAddEle,Ele_Undead,20;
+			bonus2 bHPDrainRate,200,5;
+			bonus2 bResEff,Eff_Stone,10000;
+
+			if(isequipped(3013)){
+				bonus bAllStats,7;
+			}
+		}
+		else
+			bonus2 bSubEle,Ele_Undead,15;
+			
+		return;
+	}
+
+
+	if(elemento==8){
+		if(isequipped(18058) && (isequipped(18010) || isequipped(18240)|| isequipped(18089))) {
+			bonus2 bSubEle,Ele_Poison,20;
+			bonus bMaxHPrate,10;
+			bonus bMaxSPrate,10;
+			bonus2 bAddEle,Ele_Poison,20;
+			bonus bCritical,10;
+			bonus bCritAtkRate,10;
+			bonus2 bResEff,Eff_Stone,10000;
+
+			if(isequipped(3010)){
+				bonus bAllStats,7;
+			}
+		}
+		else
+			bonus2 bSubEle,Ele_Poison,15;
+			
+		return;
+	}
+
+	if(elemento==9){
+		if(isequipped(18058) && (isequipped(18008) || isequipped(18238)|| isequipped(18093))) {
+			bonus2 bSubEle,Ele_Ghost,20;
+			bonus bMaxHPrate,10;
+			bonus bMaxSPrate,10;
+			bonus2 bAddEle,Ele_Ghost,20;
+			bonus2 bSPVanishRate,50,10;
+			bonus2 bSPRegenRate,20,1000;
+			bonus2 bResEff,Eff_Sleep,10000;
+
+			if(isequipped(3012)){
+				bonus bAllStats,7;
+			}
+		}
+		else
+			bonus2 bSubEle,Ele_Ghost,15;
+			
+		return;
+	}
+
+	return;
+}

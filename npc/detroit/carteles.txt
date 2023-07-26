@@ -1,0 +1,437 @@
+aquaf_g,51,72,5	script	John Smith	571,{
+		mes "Hola! en este lugar se puede refinar todo tu equipo, ";
+		mes "además de poder hacer una miniquest para tener exito garantizado, ";
+		mes "Mucha suerte en tus refines";
+		mes "Y no olvides quitar las cartas, adiós ";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Que hermosa la refineria",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "¡Recuerda visitar la refinería!",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "¡Reúne tus materiales!",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+
+aquaf_g,84,45,5	script	Miguel	538,{
+		mes "Hola, Te presento el lugar en el cual puedes canjear tus poring coins ";
+		mes "Recuerda que estas mismas se consiguen estando conectado ";
+		mes "Espero quedes muy facherito. ";
+		mes "Cuidate mucho";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Canjea aqui tus Poring Coins",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Ven a ponerte muy hermoso",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Aqui tenemos solo lo mejor",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+aquaf_g,65,32,5	script	Mikaela	535,{
+		mes "Hola! en este lugar puedes comprar items basicos para empezar tu aventura ";
+		mes "pero recuerda, para poder tener un buen equipo te recomendamos hacer las quest";
+		mes "de equipo ya que estos items basicos solo te serviran en los primeros niveles ";
+		mes "Te deseo mucha suerte y nos vemos";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Compra aquí equipo básico",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Recuerda completar tus quests",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Mercado de items básicos",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+prontera,144,171,5	script	Rene Puente	614,{
+		mes ":D";
+		mes "o.o";
+		mes " =(";
+		mes "=)";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Zona Quest",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Zona Herrería",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Zona Canjeo",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+aquaf_g,26,79,5	script	Mid Quests	837,{
+		mes "Auras";
+		mes "Espadas";
+		mes "Auras";
+		mes "Espadas";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Quest Mids",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Quest Auras",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Quest Espadas",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+aquaf_g,9,80,5	script	Low Quests	837,{
+		mes "Alas";
+		mes "De";
+		mes "Colores";
+		mes "Grandes";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Quest Lows",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Quest Alas",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Quest Alas de colores",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+aquaf_g,13,68,5	script	Upper Quests	837,{
+		mes "Hats";
+		mes "De";
+		mes "Colores";
+		mes "Grandes";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Quest Upper",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Quest de Gorros",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Quest de Hats",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+aquaf_g,82,66,5	script	Guía	835,{
+		mes "Bienvenido a la Guía de la Zona Oficial de RealmRO, ";
+		mes "Abajo tienes la zona de canje para usar tus porings coins, mientras que a su izquierda el mercado básico.";
+		mes "Por otro lado, si sigues derecho tendrás la Zona Quest Oficial de Realm RO, y ";
+		mes "justo aqui arribita está la zona de herrería donde podras refinar tus items, mucha suerte!";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Derecho Zona Quest",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Arriba Herrería",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Abajo Zona Canje",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+aquaf_g,83,23,5	script	Zona Shop Eventos	577,{
+		mes "Bienvenido a la zona de canje de eventos de Realm RO, ";
+		mes "Abajo tienes la zona para usar tus Realm RO, monedas que obtienes en eventos, ";
+		mes "Recuerda que estos items no dan Status, solo son visuales ";
+		mes "¡Cuidate mucho!";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Zona Canjeo Realm Coin",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Zona Canjeo Evento",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Zona de Items Visuales",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+sec_in02,145,162,5	script	Zona Shop PvP	695,{
+		mes "Bienvenido a la zona de canje de PvP de Realm RO, ";
+		mes "Abajo tienes la zona para usar tus PvP Voucher, Medallas de BG y WoE Ticket, monedas que obtienes principalmente, ";
+		mes "venciendo otros Usuarios ";
+		mes "¡Cuidate mucho!";
+		close;
+	OnInit:
+	do {		
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500; 
+		delwaitingroom;
+		waitingroom "Zona Canjeo PvP",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Revisa Todo el Mapa",0;
+		sleep 2500;
+		delwaitingroom;
+		waitingroom "",0;
+		sleep 500;
+		delwaitingroom;
+		waitingroom "Vence a otros Usuarios",0;
+		sleep 2500; // Evites super infinity loop
+	} while(1); // End Loop
+end;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//(=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=)
+//(       (c)2005 RagMods Modification Team presents        )
+//(       ______  __    __                                  )
+//(      /\  _  \/\ \__/\ \                     v 1.00.00   )
+//(    __\ \ \_\ \ \ ,_\ \ \___      __    ___      __      )
+//(  /'__`\ \  __ \ \ \/\ \  _ `\  /'__`\/' _ `\  /'__`\    )
+//( /\  __/\ \ \/\ \ \ \_\ \ \ \ \/\  __//\ \/\ \/\ \_\.\_  )
+//( \ \____\\ \_\ \_\ \__\\ \_\ \_\ \____\ \_\ \_\ \__/.\_\ )
+//(  \/____/ \/_/\/_/\/__/ \/_/\/_/\/____/\/_/\/_/\/__/\/_/ )
+//(                                                         )
+//(            -- [s] [c] [r] [i] [p] [t] [s] --            )
+//(   _   _   _   _   _   _   _     _   _   _   _   _   _   )
+//(  / \ / \ / \ / \ / \ / \ / \   / \ / \ / \ / \ / \ / \  )
+//( ( e | s | p | a | ñ | o | l ) ( A | t | h | e | n | a ) )
+//(  \_/ \_/ \_/ \_/ \_/ \_/ \_/   \_/ \_/ \_/ \_/ \_/ \_/  )
+//(                                                         )
+//(    Advanced JaMMa RO (c) 2006-2007 The Reyes Project    )
+//(=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=)
+//===== eAthena Script ======================================
+//= Cambio de Tamaño.
+//===========================================================
+//===== By ==================================================
+//= [ReYeS]
+//===== Version =============================================
+//= 1.0
+//===== Compatible With =====================================
+//= eAthena SVN and Freya SVN
+//===== Description =========================================
+//= NPC que te Cambia de Tamaño por 10000z.
+//===== Comments ============================================
+//= 1.0 - Initial beta release                      [Reyes]
+//===========================================================
+
+
+
+geffenia_in,343,246,5	script	Gallina VoO DoO	800,{
+mes "[^ff0000Gallina VoO DoO^000000]";
+mes "Hi ^0000CD"+strcharinfo(0)+"^000000";
+mes "¿Quieres cambiar de estatura?";
+next;
+menu "Sip",L_YES,"No",L_NO;
+
+L_YES:
+mes "[^ff0000Gallina VoO DoO^000000]";
+mes "Ok,elige el tamaño que quieres pero recuerda que cada uno tiene su precio...";
+mes "Y el de mi magia Voo Doo es de 5,000,000";
+mes "Solo para ricos sin quehacer";
+mes "Te animas?";
+next;
+menu "Gigante",Giant,"Pequeño",Small,"Normal",normal,"Mejor no",-;
+mes "Ok, cuando gustes ^^";
+close;
+
+Giant:
+if((Zeny < 5000000)) goto nozeny;
+atcommand "@size 2";
+set Zeny,Zeny-5000000;
+close;
+
+normal:
+if((Zeny < 5000000)) goto nozeny;
+atcommand "@size 0";
+set Zeny,Zeny-5000000;
+close;
+
+Small:
+if((Zeny < 5000000)) goto nozeny;
+atcommand "@size 1";
+set Zeny,Zeny-5000000;
+close;
+
+nozeny:
+mes "[^ff0000Gallina VoO DoO^000000]";
+mes "Parece que te falta un poco de zeny, busca bien en tus bolsas xD";
+
+L_NO:
+mes "[^ff0000Gallina VoO DoO^000000]";
+mes "OK,Suerte...";
+close;
+}
+
+
+
+
+
+gonryun,178,113,5	duplicate(Gallina VoO DoO)	Gallina VoO DoO#1	800
+ayothaya,194,180,5	duplicate(Gallina VoO DoO)	Gallina VoO DoO#2	800
+morocc,149,106,5	duplicate(Gallina VoO DoO)	Gallina VoO DoO#3	800

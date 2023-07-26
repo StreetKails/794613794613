@@ -1,0 +1,47 @@
+function	script	BRojo	{
+
+	getitem	30704,1;
+	getitem	30705,1;
+	getitem	30706,1;
+	getitem	14533,1;
+	getitem	4142,1;
+
+	end;
+}
+
+
+
+function	script	BPurple	{
+
+	getitem	30694,1;
+	getitem	30695,1;
+	getitem	30696,1;
+	getitem	14533,1;
+	getitem	4142,1;
+
+	end;
+}
+
+
+function	script	BRainbow	{
+
+	getitem	30699,1;
+	getitem	30700,1;
+	getitem	30701,1;
+	getitem	14533,1;
+	getitem	4142,1;
+
+	end;
+}
+
+function	script	BBlue	{
+
+	getitem	30687,1;
+	getitem	30688,1;
+	getitem	30689,1;
+	getitem	14533,1;
+	getitem	4142,1;
+
+	end;
+}
+

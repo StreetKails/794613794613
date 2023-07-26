@@ -1,0 +1,485 @@
+quiz_02,173,391,5	script	Build Shurikens	747,{
+
+
+
+if(Class==Job_Ninja) {
+if (isequipped(17031) || isequipped(17032) || isequipped(17033) || isequipped(17034) || isequipped(17035) || isequipped(17036) || isequipped(17037) || isequipped(17038) || isequipped(17039) || isequipped(19120)) {
+mes "Bienvenido compañero Ninja!";
+mes "Como ya sabras, somos una de las profesiones mas completas de todo RO!";
+mes "Podemos ser tanto de INT como de STR, todo depende de nuestro gusto";
+next;
+mes "Yo soy el encargado asignarle un bonus a tus Shurikens para que se acomplen a la build que eligas";
+mes "Solo dime, prefieres ser un Ninja Magico o uno Fisico?";
+menu "Magico",magia,"Fisico",fisico;
+
+
+
+
+	magia:
+		set ninjamagico,1;
+		set ninjafisico,0;
+		next;
+		mes "Listo! Ahora tus Shuriken daran un bonus MAGICO";
+		close;
+
+
+	fisico:
+		set ninjamagico,0;
+		set ninjafisico,1;
+		next;
+		mes "Listo! Ahora tus Shuriken daran un bonus FISICO";
+		close;
+
+
+
+																									}
+
+mes "Lo siento pero no tienes equipada alguna Shuriken de Quest";
+next;
+mes "Vuelve cuando te la equipes para poder trabajar";
+close;
+
+
+
+																		}
+
+mes "Lo siento, solo trabajo con players tipo Ninja";
+close;
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+//Shuriken Neutral
+function	script	F_shuriken_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+skill 468,7;
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+bonus5 bAutoSpell,469,5,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bSkillAtk,469,-50;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;};};
+return;
+}
+
+
+
+
+
+//Shuriken Agua
+function	script	F_shuriken_agua	{
+bonus bAtkEle,Ele_Water;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+skill 406,8;
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;;};};
+return;
+}
+
+
+
+
+
+//Shuriken Tierra
+function	script	F_shuriken_tierra	{
+bonus bAtkEle,Ele_Earth;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+skill 91,3;
+skill 90,5;
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;};};
+return;
+}
+
+
+
+
+//Shuriken Fuego
+function	script	F_shuriken_fuego	{
+bonus bAtkEle,Ele_Fire;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;};};
+return;
+}
+
+
+
+//Shuriken Viento
+function	script	F_shuriken_viento	{
+bonus bAtkEle,Ele_Wind;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;};};
+return;
+}
+
+
+
+//Shuriken Holy
+function	script	F_shuriken_holy	{
+bonus bAtkEle,Ele_Holy;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+bonus2 bSkillAtk,544,50;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+skill 545,7;
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;};};
+return;
+}
+
+
+
+//Shuriken Shadow
+function	script	F_shuriken_shadow	{
+bonus bAtkEle,Ele_Dark;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+bonus2 bSkillAtk,544,50;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+skill 340,7;
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;};};
+return;
+}
+
+
+
+
+//Shuriken Undead
+function	script	F_shuriken_undead	{
+bonus bAtkEle,Ele_Undead;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+skill 400,5;
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;};};
+return;
+}
+
+
+
+
+//Shuriken Ghost
+function	script	F_shuriken_ghost	{
+bonus bAtkEle,Ele_Ghost;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+skill 13,7;
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;};};
+return;
+}
+
+
+
+
+//Shuriken Poison
+function	script	F_shuriken_poison	{
+bonus bAtkEle,Ele_Poison;
+bonus bMaxHPrate,15;
+bonus bAspdRate,readparam(bDex)/2;
+skill 51,5;
+skill 213,5;
+skill 225,10;
+skill 475,1;
+if(ninjafisico==1){
+skill 406,8;
+bonus bDelayRate,-10;
+bonus bBaseAtk,400;
+bonus bAtkRate,80;
+bonus bHit,200;
+bonus2 bSkillAtk,523,50;
+bonus2 bSkillAtk,524,20;
+bonus2 bSkillAtk,525,10;
+bonus2 bSkillAtk,526,200;
+bonus2 bSkillAtk,530,10;
+bonus2 bSkillAtk,544,50;
+bonus2 bSkillAtk,528,250;
+bonus4 bAutoSpellOnSkill,524,524,5,150;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bAtkRate,10;bonus2 bSkillAtk,523,20;bonus2 bSkillAtk,524,20;bonus2 bSkillAtk,525,20;bonus2 bSkillAtk,526,20;};};
+if(ninjamagico==1){
+skill 547,7;
+bonus bAspdRate,100;
+bonus bMatkRate,40;
+bonus2 bMagicAddRace,RC_DemiHuman,10;
+bonus2 bSkillAtk,539,100;
+bonus2 bSkillAtk,537,10;
+bonus2 bSkillAtk,534,10;
+bonus2 bSkillAtk,535,500;
+bonus2 bSkillAtk,536,100;
+bonus2 bSkillAtk,541,100;
+if(isequipped(18209)|| isequipped(18208)){bonus bMaxHpRate,10;bonus bMatkRate,10;bonus2 bSkillAtk,534,10;bonus2 bSkillAtk,537,10;bonus2 bSkillAtk,540,10;};};
+return;
+}
+
+
+
+//6@tower.gat,137,76,6	duplicate(Build Shurikens)	Build Shurikens#1	747

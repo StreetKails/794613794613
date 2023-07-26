@@ -1,0 +1,228 @@
+//Guitarra Neutral
+function	script	F_guitarra_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnstripableWeapon,0;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 124,1;
+skill 328,10;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+bonus5 bAutoSpell,115,5,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(19160)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;};
+return;
+}
+
+
+
+//Guitarra Tierra
+function	script	F_guitarra_tierra	{
+bonus bAtkEle,Ele_Earth;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 124,1;
+skill 328,10;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+//bonus5 bAutoSpell,342,1,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(19163)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;}
+return;
+}
+
+
+
+//Guitarra Fuego
+function	script	F_guitarra_fuego	{
+bonus bAtkEle,Ele_Fire;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 124,1;
+skill 328,10;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+bonus5 bAutoSpell,216,5,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(19161)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;}
+return;
+}
+
+
+
+//Guitarra Agua
+function	script	F_guitarra_agua	{
+bonus bAtkEle,Ele_Water;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 124,1;
+skill 328,10;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+bonus5 bAutoSpell,30,5,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(19164)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;}
+return;
+}
+
+
+
+//Guitarra Shadow
+function	script	F_guitarra_shadow	{
+bonus bAtkEle,Ele_Dark;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 124,1;
+skill 328,10;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+bonus5 bAutoSpell,118,1,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(19166)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;}
+return;
+}
+
+
+
+//Guitarra Viento
+function	script	F_guitarra_viento	{
+bonus bAtkEle,Ele_Wind;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 124,1;
+skill 328,10;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+bonus5 bAutoSpell,118,1,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(19162)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;}
+return;
+}
+
+
+
+//Guitarra Holy
+function	script	F_guitarra_holy	{
+bonus bAtkEle,Ele_Holy;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 124,1;
+skill 328,10;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+bonus5 bAutoSpell,489,3,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(19169)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;}
+return;
+}
+
+
+
+//Guitarra Ghost
+function	script	F_guitarra_ghost	{
+bonus bAtkEle,Ele_Ghost;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 328,10;
+skill 124,1;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+bonus5 bAutoSpell,289,1,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON,1;
+if(isequipped(19165)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;}
+return;
+}
+
+
+
+//Guitarra Undead
+function	script	F_guitarra_undead	{
+bonus bAtkEle,Ele_Undead;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 328,10;
+skill 124,1;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+bonus5 bAutoSpell,489,3,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(19167)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;}
+return;
+}
+
+
+
+//Guitarra Poison
+function	script	F_guitarra_poison	{
+bonus bAtkEle,Ele_Poison;
+bonus bPerfectHitAddRate,10;
+bonus bAtkRange,3;
+skill 328,10;
+skill 124,1;
+bonus bAgi,readparam(bDex)/4;
+bonus bHit,50;
+bonus bAtkRate,50;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bSkillHeal,322,4000;
+bonus2 bSkillAtk,394,60;
+bonus2 bSkillAtk,46,-30;
+bonus4 bAutoSpellOnSkill,394,394,3,150;
+bonus5 bAutoSpell,513,1,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(19168)) { bonus2 bAddRace,RC_NonBoss,20;};
+if(isequipped(18204)|| isequipped(18208)){bonus bMaxHpRate,10; bonus bAtkRange,3; bonus bDef,5; bonus bMdef,5; bonus bSpeedRate,15; bonus2 bSkillAtk,394,10; bonus bSPDrainValue,10;}
+return;
+}

@@ -1,0 +1,416 @@
+prontera,141,169,5	script	Emperium Room	1288,{
+	if(getgmlevel() > 1) && (getgmlevel() < 98) goto L_NU;
+	if(getgmlevel() > 98) goto GM_Menu;
+	if(getgmlevel() < 98) goto L_nogm;
+	
+L_NU:
+	mes "[Emperium Room]";
+	mes "Solo un GM Admin y los users pueden usar este NPC";
+	mes "para evitar posibles problemas...";
+	close;
+	
+L_nogm:
+	if(getgmlevel() >= 98) { next; }
+	set @time, $empbrk_record;
+	set @m, @time / 60000;
+	set @time, @time - (@m * 60000);
+	set @s, @time /1000;
+	set @time, @time - (@s * 1000);
+	mes "[Emperium Room]";
+	mes "Record oficial por ^5050A0"+$empbrk_record$+"^000000";
+	mes " ^000080"+@m+"^000000min. ^000080"+@s+"^000000seg. ^000080"+@time+"^000000ms.";
+	set @time, empbrk_record;
+	set @m, @time / 60000;
+	set @time, @time - (@m * 60000);
+	set @s, @time /1000;
+	set @time, @time - (@s * 1000);
+	mes " ";
+	mes "Tu record personal";
+	mes " ^000080"+@m+"^000000min. ^000080"+@s+"^000000seg. ^000080"+@time+"^000000ms.";
+	menu "Practicar",-,"Resetear mi record",L_resc,"Salir",L_exit;
+	next;
+	cleararray .arena$[0],"",4;
+	mes "[Emperium Room]";
+	if (getareausers("pvp_n_4-5",94,128,105,139)) mes "Sala nº ^0000DF1 ^FF0000 Ocupada^000000";
+	else{ mes "Sala nº ^0000DF1 ^00A000 Libre^000000";  set .arena$[0],"^0000DFSala 1^000000";}
+	if (getareausers("pvp_n_4-5",60,94,71,105)) mes "Sala nº ^B05D002 ^FF0000 Ocupada^000000";
+	else{ mes "Sala nº ^B05D002 ^00A000 Libre^000000"; set .arena$[1],"^B05D00Sala 2^000000";}
+	if (getareausers("pvp_n_4-5",94,60,105,71)) mes "Sala nº ^B00FB03 ^FF0000 Ocupada^000000";
+	else{ mes "Sala nº ^90AF003 ^00A000 Libre^000000"; set .arena$[2],"^90AF00Sala 3^000000";}
+	if (getareausers("pvp_n_4-5",128,94,139,105)) mes "Sala nº ^50AF004 ^FF0000 Ocupada^000000";
+	else{ mes "Sala nº ^500F004 ^00A000 Libre^000000"; set .arena$[3],"^500F00Sala 4^000000";}
+	getmapxy(@mpempbrk$,@empbrkx,@empbrky,0,strcharinfo(0));
+	switch (select(.arena$[0],.arena$[1],.arena$[2],.arena$[3],"Salir")) {
+
+case 1:
+	if (getareausers("pvp_n_4-5",94,128,105,139) == 1) { mes "Lo siento, Sala nº ^0000DF1 ^FF0000 Ocupada^000000"; close; } else
+	if (getareausers("pvp_n_4-5",94,128,105,139) == 0) {
+	warp "pvp_n_4-5",99,128;
+	killmonster "pvp_n_4-5","EmpBrk#1::OnThisMobDeath";
+	initnpctimer "EmpBrk#1";
+	end; }
+	
+case 2:
+	if (getareausers("pvp_n_4-5",60,94,71,105) == 1) {	mes "Lo siento, Sala nº ^B05D002 ^FF0000 Ocupada^000000"; close; } else
+	if (getareausers("pvp_n_4-5",60,94,71,105) == 0) {
+	warp "pvp_n_4-5",68,99;
+	killmonster "pvp_n_4-5","EmpBrk#2::OnThisMobDeath";
+	initnpctimer "EmpBrk#2";
+	end; }
+
+case 3:
+	if (getareausers("pvp_n_4-5",94,60,105,71) == 1) {	mes "Lo siento, Sala nº ^B00FB03 ^FF0000 Ocupada^000000"; close; } else
+	if (getareausers("pvp_n_4-5",94,60,105,71) == 0) {
+	warp "pvp_n_4-5",100,68;
+	killmonster "pvp_n_4-5","EmpBrk#3::OnThisMobDeath";
+	initnpctimer "EmpBrk#3";
+	end; }
+
+case 4:
+	if (getareausers("pvp_n_4-5",128,94,139,105) == 1) { mes "Lo siento, Sala nº ^50AF004 ^FF0000 Ocupada^000000"; close; } else
+	if (getareausers("pvp_n_4-5",128,94,139,105) == 0) {
+	warp "pvp_n_4-5",130,99;
+	killmonster "pvp_n_4-5","EmpBrk#4::OnThisMobDeath";
+	initnpctimer "EmpBrk#4";
+	end; }
+
+case 5:
+	close;
+}
+
+GM_Menu:
+	if(getgmlevel() < 98) end;
+	set @time, $empbrk_record;
+	set @m, @time / 60000;
+	set @time, @time - (@m * 60000);
+	set @s, @time /1000;
+	set @time, @time - (@s * 1000);
+	mes "^FF0000[^000000Menu GM ^509050Activado^FF0000]^000000"; 
+	mes "Record oficial por ^5050A0"+$empbrk_record$+"^000000";
+	mes "^000080"+@m+"^000000minutos ^000080"+@s+"^000000segundos ^000080"+@time+"^000000milesimas";
+	mes "Que deseas hacer "+strcharinfo(0)+"?";
+	menu "Menu standar",L_nogm,"Resetear mi record",L_resc,"Resetear record oficial",L_reset,"Salir",L_exit;
+	close;
+
+L_reset:
+	next;
+	mes "^FF0000[^000000Menu GM ^509050Activado^FF0000]^000000";
+	mes "Seguro que quieres resetear el record oficial?";
+	menu "Si",-,"No",L_exit;
+	set $empbrk_record, 0;
+	set $empbrk_record$, "";
+	close;
+
+L_resc:
+	if(getgmlevel() >= 98) {
+	next;
+	mes "^FF0000[^000000Menu GM ^509050Activado^FF0000]^000000";
+	mes "Seguro que quieres resetear tu record?";
+	menu "Si",-,"No",L_exit;
+	set empbrk_record, 0;
+	close;
+	}
+	next;
+	mes "[Emperium Room]";
+	mes "Seguro que quieres resetear tu record?";
+	menu "Si",-,"No",L_exit;
+	set empbrk_record, 0;
+	close;
+	
+L_exit:
+close;	
+	
+}
+
+-	script	EmpBrk#1	-1,{
+
+OnTimer3000:
+	if (.end == 1) {	warpchar "prontera",150,172,.charid;
+	stopnpctimer;
+	set .end, 0;
+	}
+end;	
+	
+OnTimer5000:
+	set .x1,94;
+	set .y1,128;
+	set .x2,105;
+	set .y2,139;
+	set .xe,100;
+	set .ye,134;
+	
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"Preparado!",0;
+end;
+	
+OnTimer7000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"5",0;
+end;
+
+OnTimer8000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"4",0;
+end;
+
+OnTimer9000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"3",0;
+end;
+
+OnTimer10000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"2",0;
+end;
+
+OnTimer11000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"1",0;
+end;
+
+OnTimer12000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"YA!!!",0;
+monster "pvp_n_4-5",.xe,.ye,"Emperium",1288,1,"EmpBrk#1::OnThisMobDeath";
+end;
+
+OnThisMobDeath:
+	stopnpctimer "EmpBrk#1";
+	set .time, getnpctimer(0,"EmpBrk#1")/2;
+	set .time, .time - 12000;
+	if (.time < empbrk_record || empbrk_record == 0)
+	{
+		dispbottom "Nuevo Record Personal!!!";
+		set empbrk_record, .time;
+		
+	}
+	if (.time < $empbrk_record || $empbrk_record == 0)
+	{
+		dispbottom "Nuevo Record Oficial!!!";
+		announce ""+strcharinfo(0)+" ha hecho un nuevo record destruyendo el emperium!",bc_all;
+		set $empbrk_record, .time;
+		set $empbrk_record$,strcharinfo(0); 
+	}
+	set .m, .time / 60000;
+	set .time, .time - (.m * 60000);
+	set .s, .time /1000;
+	set .time, .time - (.s * 1000);
+	dispbottom "Tu tiempo fue ["+.m+"minutos "+.s+"segundos "+.time+"milesimas]";
+	set .end,1;
+	set .charid,getcharid(0);
+	initnpctimer;
+end;
+}
+
+-	script	EmpBrk#2	-1,{
+
+	
+OnTimer3000:
+	if (.end == 1) {	warpchar "prontera",150,172,.charid;
+	stopnpctimer;
+	set .end, 0;
+	}
+end;
+	
+OnTimer5000:
+	set .x1,60;
+	set .y1,94;
+	set .x2,71;
+	set .y2,105;
+	set .xe,65;
+	set .ye,99;
+	
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"Preparado!",0;
+end;
+	
+OnTimer7000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"5",0;
+end;
+
+OnTimer8000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"4",0;
+end;
+
+OnTimer9000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"3",0;
+end;
+
+OnTimer10000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"2",0;
+end;
+
+OnTimer11000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"1",0;
+end;
+
+OnTimer12000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"YA!!!",0;
+monster "pvp_n_4-5",.xe,.ye,"Emperium",1288,1,"EmpBrk#2::OnThisMobDeath";
+end;
+
+OnThisMobDeath:
+	stopnpctimer "EmpBrk#2";
+	set .time, getnpctimer(0,"EmpBrk#2")/2;
+	set .time, .time - 12000;
+	if (.time < empbrk_record || empbrk_record == 0)
+	{
+		dispbottom "Nuevo Record Personal!!!";
+		set empbrk_record, .time;
+		
+	}
+	if (.time < $empbrk_record || $empbrk_record == 0)
+	{
+		dispbottom "Nuevo Record Oficial!!!";
+		announce ""+strcharinfo(0)+" ha hecho un nuevo record destruyendo el emperium!",bc_all;
+		set $empbrk_record, .time;
+		set $empbrk_record$,strcharinfo(0); 
+	}
+	set .m, .time / 60000;
+	set .time, .time - (.m * 60000);
+	set .s, .time /1000;
+	set .time, .time - (.s * 1000);
+	dispbottom "Tu tiempo fue ["+.m+"minutos "+.s+"segundos "+.time+"milesimas]";
+	set .end,1;
+	set .charid,getcharid(0);
+	initnpctimer;
+end;
+}
+
+-	script	EmpBrk#3	-1,{
+
+OnTimer3000:
+	if (.end == 1) {	warpchar "prontera",150,172,.charid;
+	stopnpctimer;
+	set .end, 0;
+	}
+end;	
+	
+OnTimer5000:
+	set .x1,94;
+	set .y1,60;
+	set .x2,105;
+	set .y2,71;
+	set .xe,99;
+	set .ye,65;
+	
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"Preparado!",0;
+end;
+	
+OnTimer7000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"5",0;
+end;
+
+OnTimer8000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"4",0;
+end;
+
+OnTimer9000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"3",0;
+end;
+
+OnTimer10000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"2",0;
+end;
+
+OnTimer11000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"1",0;
+end;
+
+OnTimer12000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"YA!!!",0;
+monster "pvp_n_4-5",.xe,.ye,"Emperium",1288,1,"EmpBrk#3::OnThisMobDeath";
+end;
+
+OnThisMobDeath:
+	stopnpctimer "EmpBrk#3";
+	set .time, getnpctimer(0,"EmpBrk#3")/2;
+	set .time, .time - 12000;
+	if (.time < empbrk_record || empbrk_record == 0)
+	{
+		dispbottom "Nuevo Record Personal!!!";
+		set empbrk_record, .time;
+		
+	}
+	if (.time < $empbrk_record || $empbrk_record == 0)
+	{
+		dispbottom "Nuevo Record Oficial!!!";
+		announce ""+strcharinfo(0)+" ha hecho un nuevo record destruyendo el emperium!",bc_all;
+		set $empbrk_record, .time;
+		set $empbrk_record$,strcharinfo(0); 
+	}
+	set .m, .time / 60000;
+	set .time, .time - (.m * 60000);
+	set .s, .time /1000;
+	set .time, .time - (.s * 1000);
+	dispbottom "Tu tiempo fue ["+.m+"minutos "+.s+"segundos "+.time+"milesimas]";
+	set .end,1;
+	set .charid,getcharid(0);
+	initnpctimer;
+end;
+}
+
+-	script	EmpBrk#4	-1,{
+
+OnTimer3000:
+	if (.end == 1) {	warpchar "prontera",150,172,.charid;
+	stopnpctimer;
+	set .end, 0;
+	}
+end;	
+	
+OnTimer5000:
+	set .x1,128;
+	set .y1,94;
+	set .x2,139;
+	set .y2,105;
+	set .xe,134;
+	set .ye,99;
+	
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"Preparado!",0;
+end;
+	
+OnTimer7000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"5",0;
+end;
+
+OnTimer8000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"4",0;
+end;
+
+OnTimer9000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"3",0;
+end;
+
+OnTimer10000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"2",0;
+end;
+
+OnTimer11000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"1",0;
+end;
+
+OnTimer12000:
+areaannounce "pvp_n_4-5",.x1,.y1,.x2,.y2,"YA!!!",0;
+monster "pvp_n_4-5",.xe,.ye,"Emperium",1288,1,"EmpBrk#4::OnThisMobDeath";
+end;
+
+OnThisMobDeath:
+	stopnpctimer "EmpBrk#4";
+	set .time, getnpctimer(0,"EmpBrk#4")/2;
+	set .time, .time - 12000;
+	if (.time < empbrk_record || empbrk_record == 0)
+	{
+		dispbottom "Nuevo Record Personal!!!";
+		set empbrk_record, .time;
+		
+	}
+	if (.time < $empbrk_record || $empbrk_record == 0)
+	{
+		dispbottom "Nuevo Record Oficial!!!";
+		announce ""+strcharinfo(0)+" ha hecho un nuevo record destruyendo el emperium!",bc_all;
+		set $empbrk_record, .time;
+		set $empbrk_record$,strcharinfo(0); 
+	}
+	set .m, .time / 60000;
+	set .time, .time - (.m * 60000);
+	set .s, .time /1000;
+	set .time, .time - (.s * 1000);
+	dispbottom "Tu tiempo fue ["+.m+"minutos "+.s+"segundos "+.time+"milesimas]";
+	set .end,1;
+	set .charid,getcharid(0);
+	initnpctimer;
+end;
+}

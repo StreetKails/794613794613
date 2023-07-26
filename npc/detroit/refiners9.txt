@@ -1,0 +1,102 @@
+aquaf_g,66,83,4	script	Carlinho+9	784,{
+mes "^CCOOOO[Carlinho]^000000";
+mes "He controlado los rayos y relampagos a voluntad sobrevivi al Ragnarok y ahora puedo forjar tus items hasta +9 , sin averiarlos";
+next;
+
+mes "Estás interesado?";
+menu "Si, quiero refinar",L_Refine,"Que necesito?",L_Materials,"No gracias",-;
+next;
+mes "Hasta pronto, aqui estaré cuando te decidas...";
+close;
+
+L_Refine:
+if((countitem(7757) < 8) || (countitem(1030) < 20) || (countitem(7019) < 30) || (countitem(7443) < 35) || (countitem(984) < 120) || (countitem(985) < 120) || (countitem(7166) < 160) || (countitem(7321) < 180) || (countitem(7315) < 180) || (countitem(999) < 150) || (Zeny < 500000000)) goto noitems;
+mes "Ok, veo que ya tienes todo lo que te he pedido...";
+next;
+mes "Ahora, dime que item te gustaría refinar?";
+setarray .@position$[1], "Head","Body","Left hand","Right hand","Robe","Shoes","Accessory 1","Accessory 2","Head 2","Head 3";
+	set .@menu$,"";
+	for( set .@i,1; .@i <= 10; set .@i,.@i+1 )
+	{
+		if( getequipisequiped(.@i) )
+			set .@menu$, .@menu$ + .@position$[.@i] + "-" + "[" + getequipname(.@i) + "]";
+
+		set .@menu$, .@menu$ + ":";
+	}
+set .@part,select(.@menu$);
+	if(!getequipisequiped(.@part)) {
+		mes "[Carlinho]";
+		mes "Hmm, creo que no tienes";
+		mes "Items equipados que";
+		mes "se puedan refinar.";
+		emotion 6;
+		close;
+	}
+	//Check if the item is refinable...
+	if(!getequipisenableref(.@part)) {
+		mes "[Carlinho]";
+		mes "Hmm, no creo que pueda";
+		mes "refinar este tipo de item...";
+		close;
+	}
+	//Check to see if the items is already +10
+	if(getequiprefinerycnt(.@part) >= 9) {
+		mes "[Carlinho]";
+		mes "No puedo refinar más este item...";
+		mes "podría romperlo, no tengo tanto";
+		mes "poder.";
+		close;
+	}
+//Check to see if the items is over +4
+	if(getequiprefinerycnt(.@part) < 8) {
+		mes "[Carlinho]";
+		mes "Este item, aun no alcanza el +8";
+		mes "necesario, para poder trabajar";
+		mes "con él.";
+		close;
+	}
+set .@refineitemid, getequipid(.@part); // save id of the item
+set .@refinerycnt, getequiprefinerycnt(.@part); //save refinery count
+successrefitem .@part;
+Emotion e_heh;
+delitem 7757,8;
+delitem 1030,20;
+delitem 7019,30;
+delitem 7443,35;
+delitem 984,120;
+delitem 985,120;
+delitem 7166,160;
+delitem 7321,180;
+delitem 7315,180;
+delitem 999,150;
+set Zeny,Zeny-500000000;
+next;
+mes "Aqui tienes... todo ha sido un exito!";
+close;
+
+L_Materials:
+mes "^CCOOOO[Carlinho]^000000";
+mes "Bueno... tengo una lista de items que debes conseguir para que pueda trabajar en el refinamiento de tu equipo";
+next;
+mes "^CCOOOO[Carlinho]^000000";
+mes "Necesitas tener en tu inventario:";
+mes "8  ^CC0000Mithril^000000";
+mes "20  ^CC0000Tiger's Footskin^000000";
+mes "30  ^CC0000Loki's Whispers^000000";
+mes "35  ^CC0000Three-Headed Dragon's Head^000000";
+mes "120 ^CC0000Oridecon^000000";
+mes "120 ^CC0000Elunium^000000";
+mes "180 ^CC0000Crystal Fragment^000000";
+mes "180 ^CC0000Dark Crystal Fragment^000000";
+mes "150 ^CC0000Steel^000000";
+mes "160 ^CC0000Soft Silk^000000";
+mes "500 ^CC0000Millones Zeny^000000";
+close;
+
+noitems:
+next;
+mes "^CCOOOO[Carlinho]^000000";
+mes "Aun no puedo trabajar contigo, no tienes los items necesarios... vuelve cuando los tengas";
+close;
+
+}

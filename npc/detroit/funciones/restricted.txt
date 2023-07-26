@@ -1,0 +1,257 @@
+function	script	restricted_mvp_equipped	{
+	if(
+		isequipped(4441)||isequipped(4430)||isequipped(4425)||
+		isequipped(4408)||isequipped(4407)||isequipped(4403)||
+		isequipped(4399)||isequipped(4386)||isequipped(4376)||
+		isequipped(4372)||isequipped(4367)||isequipped(4365)||
+		isequipped(4363)||isequipped(4361)||isequipped(4359)||
+		isequipped(4357)||isequipped(4352)||isequipped(4342)||
+		isequipped(4330)||isequipped(4324)||isequipped(4318)||
+		isequipped(4305)||isequipped(4302)||isequipped(4276)||
+		isequipped(4263)||isequipped(4236)||isequipped(4171)||
+		isequipped(4168)||isequipped(4148)||isequipped(4147)||
+		isequipped(4146)||isequipped(4145)||isequipped(4144)||
+		isequipped(4143)||isequipped(4142)||isequipped(4137)||
+		isequipped(4135)||isequipped(4134)||isequipped(4132)||
+		isequipped(4131)||isequipped(4128)||isequipped(4123)||
+		isequipped(4121)||isequipped(9201)||isequipped(9202)||
+		isequipped(9203)||isequipped(9204)||isequipped(9205)||
+		isequipped(9206)||isequipped(4454)||isequipped(4455)||
+		isequipped(4456)||isequipped(4457)||isequipped(4458)||
+		isequipped(4459)||isequipped(4460)||isequipped(4419)||
+		isequipped(4374)||isequipped(4451)||isequipped(4462)||
+		isequipped(4463)||isequipped(4464)||isequipped(4465)||
+		isequipped(4466)
+	){
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+function	script	restricted_itemVIP_equipped	{
+	if(
+		isequipped(15119)||isequipped(15002)||isequipped(15006)||isequipped(9638)||
+		isequipped(15158)||isequipped(15159)||isequipped(15160)||isequipped(9960)||
+		isequipped(15161)||isequipped(15162)||isequipped(9824)||isequipped(15017)||
+		isequipped(15016)||isequipped(15056)||isequipped(15131)||isequipped(15018)||
+		isequipped(15020)||isequipped(9623)||isequipped(15045)||isequipped(15049)||
+		isequipped(15087)||isequipped(9801)||isequipped(15078)||isequipped(9698)||
+		isequipped(15096)||isequipped(9740)||isequipped(15097)||isequipped(15075)||
+		isequipped(15061)||isequipped(9602)||isequipped(15069)||isequipped(15136)||
+		isequipped(15211)||isequipped(15179)||isequipped(15212)||isequipped(15184)||
+		isequipped(15208)||isequipped(15187)||isequipped(15181)||isequipped(15177)||
+		isequipped(9984)||isequipped(15182)||isequipped(15203)||isequipped(15201)||
+		isequipped(15176)||isequipped(15200)||isequipped(15175)||isequipped(15137)||
+		isequipped(9967)||isequipped(15209)||isequipped(9613)||isequipped(9627)||
+		isequipped(9611)||isequipped(9994)||isequipped(9839)||isequipped(9632)||
+		isequipped(9609)||isequipped(9983)||isequipped(9650)||isequipped(15236)||
+		isequipped(10047)||isequipped(9658)||isequipped(9802)||isequipped(9659)||
+		isequipped(10049)||isequipped(9718)||isequipped(9990)||isequipped(15237)||
+		isequipped(9847)||isequipped(9848)||isequipped(9849)||isequipped(9992)||
+		isequipped(9850)||isequipped(9851)||isequipped(9628)||isequipped(9987)||
+		isequipped(9629)||isequipped(20053)||isequipped(9680)||isequipped(15143)||
+		isequipped(9835)||isequipped(9783)||isequipped(9823)||isequipped(15142)||
+		isequipped(9877)||isequipped(9879)||isequipped(15189)||isequipped(15141)||
+		isequipped(9968)||isequipped(9969)||isequipped(9970)||isequipped(15140)||
+		isequipped(9971)||isequipped(15204)||isequipped(10042)||isequipped(15139)||
+		isequipped(10051)||isequipped(10048)||isequipped(10050)||isequipped(15138)||
+		isequipped(20060)||isequipped(9901)||isequipped(9601)||isequipped(15127)||
+		isequipped(9925)||isequipped(9981)||isequipped(9855)||isequipped(5210)||
+		isequipped(10046)||isequipped(10041)||isequipped(15103)||isequipped(15112)||
+		isequipped(9920)||isequipped(9856)||isequipped(9982)||isequipped(9686)||
+		isequipped(9750)||isequipped(10043)||isequipped(15216)||isequipped(9897)||
+		isequipped(9898)||isequipped(9923)||isequipped(9959)||isequipped(9961)||
+		isequipped(9927)||isequipped(9930)||isequipped(9895)||isequipped(15223)||
+		isequipped(9691)||isequipped(15110)||isequipped(15137)||isequipped(15217)||
+		isequipped(15224)||isequipped(15238)||isequipped(15239)||isequipped(15240)||
+		isequipped(9962)||isequipped(9963)||isequipped(9964)||isequipped(9965)||
+		isequipped(9966)||isequipped(15901)||isequipped(15601)||isequipped(15602)||
+		isequipped(15603)||isequipped(15604)||isequipped(15605)||isequipped(15606)||
+		isequipped(15607)||isequipped(15608)||isequipped(15609)||isequipped(15610)||
+		isequipped(15611)||isequipped(15612)||isequipped(15613)||isequipped(15614)||
+		isequipped(15616)||isequipped(9728)||isequipped(9608)||isequipped(15232)||
+		isequipped(15263)||isequipped(15274)||isequipped(15275)||isequipped(15621)||
+		isequipped(15625)||isequipped(15626)||isequipped(15627)||isequipped(15233)||
+		isequipped(15234)||isequipped(15142)||isequipped(15617)||isequipped(15618)||
+		isequipped(15619)||isequipped(18088)||isequipped(15278)||isequipped(15279)||
+		isequipped(15280)||isequipped(15281)||isequipped(15282)||isequipped(15283)||
+		isequipped(15284)||isequipped(15285)||isequipped(15286)||isequipped(15287)||
+		isequipped(15288)||isequipped(15289)||isequipped(15290)||isequipped(15291)||
+		isequipped(15292)||isequipped(15293)||isequipped(15100)||isequipped(9928)||
+        isequipped(15202)||isequipped(15205)||isequipped(15653)||isequipped(15656)||
+        isequipped(15659)||isequipped(15665)||isequipped(15664)||isequipped(15668)||
+        isequipped(15669)||isequipped(15296)||isequipped(15297)||isequipped(15663)||
+        isequipped(15667)||isequipped(15298)||isequipped(15141)||isequipped(15299))
+		{
+		return 1;
+		}
+	
+	else {
+		return 0;
+	}
+}
+
+function	script	restricted_Item_Inicio	{
+if(
+		isequipped(18099)||isequipped(18223)||isequipped(18270)||isequipped(18039)||
+		isequipped(15262)||isequipped(15620))
+		{
+		return 1;
+		}
+	
+	else {
+		return 0;
+	}
+}
+function	script	restricted_Custom_equipped	{
+	if(
+		isequipped(9766)||isequipped(9789)||isequipped(9751)||isequipped(9775)||
+		isequipped(9772)||isequipped(9769)||isequipped(18208)||isequipped(9920)||
+		isequipped(9600)||isequipped(9985)||isequipped(9603)||isequipped(9604)||
+		isequipped(9605)||isequipped(9606)||isequipped(9607)||isequipped(9610)||
+		isequipped(9612)||isequipped(9840)||isequipped(9841)||isequipped(9842)||
+		isequipped(9843)||isequipped(9844)||isequipped(9845)||isequipped(9614)||
+		isequipped(9615)||isequipped(9616)||isequipped(9617)||isequipped(9618)||
+		isequipped(9624)||isequipped(9625)||isequipped(9630)||isequipped(9631)||
+		isequipped(9633)||isequipped(9634)||isequipped(9635)||isequipped(9636)||
+		isequipped(9637)||isequipped(9639)||isequipped(9640)||isequipped(9641)||
+		isequipped(9642)||isequipped(9643)||isequipped(9644)||isequipped(9645)||
+		isequipped(9646)||isequipped(9647)||isequipped(9648)||isequipped(9649)||
+		isequipped(9652)||isequipped(9653)||isequipped(9654)||isequipped(9619)||
+		isequipped(9655)||isequipped(9656)||isequipped(9657)||isequipped(9915)||
+		isequipped(9661)||isequipped(9662)||isequipped(9663)||isequipped(9664)||
+		isequipped(9666)||isequipped(9670)||isequipped(9671)||isequipped(9672)||
+		isequipped(9673)||isequipped(9674)||isequipped(9675)||isequipped(9677)||
+		isequipped(9678)||isequipped(9679)||isequipped(9682)||isequipped(9683)||
+		isequipped(9684)||isequipped(9685)||isequipped(9687)||isequipped(5152)||
+		isequipped(9688)||isequipped(9689)||isequipped(9691)||isequipped(9693)||
+		isequipped(9694)||isequipped(9695)||isequipped(9696)||isequipped(9697)||
+		isequipped(9699)||isequipped(9700)||isequipped(9701)||isequipped(9828)||
+		isequipped(9703)||isequipped(9704)||isequipped(9705)||isequipped(9857)||
+		isequipped(9706)||isequipped(9708)||isequipped(9709)||isequipped(9784)||
+		isequipped(9710)||isequipped(9711)||isequipped(9712)||isequipped(9713)||
+		isequipped(9714)||isequipped(9715)||isequipped(9716)||isequipped(9717)||
+		isequipped(9719)||isequipped(9720)||isequipped(9721)||isequipped(9722)||
+		isequipped(9723)||isequipped(9724)||isequipped(9725)||isequipped(9726)||
+		isequipped(9727)||isequipped(9867)||isequipped(9859)||isequipped(9806)||
+		isequipped(9771)||isequipped(9986)||isequipped(9988)||isequipped(9989)||
+		isequipped(9785)||isequipped(9683)||isequipped(9861)||isequipped(9778)||
+		isequipped(9873)||isequipped(9741)||isequipped(9872)||isequipped(9776)||
+		isequipped(9870)||isequipped(9878)||isequipped(9826)||isequipped(9871)||
+		isequipped(9881)||isequipped(9813)||isequipped(9858)||isequipped(9863)||
+		isequipped(9966)||isequipped(9777)||isequipped(9883)||isequipped(9862)||
+		isequipped(9707)||isequipped(9742)||isequipped(9818)||isequipped(9836)||
+		isequipped(9752)||isequipped(9692)||isequipped(9702)||isequipped(16001)||
+		isequipped(16004)||isequipped(16005)||isequipped(16006)||isequipped(16007)||
+		isequipped(16008)||isequipped(16009)||isequipped(16011)||isequipped(16012)||
+		isequipped(16013)||isequipped(16014)||isequipped(16015)||isequipped(16016)||
+		isequipped(16017)||isequipped(16018)||isequipped(16019)||isequipped(16021)||
+		isequipped(16022)||isequipped(16023)||isequipped(16024)||isequipped(16025)||
+		isequipped(16026)||isequipped(16027)||isequipped(16028)||isequipped(16029)||
+		isequipped(16031)||isequipped(16032)||isequipped(16033)||isequipped(16034)||
+		isequipped(16035)||isequipped(16036)||isequipped(16037)||isequipped(16050)||
+		isequipped(16060)||isequipped(16038)||isequipped(16039)||isequipped(16040)||
+		isequipped(20014)||isequipped(20015)||isequipped(16041)||isequipped(16042)||
+		isequipped(16043)||isequipped(16044)||isequipped(16045)||isequipped(16046)||
+		isequipped(16047)||isequipped(16048)||isequipped(16049)||isequipped(16051)||
+		isequipped(16052)||isequipped(16053)||isequipped(16054)||isequipped(16055)||
+		isequipped(16056)||isequipped(16057)||isequipped(16058)||isequipped(16059)||
+		isequipped(16061)||isequipped(16062)||isequipped(16063)||isequipped(16064)||
+		isequipped(16065)||isequipped(16066)||isequipped(16067)||isequipped(20010)||
+		isequipped(16068)||isequipped(16069)||isequipped(16071)||isequipped(16072)||
+		isequipped(16073)||isequipped(16074)||isequipped(16075)||isequipped(16076)||
+		isequipped(16077)||isequipped(16078)||isequipped(16079)||isequipped(16081)||
+		isequipped(16082)||isequipped(16083)||isequipped(16084)||isequipped(16085)||
+		isequipped(16091)||isequipped(16092)||isequipped(16093)||isequipped(16094)||
+		isequipped(16095)||isequipped(16096)||isequipped(16097)||isequipped(16098)||
+		isequipped(16099)||isequipped(17001)||isequipped(17002)||isequipped(17003)||
+		isequipped(17004)||isequipped(17005)||isequipped(17006)||isequipped(17007)||
+		isequipped(17008)||isequipped(17009)||isequipped(17011)||isequipped(17012)||
+		isequipped(17013)||isequipped(17014)||isequipped(17015)||isequipped(17016)||
+		isequipped(17017)||isequipped(17018)||isequipped(17019)||isequipped(17021)||
+		isequipped(17022)||isequipped(19110)||isequipped(19111)||isequipped(17023)||
+		isequipped(17024)||isequipped(19112)||isequipped(19113)||isequipped(17025)||
+		isequipped(17026)||isequipped(19114)||isequipped(19115)||isequipped(17027)||
+		isequipped(17028)||isequipped(19116)||isequipped(19117)||isequipped(20011)||
+		isequipped(17029)||isequipped(17030)||isequipped(19118)||isequipped(19119)||
+		isequipped(17031)||isequipped(17032)||isequipped(17033)||isequipped(17034)||
+		isequipped(17035)||isequipped(17036)||isequipped(17037)||isequipped(17038)||
+		isequipped(17039)||isequipped(19120)||isequipped(17041)||isequipped(17042)||
+		isequipped(17043)||isequipped(17044)||isequipped(17045)||isequipped(17049)||
+		isequipped(18231)||isequipped(18002)||isequipped(18003)||isequipped(18004)||
+		isequipped(18005)||isequipped(18006)||isequipped(18007)||isequipped(18008)||
+		isequipped(18009)||isequipped(18010)||isequipped(18011)||isequipped(18012)||
+		isequipped(18013)||isequipped(18014)||isequipped(18015)||isequipped(18016)||
+		isequipped(18017)||isequipped(18018)||isequipped(18019)||isequipped(18020)||
+		isequipped(18021)||isequipped(18022)||isequipped(18023)||isequipped(18025)||
+		isequipped(18026)||isequipped(18027)||isequipped(18028)||isequipped(18029)||
+		isequipped(18030)||isequipped(18220)||isequipped(18221)||isequipped(18222)||
+		isequipped(20001)||isequipped(20002)||isequipped(20003)||isequipped(20004)||
+		isequipped(20005)||isequipped(20006)||isequipped(20007)||isequipped(20008)||
+		isequipped(20012)||isequipped(20013)||isequipped(16101)||isequipped(16102)||
+		isequipped(16103)||isequipped(16104)||isequipped(16105)||isequipped(16106)||
+		isequipped(16107)||isequipped(16108)||isequipped(16109)||isequipped(19121)||
+		isequipped(18031)||isequipped(18032)||isequipped(18033)||isequipped(18034)||
+		isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18051)||
+		isequipped(18053)||isequipped(18054)||isequipped(18055)||isequipped(19169)||
+		isequipped(18057)||isequipped(18058)||isequipped(18059)||isequipped(18082)||
+		isequipped(18260)||isequipped(18261)||isequipped(18262)||isequipped(18263)||
+		isequipped(18264)||isequipped(18265)||isequipped(18266)||isequipped(18267)||
+		isequipped(18268)||isequipped(18269)||isequipped(18071)||isequipped(18072)||
+		isequipped(18073)||isequipped(18074)||isequipped(18075)||isequipped(18076)||
+		isequipped(18080)||isequipped(18081)||isequipped(20014)||isequipped(20015)||
+		isequipped(18085)||isequipped(20022)||isequipped(20023)||isequipped(20026)||
+		isequipped(18200)||isequipped(18201)||isequipped(18202)||isequipped(18203)||
+		isequipped(18052)||isequipped(18204)||isequipped(18205)||isequipped(18206)||
+		isequipped(18207)||isequipped(18209)||isequipped(18210)||isequipped(18211)||
+		isequipped(18212)||isequipped(20030)||isequipped(20031)||isequipped(20032)||
+		isequipped(20033)||isequipped(20034)||isequipped(20035)||isequipped(19160)||
+		isequipped(19161)||isequipped(19162)||isequipped(19163)||isequipped(19164)||
+		isequipped(19165)||isequipped(19166)||isequipped(19167)||isequipped(19168)||
+		isequipped(18077)||isequipped(19170)||isequipped(19171)||isequipped(19172)||
+		isequipped(19173)||isequipped(19174)||isequipped(19175)||isequipped(19176)||
+		isequipped(19177)||isequipped(19178)||isequipped(19179)||isequipped(19180)||
+		isequipped(19181)||isequipped(19182)||isequipped(19183)||isequipped(19184)||
+		isequipped(19185)||isequipped(19186)||isequipped(19187)||isequipped(19188)||
+		isequipped(19189)||isequipped(16110)||isequipped(16111)||isequipped(16112)||
+		isequipped(16113)||isequipped(16114)||isequipped(16115)||isequipped(16116)||
+		isequipped(16117)||isequipped(16118)||isequipped(20119)||isequipped(15101)||
+		isequipped(18001)||isequipped(18232)||isequipped(18233)||isequipped(18234)||
+		isequipped(18235)||isequipped(18236)||isequipped(18237)||isequipped(18238)||
+		isequipped(9736)||isequipped(9731)||isequipped(9732)||isequipped(9733)||
+		isequipped(9734)||isequipped(9735)||isequipped(9738)||isequipped(9730)||
+		isequipped(9979)||isequipped(15225)||isequipped(15226)||isequipped(15227)||
+		isequipped(15228)||isequipped(15229)||isequipped(15230)||isequipped(15231)||
+		isequipped(15241)||isequipped(15242)||isequipped(15243)||isequipped(15244)||
+		isequipped(15245)||isequipped(15250)||isequipped(15251)||isequipped(15252)||
+		isequipped(15253)||isequipped(15254)||isequipped(15255)||isequipped(15256)||
+		isequipped(15257)||isequipped(15615)||isequipped(9935)||isequipped(9933)||
+		isequipped(9937)||isequipped(18089)||isequipped(18090)||isequipped(18091)||
+		isequipped(18092)||isequipped(18093)||isequipped(18094)||isequipped(18095)||
+		isequipped(18096)||isequipped(18097)||isequipped(18098)||isequipped(16002)||
+		isequipped(16003)||isequipped(18239)||isequipped(18240)||isequipped(19158)||
+		isequipped(20009)||isequipped(18056)||isequipped(18006)||isequipped(9885)||
+		isequipped(9899)||isequipped(9940)||isequipped(9911)||isequipped(9934)||
+		isequipped(9917)||isequipped(9918)||isequipped(9786)||isequipped(9980)||
+		isequipped(9903)||isequipped(9904)||isequipped(9905)||isequipped(9906)||
+		isequipped(9907)||isequipped(9908)||isequipped(9909)||isequipped(18099)||
+		isequipped(18223)||isequipped(18270)||isequipped(18039)||isequipped(15262)||
+		isequipped(15620)||isequipped(15637)||isequipped(15638)||isequipped(15639)||
+		isequipped(15640)||isequipped(15294)||isequipped(15295)||isequipped(15641)||
+		isequipped(15642)||isequipped(9737)||isequipped(9739)||isequipped(15643)||
+		isequipped(15644)||isequipped(15645)||isequipped(15646)||isequipped(15647)||
+		isequipped(15270)||isequipped(15259)||isequipped(15273)||isequipped(15260)||
+		isequipped(15662)||isequipped(15655)||isequipped(15650)||isequipped(15648)||
+		isequipped(15652)||isequipped(15649)||isequipped(5300)||isequipped(15651)||
+		isequipped(15660)||isequipped(15666)||isequipped(15658)||isequipped(10044)||
+		isequipped(5136)||isequipped(5204)||isequipped(5381)||isequipped(5811)||
+		isequipped(15670)||isequipped(15654)||isequipped(15657)
+		){
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}

@@ -1,0 +1,288 @@
+//2hEspada Neutral
+function	script	F_2hespada_neutral	{
+bonus2 bHPDrainRate,-100,-50;
+bonus bPerfectHitAddRate,20;
+bonus bAtkRange,7;
+bonus bBaseAtk,600;
+bonus bAtkRate,70;
+bonus bAspdRate,50;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,25;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}
+
+
+//2hEspada Fuego
+function	script	F_2hespada_fuego	{
+bonus bAtkEle,Ele_Fire;
+bonus bPerfectHitAddRate,20;
+bonus bAtkRange,4;
+bonus bAtkRate,90;
+bonus bBaseAtk,600;
+bonus bAspdRate,50;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,25;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}
+
+
+//2hEspada Agua
+function	script	F_2hespada_agua	{
+
+bonus bAtkEle,Ele_Water;
+bonus bFlee2,20;
+bonus bPerfectHitAddRate,20;
+bonus bAtkRange,4;
+bonus bAtkRate,70;
+bonus bBaseAtk,600;
+bonus bAspdRate,50;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,25;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}
+
+
+//2hEspada Viento
+function	script	F_2hespada_viento	{
+
+bonus bAtkEle,Ele_Wind;
+bonus bPerfectHitAddRate,20;
+bonus bAtkRange,7;
+bonus bAtkRate,70;
+bonus bBaseAtk,600;
+bonus bAspdRate,50;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,25;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}
+
+
+//2hEspada Tierra
+function	script	F_2hespada_tierra	{
+
+bonus bAtkEle,Ele_Earth;
+bonus bMaxHPrate,20;
+bonus bPerfectHitAddRate,20;
+bonus bAtkRange,4;
+bonus bBaseAtk,600;
+bonus bAtkRate,70;
+bonus bAspdRate,50;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,25;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}
+
+
+//2hEspada Holy
+function	script	F_2hespada_holy	{
+
+bonus bAtkEle,Ele_Holy;
+bonus bPerfectHitAddRate,20;
+bonus bAtkRange,4;
+bonus bAtkRate,70;
+bonus bBaseAtk,600;
+bonus bAspdRate,50;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,40;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}
+
+
+//2hEspada Shadow
+function	script	F_2hespada_shadow	{
+
+bonus bAtkEle,Ele_Dark;
+bonus2 bSPVanishRate,100,5;
+bonus bPerfectHitAddRate,20;
+bonus bAtkRange,4;
+bonus bAtkRate,70;
+bonus bBaseAtk,600;
+bonus bAspdRate,50;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,25;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}
+
+
+//2hEspada Ghost
+function	script	F_2hespada_ghost	{
+bonus bAtkEle,Ele_Ghost;
+bonus3 bMagicDamageReturn2,100,1,10;bonus3 bMagicDamageReturn2,100,0,10;
+bonus bPerfectHitAddRate,20;
+bonus bAtkRange,4;
+bonus bAtkRate,70;
+bonus bAspdRate,50;
+bonus bBaseAtk,600;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,25;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}
+
+
+//2hEspada Undead
+function	script	F_2hespada_undead	{;
+bonus bAtkEle,Ele_Undead;
+bonus bPerfectHitAddRate,20;
+bonus bAtkRange,4;
+bonus bAtkRate,70;
+bonus bAspdRate,50;
+bonus bBaseAtk,600;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,40;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}
+
+
+//2hEspada Poison
+function	script	F_2hespada_poison	{
+bonus bAtkEle,Ele_Poison;
+bonus bPerfectHitAddRate,20;
+bonus bShortWeaponDamageReturn,20;
+bonus bAtkRange,4;
+bonus bAtkRate,70;
+bonus bAspdRate,50;
+bonus bBaseAtk,600;
+bonus bHit,150;
+bonus bDef,20;
+bonus bDoubleRate,50;
+skill 1001,1;
+skill 263,10;
+skill 406,8;
+bonus2 bSkillAtk,62,-30;
+bonus2 bSkillAtk,5,30;
+bonus2 bSkillAtk,1001,30;
+bonus2 bSkillAtk,406,40;
+bonus2 bSkillAtk,398,40;
+bonus2 bSkillAtk,7,60;
+bonus2 bHPDrainRate,50,50;
+bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,25;
+bonus2 bSubEle,Ele_Neutral,10;bonus2 bSubEle,Ele_Poison,10;bonus2 bSubEle,Ele_Holy,10;bonus2 bSubEle,Ele_Dark,10;bonus2 bSubEle,Ele_Fire,10;bonus2 bSubEle,Ele_Water,10;bonus2 bSubEle,Ele_Wind,10;bonus2 bSubEle,Ele_Earth,10;bonus2 bSubEle,Ele_Undead,10;bonus2 bSubEle,Ele_Ghost,10;
+if(isequipped(18201)|| isequipped(18208)){bonus bAgi,readparam(bDex)/3;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;bonus2 bSubRace,RC_DemiHuman,10;}
+return;
+}

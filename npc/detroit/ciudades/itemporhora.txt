@@ -1,0 +1,16 @@
+-	script	CashLogin	-1,{
+OnPCLoginEvent:
+	addtimer .Tiempo,"CashLogin::OnTimeOut";
+	end;
+
+OnTimeOut:
+	if(checkvending() || checkChatting()) end; //Esto no permite que los usuarios ganen Cash Points si estan Vendiendo o tengan abierta una ventana de Chat.
+	getitem 7539,5 ;
+	dispbottom "Ganas 5 Poring Coin, por estar en linea.";
+	addtimer .Tiempo,"CashLogin::OnTimeOut";
+	end;
+
+OnInit:
+	set .Tiempo,1800000; //1000 == 1 Hora, 1000 == 1 Segundo, por si queres cambiar el tiempo.3600000
+	end;
+}

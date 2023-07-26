@@ -1,0 +1,104 @@
+//===== eAthena Script =======================================================================
+//= Kiara 
+//===== By: =================================================================================
+//= Draxter (Emperium RO)
+//===== Versión =========================================
+//= 1.0.0
+//===== Compatible: =========================================
+//= Cualquier versión
+//===== Descripción: =============================================
+//= Juego simple de tijera,piedra y papel
+//= PREMIOS DE TICKETS
+//= Los tickets seran cambiados por otro NPC de premios(proximamente...SOLO FORMATO)
+//==========================================================================================
+prontera.gat,164,164,5	script	Kiara	96,{
+	mes "[^0065DFKiara^000000]";
+	mes "Hola Damas y Caballeros, Soy una experta en el arte de…. ";
+	next;
+	mes "[^0065DFKiara^000000]";
+	mes "JUEGO Piedra, Papel o Tijera";
+	next;
+	mes "[^0065DFKiara^000000]";
+	mes "Hey, ^5555FF" + strcharinfo(0) + "^000000!";
+	mes "Para hacerlo mas interesante apostaremos 1M de Zenys";
+	next;
+	mes "¿Te atreverias a desafiarme?";
+	menu "Yes",-,"No",no;
+	if(Zeny < 1000000) goto nozeny;
+mon1:
+	mes "[^0065DFKiara^000000]";
+	mes "Entonces has decidido desafiar a una Chica PRO";
+	if(Zeny < 1000000) goto nozeny;
+	set @roc$, 0;
+	set @rock, 0;
+	next;
+roll:
+	set @rock, rand(3);
+	if(@rock==0) set @roc$, "Tijera";
+	if(@rock==1) set @roc$, "Piedra";
+	if(@rock==2) set @roc$, "Papel";
+	if(@rock==3) goto roll;
+	mes "[^0065DFKiara^000000]"; 
+	mes "Ahora colocate en tu puesto";
+	next;
+	mes "(La emoción de ganarle a una PRO te lleva a pensar...)";
+	menu "Tijera",tijera,"Piedra",piedra,"Papel",papel;
+tijera:
+	mes "[^0065DFKiara^000000]";
+	mes "Piedra, Papel o Tijera!";
+	next;
+	mes "[^0065DFKiara^000000]";
+	mes ""+@roc$+"!!";
+	if(@rock!=0) goto lose;
+	mes "Elegiste Tijera, Ahh mira has ganado a una profesional!!";
+	next;
+	mes "[^0065DFKiara^000000]";
+	mes "Has ganado 2 Millones de Zenys!!";
+	set Zeny,Zeny+2000000;
+	mes "¿Quieres repetir?";
+	menu "Ok",mon1,"No",no;
+piedra:
+	mes "[^0065DFKiara^000000]";
+	mes "Piedra, Papel o Tijera!";
+	next;
+	mes "[Kiara]";
+	mes ""+@roc$+"!!";
+	if(@rock!=1) goto lose;
+	mes "Elegiste Piedra, Ahh mira has ganado a una profesional!!";
+	next;
+	mes "[^0065DFKiara^000000]";
+	mes "Has ganado 2 Millones de Zenys!!";
+	set Zeny,Zeny+2000000;
+	mes "¿Quieres repetir?";
+	menu "Ok",mon1,"No",no;
+papel:
+	mes "[^0065DFKiara^000000]";
+	mes "Piedra, Papel o Tijera!";
+	next;
+	mes "[^0065DFKiara^000000]";
+	mes ""+@roc$+"!!";
+	if(@rock!=2) goto lose;
+	mes "Elegiste Papel, Ahh mira has ganado a una profesional!!";
+	next;
+	mes "[^0065DFKiara^000000]";
+	mes "Has ganado 2 Millones de Zenys!!";
+	set Zeny,Zeny+2000000;
+	mes "¿Quieres repetir?";
+	menu "Ok",mon1,"No",no;
+no:
+	mes "[^0065DFKiara^000000]";
+	mes "Hahaha, Creo que ya sabes lo que es enfrentarse a un PRO como yo,HUYE!!";
+	close;
+nozeny:
+	mes "No tienes el zeny suficiente";
+	close;
+lose:
+	mes "[^0065DFKiara^000000]";
+	mes "Muy mal! Perdiste contra mí";
+	mes "Pierdes 1 Millon de Zenys!!";
+	set Zeny,Zeny-1000000;
+	close;
+}
+
+
+//6@tower.gat,162,142,3	duplicate(Kiara)	Kiara#1	96

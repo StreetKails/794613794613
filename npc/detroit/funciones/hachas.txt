@@ -1,0 +1,464 @@
+//Hacha Neutral
+function	script	F_hacha_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,485,-30;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+bonus bInt,20;
+bonus bHit,100;
+bonus5 bAutoSpell,490,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,40;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}
+
+//Hacha Viento
+function	script	F_hacha_viento	{
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bAtkEle,Ele_Wind;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus5 bAutoSpell,118,1,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+bonus2 bSkillAtk,485,-30;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+skill 20,7;
+bonus bInt,20;
+bonus bHit,100;
+bonus bLongAtkDef,20;
+bonus5 bAutoSpell,20,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,20;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}
+
+//Hacha Fuego
+function	script	F_hacha_fuego	{
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bAtkEle,Ele_Fire;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus2 bAddRace,RC_NonBoss,10;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+bonus2 bSkillAtk,485,-30;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+skill 19,7;
+bonus bInt,20;
+bonus bHit,100;
+bonus bMaxHPrate,20;
+bonus5 bAutoSpell,19,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,20;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}
+
+//Hacha Tierra
+function	script	F_hacha_tierra	{
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bAtkEle,Ele_Earth;
+skill 51,5;
+skill 213,5;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+bonus2 bSubSize,1,10;bonus2 bSubSize,2,10;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+bonus2 bSkillAtk,485,-30;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+skill 90,5;
+skill 91,5;
+bonus bInt,20;
+bonus bHit,100;
+bonus5 bAutoSpell,90,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,20;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}
+
+//Hacha Agua
+function	script	F_hacha_agua	{
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bAtkEle,Ele_Water;
+skill 358,1;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+   // Alas de temporada con bonus de Goddess.
+  ( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )) {bonus2 bHPDrainRate,-100,-50;};
+bonus2 bHPDrainRate,100,50;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+bonus2 bSkillAtk,485,-30;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+skill 14,7;
+bonus bInt,20;
+bonus bHit,100;
+bonus3 bMagicHpDrainRateRace,RC_DemiHuman,50,40;
+bonus5 bAutoSpell,14,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,20;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}
+
+//Hacha Ghost
+function	script	F_hacha_ghost	{
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bAtkEle,Ele_Ghost;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+bonus bMagicAtkDef,15;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+bonus2 bSkillAtk,485,-30;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bNearAtkDef,10;
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+skill 13,10;
+bonus bInt,20;
+bonus bHit,100;
+bonus5 bAutoSpell,13,10,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,20;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}
+
+//Hacha Shadow
+function	script	F_hacha_shadow	{
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bAtkEle,Ele_Dark;
+bonus5 bAutoSpell,342,1,50,BF_SHORT+BF_LONG+BF_WEAPON,1;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+bonus2 bSkillAtk,485,-30;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+skill 340,10;
+bonus bInt,20;
+bonus bHit,100;
+bonus5 bAutoSpell,340,10,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,20;
+bonus3 bMagicDamageReturn2,100,1,10;
+bonus3 bMagicDamageReturn2,100,0,10;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}
+
+//Hacha Holy
+function	script	F_hacha_holy	{
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bAtkEle,Ele_Holy;
+skill 78,1;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+bonus bMagicAtkDef,15;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+bonus2 bSkillAtk,485,-30;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+skill 545,7;
+bonus bInt,20;
+bonus bHit,100;
+bonus5 bAutoSpell,545,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,20;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}
+
+//Hacha Undead
+function	script	F_hacha_undead	{
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bAtkEle,Ele_Undead;
+bonus2 bAddEff,Eff_Curse,500;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+bonus2 bSkillAtk,485,-30;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+skill 400,5;
+bonus bFlee2,20;
+bonus bInt,20;
+bonus bHit,100;
+bonus5 bAutoSpell,400,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,20;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}
+
+//Hacha Poison
+function	script	F_hacha_poison	{
+bonus bStr,10;
+bonus bInt,10;
+bonus bHit,50;
+skill 459,1;
+skill 1001,1;
+skill 337,1;
+bonus bAtkRange,1;
+bonus bAspdRate,30;
+bonus bAtkEle,Ele_Poison;
+bonus bMatkRate,30;
+//Whitesmith
+if(Class==Job_Blacksmith||Class==Job_Whitesmith) {
+//bonus2 bAddRace,RC_Boss,-80;
+bonus bSpeedAddRate,10;
+bonus bAtkRate,30;
+skill 139,7;bonus2 bSkillAtk,52,30;
+bonus4 bAutoSpellOnSkill,485,485,5,150;
+bonus bStr,20;
+bonus bHit,100;
+bonus2 bAddSkillBlow,337,1;
+bonus2 bSkillAtk,337,30;
+bonus2 bSkillAtk,42,50;
+bonus2 bSkillAtk,485,-30;
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,70;bonus bVit,readparam(bStr)/10;bonus2 bSubEle,Ele_Fire,20;};};
+//Creator
+if(Class==Job_Alchemist||Class==Job_Creator||Class==4041) {
+bonus bMatkRate,50;
+bonus bDelayRate,-10;
+bonus bAspdRate,10;
+bonus bSpeedAddRate,10;
+skill 547,7;
+bonus bInt,20;
+bonus bHit,100;
+bonus5 bAutoSpell,547,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bskillAtk,230,50;
+bonus2 bSkillHeal,231,-40;
+bonus2 bSkillHeal,231,-30;
+bonus2 bSkillAtk,490,20;
+bonus bShortWeaponDamageReturn,10;
+if(readparam(bInt)>=255){bonus2 bSkillAtk,230,400;};
+if(isequipped(18205)|| isequipped(18208)){bonus bAspdRate,15;bonus bMaxHPrate,10;bonus bMatkRate,15;bonus2 bSkillHeal,231,-10;bonus2 bSkillHeal,478,-10;bonus bDelayRate,-10;};};
+return;
+}

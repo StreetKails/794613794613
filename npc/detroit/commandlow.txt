@@ -1,0 +1,213 @@
+-	script	npc_example1	-1,{
+	OnCommand1: //Add event on the start of your npc
+
+	function listabonus;
+	function	validarBonus;
+
+	//Limpiar variables anteriores
+	//2009
+	//set allstats,0; set atk,0; set matk,0; set flee,0; set perfectflee,0; set hit,0; set perfecthit,0; set critico,0; set triple,0; set mind,0;
+	//2010
+	//set nallstats,0; set natk,0; set nmatk,0;set nflee,0;set nperfectflee,0;	set nhit,0;	set nperfecthit,0; set ncritico,0; set ntriple,0; 
+	//set nmind,0; set njupitel,0; set nrango,0; set ndmgdemi,0; set nredumagia,0; set ngemas,0; set nhpsp,0; set ndefmdef,0; set ndac,0;
+	
+	mes "^FF0000[Ver Bonus]^000000";
+	mes "Que tal ! Quieres ver tus bonus de tu ^FF0000Low^000000  ?";
+	mes "Recuerda ir a cambiar tus bonus en ^FF0000@bonus^000000 !";
+
+	next;
+	mes "^FF0000[Ver Bonus]^000000";
+	//se identifica que tipo de mid es 2009, 2010 o 2011
+	if(getequipid(EQI_HEAD_MID)==9897 || getequipid(EQI_HEAD_MID)==9898 || getequipid(EQI_HEAD_MID)==9923 || getequipid(EQI_HEAD_MID)==9959 || getequipid(EQI_HEAD_MID)==9961 || getequipid(EQI_HEAD_MID)==9966 || getequipid(EQI_HEAD_MID)==9965 || getequipid(EQI_HEAD_MID)==9963 || getequipid(EQI_HEAD_MID)==9960 || getequipid(EQI_HEAD_MID)==9962 || getequipid(EQI_HEAD_MID)==15901|| getequipid(EQI_HEAD_MID)==15281){ // 2014		set @typemid,2014;
+		set @bonusDisp,4;
+		set @listabonus,21;
+	}
+	else if(getequipid(EQI_HEAD_LOW)==30910	|| getequipid(EQI_HEAD_LOW)==30911 || getequipid(EQI_HEAD_LOW)==30912 || getequipid(EQI_HEAD_LOW)==30913 || getequipid(EQI_HEAD_LOW)==30914 || getequipid(EQI_HEAD_LOW)==20833 || getequipid(EQI_HEAD_LOW)==20834 || getequipid(EQI_HEAD_LOW)==20835 || getequipid(EQI_HEAD_LOW)==20836 || getequipid(EQI_HEAD_LOW)==20837 || getequipid(EQI_HEAD_LOW)==20838 || getequipid(EQI_HEAD_LOW)==20839 || getequipid(EQI_HEAD_LOW)==31009 || getequipid(EQI_HEAD_LOW)==31010 || getequipid(EQI_HEAD_LOW)==31011 || getequipid(EQI_HEAD_LOW)==31012 || getequipid(EQI_HEAD_LOW)==31013 || getequipid(EQI_HEAD_LOW)==31014 || getequipid(EQI_HEAD_LOW)==31015 || getequipid(EQI_HEAD_LOW)==31016 || getequipid(EQI_HEAD_LOW)==31017 || getequipid(EQI_HEAD_LOW)==31018 || getequipid(EQI_HEAD_LOW)==32625 || getequipid(EQI_HEAD_LOW)==32626 || getequipid(EQI_HEAD_LOW)==32627 || getequipid(EQI_HEAD_LOW)==32628 || getequipid(EQI_HEAD_LOW)==32629 || getequipid(EQI_HEAD_LOW)==32630 || getequipid(EQI_HEAD_LOW)==30667 || getequipid(EQI_HEAD_LOW)==33371 || getequipid(EQI_HEAD_LOW)==33372 || getequipid(EQI_HEAD_LOW)==33373 || getequipid(EQI_HEAD_LOW)==33374 || getequipid(EQI_HEAD_LOW)==33375 || getequipid(EQI_HEAD_LOW)==33376 || getequipid(EQI_HEAD_LOW)==33377 || getequipid(EQI_HEAD_LOW)==33378 || getequipid(EQI_HEAD_LOW)==33379 || getequipid(EQI_HEAD_LOW)==33380 || getequipid(EQI_HEAD_LOW)==33381 || getequipid(EQI_HEAD_LOW)==33382 || getequipid(EQI_HEAD_LOW)==33383 || getequipid(EQI_HEAD_LOW)==33384 || getequipid(EQI_HEAD_LOW)==33385 || getequipid(EQI_HEAD_LOW)==33386 || getequipid(EQI_HEAD_LOW)==33387 || getequipid(EQI_HEAD_LOW)==33388 || getequipid(EQI_HEAD_LOW)==32925 || getequipid(EQI_HEAD_LOW)==32927 || getequipid(EQI_HEAD_LOW)==32928 || getequipid(EQI_HEAD_LOW)==32929 || getequipid(EQI_HEAD_LOW)==33003 || getequipid(EQI_HEAD_LOW)==33014 || getequipid(EQI_HEAD_LOW)==33352 || getequipid(EQI_HEAD_LOW)==32673 || getequipid(EQI_HEAD_LOW)==32674 || getequipid(EQI_HEAD_LOW)==32688 || getequipid(EQI_HEAD_LOW)==30540 || getequipid(EQI_HEAD_LOW)==30541 || getequipid(EQI_HEAD_LOW)==30539 || getequipid(EQI_HEAD_LOW)==33113 || getequipid(EQI_HEAD_LOW)==33114 || getequipid(EQI_HEAD_LOW)==33115 || getequipid(EQI_HEAD_LOW)==33116 || getequipid(EQI_HEAD_LOW)==33117 || getequipid(EQI_HEAD_LOW)==33118 || getequipid(EQI_HEAD_LOW)==33269 || getequipid(EQI_HEAD_LOW)==33270 || getequipid(EQI_HEAD_LOW)==33271 || getequipid(EQI_HEAD_LOW)==33272 || getequipid(EQI_HEAD_LOW)==33273 || getequipid(EQI_HEAD_LOW)==33274 || getequipid(EQI_HEAD_LOW)==32916 || getequipid(EQI_HEAD_LOW)==32917 || getequipid(EQI_HEAD_LOW)==32918 || getequipid(EQI_HEAD_LOW)==32919 || getequipid(EQI_HEAD_LOW)==32920 || getequipid(EQI_HEAD_LOW)==32921 || getequipid(EQI_HEAD_LOW)==32922 || getequipid(EQI_HEAD_LOW)==32896 || getequipid(EQI_HEAD_LOW)==32897 || getequipid(EQI_HEAD_LOW)==32898 || getequipid(EQI_HEAD_LOW)==32899 || getequipid(EQI_HEAD_LOW)==32900 || getequipid(EQI_HEAD_LOW)==32901 || getequipid(EQI_HEAD_LOW)==32902 || getequipid(EQI_HEAD_LOW)==30667 || getequipid(EQI_HEAD_LOW)==30510 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 || getequipid(EQI_HEAD_LOW)==30907 ){
+		set @typemid,2011;
+		set @bonusDisp,3;
+		set @listabonus,10;
+	}
+	else {
+		//se verifica que tenga un regalo equipado para acceder al NPC
+		mes "^FF0000Veo que no tienes ningun item con el que trabajo^000000";
+		close;
+	}
+	
+	cleararray @bonus[0],0,4;
+	mes "Cuando cambies los stats de tu item recuerda sacartelo y ponertelo nuevamente";
+	menu "Ver bonus asignados",verbonus;
+	next;
+	mes "^FF0000[Ver Bonus]^000000";
+	mes "Ve que tienes equipado un ^B05D00"+getequipname(EQI_HEAD_LOW)+"^000000. Los bonus que puedes elegir son los siguientes:";
+	next;
+	mes "^FF0000[Ver Bonus ]^000000";
+	for(set .@j,1;.@j<=@listabonus;set .@j,.@j+1)
+		listaBonus(.@j); //Imprime los bonus que se pueden elegir
+	//seleccion de Bonus
+	set .@i,0;
+	while(.@i<@bonusDisp){
+		input @bopcion;
+		if( validarBonus(.@i) ){
+			set @bonus[.@i],@bopcion;
+			next;
+			mes "^FF0000[Sabio Ermitaño ]^000000";
+			mes "Has seleccionado:";
+			listaBonus(@bopcion);
+			next;
+			mes "^FF0000[Sabio Ermitaño ]^000000";
+			for(set .@j,1;.@j<=@listabonus;set .@j,.@j+1)
+				listaBonus(.@j);
+			set .@i,.@i+1;
+		}
+	}
+	//Se asignan los bonus a cada mid segun sea el caso
+	if(@typemid == 2009){ //Mids 2009
+		set b1Mid2009,@bonus[0];
+		set b2Mid2009,@bonus[1];
+		set b3Mid2009,@bonus[2];
+	}
+	else if(@typemid == 2010){ //Mids 2010
+		set b1Mid2010,@bonus[0];
+		set b2Mid2010,@bonus[1];
+		set b3Mid2010,@bonus[2];
+		set b4Mid2010,@bonus[3];
+	}
+	else if(@typemid == 2011){ //Mids 2011
+		set b1Mid2011,@bonus[0];
+		set b2Mid2011,@bonus[1];
+		set b3Mid2011,@bonus[2];
+		set b4Mid2011,@bonus[3];
+	}
+	else if(@typemid == 2014){ //Mids 2014
+		set b1Mid2014,@bonus[0];
+		set b2Mid2014,@bonus[1];
+		set b3Mid2014,@bonus[2];
+		set b4Mid2014,@bonus[3];
+	}
+	next;
+	mes "^FF0000[Sabio Ermitaño ]^000000";
+	mes "Ya has seleccionado todos los bonus para tu item";
+	mes "Espero y con esto hayas mejorado tu build";
+	next;
+	mes "^FF0000[Sabio Ermitaño ]^000000";
+	mes "Siempre estare aqui de tal manera que puedas cambiar los bonus cuando gustes.";
+	next;
+	mes "^FF0000[Sabio Ermitaño ]^000000";
+	mes "Ahh y recuerda quitarte y volverte a poner el item para que los nuevos bonus tomen efecto";
+	close;
+	
+verbonus:
+	next;
+	if(@typemid == 2009){ //Mid 2009
+		setarray @verbonus[0],b1Mid2009,b2Mid2009,b3Mid2009;
+	}
+	else if(@typemid == 2010){ //Mid 2010
+		setarray @verbonus[0],b1Mid2010,b2Mid2010,b3Mid2010,b4Mid2010;
+	}
+	else if(@typemid == 2011){ //Mid 2011
+		setarray @verbonus[0],b1Mid2011,b2Mid2011,b3Mid2011,b4Mid2011;
+	}
+	else if(@typemid == 2014){ //Mid 2014
+		setarray @verbonus[0],b1Mid2014,b2Mid2014,b3Mid2014,b4Mid2014;
+	}
+	mes "^FF0000[Ver Bonus]^000000";
+	mes "Tu ^B05D00"+getequipname(EQI_HEAD_LOW)+"^000000 tiene los siguientes bonus:";
+	for(set .@i,0;.@i<@bonusDisp;set .@i,.@i+1)
+		listaBonus(@verbonus[.@i]);
+	close;
+	
+	function	listaBonus{
+		switch(getarg(0)){
+			case 1: mes "1.-^0000DF +60 Str ^000000";break;
+			case 2: mes "2.-^0000DF +15% Atk ^000000";break;
+			case 3: mes "3.-^0000DF +15% Matk ^000000";break;
+			case 4: mes "4.-^0000DF +60 Int ^000000";break;
+			case 5: mes "5.-^0000DF +60 Dex ^000000";break;
+			case 6: mes "6.-^0000DF +275 de Hit ^000000";break;
+			case 7: mes "7.-^0000DF +5% de Perfect Hit ^000000";break;
+			case 8: mes "8.-^0000DF +25 de Critico ^000000";break;
+			case 9: mes "9.-^0000DF Triple Attack lvl 10 ^000000";break;
+			case 10: mes "10.-^0000DF 3% de Chance de Autocastear Mind Breaker lvl 3 cuando recibes daño ^000000";break;
+			case 11: mes "11.-^0000DF Lord of Vermillion lvl 5 ^000000";break;
+			case 12: mes "12.-^0000DF Rango de Ataque +1 ^000000";break;
+			case 13: mes "13.-^0000DF Daño a Demi-Humans +5% ^000000";break;
+			case 14: mes "14.-^0000DF Reduccion de daño de ataques magicos en 10% ^000000";break;
+			case 15: mes "15.-^0000DF Los skills no consumen gemas y gastan 30% menos SP ^000000";break;
+			case 16: mes "16.-^0000DF +20% de HP & SP ^000000";break;
+			case 17: mes "17.-^0000DF +50 de Def & Mdef ^000000"; break;
+			case 18: mes "18.-^0000DF Resistencia Demi-Human +15 ^000000";	break;
+			//Mids 2014
+			case 19: mes "19.-^0000DF Reduccion de daño de ataques corto rango en 5% ^000000"; break;
+			case 20: mes "20.-^0000DF HP recovery +30% ^000000"; break;
+			case 21: mes "21.-^0000DF 2 % de esquivar ataques mágicos ^000000"; break;
+		}
+		return;
+	}
+	
+	//Función que verifica que el bonus seleccionado es válido.
+	function	validarBonus{
+		//¿El bonus seleccionado esta entre 1 y 10(mid 2009), 1 y 18 (mid 2010) ?
+		if( @bopcion<1 || @bopcion > @listabonus ){
+			next;
+			mes "^FF0000[Mighty Sage]^000000";
+			mes "^FF0000Has seleccionado un numero incorrecto.^000000";
+			next;
+			mes "^FF0000[Mighty Sage]^000000";
+			for(set .@j,1;.@j<=@listabonus;set .@j,.@j+1)
+				listaBonus(.@j);
+			return 0;
+		}
+		//¿El bonus seleccionado es igual a un bonus seleccionado anteriormente?
+		for(set .@c,0; .@c<getarg(0);set .@c,.@c+1){
+			if(@bonus[.@c] == @bopcion){
+				next;
+				mes "^FF0000[Mighty Sage]^000000";
+				mes "^FF0000Ya has seleccionado este bonus.^000000";
+				next;
+				mes "^FF0000[Mighty Sage]^000000";
+				for(set .@j,1;.@j<=@listabonus;set .@j,.@j+1)
+					listaBonus(.@j);
+				return 0;
+			}
+			//Los bonus ATK y daño a demi no pueden ser seleccionados al mismo tiempo.
+			if((@bonus[.@c] == 2 && @bopcion == 13)||(@bonus[.@c] == 13 && @bopcion == 2)){
+				next;
+				mes "^FF0000[Mighty Sage]^000000";
+				mes"^FF0000No puedes seleccionar atk y daño a demihuman juntos.^000000";
+				next;
+				mes "^FF0000[Mighty Sage]^000000";
+				for(set .@j,1;.@j<=@listabonus;set .@j,.@j+1)
+					listaBonus(.@j);
+				return 0;
+			}
+		}
+		return 1;
+	}
+OnInit:
+	bindatcmd "bonuslow",strnpcinfo(3) + "::OnCommand1";
+end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////////////////////////////EQI_HEAD_TOP

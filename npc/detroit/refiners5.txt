@@ -1,0 +1,98 @@
+aquaf_g,54,83,3	script	Loki+5	806,{
+
+mes "^CCOOOO[Loki]^000000";
+mes "Después del Ragnarok me quede casi sin poderes por el castigo que me impusieron los dioses pero conserve la habilidad de forjar Items +5 sin averiarlos";
+next;
+mes "Estás interesado?";
+menu "Si, quiero refinar",L_Refine,"Que necesito?",L_Materials,"No gracias",-;
+next;
+mes "Hasta pronto, aqui estaré cuando te decidas...";
+close;
+
+L_Refine:
+if((countitem(7757) < 1) || (countitem(7019) < 5) || (countitem(984) < 50) || (countitem(985) < 50) || (countitem(7166) < 50) || (countitem(7321) < 50) || (countitem(7315) < 50) || (countitem(999) < 50) || (Zeny < 100000000)) goto noitems;
+mes "Ok, veo que ya tienes todo lo que te he pedido...";
+next;
+mes "Ahora, dime que item te gustaría refinar?";
+setarray .@position$[1], "Head","Body","Left hand","Right hand","Robe","Shoes","Accessory 1","Accessory 2","Head 2","Head 3";
+	set .@menu$,"";
+	for( set .@i,1; .@i <= 10; set .@i,.@i+1 )
+	{
+		if( getequipisequiped(.@i) )
+			set .@menu$, .@menu$ + .@position$[.@i] + "-" + "[" + getequipname(.@i) + "]";
+
+		set .@menu$, .@menu$ + ":";
+	}
+set .@part,select(.@menu$);
+	if(!getequipisequiped(.@part)) {
+		mes "[Loki]";
+		mes "Hmm, creo que no tienes";
+		mes "Items equipados que";
+		mes "se puedan refinar.";
+		emotion 6;
+		close;
+	}
+	//Check if the item is refinable...
+	if(!getequipisenableref(.@part)) {
+		mes "[Loki]";
+		mes "Hmm, no creo que pueda";
+		mes "refinar este tipo de item...";
+		close;
+	}
+	//Check to see if the items is already +10
+	if(getequiprefinerycnt(.@part) >= 5) {
+		mes "[Loki]";
+		mes "No puedo refinar más este item...";
+		mes "podría romperlo, no tengo tanto";
+		mes "poder.";
+		close;
+	}
+//Check to see if the items is over +4
+	if(getequiprefinerycnt(.@part) < 4) {
+		mes "[Loki]";
+		mes "Este item, aun no alcanza el +4";
+		mes "necesario, para poder trabajar";
+		mes "con él.";
+		close;
+	}
+set .@refineitemid, getequipid(.@part); // save id of the item
+set .@refinerycnt, getequiprefinerycnt(.@part); //save refinery count
+successrefitem .@part;
+Emotion e_heh;
+delitem 7757,1;
+delitem 7019,1;
+delitem 984,15;
+delitem 985,15;
+delitem 7166,25;
+delitem 7321,25;
+delitem 7315,15;
+delitem 999,40;
+set Zeny,Zeny-1000000;
+next;
+mes "Aqui tienes... todo ha sido un exito!";
+close;
+
+L_Materials:
+mes "^CCOOOO[Loki]^000000";
+mes "Bueno... tengo una lista de items que debes conseguir para que pueda trabajar en el refinamiento de tu equipo";
+next;
+mes "^CCOOOO[Loki]^000000";
+mes "Necesitas tener en tu inventario:";
+mes "1  ^CC0000Mithril^000000";
+mes "1  ^CC0000Loki's Whispers^000000";
+mes "15 ^CC0000Oridecon^000000";
+mes "15 ^CC0000Elunium^000000";
+mes "25 ^CC0000Crystal Fragment^000000";
+mes "15 ^CC0000Dark Crystal Fragment^000000";
+mes "40 ^CC0000Steel^000000";
+mes "25 ^CC0000Soft Silk^000000";
+mes "1 ^CC0000Millones Zeny^000000";
+close;
+
+noitems:
+next;
+mes "^CCOOOO[Loki]^000000";
+mes "Aun no puedo trabajar contigo, no tienes los items necesarios... vuelve cuando los tengas";
+close;
+
+}

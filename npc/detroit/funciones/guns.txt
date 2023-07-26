@@ -1,0 +1,407 @@
+// ==ARMAS DE GUNSLINGER==
+//------------ REVOLVERS-------------
+//Six_Shooter,Fenrir,
+function	script	F_fenrir	{
+bonus bUnbreakableWeapon,0;
+bonus bAspdrate,20;
+bonus2 bAddSkillBlow,507,5;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,514,60;
+bonus2 bSkillAtk,515,30;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+bonus5 bAutoSpell,115,1,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(getskilllv(500)>0) bonus3 bAutoSpell,500,getskilllv(500),100;
+
+return;
+}
+
+//Crimson_Bolt,Darkness
+function	script	F_darkness	{
+bonus bUnstripableWeapon,0;
+bonus bAspdrate,20;
+bonus2 bAddSkillBlow,507,5;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,514,60;
+bonus2 bSkillAtk,515,30;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+bonus5 bAutoSpell,117,1,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(getskilllv(500)>0) bonus3 bAutoSpell,500,getskilllv(500),100;
+return;
+}
+
+//Infernal_Revolver,Infernal Revolver
+function	script	F_infernalrevolver	{
+bonus bUnbreakableWeapon,0;
+bonus bAspdrate,20;
+bonus2 bAddSkillBlow,507,5;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,514,60;
+bonus2 bSkillAtk,515,30;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+bonus5 bAutoSpell,289,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON,1;
+if(getskilllv(500)>0) bonus3 bAutoSpell,500,getskilllv(500),100;
+return;
+}
+
+//Vandal_Shooter,Vandal Shooter
+function	script	F_vandalshooter	{
+bonus bUnstripableWeapon,0;
+bonus bAspdrate,20;
+bonus2 bAddSkillBlow,507,5;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,514,60;
+bonus2 bSkillAtk,515,30;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+bonus5 bAutoSpell,513,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;bonus bUnstripableWeapon,0;
+if(getskilllv(500)>0) bonus3 bAutoSpell,500,getskilllv(500),100;
+return;
+}
+
+//------------ RIFFLES-------------
+//Gold_Lux,Tiamat
+function	script	F_tiamat	{
+bonus bUnbreakableWeapon,0;
+bonus2 bAddSkillBlow,507,5;
+bonus bAspdrate,20;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,514,60;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+if(getskilllv(500)>0) bonus3 bAutoSpell,500,getskilllv(500),100;
+bonus5 bAutoSpell,115,1,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,382,2,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+//Branch,Judgment
+function	script	F_judgment	{
+bonus bUnstripableWeapon,0;
+bonus2 bAddSkillBlow,507,5;
+bonus bAspdrate,20;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,514,60;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+if(getskilllv(500)>0) bonus3 bAutoSpell,500,getskilllv(500),100;
+bonus5 bAutoSpell,379,5,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,382,2,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+//Infernal_Rifle,Infernal Rifle
+function	script	F_infernalrifle	{
+bonus bUnbreakableWeapon,0;
+bonus2 bAddSkillBlow,507,5;
+bonus bAspdrate,20;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,514,60;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+if(getskilllv(500)>0) bonus3 bAutoSpell,500,getskilllv(500),100;
+bonus5 bAutoSpell,289,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON,1;
+bonus5 bAutoSpell,382,2,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+//Venom_Carbine,Venom Carbine
+function	script	F_venomcarbine	{
+bonus bUnstripableWeapon,0;
+bonus2 bAddSkillBlow,507,5;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,514,60;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+if(getskilllv(500)>0) bonus3 bAutoSpell,500,getskilllv(500),100;
+bonus5 bAutoSpell,513,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,382,2,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+//------------ SHOTGUNS-------------
+//Cyclone,Beowulf
+function	script	F_beowulf	{
+bonus bUnbreakableWeapon,0;
+bonus bSplashRange,2;
+bonus2 bAddSkillBlow,507,5;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,263,-30;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,519,-40;
+bonus2 bSkillAtk,516,-40;
+bonus2 bSkillAtk,520,40;
+bonus5 bAutoSpell,520,5,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,507,1,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bHPDrainRate,50,40;
+if (isequipped(15298)){bonus2 bHPDrainRate,-50,-40;}
+return;
+}
+
+//Dusk,Chaos
+function	script	F_chaos	{
+bonus bUnstripableWeapon,0;
+bonus bSplashRange,2;
+bonus2 bAddSkillBlow,507,5;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,263,-30;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,519,-40;
+bonus2 bSkillAtk,516,-40;
+bonus2 bSkillAtk,520,40;
+bonus5 bAutoSpell,520,5,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,515,5,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bAddEff,Eff_Stun,500; bonus2 bAddEff,Eff_Curse,500; bonus2 bAddEff,Eff_Silence,500;
+bonus2 bAddEff,Eff_Poison,500; bonus2 bAddEff,Eff_Bleeding,500; bonus2 bAddEff,Eff_Freeze,500;
+bonus2 bAddEff,Eff_Stone,500; bonus2 bAddEff,Eff_Sleep,500; bonus2 bAddEff,Eff_Confuse,500; bonus2 bAddEff,Eff_Blind,500;
+return;
+}
+
+//Black_Rose_V2,Black Rose V2
+function	script	F_blackrose	{
+bonus bUnbreakableWeapon,0;
+bonus bSplashRange,2;
+bonus2 bAddSkillBlow,507,5;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,263,-30;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,519,-40;
+bonus2 bSkillAtk,516,-40;
+bonus2 bSkillAtk,520,40;
+bonus5 bAutoSpell,520,5,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,289,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON,1;
+return;
+}
+
+//Gatekeeper_V2,Gatekeeper V2
+function	script	F_gatekeeper	{
+bonus bUnstripableWeapon,0;
+bonus bSplashRange,2;
+bonus2 bAddSkillBlow,507,5;
+skill 263,10; skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,263,-30;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,519,-40;
+bonus2 bSkillAtk,516,-40;
+bonus2 bSkillAtk,520,40;
+bonus5 bAutoSpell,520,5,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,513,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+//------------ GATLING GUNS-------------
+//Butcher_,Cerberus
+function	script	F_cerberus	{
+bonus bUnbreakableWeapon,0;
+bonus bAspdrate,30;
+skill 45,5;
+bonus2 bAddSkillBlow,507,5;
+bonus bCritical,50;
+bonus bCritAtkRate,10;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+bonus2 bAddRace,RC_NonBoss,15;
+bonus2 bAddRace,RC_Boss,15;
+bonus5 bAutoSpell,370,2,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+//Drifter,Calamity,
+function	script	F_calamity	{
+bonus bUnstripableWeapon,0;
+bonus bAspdrate,30;
+skill 45,5;
+bonus2 bAddSkillBlow,507,5;
+bonus bCritical,50;
+bonus bCritAtkRate,10;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+bonus5 bAutoSpell,370,2,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bAddEff,Eff_Stun,500; bonus2 bAddEff,Eff_Curse,500; bonus2 bAddEff,Eff_Silence,500;
+bonus2 bAddEff,Eff_Poison,500; bonus2 bAddEff,Eff_Bleeding,500; bonus2 bAddEff,Eff_Freeze,500; 
+bonus2 bAddEff,Eff_Stone,500; bonus2 bAddEff,Eff_Sleep,500; bonus2 bAddEff,Eff_Confuse,500; bonus2 bAddEff,Eff_Blind,500;
+return;
+}
+
+//Infernal_Drifter,Infernal Drifter,
+function	script	F_infernaldrifter	{
+bonus bUnbreakableWeapon,0;
+bonus bAspdrate,30;
+skill 45,5;
+bonus2 bAddSkillBlow,507,5;
+bonus bCritical,50;
+bonus bCritAtkRate,10;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+bonus5 bAutoSpell,370,2,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,289,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON,1;
+return;
+}
+
+//Vandal_Butcher,Vandal Butcher
+function	script	F_vandalbutcher	{
+bonus bUnstripableWeapon,0;
+bonus bAspdrate,30;
+skill 45,5;
+bonus2 bAddSkillBlow,507,5;
+bonus bCritical,50;
+bonus bCritAtkRate,10;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,502,35;
+bonus2 bSkillAtk,503,40;
+bonus2 bSkillAtk,507,100;
+bonus2 bSkillAtk,512,-30;
+bonus2 bSkillAtk,516,-30;
+bonus2 bSkillAtk,519,-40;
+bonus5 bAutoSpell,370,2,100,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,513,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+//------------ GRANADE LAUNCHER-------------
+//Butcher_,Dragon
+function	script	F_dragon	{
+bonus bUnbreakableWeapon,0;
+bonus bSplashRange,3;
+skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,512,-50;
+bonus2 bSkillAtk,516,-50;
+bonus2 bSkillAtk,519,-50;
+bonus2 bSkillAtk,521,40;
+bonus2 bSkillAtk,515,-20;
+bonus2 bAddSkillBlow,521,2;
+bonus bNoSizeFix,0;
+bonus5 bAutoSpell,370,1,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus bBreakArmorRate,200;
+return;
+}
+
+//Destroyer,Catastrophe
+function	script	F_catastrophe	{
+bonus bUnstripableWeapon,0;
+bonus bSplashRange,3;
+skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,512,-50;
+bonus2 bSkillAtk,516,-50;
+bonus2 bSkillAtk,519,-50;
+bonus2 bSkillAtk,521,40;
+bonus2 bSkillAtk,515,-20;
+bonus2 bAddSkillBlow,521,2;
+bonus bNoSizeFix,0;
+bonus5 bAutoSpell,370,1,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus2 bAddEff,Eff_Stun,500; bonus2 bAddEff,Eff_Curse,500; bonus2 bAddEff,Eff_Silence,500;
+bonus2 bAddEff,Eff_Poison,500; bonus2 bAddEff,Eff_Bleeding,500; bonus2 bAddEff,Eff_Freeze,500;
+bonus2 bAddEff,Eff_Stone,500; bonus2 bAddEff,Eff_Sleep,500; bonus2 bAddEff,Eff_Confuse,500; bonus2 bAddEff,Eff_Blind,500;
+return;
+}
+
+//Inferno_V2,Inferno V2
+function	script	F_infernov2	{
+bonus bUnbreakableWeapon,0;
+bonus bSplashRange,3;
+skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,512,-50;
+bonus2 bSkillAtk,516,-50;
+bonus2 bSkillAtk,519,-50;
+bonus2 bSkillAtk,521,40;
+bonus2 bSkillAtk,515,-20;
+bonus2 bAddSkillBlow,521,2;
+bonus bNoSizeFix,0;
+bonus5 bAutoSpell,370,1,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,289,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON,1;
+return;
+}
+
+//Vandal_Destroyer,Vandal Destroyer
+function	script	F_vandaldestroyer	{
+bonus bUnstripableWeapon,0;
+bonus bSplashRange,3;
+skill 45,5;
+bonus bHit,readparam(bDex)/3;
+bonus2 bSkillAtk,512,-50;
+bonus2 bSkillAtk,516,-50;
+bonus2 bSkillAtk,519,-50;
+bonus2 bSkillAtk,521,40;
+bonus2 bSkillAtk,515,-20;
+bonus2 bAddSkillBlow,521,2;
+bonus bNoSizeFix,0;
+bonus5 bAutoSpell,370,1,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+bonus5 bAutoSpell,513,1,20,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+return;
+}

@@ -1,0 +1,74 @@
+-	script	AutoAnunciador	-1,{
+
+OnInit:
+
+
+//Colores
+//setarray .@color$[0],"FF3C00","FF0000","FF8000","00FF00","00FFFF","0000FF","FE2EF7";
+setarray .@color$[0],"FF3C00";
+
+
+set .@opc,11;
+set .@whi,1;
+
+
+while (.@whi == 1) {
+set .@col,rand(1);
+set .@e$,"0x"+.@color$[.@col];
+
+switch (rand(.@opc)) {
+
+	case 1:
+		announce "Dale Like y Visitanos en Facebook www.facebook.com/RealmRO Ahí se anuncian las novedades y avisos de Realm Ragnarok Online !",0,.@e$;
+		sleep 1200000;
+		break;
+
+	case 2:
+		announce "Pon atención y toma screenshot al hacer tus trades, hay jugadores que intentan engañar, cuidate y reportalos. Hagamos juntos una mejor comunidad.",0,.@e$;
+		sleep 1200000;
+		break;
+
+	case 3:
+		announce "Soporte, Reporte de Errores, Quejas, Sugerencias y Dudas sobre Donaciones, mandanos mendajes desde www.facebook.com/RealmRO",0,.@e$;
+		sleep 1200000;
+		break;
+
+	case 4:
+		announce "¿Alguna duda sobre Realm? Visita el foro de nuestra comunidad, tenemos sección de Dudas y Preguntas Frecuentes: www.realmro.roserver.net/Foro",0,.@e$;
+		sleep 1200000;
+		break;
+
+	case 5:
+		announce "Cada dia entran nuevos jugadores a Realm Ragnarok, seamos amables y ayudemoslos a iniciar su aventura, los inicios son confusos y ustedes tienen más experiencia.",0,.@e$;
+		sleep 1200000;
+		break;
+
+	case 7:
+		announce "Vota por Realm RO cada 12hrs desde el Panel de Control, con tu apoyo, nuestra comunidad seguirá creciendo y el juego será más divertido para todos.",0,.@e$;
+		sleep 1200000;
+		break;
+
+	case 8:
+		announce "Comparte tus mejores momentos en Realm RO con la comunidad , manda video o screenshot por mensaje al Facebook www.facebook.com/RealmRO",0,.@e$;
+		sleep 1200000;
+		break;
+
+	case 9:
+		announce "Invita a tus amigos del colegio o trabajo. Jugar Realm !! , es divertido, pero entre amigos, lo hace INCREIBLEMENTE GENIAL!",0,.@e$;
+		sleep 1200000;
+		break;
+
+	case 10:
+		announce "Ayudanos a ser una mejor comunidad, seamos amables y evita insultar. Realm RO nos permite tener amigos de todo el mundo!",0,.@e$;
+		sleep 1200000;
+		break;
+		
+	case 11:
+		announce "Varios jugadores apoyan a Realm con un donativo cada mes, gracias a esta ayuda, seguimos en linea para diversión de todos. Nos ayudas? Informate sobre como ayudar y la recompensa a donadores, cada mes hay regalos diferentes www.realmro.roserver.net/donaciones",0,.@e$;
+		sleep 1200000;
+		break;
+			}
+
+		}
+
+}

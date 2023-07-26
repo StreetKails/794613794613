@@ -1,0 +1,492 @@
+//Daga Neutral
+function	script	F_daga_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+bonus bStr,20;
+bonus bHit,50;
+bonus bBaseAtk,350;
+bonus bFlee,50;
+bonus2 bAddEff, Eff_Stun,500;
+//Assassin
+	if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+		if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){
+			bonus2 bSkillAtk,136,40;
+			bonus2 bSubSize,1,25;
+			bonus2 bSubSize,0,25;
+			bonus bMagicAtkDef,8;
+			if(isequipped(18200)||isequipped(18208)){
+				bonus bAtkRate,-5;
+				bonus bFlee,-40;
+				bonus bFlee2,-2;
+				bonus bAspdRate,-10;};
+			};
+			bonus2 bSkillAtk,406,50;
+			bonus2 bHPDrainRate,50,15;
+			bonus2 bSkillAtk,48,20;
+		
+		if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){
+			bonus2 bSubSize,1,-200;
+			bonus2 bSubSize,2,-200;
+		};
+		if(isequipped(18200)||isequipped(18208)){
+			bonus bAtkRate,10;
+			bonus bFlee,80;
+			bonus bFlee2,5;
+			bonus bAspdRate,20;
+		};
+	}
+//Stalker
+	if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+		if(isequipped(15150) || isequipped(4456)) {
+			bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+		};
+		if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+		// Alas de temporada con bonus de Goddess.
+        ( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+        ){
+	    	bonus2 bHPDrainRate,-50,-50;
+        };
+		bonus2 bSkillAtk,214,70;
+		skill 263,10;
+		skill 132,5;
+		skill 133,5;
+		bonus bAtkRange,3;
+		bonus bMatkRate,20;
+		bonus bAtkRate,70;
+		bonus2 bHPDrainRate,80,75;
+		bonus bHit,200;
+		bonus bAspdRate,30;
+		skill 5,10;
+		if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){
+			bonus2 bSubSize,1,25;
+			bonus2 bSubSize,0,25;
+			bonus bMagicAtkDef,8;
+		};
+		if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){
+			bonus bAgi,readparam(bStr)/10;
+			bonus bDex,readparam(bStr)/10;
+			bonus bFlee,50;
+			bonus bMaxHpRate,5;
+			bonus bAtkRate,5;
+			bonus bAtkRange,3;
+		};
+		if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){
+			bonus bAgi,readparam(bStr)/5;
+			bonus bDex,readparam(bStr)/5;
+			bonus bFlee,100;
+			bonus bMaxHpRate,10;
+			bonus bAtkRate,10;
+		};
+	};
+
+return;
+}
+
+//Daga Viento
+function	script	F_daga_viento	{
+bonus bStr,20;
+bonus bHit,50;
+bonus bFlee,50;
+bonus bBaseAtk,350;
+bonus bAtkEle,Ele_Wind;
+bonus2 bAddEff,Eff_Confusion,500;
+//Assassin
+if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSkillAtk,136,40;bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,-5;bonus bFlee,-40;bonus bFlee2,-2;bonus bAspdRate,-10;};
+};
+bonus2 bSkillAtk,406,50;
+bonus2 bHPDrainRate,50,15;
+bonus2 bSkillAtk,48,20;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){bonus2 bSubSize,1,-200;bonus2 bSubSize,2,-200;};
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,10;bonus bFlee,80;bonus bFlee2,5;bonus bAspdRate,20;};
+};
+//Stalker
+if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+// Alas de temporada con bonus de Goddess.
+( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-50,-50;
+};
+bonus2 bSkillAtk,214,70;
+if(isequipped(15150) || isequipped(4456))bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+skill 263,10;
+skill 132,5;
+skill 133,5;
+bonus bAtkRange,3;
+bonus bMatkRate,20;
+bonus bAtkRate,70;
+bonus2 bHPDrainRate,80,75;
+bonus bHit,200;
+bonus bAspdRate,30;
+skill 5,10;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/10;bonus bDex,readparam(bStr)/10;bonus bFlee,50;bonus bMaxHpRate,5;bonus bAtkRate,5;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/5;bonus bDex,readparam(bStr)/5;bonus bFlee,100;bonus bMaxHpRate,10;bonus bAtkRate,10;bonus bAtkRange,3;};
+};
+return;
+}
+
+//Daga Shadow
+function	script	F_daga_shadow	{
+bonus bStr,20;
+bonus bHit,50;
+bonus bBaseAtk,350;
+bonus bFlee,50;
+bonus bAtkEle,Ele_Dark;
+bonus2 bAddEff,Eff_Silence,500;
+//Assassin
+if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSkillAtk,136,40;bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,-5;bonus bFlee,-40;bonus bFlee2,-2;bonus bAspdRate,-10;};
+};
+bonus2 bSkillAtk,406,50;
+bonus2 bHPDrainRate,50,15;
+bonus2 bSkillAtk,48,20;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){bonus2 bSubSize,1,-200;bonus2 bSubSize,2,-200;};
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,10;bonus bFlee,80;bonus bFlee2,5;bonus bAspdRate,20;};
+};
+//Stalker
+if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+// Alas de temporada con bonus de Goddess.
+( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-50,-50;
+};
+bonus2 bSkillAtk,214,70;
+if(isequipped(15150) || isequipped(4456))bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+skill 263,10;
+skill 132,5;
+skill 133,5;
+bonus bAtkRange,3;
+bonus bMatkRate,20;
+bonus bAtkRate,70;
+bonus2 bHPDrainRate,80,75;
+bonus bHit,200;
+bonus bAspdRate,30;
+skill 5,10;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/10;bonus bDex,readparam(bStr)/10;bonus bFlee,50;bonus bMaxHpRate,5;bonus bAtkRate,5;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/5;bonus bDex,readparam(bStr)/5;bonus bFlee,100;bonus bMaxHpRate,10;bonus bAtkRate,10;bonus bAtkRange,3;};
+};
+return;
+}
+
+//Daga Holy
+function	script	F_daga_holy	{
+bonus bStr,20;
+bonus bHit,50;
+bonus bBaseAtk,350;
+bonus bFlee,50;
+bonus bAtkEle,Ele_Holy;
+bonus2 bAddEff,Eff_Blind,500;
+//Assassin
+if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSkillAtk,136,40;bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,-5;bonus bFlee,-40;bonus bFlee2,-2;bonus bAspdRate,-10;};
+};
+bonus2 bSkillAtk,406,50;
+bonus2 bHPDrainRate,50,15;
+bonus2 bSkillAtk,48,20;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){bonus2 bSubSize,1,-200;bonus2 bSubSize,2,-200;};
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,10;bonus bFlee,80;bonus bFlee2,5;bonus bAspdRate,20;};
+};
+//Stalker
+if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+// Alas de temporada con bonus de Goddess.
+( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-50,-50;
+};
+bonus2 bSkillAtk,214,70;
+if(isequipped(15150) || isequipped(4456))bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+skill 263,10;
+skill 132,5;
+skill 133,5;
+bonus bAtkRange,3;
+bonus bMatkRate,20;
+bonus bAtkRate,70;
+bonus2 bHPDrainRate,80,75;
+bonus bHit,200;
+bonus bAspdRate,30;
+skill 5,10;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/10;bonus bDex,readparam(bStr)/10;bonus bFlee,50;bonus bMaxHpRate,5;bonus bAtkRate,5;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/5;bonus bDex,readparam(bStr)/5;bonus bFlee,100;bonus bMaxHpRate,10;bonus bAtkRate,10;bonus bAtkRange,3;};
+};
+return;
+}
+
+//Daga Fuego
+function	script	F_daga_fuego	{
+bonus bStr,20;
+bonus bHit,50;
+bonus bBaseAtk,350;
+bonus bFlee,50;
+bonus bAtkEle,Ele_Fire;
+bonus2 bAddEff,Eff_Bleeding,500;
+//Assassin
+if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSkillAtk,136,40;bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,-5;bonus bFlee,-40;bonus bFlee2,-2;bonus bAspdRate,-10;};
+};
+bonus2 bSkillAtk,406,50;
+bonus2 bHPDrainRate,50,15;
+bonus2 bSkillAtk,48,20;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){bonus2 bSubSize,1,-200;bonus2 bSubSize,2,-200;};
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,10;bonus bFlee,80;bonus bFlee2,5;bonus bAspdRate,20;};
+};
+//Stalker
+if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+// Alas de temporada con bonus de Goddess.
+( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-50,-50;
+};
+bonus2 bSkillAtk,214,70;
+if(isequipped(15150) || isequipped(4456))bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+skill 263,10;
+skill 132,5;
+skill 133,5;
+bonus bAtkRange,3;
+bonus bMatkRate,20;
+bonus bAtkRate,70;
+bonus2 bHPDrainRate,80,75;
+bonus bHit,200;
+bonus bAspdRate,30;
+skill 5,10;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/10;bonus bDex,readparam(bStr)/10;bonus bFlee,50;bonus bMaxHpRate,5;bonus bAtkRate,5;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/5;bonus bDex,readparam(bStr)/5;bonus bFlee,100;bonus bMaxHpRate,10;bonus bAtkRate,10;bonus bAtkRange,3;};
+};
+return;
+}
+
+//Daga Tierra
+function	script	F_daga_tierra	{
+bonus bStr,20;
+bonus bHit,50;
+bonus bBaseAtk,350;
+bonus bFlee,50;
+bonus bAtkEle,Ele_Earth;
+bonus2 bAddEff,Eff_Stone,500;
+//Assassin
+if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSkillAtk,136,40;bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,-5;bonus bFlee,-40;bonus bFlee2,-2;bonus bAspdRate,-10;};};
+bonus2 bSkillAtk,406,50;
+bonus2 bHPDrainRate,50,15;
+bonus2 bSkillAtk,48,20;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){bonus2 bSubSize,1,-200;bonus2 bSubSize,2,-200;};
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,10;bonus bFlee,80;bonus bFlee2,5;bonus bAspdRate,20;};};
+//Stalker
+if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+// Alas de temporada con bonus de Goddess.
+( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-50,-50;
+};
+bonus2 bSkillAtk,214,70;
+if(isequipped(15150) || isequipped(4456))bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+skill 263,10;
+skill 132,5;
+skill 133,5;
+bonus bAtkRange,3;
+bonus bMatkRate,20;
+bonus bAtkRate,70;
+bonus2 bHPDrainRate,80,75;
+bonus bHit,200;
+bonus bAspdRate,30;
+skill 5,10;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/10;bonus bDex,readparam(bStr)/10;bonus bFlee,50;bonus bMaxHpRate,5;bonus bAtkRate,5;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/5;bonus bDex,readparam(bStr)/5;bonus bFlee,100;bonus bMaxHpRate,10;bonus bAtkRate,10;bonus bAtkRange,3;};
+};
+return;
+}
+
+//Daga Agua
+function	script	F_daga_agua	{
+bonus bStr,20;
+bonus bHit,50;
+bonus bFlee,50;
+bonus bBaseAtk,350;
+bonus bAtkEle,Ele_Water;
+bonus2 bAddEff,Eff_Freeze,500;
+//Assassin
+if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSkillAtk,136,40;bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,-5;bonus bFlee,-40;bonus bFlee2,-2;bonus bAspdRate,-10;};};
+bonus2 bSkillAtk,406,50;
+bonus2 bHPDrainRate,50,15;
+bonus2 bSkillAtk,48,20;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){bonus2 bSubSize,1,-200;bonus2 bSubSize,2,-200;};
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,10;bonus bFlee,80;bonus bFlee2,5;bonus bAspdRate,20;};
+};
+//Stalker
+if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+// Alas de temporada con bonus de Goddess.
+( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-50,-50;
+};
+bonus2 bSkillAtk,214,70;
+if(isequipped(15150) || isequipped(4456))bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+skill 263,10;
+skill 132,5;
+skill 133,5;
+bonus bAtkRange,3;
+bonus bMatkRate,20;
+bonus bAtkRate,70;
+bonus2 bHPDrainRate,80,75;
+bonus bHit,200;
+bonus bAspdRate,30;
+skill 5,10;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/10;bonus bDex,readparam(bStr)/10;bonus bFlee,50;bonus bMaxHpRate,5;bonus bAtkRate,5;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/5;bonus bDex,readparam(bStr)/5;bonus bFlee,100;bonus bMaxHpRate,10;bonus bAtkRate,10;bonus bAtkRange,3;};
+};
+return;
+}
+
+//Daga Ghost
+function	script	F_daga_ghost	{
+bonus bStr,20;
+bonus bHit,50;
+bonus bFlee,50;
+bonus bBaseAtk,350;
+bonus bAtkEle,Ele_Ghost;
+bonus2 bAddEff,Eff_Sleep,500;
+//Assassin
+if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSkillAtk,136,40;bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,-5;bonus bFlee,-40;bonus bFlee2,-2;bonus bAspdRate,-10;};
+};
+bonus2 bSkillAtk,406,50;
+bonus2 bHPDrainRate,50,15;
+bonus2 bSkillAtk,48,20;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){bonus2 bSubSize,1,-200;bonus2 bSubSize,2,-200;};
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,10;bonus bFlee,80;bonus bFlee2,5;bonus bAspdRate,20;};
+};
+//Stalker
+if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+// Alas de temporada con bonus de Goddess.
+( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-50,-50;
+};
+bonus2 bSkillAtk,214,70;
+if(isequipped(15150) || isequipped(4456))bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+skill 263,10;
+skill 132,5;
+skill 133,5;
+bonus bAtkRange,3;
+bonus bMatkRate,20;
+bonus bAtkRate,70;
+bonus2 bHPDrainRate,80,75;
+bonus bHit,200;
+bonus bAspdRate,30;
+skill 5,10;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/10;bonus bDex,readparam(bStr)/10;bonus bFlee,50;bonus bMaxHpRate,5;bonus bAtkRate,5;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/5;bonus bDex,readparam(bStr)/5;bonus bFlee,100;bonus bMaxHpRate,10;bonus bAtkRate,10;bonus bAtkRange,3;};
+};
+return;
+}
+
+//Daga Undead
+function	script	F_daga_undead	{
+bonus bStr,20;
+bonus bHit,50;
+bonus bBaseAtk,350;
+bonus bFlee,50;
+bonus bAtkEle,Ele_Undead;
+bonus2 bAddEff,Eff_Curse,500;
+//Assassin
+if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSkillAtk,136,40;bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,-5;bonus bFlee,-40;bonus bFlee2,-2;bonus bAspdRate,-10;};
+};
+bonus2 bSkillAtk,406,50;
+bonus2 bHPDrainRate,50,15;
+bonus2 bSkillAtk,48,20;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){bonus2 bSubSize,1,-200;bonus2 bSubSize,2,-200;};
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,10;bonus bFlee,80;bonus bFlee2,5;bonus bAspdRate,20;};
+};
+//Stalker
+if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+// Alas de temporada con bonus de Goddess.
+( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-50,-50;
+};
+bonus2 bSkillAtk,214,70;
+if(isequipped(15150) || isequipped(4456))bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+skill 263,10;
+skill 132,5;
+skill 133,5;
+bonus bAtkRange,3;
+bonus bMatkRate,20;
+bonus bAtkRate,70;
+bonus2 bHPDrainRate,80,75;
+bonus bHit,200;
+bonus bAspdRate,30;
+skill 5,10;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/10;bonus bDex,readparam(bStr)/10;bonus bFlee,50;bonus bMaxHpRate,5;bonus bAtkRate,5;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/5;bonus bDex,readparam(bStr)/5;bonus bFlee,100;bonus bMaxHpRate,10;bonus bAtkRate,10;bonus bAtkRange,3;};
+};
+return;
+}
+
+//Daga Poison
+function	script	F_daga_poison	{
+bonus bStr,20;
+bonus bHit,50;
+bonus bFlee,50;
+bonus bBaseAtk,350;
+bonus bAtkEle,Ele_Poison;
+bonus2 bAddEff,Eff_Poison,500;
+//Assassin
+if(Class==Job_Assassin||Class==Job_Assassin_Cross||Class==Job_Baby_Assassin){
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSkillAtk,136,40;bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,-5;bonus bFlee,-40;bonus bFlee2,-2;bonus bAspdRate,-10;};
+};
+bonus2 bSkillAtk,406,50;
+bonus2 bHPDrainRate,50,15;
+bonus2 bSkillAtk,48,20;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 16){bonus2 bSubSize,1,-200;bonus2 bSubSize,2,-200;};
+if(isequipped(18200)||isequipped(18208)){bonus bAtkRate,10;bonus bFlee,80;bonus bFlee2,5;bonus bAspdRate,20;};
+};
+//Stalker
+if(Class==Job_Rouge||Class==Job_Stalker||Class==Job_Baby_Rogue){
+if(isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+// Alas de temporada con bonus de Goddess.
+( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-50,-50;
+};
+bonus2 bSkillAtk,214,70;
+if(isequipped(15150) || isequipped(4456))bonus2 bSkillAtk,"CH_CHAINCRUSH",-20;
+skill 263,10;
+skill 132,5;
+skill 133,5;
+bonus bAtkRange,3;
+bonus bMatkRate,20;
+bonus bAtkRate,70;
+bonus2 bHPDrainRate,80,75;
+bonus bHit,200;
+bonus bAspdRate,30;
+skill 5,10;
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1){bonus2 bSubSize,1,25;bonus2 bSubSize,0,25;bonus bMagicAtkDef,8;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) == 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/10;bonus bDex,readparam(bStr)/10;bonus bFlee,50;bonus bMaxHpRate,5;bonus bAtkRate,5;};
+if(getiteminfo(getequipid(EQI_HAND_R),11) == 1 && getiteminfo(getequipid(EQI_HAND_L),11) != 1 && (isequipped(18211) || isequipped(18208))){bonus bAgi,readparam(bStr)/5;bonus bDex,readparam(bStr)/5;bonus bFlee,100;bonus bMaxHpRate,10;bonus bAtkRate,10;bonus bAtkRange,3;};
+};
+return;
+}

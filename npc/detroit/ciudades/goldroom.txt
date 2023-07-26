@@ -1,0 +1,80 @@
+prontera,164,171,0	script	Gold Room	78,{
+
+	mes "[ Gold Room ]";
+	mes "Como te puedo ayudar payaso culiao?";
+	mes "Yo puedo teleportarte a gold room si queri no mas po.";
+	next;
+	mes "[ Gold Room ]";
+	mes "Eso si necesito qe me di";
+	mes "1,000,000 Zeny Pa entrar, ponte vio.";
+	next;
+	switch(select("Entrar:Cancelar")) {
+case 1:
+	if(Zeny < 1000000) goto nomoney;
+	set .@a,rand(50);
+	set .@b,rand(50);
+	mes "[Gold Room]";
+	mes "Antes de entrar, tendras que responder una pregunta  ";
+	mes "Por Seguridad, vo cachai po.";
+	mes "Si A = "+.@a+"   B = "+.@b;
+	switch( rand(1) ){
+	set .@answer,.@a + .@b;
+	mes "Cuanto es A + B ?";
+			next;
+			input .@input;	
+			next;
+		if( .@input!=.@answer ) {
+		atcommand "@kick " + strcharinfo(0);
+		close;
+		break;
+		}
+		else if (.@input==.@answer) {
+			set Zeny,Zeny-1000000;		
+			warp "moc_gld",0,0; 	
+			close;
+			}
+		end;
+		}
+case 2:
+			mes "[ Gold Room Manager ]";	
+			mes "Mijito..";
+			mes "Le digo altoque una wea";
+			mes "Soy puro perkin asi que vira pao culiao.";
+			close;
+	}
+	nomoney:
+		mes "[Gold Room Manager]";
+		mes "No teni plata pa entrar aqui perkin culiao";
+		close;
+}
+//-------------------------MONSTER SPAWN--------------------------------------------------------------------
+
+
+// Duplicados Warps v1.0
+ordeal_3-2.gat,130,193,0	warp	goldroomwrp#1	3,3,ordeal_3-2.gat,154,154
+ordeal_3-2.gat,106,154,0	warp	goldroomwrp#2	3,3,ordeal_3-2.gat,154,154
+ordeal_3-2.gat,201,129,0	warp	goldroomwrp#3	3,3,ordeal_3-2.gat,154,154
+ordeal_3-2.gat,177,193,0	warp	goldroomwrp#4	3,3,ordeal_3-2.gat,154,154
+//ordeal_3-2,24,228,0	warp	prontera	1,1,prontera,156,172;
+//ordeal_3-2,25,58,0	warp	prontera	1,1,prontera,156,172;
+//ordeal_3-2,289,130,0	warp	prontera	1,1,prontera,156,172;
+//ordeal_3-2,283,230,0	warp	prontera	1,1,prontera,156,172;
+//ordeal_3-2,210,203,0	warp	prontera	1,1,prontera,156,172;
+
+// Natural Monsters v1.0
+moc_gld,154,154,0,0	monster	Golden Servant	2513,15,0,0,0
+moc_gld,0,0,0,0	monster	Golden Servant	2513,100,0,0,0
+moc_gld,0,0,0,0	monster	Golden Servant	2513,300,0,0,0
+moc_gld,0,0,0,0	monster	Golden Servant	2513,150,0,0,0
+moc_gld,0,0,0,0	monster	Golden Servant	2513,200,0,0,0
+
+
+// Map Flags v1.0
+moc_gld	mapflag	nobranch
+moc_gld	mapflag	nomemo
+moc_gld	mapflag	nowarpto
+moc_gld	mapflag	nopenalty
+moc_gld	mapflag	pvp_noparty
+moc_gld	mapflag	nosave
+moc_gld	mapflag	novending
+moc_gld	mapflag	noteleport

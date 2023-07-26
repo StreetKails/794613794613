@@ -1,0 +1,1381 @@
+//=================Funciones====================
+
+
+
+//Resta 10% de resistencia a todos los elementos---------------------------------
+
+function	script	F_Resta10Ele	{
+bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;
+return;
+}
+
+
+
+
+
+//Suma 20% de Resistencia a todos los elementos------------------------------------
+
+function	script	F_Suma20Ele	{
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+return;
+}
+
+
+
+
+//======================================================== COMBOS VIP ========================================================
+
+
+//Combo Neutral VIP
+function	script	F_vip_neutral	{
+bonus bMDef,getrefine();
+if(isequipped(18001,18060)) {bonus2 bSubEle,Ele_Neutral,25;bonus2 bAddEle,Ele_Neutral,20;bonus bHit,70;bonus2 bResEff,Eff_Bleeding,10000;}
+else
+if(isequipped(18001,18061)) {bonus2 bSubEle,Ele_Neutral,25;bonus2 bAddEle,Ele_Neutral,20;bonus bHit,70;bonus2 bResEff,Eff_Bleeding,10000;}
+else
+if(isequipped(18001,18062)) {bonus2 bSubEle,Ele_Neutral,25;bonus2 bAddEle,Ele_Neutral,20;bonus bHit,70;bonus2 bResEff,Eff_Bleeding,10000;}
+else
+if(isequipped(18231,18060)) {bonus2 bSubEle,Ele_Neutral,25;bonus2 bAddEle,Ele_Neutral,20;bonus bHit,70;bonus2 bResEff,Eff_Bleeding,10000;}
+else
+if(isequipped(18231,18061)) {bonus2 bSubEle,Ele_Neutral,25;bonus2 bAddEle,Ele_Neutral,20;bonus bHit,70;bonus2 bResEff,Eff_Bleeding,10000;}
+else
+if(isequipped(18231,18062)) {bonus2 bSubEle,Ele_Neutral,25;bonus2 bAddEle,Ele_Neutral,20;bonus bHit,70;bonus2 bResEff,Eff_Bleeding,10000;}
+else
+bonus2 bSubEle,Ele_Neutral,25;
+return;
+}
+
+
+
+//Combo Fuego VIP
+function	script	F_vip_fuego	{
+bonus bMDef,getrefine();
+if(isequipped(18002,18060)){bonus2 bSubEle,Ele_Fire,25;bonus2 bAddEle,Ele_Fire,20;bonus2 bAddRace,RC_NonBoss,10;bonus2 bAddRace,RC_Boss,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18002,18061)){bonus2 bSubEle,Ele_Fire,25;bonus2 bAddEle,Ele_Fire,20;bonus2 bAddRace,RC_NonBoss,10;bonus2 bAddRace,RC_Boss,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18002,18062)){bonus2 bSubEle,Ele_Fire,25;bonus2 bAddEle,Ele_Fire,20;bonus2 bAddRace,RC_NonBoss,10;bonus2 bAddRace,RC_Boss,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18232,18060)){bonus2 bSubEle,Ele_Fire,25;bonus2 bAddEle,Ele_Fire,20;bonus2 bAddRace,RC_NonBoss,10;bonus2 bAddRace,RC_Boss,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18232,18061)){bonus2 bSubEle,Ele_Fire,25;bonus2 bAddEle,Ele_Fire,20;bonus2 bAddRace,RC_NonBoss,10;bonus2 bAddRace,RC_Boss,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18232,18062)){bonus2 bSubEle,Ele_Fire,25;bonus2 bAddEle,Ele_Fire,20;bonus2 bAddRace,RC_NonBoss,10;bonus2 bAddRace,RC_Boss,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+bonus2 bSubEle,Ele_Fire,25;
+return;
+}
+
+
+
+//Combo Agua VIP
+function	script	F_vip_agua	{
+bonus bMDef,getrefine();
+if(isequipped(18003,18060)) {bonus2 bSubEle,Ele_Water,25;bonus2 bAddEle,Ele_Water,20;bonus2 bHPRegenRate,1000,1000;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18003,18061)) {bonus2 bSubEle,Ele_Water,25;bonus2 bAddEle,Ele_Water,20;bonus2 bHPRegenRate,1000,1000;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18003,18062)) {bonus2 bSubEle,Ele_Water,25;bonus2 bAddEle,Ele_Water,20;bonus2 bHPRegenRate,1000,1000;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18233,18060)) {bonus2 bSubEle,Ele_Water,25;bonus2 bAddEle,Ele_Water,20;bonus2 bHPRegenRate,1000,1000;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18233,18061)) {bonus2 bSubEle,Ele_Water,25;bonus2 bAddEle,Ele_Water,20;bonus2 bHPRegenRate,1000,1000;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18233,18062)) {bonus2 bSubEle,Ele_Water,25;bonus2 bAddEle,Ele_Water,20;bonus2 bHPRegenRate,1000,1000;bonus2 bResEff,Eff_Sleep,10000;}
+else
+bonus2 bSubEle,Ele_Water,25;
+return;
+}
+
+
+
+//Combo Tierra VIP
+function	script	F_vip_tierra	{
+bonus bMDef,getrefine();
+if(isequipped(18005,18060)) {bonus2 bSubEle,Ele_Earth,25;bonus2 bAddEle,Ele_Earth,20;bonus2 bSubSize,1,10;bonus2 bSubSize,2,10;sc_start 34,90000000,10;}
+else
+if(isequipped(18005,18061)) {bonus2 bSubEle,Ele_Earth,25;bonus2 bAddEle,Ele_Earth,20;bonus2 bSubSize,1,10;bonus2 bSubSize,2,10;sc_start 34,90000000,10;}
+else
+if(isequipped(18005,18062)) {bonus2 bSubEle,Ele_Earth,25;bonus2 bAddEle,Ele_Earth,20;bonus2 bSubSize,1,10;bonus2 bSubSize,2,10;sc_start 34,90000000,10;}
+else
+if(isequipped(18235,18060)) {bonus2 bSubEle,Ele_Earth,25;bonus2 bAddEle,Ele_Earth,20;bonus2 bSubSize,1,10;bonus2 bSubSize,2,10;sc_start 34,90000000,10;}
+else
+if(isequipped(18235,18061)) {bonus2 bSubEle,Ele_Earth,25;bonus2 bAddEle,Ele_Earth,20;bonus2 bSubSize,1,10;bonus2 bSubSize,2,10;sc_start 34,90000000,10;}
+else
+if(isequipped(18235,18062)) {bonus2 bSubEle,Ele_Earth,25;bonus2 bAddEle,Ele_Earth,20;bonus2 bSubSize,1,10;bonus2 bSubSize,2,10;sc_start 34,90000000,10;}
+else
+bonus2 bSubEle,Ele_Earth,25;
+return;
+}
+
+
+
+//Combo Viento VIP
+function	script	F_vip_viento	{
+bonus bMDef,getrefine();
+if(isequipped(18004,18060)) {bonus2 bSubEle,Ele_Wind,25;bonus2 bAddEle,Ele_Wind,20;bonus bAtkRange,3;bonus2 bResEff,Eff_Freeze,10000;}
+else
+if(isequipped(18004,18061)) {bonus2 bSubEle,Ele_Wind,25;bonus2 bAddEle,Ele_Wind,20;bonus bAtkRange,3;bonus2 bResEff,Eff_Freeze,10000;}
+else
+if(isequipped(18004,18062)) {bonus2 bSubEle,Ele_Wind,25;bonus2 bAddEle,Ele_Wind,20;bonus bAtkRange,3;bonus2 bResEff,Eff_Freeze,10000;}
+else
+if(isequipped(18234,18060)) {bonus2 bSubEle,Ele_Wind,25;bonus2 bAddEle,Ele_Wind,20;bonus bAtkRange,3;bonus2 bResEff,Eff_Freeze,10000;}
+else
+if(isequipped(18234,18061)) {bonus2 bSubEle,Ele_Wind,25;bonus2 bAddEle,Ele_Wind,20;bonus bAtkRange,3;bonus2 bResEff,Eff_Freeze,10000;}
+else
+if(isequipped(18234,18062)) {bonus2 bSubEle,Ele_Wind,25;bonus2 bAddEle,Ele_Wind,20;bonus bAtkRange,3;bonus2 bResEff,Eff_Freeze,10000;}
+else
+bonus2 bSubEle,Ele_Wind,25;
+return;
+}
+
+
+
+//Combo Ghost VIP
+function	script	F_vip_ghost	{
+bonus bMDef,getrefine();
+if(isequipped(18008,18060)) {bonus2 bSubEle,Ele_Ghost,25;bonus2 bAddEle,Ele_Ghost,20;bonus3 bSPDrainRate,5,10,0;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18008,18061)) {bonus2 bSubEle,Ele_Ghost,25;bonus2 bAddEle,Ele_Ghost,20;bonus3 bSPDrainRate,5,10,0;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18008,18062)) {bonus2 bSubEle,Ele_Ghost,25;bonus2 bAddEle,Ele_Ghost,20;bonus3 bSPDrainRate,5,10,0;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18238,18060)) {bonus2 bSubEle,Ele_Ghost,25;bonus2 bAddEle,Ele_Ghost,20;bonus3 bSPDrainRate,5,10,0;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18238,18061)) {bonus2 bSubEle,Ele_Ghost,25;bonus2 bAddEle,Ele_Ghost,20;bonus3 bSPDrainRate,5,10,0;bonus2 bResEff,Eff_Sleep,10000;}
+else
+if(isequipped(18238,18062)) {bonus2 bSubEle,Ele_Ghost,25;bonus2 bAddEle,Ele_Ghost,20;bonus3 bSPDrainRate,5,10,0;bonus2 bResEff,Eff_Sleep,10000;}
+else
+bonus2 bSubEle,Ele_Ghost,25;
+return;
+}
+
+
+
+//Combo Undead VIP
+function	script	F_vip_undead	{
+bonus bMDef,getrefine();
+if(isequipped(18009,18060)) {bonus2 bSubEle,Ele_Undead,25;bonus2 bAddEle,Ele_Undead,20;bonus2 bHPDrainRate,200,5;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18009,18061)) {bonus2 bSubEle,Ele_Undead,25;bonus2 bAddEle,Ele_Undead,20;bonus2 bHPDrainRate,200,5;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18009,18062)) {bonus2 bSubEle,Ele_Undead,25;bonus2 bAddEle,Ele_Undead,20;bonus2 bHPDrainRate,200,5;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18239,18060)) {bonus2 bSubEle,Ele_Undead,25;bonus2 bAddEle,Ele_Undead,20;bonus2 bHPDrainRate,200,5;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18239,18061)) {bonus2 bSubEle,Ele_Undead,25;bonus2 bAddEle,Ele_Undead,20;bonus2 bHPDrainRate,200,5;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18239,18062)) {bonus2 bSubEle,Ele_Undead,25;bonus2 bAddEle,Ele_Undead,20;bonus2 bHPDrainRate,200,5;bonus2 bResEff,Eff_Stone,10000;}
+else
+bonus2 bSubEle,Ele_Undead,25;
+return;
+}
+
+
+
+
+//Combo Shadow VIP
+function	script	F_vip_dark	{
+bonus bMDef,getrefine();
+if(isequipped(18006,18060)) {bonus2 bSubEle,Ele_Dark,25;bonus2 bAddEle,Ele_Dark,20;bonus2 bAddEle,Ele_Holy,15;bonus bSplashAddRange,2;sc_start 34,90000000,10;}
+else
+if(isequipped(18006,18061)) {bonus2 bSubEle,Ele_Dark,25;bonus2 bAddEle,Ele_Dark,20;bonus2 bAddEle,Ele_Holy,15;bonus bSplashAddRange,2;sc_start 34,90000000,10;}
+else
+if(isequipped(18006,18062)) {bonus2 bSubEle,Ele_Dark,25;bonus2 bAddEle,Ele_Dark,20;bonus2 bAddEle,Ele_Holy,15;bonus bSplashAddRange,2;sc_start 34,90000000,10;}
+else
+if(isequipped(18236,18060)) {bonus2 bSubEle,Ele_Dark,25;bonus2 bAddEle,Ele_Dark,20;bonus2 bAddEle,Ele_Holy,15;bonus bSplashAddRange,2;sc_start 34,90000000,10;}
+else
+if(isequipped(18236,18061)) {bonus2 bSubEle,Ele_Dark,25;bonus2 bAddEle,Ele_Dark,20;bonus2 bAddEle,Ele_Holy,15;bonus bSplashAddRange,2;sc_start 34,90000000,10;}
+else
+if(isequipped(18236,18062)) {bonus2 bSubEle,Ele_Dark,25;bonus2 bAddEle,Ele_Dark,20;bonus2 bAddEle,Ele_Holy,15;bonus bSplashAddRange,2;sc_start 34,90000000,10;}
+else
+bonus2 bSubEle,Ele_Dark,25;
+return;
+}
+
+
+
+
+//Combo Poison VIP
+function	script	F_vip_poison	{
+bonus bMDef,getrefine();
+if(isequipped(18010,18060)) {bonus2 bSubEle,Ele_Poison,25;bonus2 bAddEle,Ele_Poison,20;bonus bCritical,10;bonus bCritAtkRate,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18010,18061)) {bonus2 bSubEle,Ele_Poison,25;bonus2 bAddEle,Ele_Poison,20;bonus bCritical,10;bonus bCritAtkRate,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18010,18062)) {bonus2 bSubEle,Ele_Poison,25;bonus2 bAddEle,Ele_Poison,20;bonus bCritical,10;bonus bCritAtkRate,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18240,18060)) {bonus2 bSubEle,Ele_Poison,25;bonus2 bAddEle,Ele_Poison,20;bonus bCritical,10;bonus bCritAtkRate,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18240,18061)) {bonus2 bSubEle,Ele_Poison,25;bonus2 bAddEle,Ele_Poison,20;bonus bCritical,10;bonus bCritAtkRate,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+if(isequipped(18240,18062)) {bonus2 bSubEle,Ele_Poison,25;bonus2 bAddEle,Ele_Poison,20;bonus bCritical,10;bonus bCritAtkRate,10;bonus2 bResEff,Eff_Stone,10000;}
+else
+bonus2 bSubEle,Ele_Poison,25;
+return;
+}
+
+
+
+
+
+
+//======================================================== HATS VIPS ========================================================
+
+
+//Black Helm / Red Helm / Blue Helm / Gold Helm
+function	script	F_blackhelm	{
+bonus bUnstripableHelm,0;
+bonus bAgi,10;bonus bVit,10;bonus bStr,10;
+bonus bMaxHPrate,20;
+bonus bAtkRate,20;
+bonus bAspdRate,5;
+return;
+}
+
+
+//Dragon Helm
+function	script	F_dragonhelm	{
+bonus bUnstripableHelm,0;
+bonus bAgi,10;bonus bDex,10;bonus bVit,10;
+bonus bMaxHPrate,20;
+bonus bHit,100;
+bonus bPerfectHitAddRate,10;
+bonus bAspdRate,10;
+if(isequipped(15018)){bonus bHit,50;bonus bAtkRate,5;};
+return;
+}
+
+
+//Maya Helm / Randgris Helm
+function	script	F_mayahelm	{
+bonus bUnstripableHelm,0;
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bDelayRate,-5;
+bonus bMatkRate,20;
+bonus bMaxHPrate,20;
+if(isequipped(15045)) {bonus bDelayRate,-5;;bonus bMatkRate,5;};
+return;
+}
+
+
+//Penacho de Moktezuma / Fenix Helm
+function	script	F_penachohelm	{
+bonus bUnstripableHelm,0;
+bonus bStr,10; bonus bDex,10; bonus bVit,10;
+bonus bMaxHPrate,30;
+bonus bShortWeaponDamageReturn,20;
+if(Class==Job_Paladin||Class==Job_Crusader) {bonus bShortWeaponDamageReturn,-10;};
+if(isequipped(15119) || isequipped(15002)) {bonus bMaxHPrate,15;};
+return;
+}
+
+
+//Archangel Helm
+function	script	F_archangelhelm	{
+bonus bUnstripableHelm,0;
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bMaxHPrate,20;
+bonus bMatkRate,10;
+bonus bMagicDamageReturn,10;
+return;
+}
+
+
+//Airth Goat
+function	script	F_airthhelm	{
+bonus bUnstripableHelm,0;
+bonus bDex,10;bonus bStr,10;bonus bLuk,10;
+bonus bMaxHPrate,20;
+bonus bSplashRange,4;
+bonus bAspdRate,20;
+if(isequipped(15049) || isequipped(15087)) {bonus bSplashAddRange,2;bonus bAspdRate,10;};
+return;
+}
+
+
+//Black Valkyrie Helm
+function	script	F_blackvalkyriehelm	{
+bonus bUnstripableHelm,0;
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bMaxHPrate,20;
+bonus4 bAutoSpellWhenHit,83,8,50,0;
+bonus bMatkRate,10;
+return;
+}
+
+
+//White Morriganes Helm
+function	script	F_morriganeshelm	{
+bonus bUnstripableHelm,0;
+bonus bStr,20;bonus bLuk,10;
+bonus bMaxHPrate,20;
+bonus bCritical,30;
+bonus bCritAtkRate,20;
+return;
+}
+
+
+//Helm of Ice Wolf
+function	script	F_icewolfhelm	{
+bonus bUnstripableHelm,0;
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bMaxHPrate,20;
+bonus bMatkRate,10;
+bonus4 bAutoSpellWhenHit,89,8,50,0;
+if(isequipped(15006)) {bonus bUnbreakableHelm,0;bonus3 bAutoSpellWhenHit,655,100,50;bonus2 bSkillAtk,14,30;bonus2 bSkillAtk,88,30;bonus2 bSkillAtk,86,30;bonus2 bSkillAtk,89,30;bonus2 bSkillAtk,537,30;bonus2 bSkillAtk,539,30;};
+return;
+}
+
+
+//Hades Helm
+function	script	F_hadeshelm	{
+bonus bUnstripableHelm,0;
+bonus bStr,10;bonus bDex,10;bonus bAgi,10;
+bonus bMaxHPrate,20;
+bonus bFlee2,15;
+bonus2 bSubRace,RC_DemiHuman,10;
+if(isequipped(15075) || isequipped(15097)) {bonus bAtkRate,5;bonus bFlee2,5;};
+return;
+}
+
+
+//Lucifer Helm
+function	script	F_luciferhelm	{
+bonus bUnstripableHelm,0;
+bonus bVit,10;bonus bStr,10;bonus bAgi,10;
+bonus bMaxHPrate,20;
+bonus bAtkRate,5;
+bonus2 bAddEff,Eff_Stun,500; bonus2 bAddEff,Eff_Curse,500; bonus2 bAddEff,Eff_Silence,500; bonus2 bAddEff,Eff_Poison,500; bonus2 bAddEff,Eff_Bleeding,500;bonus2 bAddEff,Eff_Stone,500;bonus2 bAddEff,Eff_Confusion,500;bonus2 bAddEff,Eff_Frezee,500;bonus2 bAddEff,Eff_Sleep,500;
+if(isequipped(15020)) {bonus bAtkRate,5;bonus2 bSubRace,RC_DemiHuman,5;};
+return;
+}
+
+
+
+
+
+//======================================================== ALAS VIPS ========================================================
+
+
+//Phoenix Wings / Black Phoenix Wings
+function	script	F_phoenixwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 462,10;skill 375,2;
+return;
+}
+
+
+//Devil Wings / Artic Inferno Wings
+function	script	F_devilwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 490,5;skill 541,5;
+return;
+}
+
+
+//Red Fallen Angel Wings
+function	script	F_redfallenwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 252,5;bonus bHit,50;
+return;
+}
+
+
+//Ying Yang Wings
+function	script	F_yingyangwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bResEff,Eff_Bleeding,10000;
+bonus2 bResEff,Eff_Blind,10000;
+bonus2 bResEff,Eff_Stone,10000;
+bonus2 bResEff,Eff_Freeze,10000;
+bonus2 bResEff,Eff_Sleep,10000;
+bonus2 bResEff,Eff_Poison,10000;
+bonus2 bResEff,Eff_DPoison,10000;
+bonus2 bResEff,Eff_Curse,10000;
+bonus2 bResEff,Eff_Confusion,10000;
+bonus2 bResEff,Eff_Stun,10000;
+bonus2 bResEff,Eff_Silence,10000;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 361,3;
+return;
+}
+
+
+//Artic Wings
+function	script	F_articwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 89,5;skill 537,5;
+bonus2 bResEff,Eff_Freeze,10000;
+return;
+}
+
+
+//Mechanical Wings
+function	script	F_mechanicalwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 135,5;skill 404,1;
+return;
+}
+
+
+//Ghotic Wings / Destruction Wings
+function	script	F_ghoticwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 384,3;
+return;
+}
+
+
+//Heart Wings / Dark Angel Wings
+function	script	F_heartwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus5 bAutoSpellWhenHit,288,1,60,BF_MAGIC+BF_MISC,0;
+return;
+}
+
+
+//Transcendent Wings
+function	script	F_transwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus3 bAutoSpell,476,5,70;
+return;
+}
+
+
+//Goddess Wings / Blood Seal Wings
+function	script	F_goddesswings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+//if(getiteminfo(getequipid(EQI_HAND_R),11) == 3){bonus2 bHPDrainRate,-100,-100;};
+bonus2 bHPDrainRate,100,50;bonus2 bSPDrainRate,100,50;	//10% de chance, 50% de daño
+if(Class==4016||Class==4038) {bonus2 bSpDrainRate,-50,-30;};
+return;
+}
+
+
+//Valkyrie Wings
+function	script	F_valkyriewings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+skill 73,5;
+bonus2 bAddEffWhenHit,Eff_Stone,500;bonus2 bAddEffWhenHit,Eff_Freeze,500;bonus2 bAddEffWhenHit,Eff_Stun,500;bonus2 bAddEffWhenHit,Eff_Sleep,500;bonus2 bAddEffWhenHit,Eff_Curse,500;bonus2 bAddEffWhenHit,Eff_Confusion,500;bonus2 bAddEffWhenHit,Eff_Poison,500;bonus2 bAddEffWhenHit,Eff_Bleeding,500;bonus2 bAddEffWhenHit,Eff_Blind,500;bonus2 bAddEffWhenHit,Eff_Silence,500;
+bonus5 bAutoSpellWhenHit,92,3,80,BF_WEAPON|BF_MISC|BF_MAGIC,1;
+return;
+}
+
+
+//Ikki Wings
+function	script	F_ikkiwings	{
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus bAtkRate,10;
+bonus bAllStats,10;
+bonus2 bSubEle,Ele_Neutral,20;bonus2 bSubEle,Ele_Poison,20;bonus2 bSubEle,Ele_Holy,20;bonus2 bSubEle,Ele_Dark,20;bonus2 bSubEle,Ele_Fire,20;bonus2 bSubEle,Ele_Water,20;bonus2 bSubEle,Ele_Wind,20;bonus2 bSubEle,Ele_Earth,20;bonus2 bSubEle,Ele_Undead,20;bonus2 bSubEle,Ele_Ghost,20;
+if(isequipped(18035) || isequipped(18034) || isequipped(18036)) {bonus2 bSubEle,Ele_Neutral,-10;bonus2 bSubEle,Ele_Poison,-10;bonus2 bSubEle,Ele_Holy,-10;bonus2 bSubEle,Ele_Dark,-10;bonus2 bSubEle,Ele_Fire,-10;bonus2 bSubEle,Ele_Water,-10;bonus2 bSubEle,Ele_Wind,-10;bonus2 bSubEle,Ele_Earth,-10;bonus2 bSubEle,Ele_Undead,-10;bonus2 bSubEle,Ele_Ghost,-10;};
+bonus bLongWeaponDamageReturn,20;
+bonus bNoKnockback,0;
+return;
+}
+
+
+
+
+
+
+
+
+//======================================================== ARMAS DE QUEST ========================================================
+
+
+//-------------------------------------------------- MAZOS --------------------------------------------------
+
+//Mazo Neutral
+function	script	F_mazo_neutral	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+bonus5 bAutoSpell,469,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+skill 365,5;skill 468,5;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Agua
+function	script	F_mazo_agua	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 14,7;
+bonus bAtkEle,Ele_Water;
+bonus5 bAutoSpell,14,5,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+
+//Mazo Tierra
+function	script	F_mazo_tierra	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 90,5;
+bonus bAtkEle,Ele_Earth;
+bonus5 bAutoSpell,90,3,300,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Shadow
+function	script	F_mazo_shadow	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 340,8;
+bonus bAtkEle,Ele_Dark;
+bonus5 bAutoSpell,340,6,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Fuego
+function	script	F_mazo_fuego	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 19,7;
+bonus bAtkEle,Ele_Fire;
+bonus5 bAutoSpell,19,5,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Viento
+function	script	F_mazo_viento	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 20,7;
+bonus bAtkEle,Ele_Wind;
+bonus5 bAutoSpell,20,5,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Holy
+function	script	F_mazo_holy	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+bonus2 bSkillAtk,156,50;
+skill 545,10;
+bonus bAtkEle,Ele_Holy;
+bonus5 bAutoSpell,545,7,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Ghost
+function	script	F_mazo_ghost	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 13,8;
+bonus bAtkEle,Ele_Ghost;
+bonus5 bAutoSpell,13,6,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Undead
+function	script	F_mazo_undead	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+skill 400,3;
+bonus bAtkEle,Ele_Undead;
+bonus5 bAutoSpell,400,3,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+//Mazo Poison
+function	script	F_mazo_poison	{
+if(Class==8||Class==4009||Class==4031) {
+bonus bHit,100;
+bonus2 bSkillHeal,28,20;bonus2 bSkillHeal,70,150;
+bonus bMatkRate,30;
+skill 263,10;
+bonus bBaseAtk,readparam(bInt)*10;
+//
+bonus bAtkEle,Ele_Poison;
+skill 547,7;
+bonus5 bAutoSpell,547,5,200,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18202)|| isequipped(18208)){bonus5 bAutoSpell,156,1,50,BF_MAGIC+BF_SHORT+BF_WEAPON,1;bonus bMatkRate,10;bonus bAspd,readparam(bInt)/20;bonus bDelayRate,-10;bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,50;};};
+return;
+}
+
+
+
+
+
+
+//-------------------------------------------------- PUÑOS --------------------------------------------------
+
+
+
+//Puño Neutral
+function	script	F_puño_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+return;
+}
+
+
+//Puño Agua
+function	script	F_puño_agua	{
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+skill 14,5;
+bonus bAtkEle,Ele_Water;
+bonus5 bAutoSpell,537,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+
+//Puño Tierra
+function	script	F_puño_tierra	{
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+skill 90,5;
+bonus bAtkEle,Ele_Earth;
+bonus5 bAutoSpell,90,3,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+
+//Puño Fuego
+function	script	F_puño_fuego	{
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+skill 19,5;
+bonus bAtkEle,Ele_Fire;
+bonus5 bAutoSpell,534,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+
+//Puño Shadow
+function	script	F_puño_shadow	{
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+skill 340,8;
+bonus bAtkEle,Ele_Dark;
+bonus5 bAutoSpell,340,6,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+
+//Puño Viento
+function	script	F_puño_viento	{
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+skill 20,5;
+bonus bAtkEle,Ele_Wind;
+bonus5 bAutoSpell,540,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+
+//Puño Holy
+function	script	F_puño_holy	{
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+skill 545,5;
+bonus bAtkEle,Ele_Holy;
+bonus5 bAutoSpell,545,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+
+//Puño Ghost
+function	script	F_puño_ghost	{
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+skill 13,8;
+bonus bAtkEle,Ele_Ghost;
+bonus5 bAutoSpell,13,6,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+
+//Puño Undead
+function	script	F_puño_undead	{
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+skill 400,3;
+bonus bAtkEle,Ele_Undead;
+bonus5 bAutoSpell,400,3,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+
+//Puño Poison
+function	script	F_puño_poison	{
+bonus2 bSkillAtk,271,-20;
+bonus2 bAddRace,RC_NonBoss,30;
+bonus2 bAddRace,RC_Boss,-60;
+bonus bAgi,readparam(bStr)/8;
+bonus bAspd,25;
+bonus bHit,100;
+bonus2 bSkillHeal,28,30;
+bonus4 bAutoSpellOnSkill,267,401,1,1000;
+bonus5 bAutoSpell,273,5,100,BF_SHORT+BF_WEAPON,1;
+bonus5 bAutoSpell,372,5,100,BF_SHORT+BF_WEAPON,1;
+sc_start SC_MATKPOTION,3600000,2000;
+if(isequipped(18202)|| isequipped(18208)){bonus2 bSpDrainRate,70,20;bonus bHit,50;bonus bAtkRate,10;bonus2 bSkillAtk,267,15;bonus2 bSkillAtk,271,-20;};
+skill 547,5;
+bonus bAtkEle,Ele_Poison;
+bonus5 bAutoSpell,547,5,100,BF_MAGIC+BF_SHORT+BF_WEAPON+BF_MISC,1;
+return;
+}
+
+
+
+
+
+//-------------------------------------------------- ARMAS DE TAEKWON --------------------------------------------------
+
+
+//Taekwon Neutral
+function	script	F_taekwon_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+skill 263,10;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus5 bAutoSpell,365,1,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+bonus5 bAutoSpell,469,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Fuego
+function	script	F_taekwon_fuego	{
+skill 263,10;
+bonus bAtkEle,Ele_Fire;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+skill 42,6;
+bonus5 bAutoSpell,42,4,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 19,7;bonus5 bAutoSpell,19,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Agua
+function	script	F_taekwon_agua	{
+skill 263,10;
+bonus bAtkEle,Ele_Water;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+skill 358,1;
+bonus2 bHPDrainRate,100,50;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 14,7;bonus5 bAutoSpell,14,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Viento
+function	script	F_taekwon_viento	{
+skill 263,10;
+bonus bAtkEle,Ele_Wind;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus bAtkRange,2;
+bonus bSplashRange,2;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 20,7;bonus5 bAutoSpell,20,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Tierra
+function	script	F_taekwon_tierra	{
+skill 263,10;
+bonus bAtkEle,Ele_Earth;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus2 bAddRace,RC_DemiHuman,10;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 90,3;bonus5 bAutoSpell,90,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Holy
+function	script	F_taekwon_holy	{
+skill 263,10;
+bonus bAtkEle,Ele_holy;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus bMagicAtkDef,20;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 545,7;bonus5 bAutoSpell,545,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Shadow
+function	script	F_taekwon_shadow	{
+skill 263,10;
+bonus bAtkEle,Ele_Dark;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus2 bSPVanishRate,100,5;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 340,8;bonus5 bAutoSpell,340,6,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Undead
+function	script	F_taekwon_undead	{
+skill 263,10;
+bonus bAtkEle,Ele_Undead;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus5 bAutoSpell,342,1,50,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 400,3;bonus5 bAutoSpell,400,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Ghost
+function	script	F_taekwon_ghost	{
+skill 263,10;
+bonus bAtkEle,Ele_ghost;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+bonus2 bAddRace,RC_Boss,40;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 13,8;bonus5 bAutoSpell,13,6,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+//Taekwon Poison
+function	script	F_taekwon_poison	{
+skill 263,10;
+bonus bAtkEle,Ele_Poison;
+//Star Gladiator
+if(Class==Job_Star_Gladiator||Class==4046){
+bonus bSpeedRate,20;
+bonus bAspd,70;
+bonus bHit,200;
+skill 52,7;
+bonus2 bSkillAtk,52,30;
+bonus5 bAutoSpell,52,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18206)){bonus bHit,50;bonus bAtkRate,10;bonus bAtkRange,3;};if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};};
+//Soul Linker
+if(Class==Job_Soul_Linker){
+bonus2 bSkillAtk,469,-50;
+bonus bSpeedRate,20;
+bonus bAspd,80;
+bonus bHit,200;
+bonus bMatkRate,30;
+bonus bBaseAtk,readparam(bInt)*10;
+bonus4 bAutoSpellOnSkill,467,469,10,1000;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+skill 547,7;bonus5 bAutoSpell,547,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+if(isequipped(18207)){bonus bFlee,70;bonus bFlee2,5;bonus bMaxHpRate,10;bonus2 bSubSize,1,5;bonus2 bSubSize,2,5;};if(isequipped(18206)){bonus bMAtkRate,20;bonus bAtkRange,3;};};
+return;
+}
+
+
+
+
+
+
+//-------------------------------------------------- LANZAS --------------------------------------------------
+
+
+//Lanza Neutral
+function	script	F_lanza_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnStripableWeapon,0;
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Stun,500;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,469,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}
+
+
+//Lanza Agua
+function	script	F_lanza_agua	{
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Freeze,500;
+bonus bAtkEle,Ele_Water;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,537,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}
+
+
+//Lanza Tierra
+function	script	F_lanza_tierra	{
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Stone,500;
+bonus bAtkEle,Ele_Earth;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,90,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}
+
+
+//Lanza Fuego
+function	script	F_lanza_fuego	{
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Bleeding,500;
+bonus bAtkEle,Ele_Fire;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,534,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}
+
+
+//Lanza Viento
+function	script	F_lanza_viento	{
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus bAtkRange,3;
+bonus bAtkEle,Ele_Wind;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,540,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}
+
+
+//Lanza Holy
+function	script	F_lanza_holy	{
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Blind,500;
+bonus bAtkEle,Ele_Holy;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,545,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}
+
+
+//Lanza Shadow
+function	script	F_lanza_shadow	{
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Silence,500;
+bonus bAtkEle,Ele_Dark;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,340,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}
+
+
+//Lanza Ghost
+function	script	F_lanza_ghost	{
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Confuse,500;
+bonus bAtkEle,Ele_Ghost;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,13,7,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}
+
+
+//Lanza Undead
+function	script	F_lanza_undead	{
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Curse,500;
+bonus bAtkEle,Ele_Undead;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,400,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}
+
+
+//Lanza Poison
+function	script	F_lanza_poison	{
+skill 258,10;
+bonus2 bSkillAtk,56,50;
+bonus2 bSkillAtk,59,80;
+bonus2 bSkillAtk,397,200;
+bonus2 bSkillAtk,399,200;
+bonus2 bAddEff,Eff_Poison,500;
+bonus bAtkEle,Ele_Poison;
+if(Class==7||Class==4008){bonus2 bAddRace,RC_NonBoss,30;bonus bAspdRate,readparam(bVit)/8;bonus bHit,readparam(bStr)/3;bonus4 bAutoSpellOnSkill,397,397,3,150;bonus bPerfectHitAddRate,20;bonus bSPDrainValue,5;
+if(readparam(bInt)>=150){bonus4 bAutoSpellOnSkill,397,397,3,-150;bonus5 bAutoSpell,547,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;sc_start SC_MATKPOTION,3600000,2000;};
+if(isequipped(18201)|| isequipped(18208)){bonus bAspdRate,15;bonus bHit,50;bonus bMaxHpRate,10;bonus2 bAddRace,RC_NonBoss,10;};}
+return;
+}

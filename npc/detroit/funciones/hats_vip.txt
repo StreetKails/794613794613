@@ -1,0 +1,688 @@
+//======================================================== HATS VIPS ========================================================
+//funciones hats tipo vip diciembre 2015
+function	script	F_tipodark	{
+	bonus bStr,10;bonus bAgi,10;bonus bDex,10;
+	bonus bMaxHPrate,10;
+	bonus2 bAddRace,RC_DemiHuman,10;
+return;
+}
+function	script	F_tiposniper	{
+	bonus2 bSubRace,RC_DemiHuman,5;
+	bonus bStr,10;bonus bDex,10;bonus bAgi,10;
+	bonus bMaxHPrate,10;
+	bonus bFlee2,10;
+return;
+}
+function	script	F_tipocapri	{
+	bonus2 bSubRace,RC_DemiHuman,5;
+	bonus bInt,10;bonus bDex,10;bonus bAgi,10;
+	bonus bMaxHPrate,10;
+	bonus bFlee2,10;
+return;
+}
+function	script	F_tipouru	{
+	bonus2 bResEff,Eff_Bleeding,10000;
+	bonus2 bResEff,Eff_Blind,10000;
+	bonus2 bResEff,Eff_Stone,10000;
+	bonus2 bResEff,Eff_Freeze,10000;
+	bonus2 bResEff,Eff_Sleep,10000;
+	bonus2 bResEff,Eff_Poison,10000;
+	bonus2 bResEff,Eff_DPoison,10000;
+	bonus2 bResEff,Eff_Curse,10000;
+	bonus2 bResEff,Eff_Confusion,10000;
+	bonus2 bResEff,Eff_Stun,10000;
+	bonus2 bResEff,Eff_Silence,10000;
+	bonus bStr,15;bonus bDex,15;
+	bonus bMaxHPrate,10;
+	bonus bAtkRate,10;
+return;
+}		
+//vips		
+function	script	F_whisperhat	{
+	bonus bMatkRate,15;
+	bonus bAgi,10;bonus bDex,10;bonus bVit,10;
+	//bonus bDelayRate,-10;
+	bonus bMaxHPrate,10;
+	bonus bInt,readparam(bAgi)/6;
+	//bonus5 bAutoSpellWhenHit,402,3,150,BF_WEAPON|BF_MAGIC|BF_SHORT|BF_LONG|BF_MISC,0;
+	bonus bSpeedRate,20;
+return;
+}
+
+function	script	F_BlueStellar	{
+
+bonus bMatkRate,10;
+bonus bMaxHPrate,10;
+bonus bInt,10;bonus bAgi,10;bonus bDex,10;
+bonus2 bResEff,Eff_Bleeding,10000;
+bonus2 bResEff,Eff_Blind,10000;
+bonus2 bResEff,Eff_Stone,10000;
+bonus2 bResEff,Eff_Freeze,10000;
+bonus2 bResEff,Eff_Sleep,10000;
+bonus2 bResEff,Eff_Poison,10000;
+bonus2 bResEff,Eff_DPoison,10000;
+bonus2 bResEff,Eff_Curse,10000;
+bonus2 bResEff,Eff_Confusion,10000;
+bonus2 bResEff,Eff_Stun,10000;
+bonus2 bResEff,Eff_Silence,10000;
+bonus bFlee2,readparam(bDex)/7;
+bonus2 bSubEle,Ele_Water,15;
+if ( isequipped(4365) ) { // High Wizard Card
+		bonus2 bIgnoreMdefRate,RC_NonBoss,15;
+	} else {
+		bonus2 bIgnoreMdefRate,RC_NonBoss,50;
+	}
+return;
+}
+function	script	F_GladiadorHelm	{	
+
+bonus bMaxHPrate,10;
+bonus2 bAddRace,RC_DemiHuman,20;
+bonus2 bHPDrainRate,100,15;
+bonus bFlee,readparam(bVit)/2;
+bonus bPerfectHitAddRate,15;
+bonus bStr,10;bonus bVit,10;bonus bAgi,10;
+bonus bDelayRate,-7;
+if(isequipped(16103) || isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) || isequipped(15233) ||
+  //Shaman y Alas de temporada con bonus de Goddess.
+ ( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-100,-50;    //Se Cancela la curacion de las Goddes y Shaman al Usarse con el Hat.
+}
+if(Class==Job_Rogue||Class==Job_Stalker||Class==Job_Baby_Rogue) {
+	bonus2 bHPDrainRate,-70,-5;   //3% de chance, 5% de dano. Fisico
+		                           
+};
+return;
+}
+
+function	script	F_HeadProtect	{ 
+
+bonus bMaxHPrate,10;
+bonus bStr,10;bonus bDex,10;bonus bAgi,10;
+bonus bLongAtkRate,10;
+bonus2 bSubSize,1,5; bonus2 bSubSize,0,5;
+bonus bAtkRate,readparam(bDex)/40;
+bonus bAtkRate,readparam(bStr)/40;
+
+return;
+}
+
+function	script	F_platinumDeath	{
+bonus bMaxHPrate,10;
+bonus bStr,10;bonus bDex,10;bonus bAgi,10;
+bonus bAtkRange,3;
+bonus bSplashRange,3;
+bonus bAtkRate,10;
+if(isequipped(15049)|| isequipped(15087)){ 		//combo con Ghotic/Destruction wings
+bonus bAtkRate,5;
+skill 263,10;
+bonus2 bSkillAtk,"MO_TRIPLEATTACK",15;
+	}
+
+return;
+}
+
+function	script	F_platinumv2	{
+bonus bLuk,30;
+bonus bMaxHPrate,10;
+bonus2 bSubRace,RC_DemiHuman,10;
+bonus bDef,5;
+bonus bMDef,5;
+skill 4,5;
+skill 9,5;
+skill 463,7;
+if(isequipped(15119)|| isequipped(15002)){ 		//combo con Fenix/Black Fenix Wings
+		bonus bMaxHPrate,5;
+		bonus bFlee2,15;                                                                                                   
+		bonus bNearAtkDef,5;
+	    bonus bLongAtkDef,5;
+	    bonus bMagicAtkDef,5;
+	    bonus bMiscAtkDef,5;
+	}
+
+return;
+}
+
+function	script	F_platdeathv3	{
+bonus bMatkRate,10;
+bonus bMaxHPrate,10;
+bonus bCastrate,-100;
+bonus bDelayRate,-5;
+bonus bNearAtkDef,10;
+bonus bLongAtkDef,10;
+bonus bMagicAtkDef,10;
+bonus bMiscAtkDef,10;
+bonus bInt,10;bonus bDex,10;bonus bVit,10;
+if(class == Job_Professor){ //Professor
+bonus2 bSkillAtk,"MG_COLDBOLT",60;
+bonus2 bSkillAtk,"MG_FIREBOLT",60;
+bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",60;
+bonus2 bSkillAtk,"NSC_HOLYBOLT",60;
+bonus2 bSkillAtk,"NSC_VENOMBOLT",60;
+	}
+	else{
+bonus2 bSkillAtk,"MG_COLDBOLT",30;
+bonus2 bSkillAtk,"MG_FIREBOLT",30;
+bonus2 bSkillAtk,"MG_LIGHTNINGBOLT",30;
+bonus2 bSkillAtk,"NSC_HOLYBOLT",30;
+bonus2 bSkillAtk,"NSC_VENOMBOLT",30;
+	}
+if(isequipped(15061)){ 		//combo con Valkyrie Wings
+		bonus bDelayRate,-2;
+		bonus bMatkRate,5;
+		bonus bIntravision,0;
+}
+
+return;
+}
+
+
+function	script	F_HelmOfGod	{
+	bonus bVit,30;
+	bonus bMaxHPrate,10;
+	bonus bDef,7;
+	bonus bMDef,7;
+	bonus bFlee2, 5;
+	if(isequipped(9691)|| isequipped(15232)|| isequipped(15278)|| isequipped(15279)){
+		//combo con burning crystal/tale wings
+		bonus bMaxHPrate,10;
+		bonus bDef,3;
+		bonus bMDef,3;
+	}
+	return;
+}
+
+function	script	F_RedViking	{
+	bonus bAgi,15;bonus bDex,15;
+	bonus bMaxHPrate,10;
+	bonus bAtkRate,10;
+	bonus bHit,100;
+	bonus bPerfectHitAddRate,10;
+	if(isequipped(15217)){bonus bHit,50;bonus bPerfectHitAddRate,5;} //combo con ethereal wings
+	return;
+}
+
+function	script	F_CyanViking	{
+	bonus bInt,10;bonus bDex,10;bonus bVit,10;
+	bonus bMaxHPrate,10;
+	bonus bDelayRate,-5;
+	bonus bMatkRate,10;
+	
+	if ( isequipped(4365) ) { // High Wizard Card
+		bonus2 bIgnoreMdefRate,RC_NonBoss,15;
+	} else {
+		bonus2 bIgnoreMdefRate,RC_NonBoss,50;
+	}
+	
+	if(isequipped(15224)){bonus bDelayRate,-3; bonus bMatkRate,5;} //combo con blue butterfly
+	return;
+}
+
+function	script	F_RiderCap	{
+	bonus bAgi,10;bonus bLuk,10;bonus bVit,10;
+	bonus bMaxHPrate,10;
+	bonus bFlee, 70;
+	bonus bFlee2, 15;
+	bonus2 bSubRace,RC_Demihuman,5;
+
+	return;
+}
+
+function	script	F_DragonMaster	{
+	bonus bStr,10;bonus bAgi,10;bonus bDex,10;
+	bonus bMaxHPrate,10;
+	bonus2 bAddRace,RC_Dragon,30;
+	
+	if ( isequipped(4263) ) { // Incantation Samurai Card
+		bonus2 bIgnoreDefRate,RC_DemiHuman,15;
+	} else {
+		bonus2 bIgnoreDefRate,RC_DemiHuman,50;
+	}
+	
+	if(class == Job_Whitesmith){ //Whitesmith
+		bonus bAtkRate,10;
+	}
+	else{
+		bonus2 bAddSize,0,15;
+		bonus2 bAddSize,1,15;
+	}
+
+	return;
+}
+
+//Flying Wings Helm
+function	script	F_flyingHelm	{
+	bonus bAllStats,5;
+	bonus bMaxHPrate,10;
+	bonus bSpeedRate,5;
+	bonus bAspdRate,5;
+	bonus bAtkRate,10;
+	bonus bFlee2,10;
+	bonus2 bSubRace,RC_DemiHuman,10;
+	if(isequipped(15069) || isequipped(15136)) {
+		bonus bFlee2,5;
+		bonus bAspdRate,5;
+		bonus bSpeedRate,5;
+	};
+}
+
+//Chinease Samurai
+function	script	F_chinsamu	{
+bonus bAgi,10;bonus bVit,10;bonus bLuk,10;
+bonus bMaxHPrate,10;
+bonus bLongWeaponDamageReturn,15;
+if(isequipped(15069) || isequipped(15136)) {bonus bLongWeaponDamageReturn,-10;};
+return;
+}
+
+//Black Helm / Red Helm / Blue Helm / Gold Helm
+function	script	F_blackhelm	{
+bonus bAgi,10;bonus bVit,10;bonus bStr,10;
+bonus bMaxHPrate,10;
+bonus bAtkRate,15;
+bonus bAspdRate,5;
+return;
+}
+
+//Fusion
+function	script	F_fusionhelm	{
+bonus bAgi,10;bonus bVit,10;bonus bStr,10;
+bonus bMaxHPrate,10;
+bonus bAtkRate,15;
+bonus bHit,50;
+return;
+}
+
+//Tiraya Bonnet
+function	script	F_tirayabon	{
+bonus bDex,10;bonus bVit,10;bonus bInt,10;
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus2 bIgnoreMdefRate,RC_NonBoss,50;
+return;
+}
+
+//Leo Diadem
+function	script	F_leodiadem	{
+bonus bDex,10;bonus bInt,10;
+bonus bMaxHPrate,10;
+bonus bMatkRate,15;
+bonus5 bAutoSpellWhenHit,402,3,30,BF_WEAPON|BF_MAGIC|BF_SHORT|BF_LONG|BF_MISC,0;
+bonus2 bIgnoreMdefRate,RC_NonBoss,40;
+return;
+}
+
+//Samurai Helm
+function	script	F_samuraihelm	{
+bonus bAgi,10;bonus bVit,10;bonus bStr,10;
+bonus bMaxHPrate,15;
+bonus2 bIgnoreDefRate,RC_DemiHuman,40;
+return;
+}
+
+//Dragon Helm
+function	script	F_dragonhelm	{
+bonus bAgi,10;bonus bDex,10;bonus bVit,10;
+bonus bMaxHPrate,15;
+bonus bHit,100;
+bonus bPerfectHitAddRate,10;
+bonus bAspdRate,10;
+if(isequipped(15018) || isequipped(15112)){bonus bHit,50;bonus bAtkRate,5;};
+return;
+}
+
+//Maya Helm / Randgris Helm
+function	script	F_mayahelm	{
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bDelayRate,-5;
+bonus bMatkRate,20;
+bonus bMaxHPrate,15;
+if(isequipped(15045) || isequipped(15017)) {bonus bDelayRate,-5;;bonus bMatkRate,5;};
+return;
+}
+
+//Mama Mia
+function	script	F_mamamia	{
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bDelayRate,-5;
+bonus bMatkRate,15;
+bonus bMaxHPrate,10;
+bonus5 bAutoSpellWhenHit,366,5,50,BF_WEAPON|BF_MAGIC|BF_SHORT|BF_LONG|BF_MISC,0;
+if(isequipped(15045) || isequipped(15017)) {bonus bDelayRate,-5;;bonus bMatkRate,5;};
+return;
+}
+
+//Penacho de Moktezuma
+function	script	F_penachohelm	{
+bonus bStr,10; bonus bDex,10; bonus bVit,10;
+bonus bMaxHPrate,15;
+bonus bShortWeaponDamageReturn,10;
+bonus bAtkRate,5;
+if(Class==Job_Paladin||Class==Job_Crusader||Class==Job_Baby_Crusader) || (isequipped(15018) || isequipped(15112)) {bonus bShortWeaponDamageReturn,-5;};
+if(isequipped(15119) || isequipped(15002)) {bonus bAtkRate,5;bonus bMaxHPrate,5;};
+return;
+}
+
+//Torch Cap
+function	script	F_torchcap	{
+bonus bInt,10; bonus bDex,10; bonus bVit,10;
+bonus bMaxHPrate,15;
+bonus bShortWeaponDamageReturn,10;
+bonus bMatkRate,5;
+if(Class==Job_Paladin||Class==Job_Crusader||Class==Job_Baby_Crusader) || (isequipped(15018) || isequipped(15112)) {bonus bShortWeaponDamageReturn,-10;};
+if(isequipped(15119) || isequipped(15002)) {bonus bMaxHPrate,5;};
+return;
+}
+
+//Archangel Helm
+function	script	F_archangelhelm	{
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bMaxHPrate,15;
+bonus bMatkRate,10;
+bonus3 bMagicDamageReturn2,100,1,20;bonus3 bMagicDamageReturn2,100,0,20;
+if(isequipped(15103) || isequipped(15078) || isequipped(9698)) {bonus bMaxHPrate,5;bonus3 bMagicDamageReturn2,100,1,-10;bonus3 bMagicDamageReturn2,100,0,-10;};
+return;
+}
+
+//Divine Horn
+function	script	F_divinehorn	{
+bonus bStr,10;bonus bVit,10;bonus bDex,10;
+bonus bMaxHPrate,10;
+bonus bAtkRate,5;
+bonus3 bMagicDamageReturn2,100,1,15;bonus3 bMagicDamageReturn2,100,0,15;
+if(isequipped(15103) || isequipped(15078) || isequipped(9698)) {bonus3 bMagicDamageReturn2,100,1,-10;bonus3 bMagicDamageReturn2,100,0,-10;};
+return;
+}
+
+//Airth Goat
+function	script	F_airthhelm	{
+bonus bDex,10;bonus bStr,10;bonus bLuk,10;
+bonus bMaxHPrate,15;
+bonus bSplashRange,4;
+bonus bAspdRate,20;
+bonus bflee,50;
+if(isequipped(15049) || isequipped(15087)) {bonus bSplashAddRange,2;bonus bAspdRate,10;};
+if(isequipped(15216)) {bonus bSplashAddRange,2;};
+return;
+}
+
+//Bone Helm
+function	script	F_bonehelm	{
+bonus bDex,10;bonus bStr,10;bonus bLuk,10;
+bonus bMaxHPrate,10;
+bonus bSplashRange,4;
+bonus bAtkRate,10;
+bonus bPerfectHitAddRate,10;
+if(isequipped(15049) || isequipped(15087)) {bonus bSplashAddRange,-2;};
+return;
+}
+
+//Bloody Garm
+function	script	F_firewolfhelm	{
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bMaxHPrate,10;
+bonus4 bAutoSpellWhenHit,83,5,50,0;
+bonus bMatkRate,10;
+bonus2 bSubEle,Ele_Fire,10;
+bonus2 bSPRegenRate,5,1000;
+return;
+}
+
+//White Morriganes Helm
+function	script	F_morriganeshelm	{
+bonus bStr,20;bonus bLuk,10;
+bonus bMaxHPrate,15;
+bonus bCritical,30;
+bonus bCritAtkRate,20;
+return;
+}
+
+//Helm of Ice Wolf
+function	script	F_icewolfhelm	{
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bMaxHPrate,15;
+bonus bMatkRate,10;
+bonus4 bAutoSpellWhenHit,89,5,50,0;
+bonus2 bSubEle,Ele_Water,10;
+bonus2 bSPRegenRate,5,1000;
+if(isequipped(15006)) {bonus3 bAutoSpellWhenHit,655,100,50;bonus2 bSkillAtk,14,30;bonus2 bSkillAtk,88,30;bonus2 bSkillAtk,86,30;bonus2 bSkillAtk,89,30;bonus2 bSkillAtk,537,30;bonus2 bSkillAtk,539,30;};
+return;
+}
+
+//Hades Helm
+function	script	F_hadeshelm	{
+bonus bStr,10;bonus bDex,10;bonus bAgi,10;
+bonus bMaxHPrate,15;
+bonus bFlee2,15;
+bonus2 bSubRace,RC_DemiHuman,10;
+
+if(isequipped(15075) || isequipped(15097) || isequipped(15158) || isequipped(15159) ||
+  isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+  // Alas de temporada con bonus de Goddess.
+ ( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus bAtkRate,5;bonus bFlee2,5;
+};
+
+return;
+}
+
+//Royal Crown
+function	script	F_royalcrown	{
+bonus bInt,10;bonus bDex,10;bonus bAgi,10;
+bonus bMaxHPrate,10;
+bonus bFlee2,15;
+bonus bMatkRate,5;
+bonus2 bSubRace,RC_DemiHuman,10;
+
+if(isequipped(15075) || isequipped(15097) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+  // Alas de temporada con bonus de Goddess.
+ ( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus bAtkRate,5;bonus bFlee2,5;
+};
+
+return;
+}
+
+//Lucifer Helm
+function	script	F_luciferhelm	{
+bonus bVit,10;bonus bStr,10;bonus bAgi,10;
+bonus bMaxHPrate,10;
+bonus bAtkRate,5;
+bonus2 bAddEle,Ele_Holy,10; bonus2 bAddEle,Ele_Dark,10;
+bonus2 bAddEff,Eff_Stun,500; bonus2 bAddEff,Eff_Curse,500; bonus2 bAddEff,Eff_Silence,500; bonus2 bAddEff,Eff_Poison,500; bonus2 bAddEff,Eff_Bleeding,500;bonus2 bAddEff,Eff_Stone,500;bonus2 bAddEff,Eff_Confusion,500;bonus2 bAddEff,Eff_Freeze,500;bonus2 bAddEff,Eff_Sleep,500;
+if(isequipped(15020)) {bonus bUnbreakableHelm,0;bonus bAtkRate,5;bonus2 bSubRace,RC_DemiHuman,5;};
+return;
+}
+
+//Black Valkyrie Helm
+function	script	F_blackvalkyriehelm	{
+bonus bInt,10;bonus bVit,10;bonus bDex,10;
+bonus bMaxHPrate,15;
+bonus bDelayRate,-5;
+bonus bMatkRate,10;
+bonus2 bSkillHeal,28,10;bonus2 bSkillHeal,70,10;bonus2 bSkillHeal,478,10;
+return;
+}
+
+//Dark Helm
+function	script	F_darkhelm	{
+bonus bStr,10;bonus bAgi,10;bonus bDex,10;
+bonus bMaxHPrate,10;
+bonus2 bAddRace,RC_DemiHuman,15;
+bonus bAtkRange,2;
+skill 357,3;
+	// No da rango con dagas en stalker ni armas taekwon
+if ( !( (BaseJob==Job_Rogue && (isequipped(20009) || isequipped(16061) || isequipped(16062) || isequipped(16063) || isequipped(16064) || isequipped(16065) || isequipped(16066) || isequipped(16067) || isequipped(16068) || isequipped(16069))) || 
+   isequipped(19121) || isequipped(16101) || isequipped(16102) || isequipped(16103) || isequipped(16104) || isequipped(16105) || isequipped(16106) || isequipped(16107) || isequipped(16108) || isequipped(16109)) ) {
+	bonus bAtkRange,1;
+}
+return;
+}
+
+//Dark Bashilrium
+function	script	F_bashilrium	{
+bonus bStr,10;bonus bAgi,10;bonus bDex,10;
+bonus bMaxHPrate,10;
+bonus2 bSPVanishRate,50,10;
+bonus2 bSpDrainRate,50,5;
+if(Class==4016||Class==4038) {bonus2 bSpDrainRate,-50,-10;};
+bonus2 bAddRace,RC_DemiHuman,5;
+bonus bAtkRange,1;
+return;
+}
+
+//Piscis Crown
+function	script	F_piscescrown	{
+bonus bStr,10;bonus bAgi,10;bonus bVit,10;
+bonus bMaxHPrate,15;
+bonus2 bAddRace,RC_DemiHuman,10;
+bonus2 bSubRace,RC_DemiHuman,10;
+return;
+}
+
+//Wanderer Sakkat
+function	script	F_wandersak	{
+bonus bStr,20;bonus bDex,10;
+bonus bMaxHPrate,15;
+bonus bHit,readparam(bDex)/4;
+bonus bBreakWeaponRate,300; bonus bBreakArmorRate,300;bonus bBreakHelmRate,50; bonus bBreakShieldRate,50;
+return;
+}
+
+//Evil Druid Hat
+function	script	F_evildruid	{
+bonus bInt,20;bonus bDex,10;
+bonus bMaxHPrate,10;
+bonus bMatkRate,readparam(bDex)/20;
+bonus5 bAutoSpell,200,3,70,BF_MAGIC,1;
+return;
+}
+
+//Lala Cap
+function	script	F_lalacap	{
+bonus bStr,20;bonus bDex,10;
+bonus bMaxHPrate,10;
+bonus bAtkRate,readparam(bDex)/20;
+bonus5 bAutoSpell,199,3,40,BF_SHORT+BF_LONG+BF_WEAPON,1;
+return;
+}
+
+//Gemini Crown
+function	script	F_geminicrown	{
+bonus bStr,15;bonus bInt,15;
+bonus bMaxHPrate,10;
+bonus2 bHPDrainRate,50,30;
+bonus2 bSPDrainRate,50,30;	//5% de chance, 30% de daño. Fisico
+bonus3 bMagicHpDrainRateRace,RC_NonBoss,50,30; //5% de chance, 30% de daño. Magico NonBoss
+bonus3 bMagicHpDrainRateRace,RC_Boss,50,50; //5% de chance, 50% de daño. Magico Boss.
+bonus bShortWeaponDamageReturn,5;
+bonus bLongWeaponDamageReturn,5;
+bonus3 bMagicDamageReturn2,100,1,5;
+bonus3 bMagicDamageReturn2,100,0,5;
+
+if(isequipped(16103) || isequipped(15097) || isequipped(15075) || isequipped(15158) || isequipped(15159) || isequipped(15160) || isequipped(15161) || isequipped(15162) ||
+  // Alas de temporada con bonus de Goddess.
+ ( (isequipped(15202) || isequipped(15205)) && #bonustemp==11 )
+){
+	bonus2 bHPDrainRate,-30,-20;bonus bAtkRate,5;//2% chance.10% daño HP
+}
+
+if(Class==Job_Knight||Class==Job_Lord_Knight||Class==Job_Rogue||Class==Job_Stalker||Class==Job_Baby_Knight||Class==Job_Baby_Rogue) {
+	bonus bAtkRate,5;
+	bonus2 bHPDrainRate,-20,-25;
+	bonus2 bSPDrainRate,-20,-25;	//3% de chance, 5% de daño. Fisico
+};
+return;
+}
+
+//Astronaut Helm
+function	script	F_astrohelm	{
+bonus bVit,10;bonus bStr,10;bonus bInt,10;
+bonus bMaxHPrate,10;
+if (readparam(bStr) > readparam(bInt)) {bonus bAtkRate,10;} else if (readparam(bStr) < readparam(bInt)) {bonus bMatkRate,10;} else if (readparam(bStr) == readparam(bInt)) {bonus bAtkRate,5;bonus bMatkRate,5;}; 
+switch(Class){
+			case 4008:bonus2 bSkillAtk,397,15;bonus2 bSkillAtk,62,15;break; //LK
+			case 4009:bonus2 bSkillAtk,156,20;break; //High Priest
+			case 4010:bonus2 bSkillAtk,400,20;bonus2 bSkillAtk,13,20;break; //High Wizard
+			case 4011:bonus2 bSkillAtk,485,15;break; //Whitesmith
+			case 4012:bonus2 bSkillAtk,46,15;break; //Sniper
+			case 4013:bonus2 bSkillAtk,136,15;break; //Assassin Cross
+			case 4014:bonus2 bSkillAtk,397,15;bonus2 bSkillAtk,62,15;break; //LK Peco
+			case 4015:bonus2 bSkillAtk,480,15;bonus2 bSkillAtk,254,20;break; //Paladin
+			case 4016:bonus2 bSkillAtk,267,15;break; //Champion
+			case 4017:bonus2 bSkillAtk,14,15;bonus2 bSkillAtk,19,15;bonus2 bSkillAtk,20,15;break; //Professor
+			case 4018:bonus2 bSkillAtk,214,15;break; //Stalker
+			case 4019:bonus2 bSkillAtk,230,20;bonus2 bSkillAtk,490,20;break; //Creator
+			case 4020:bonus2 bSkillAtk,394,15;break; //Clown
+			case 4021:bonus2 bSkillAtk,394,15;break; //Gypsy
+			case 4022:bonus2 bSkillAtk,480,15;bonus2 bSkillAtk,254,20;break; //Paladin Peco
+			case 4047:bonus bAtkRate,10;break; //Star Gladiator
+			case 4048:bonus bAtkRate,10;break; //Star Gladiator Union
+			case 4049:bonus2 bSkillAtk,469,20;break; //Soul Linker
+			case 24:bonus2 bSkillAtk,515,15;break; //Gunslinger
+			case 25:bonus2 bSkillAtk,542,20;bonus2 bSkillAtk,525,15;break; //Ninja
+			
+			/*
+			Star Gladiator: Atk +10%
+			Soul Linker: Esma +20%
+			Gunslinger: Rapid Shower +15%
+			Ninja: North Wind +20%. Throw Fuuma Shuriken +15%
+			Lord Knight: Spiral Pierce y Bowlin Bash +15%
+			Paladin: Shield Chain 15%. Grand Cross +20%
+			High Wizard: Napalm Vulcan & Soul Strike +20%
+			Scholar: Fire Bolt, Cold Bolt, Lightning Bolt +15%
+			Sniper: Double Strafe 15%
+			Clown/Gypsy: Vulcan arrow 15%
+			High Priest: Holy Light +20%
+			Champion: Finger offensive 15%
+			Whitesmith: Cart Termination 15%
+			Creator: Acid Terror & Acid Demonstration +20%
+			Assassin Cross: Sonic Blow 15%
+			Stalker: Raid 15%
+			*/
+		}
+return;
+}
+
+// uruhara cap - 
+function	script	F_uruhara	{
+bonus bMaxHPrate,10;
+bonus bStr,20;
+bonus bdex,20;
+bonus bdispellresist,80;
+bonus2 bResEff,Eff_Bleeding,10000;
+bonus2 bResEff,Eff_Blind,10000;
+bonus2 bResEff,Eff_Stone,10000;
+bonus2 bResEff,Eff_Freeze,10000;
+bonus2 bResEff,Eff_Sleep,10000;
+bonus2 bResEff,Eff_Poison,10000;
+bonus2 bResEff,Eff_DPoison,10000;
+bonus2 bResEff,Eff_Curse,10000;
+bonus2 bResEff,Eff_Confusion,10000;
+bonus2 bResEff,Eff_Stun,10000;
+bonus2 bResEff,Eff_Silence,10000;
+if(class == Job_Lord_Knight){ //Lord_Knight
+  bonus2 bAddRace,RC_DemiHuman,10;
+ }
+ else{
+ bonus bAtkRate,10;
+ } 
+
+return;
+}
+//gold viking
+function	script	F_gold_viking	{
+bonus bInt,10;bonus bDex,10;bonus bVit,10;
+bonus bMaxHPrate,10;
+bonus bMatkRate,10;
+bonus3 bMagicHpDrainRateRace,RC_NonBoss,50,20; //5% de chance, 20% de daño Magico NonBoss
+//bonus3 bMagicHpDrainRateRace,RC_Boss,100,50; //10% de chance, 50% de dano. Magico Boss.
+bonus2 bIgnoreMdefRate,RC_NonBoss,50;
+bonus bNoKnockback,0;//agregue
+if(isequipped(15274) || isequipped(15200)) {bonus3 bMagicHpDrainRateRace,RC_NonBoss,-30,-10;};//reduccion de curacion con aztec y thousand	
+if(isequipped(15100)) {skill 20,7;bonus bMatkRate,5;bonus bDelayRate,-5;}; //5% mas de matk,otorga la skill lightning bolt,-5 delay.
+return;
+}

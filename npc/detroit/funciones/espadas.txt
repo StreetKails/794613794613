@@ -1,0 +1,294 @@
+quiz_02,133,393,5	script	Build Espadas	751,{
+
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	
+	if (isequipped(16001) || isequipped(16002) || isequipped(16003) || isequipped(16004) || isequipped(16005) || isequipped(16006) || isequipped(16007) || isequipped(16008) || isequipped(16009) || isequipped(20002)) {
+	
+	mes "Bienvenido compa�ero Crusader!";
+	mes "Como ya sabras, somos una de las profesiones mas completas de todo RO!";
+	mes "Podemos ser tanto de INT como de STR, todo depende de nuestro gusto";
+	next;
+	mes "Yo soy el encargado asignarle un bonus a tus espadas para que se acomplen a la build que eligas";
+	mes "Solo dime, prefieres ser un Crusader Magico o uno Fisico?";
+	menu "Magico",magia,"Fisico",fisico;
+
+	magia:
+		set palamagico,1;
+		set palafisico,0;
+		next;
+		mes "Listo! Ahora tus espadas daran un bonus MAGICO";
+		close;
+
+	fisico:
+		set palamagico,0;
+		set palafisico,1;
+		next;
+		mes "Listo! Ahora tus espadas daran un bonus FISICO";
+		close;
+
+	};
+
+	mes "Lo siento pero no tienes equipada alguna espada de Quest";
+	next;
+	mes "Vuelve cuando te la equipes para poder trabajar";
+	close;
+
+};
+
+mes "Lo siento, solo trabajo con players tipo Crusader";
+close;
+
+}
+
+//Espada Neutral
+function	script	F_espada_neutral	{
+bonus bUnbreakableWeapon,0;
+bonus bUnstripableWeapon,0;
+skill 495,1;
+skill 468,7;
+bonus4 bAutoSpellOnSkill,468,469,10,1000;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2){
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;
+			bonus bMaxHPrate,readparam(bStr)/10;
+			bonus bAspdRate,readparam(bStr)/5;
+			bonus bHit,100;
+			bonus bPerfectHitAddRate,10;
+			bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;
+			bonus2 bSkillAtk,253,40;
+			bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){
+				bonus bMaxHPrate,10;
+				bonus2 bSubRace,RC_DemiHuman,10;
+				bonus bHit,50;
+				bonus bDelayrate,-10;
+			};
+		};
+
+		if(palamagico==1){
+			bonus5 bAutoSpell,469,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;
+			bonus bAspdRate,readparam(bInt)/10;
+			bonus bMatkRate,readparam(bInt)/12;
+			bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){
+				bonus bMaxHPrate,10;
+				bonus bMatkRate,20;
+				bonus bDelayrate,-10;
+			};
+		};
+	};
+};
+return;
+}
+
+//Espada Fuego
+function	script	F_espada_fuego	{
+skill 495,1;
+skill 19,7;
+bonus bAtkEle,Ele_Fire;
+bonus2 bAddEff,Eff_Bleeding,1000;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;bonus bMaxHPrate,readparam(bStr)/10;bonus bAspdRate,readparam(bStr)/5;bonus bHit,100;bonus bPerfectHitAddRate,10;bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;bonus2 bSkillAtk,253,40;bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){bonus bMaxHPrate,10;bonus2 bSubRace,RC_DemiHuman,10;bonus bHit,50;bonus bDelayrate,-10;};
+		};
+		if(palamagico==1){
+			bonus5 bAutoSpell,19,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;bonus bAspdRate,readparam(bInt)/10;bonus bMatkRate,readparam(bInt)/12;bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){bonus bMaxHPrate,10;bonus bMatkRate,20;bonus bDelayrate,-10;};
+		};
+	};
+};
+return;
+}
+
+//Espada Agua
+function	script	F_espada_agua	{
+skill 495,1;
+skill 14,7;
+bonus bAtkEle,Ele_Water;
+bonus2 bAddEff,Eff_Freeze,1000;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;bonus bMaxHPrate,readparam(bStr)/10;bonus bAspdRate,readparam(bStr)/5;bonus bHit,100;bonus bPerfectHitAddRate,10;bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;bonus2 bSkillAtk,253,40;bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){bonus bMaxHPrate,10;bonus2 bSubRace,RC_DemiHuman,10;bonus bHit,50;bonus bDelayrate,-10;};
+		};
+		if(palamagico==1){
+			bonus5 bAutoSpell,14,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;bonus bAspdRate,readparam(bInt)/10;bonus bMatkRate,readparam(bInt)/12;bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){bonus bMaxHPrate,10;bonus bMatkRate,20;bonus bDelayrate,-10;};
+		};
+	};
+};
+return;
+}
+
+//Espada Viento
+function	script	F_espada_viento	{
+skill 495,1;
+skill 20,7;
+bonus bAtkEle,Ele_Wind;
+bonus bAtkRange,2;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;bonus bMaxHPrate,readparam(bStr)/10;bonus bAspdRate,readparam(bStr)/5;bonus bHit,100;bonus bPerfectHitAddRate,10;bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;bonus2 bSkillAtk,253,40;bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){bonus bMaxHPrate,10;bonus2 bSubRace,RC_DemiHuman,10;bonus bHit,50;bonus bDelayrate,-10;};
+		};
+		if(palamagico==1){
+			bonus5 bAutoSpell,20,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;bonus bAspdRate,readparam(bInt)/10;bonus bMatkRate,readparam(bInt)/12;bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){bonus bMaxHPrate,10;bonus bMatkRate,20;bonus bDelayrate,-10;};
+		};
+	};
+};
+return;
+}
+
+//Espada Tierra
+function	script	F_espada_tierra	{
+skill 495,1;
+skill 90,5;
+bonus bAtkEle,Ele_Earth;
+bonus2 bAddEff,Eff_Stone,1000;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;bonus bMaxHPrate,readparam(bStr)/10;bonus bAspdRate,readparam(bStr)/5;bonus bHit,100;bonus bPerfectHitAddRate,10;bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;bonus2 bSkillAtk,253,40;bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){bonus bMaxHPrate,10;bonus2 bSubRace,RC_DemiHuman,10;bonus bHit,50;bonus bDelayrate,-10;};
+		};
+		if(palamagico==1){
+			bonus5 bAutoSpell,90,3,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;bonus bAspdRate,readparam(bInt)/10;bonus bMatkRate,readparam(bInt)/12;bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){bonus bMaxHPrate,10;bonus bMatkRate,20;bonus bDelayrate,-10;};
+		};
+	};
+};
+return;
+}
+
+//Espada Holy
+function	script	F_espada_holy	{
+skill 495,1;
+skill 545,7;
+bonus bAtkEle,Ele_Holy;
+bonus2 bAddEff,Eff_Blind,1000;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;bonus bMaxHPrate,readparam(bStr)/10;bonus bAspdRate,readparam(bStr)/5;bonus bHit,100;bonus bPerfectHitAddRate,10;bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;bonus2 bSkillAtk,253,40;bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){bonus bMaxHPrate,10;bonus2 bSubRace,RC_DemiHuman,10;bonus bHit,50;bonus bDelayrate,-10;};
+		};
+		if(palamagico==1){
+			bonus5 bAutoSpell,545,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;bonus bAspdRate,readparam(bInt)/10;bonus bMatkRate,readparam(bInt)/12;bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){bonus bMaxHPrate,10;bonus bMatkRate,20;bonus bDelayrate,-10;};
+		};
+	};
+};
+return;
+}
+
+//Espada Ghost
+function	script	F_espada_ghost	{
+skill 495,1;
+skill 13,7;
+bonus bAtkEle,Ele_Ghost;
+bonus2 bAddEff,Eff_Sleep,1000;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;bonus bMaxHPrate,readparam(bStr)/10;bonus bAspdRate,readparam(bStr)/5;bonus bHit,100;bonus bPerfectHitAddRate,10;bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;bonus2 bSkillAtk,253,40;bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){bonus bMaxHPrate,10;bonus2 bSubRace,RC_DemiHuman,10;bonus bHit,50;bonus bDelayrate,-10;};
+		};
+		if(palamagico==1){
+			bonus5 bAutoSpell,13,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;bonus bAspdRate,readparam(bInt)/10;bonus bMatkRate,readparam(bInt)/12;bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){bonus bMaxHPrate,10;bonus bMatkRate,20;bonus bDelayrate,-10;};
+		};
+	};
+};
+return;
+}
+
+//Espada Shadow
+function	script	F_espada_shadow	{
+skill 495,1;
+skill 340,7;
+bonus bAtkEle,Ele_Dark;
+bonus2 bAddEff,Eff_Curse,1000;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;bonus bMaxHPrate,readparam(bStr)/10;bonus bAspdRate,readparam(bStr)/5;bonus bHit,100;bonus bPerfectHitAddRate,10;bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;bonus2 bSkillAtk,253,40;bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){bonus bMaxHPrate,10;bonus2 bSubRace,RC_DemiHuman,10;bonus bHit,50;bonus bDelayrate,-10;};
+		};
+		if(palamagico==1){
+			bonus5 bAutoSpell,340,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;bonus bAspdRate,readparam(bInt)/10;bonus bMatkRate,readparam(bInt)/12;bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){bonus bMaxHPrate,10;bonus bMatkRate,20;bonus bDelayrate,-10;};
+		};
+	};
+};
+return;
+}
+
+//Espada Undead
+function	script	F_espada_undead	{
+skill 495,1;
+skill 400,3;
+bonus bAtkEle,Ele_Undead;
+bonus2 bAddEff,Eff_Curse,1000;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;bonus bMaxHPrate,readparam(bStr)/10;bonus bAspdRate,readparam(bStr)/5;bonus bHit,100;bonus bPerfectHitAddRate,10;bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;bonus2 bSkillAtk,253,40;bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){bonus bMaxHPrate,10;bonus2 bSubRace,RC_DemiHuman,10;bonus bHit,50;bonus bDelayrate,-10;};
+		};
+		if(palamagico==1){
+			bonus5 bAutoSpell,400,2,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;bonus bAspdRate,readparam(bInt)/10;bonus bMatkRate,readparam(bInt)/12;bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){bonus bMaxHPrate,10;bonus bMatkRate,20;bonus bDelayrate,-10;};
+		};
+	};
+};
+return;
+}
+
+//Espada Poison
+function	script	F_espada_poison	{
+skill 495,1;
+skill 547,7;
+bonus bAtkEle,Ele_Poison;
+bonus2 bAddEff,Eff_Poison,1000;
+if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2||Class==Job_Baby_Crusader||Class==Job_Baby_Crusader2) {
+	if(isequipped(18031)|| isequipped(18032)||isequipped(18035)||isequipped(18036)||isequipped(18037)||isequipped(18033)||isequipped(18034)||isequipped(18038)){
+		if(palafisico==1){
+			bonus bBaseAtk,400;bonus bMaxHPrate,readparam(bStr)/10;bonus bAspdRate,readparam(bStr)/5;bonus bHit,100;bonus bPerfectHitAddRate,10;bonus bSPDrainValue,5;
+			bonus2 bSkillAtk,5,60;bonus2 bSkillAtk,253,40;bonus2 bSkillAtk,480,20;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bStr)>=150)){bonus bMaxHPrate,10;bonus2 bSubRace,RC_DemiHuman,10;bonus bHit,50;bonus bDelayrate,-10;};
+		};
+		if(palamagico==1){
+			bonus5 bAutoSpell,547,5,150,BF_MAGIC+BF_SHORT+BF_LONG+BF_WEAPON+BF_MISC,1;
+			bonus bCritical,50;bonus bAspdRate,readparam(bInt)/10;bonus bMatkRate,readparam(bInt)/12;bonus2 bSkillHeal,28,10;
+			if(isequipped(18201)|| isequipped(18208) && (readparam(bInt)>=150)){bonus bMaxHPrate,10;bonus bMatkRate,20;bonus bDelayrate,-10;};
+		};
+	};
+};
+return;
+}
+
+//6@tower.gat,134,76,6	duplicate(Build Espadas)	Build Espadas#1	751

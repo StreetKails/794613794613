@@ -1,0 +1,94 @@
+//	~~~~~ show time left in days, hours, minutes and seconds ~~~~~
+function	script	timeleft__	{
+	set .@left, getarg(0);
+	if ( .@left <= 0 ) return getarg(0);
+	set .@day, .@left / 86400;
+	set .@hour, .@left % 86400 / 3600;
+	set .@min, .@left % 3600 / 60;
+	set .@sec, .@left % 60;
+	return ( ( .@day )?.@day +" day ":"" )+( ( .@day || .@hour )?.@hour +" hour ":"" )+( ( .@day == 0 && ( .@hour || .@min ) )?.@min +" min ":"" )+( ( .@day || .@hour )?"":.@sec +" sec" );
+}
+
+-	script	tombstone_dup	-1,{
+	getmapxy .@map$, .@x, .@y, 1;
+	if ( .@x == 0 && .@y == 0 ) end;
+	set .@id, atoi( strnpcinfo(2) );
+	mes "Tomb of "+ strmobinfo( 2, .mvpid[.@id] );
+	mes "it was killed by "+ .name$[.@id];
+	close;
+Onmvpdead:
+getmapxy .@map$, .@x, .@y, 0;
+	set .@id, atoi( strnpcinfo(2) );
+	set .@map$, strcharinfo(3);
+	set .name$[.@id], strcharinfo(0);
+	movenpc strnpcinfo(0), .@x, .@y;
+	set .@loop, rand(.respawn[0],.respawn[.@id]);
+	while ( .@loop ) {
+		delwaitingroom strnpcinfo(0);
+		waitingroom callfunc("timeleft__", .@loop ), 0;
+		set .@loop, .@loop -1;
+		sleep 1000;
+	}
+	delwaitingroom strnpcinfo(0);
+	monster .@map$, 0,0, "--ja--", .mvpid[.@id], 1, strnpcinfo(0) +"::Onmvpdead";
+	movenpc strnpcinfo(0), 0,0;
+	end;
+OnInit:
+	if ( strnpcinfo(2) == "" ) {
+		setarray .respawn[0], 600,7200,43200,10800,5460,7200,25200,18000,7200,7200,7200,7200,7500,3600,7200,3600,28800,28800,28800,28800,5650,3600,7200,7200,7200,7200,7000,3600,3600,7200,28800,3600,7200,3600,18000,39600,7200,3600,3600,7200,3600,7200,7200,7200,7200,43200,7200,10800,18000,10800,21600; // 10 seconds to respawn
+		setarray .mvpid[1], 1871,1872,1719,1492,1147,1688,1583,2068,2156,2087,2165,1623,1389,1046,1272,1115,1046,1147,1272,1418,1157,2202,1685,1734,1658,1630,1038,1511,1885,1751,1150,1039,1086,1768,1832,1112,1312,1251,2131,1087,1190,1252,1059,1159,1917,1115,1785,1785,1785,1785;
+	}
+	else {
+		sleep 1;
+		getmapxy .@map$, .@x, .@y, 1;
+		monster .@map$, 0,0, "--ja--", .mvpid[ atoi( strnpcinfo(2) ) ], 1, strnpcinfo(0) +"::Onmvpdead";
+	}
+	end;
+}
+
+
+abbey02,0,0,0	duplicate(tombstone_dup)	Tomb#1_mvp	565
+abbey03,0,0,0	duplicate(tombstone_dup)	Tomb#2_mvp	565
+abyss_03,0,0,0	duplicate(tombstone_dup)	Tomb#3_mvp	565
+ama_dun03,0,0,0	duplicate(tombstone_dup)	Tomb#4_mvp	565
+anthell02,0,0,0	duplicate(tombstone_dup)	Tomb#5_mvp	565
+ayo_dun02,0,0,0	duplicate(tombstone_dup)	Tomb#6_mvp	565
+beach_dun,0,0,0	duplicate(tombstone_dup)	Tomb#7_mvp	565
+bra_dun02,0,0,0	duplicate(tombstone_dup)	Tomb#8_mvp	565
+ein_dun02,0,0,0	duplicate(tombstone_dup)	Tomb#12_mvp	565
+gef_dun01,0,0,0	duplicate(tombstone_dup)	Tomb#13_mvp	565
+gef_dun02,0,0,0	duplicate(tombstone_dup)	Tomb#14_mvp	565
+gl_chyard,0,0,0	duplicate(tombstone_dup)	Tomb#15_mvp	565
+gld_dun01,0,0,0	duplicate(tombstone_dup)	Tomb#16_mvp	565
+gld_dun02,0,0,0	duplicate(tombstone_dup)	Tomb#17_mvp	565
+gld_dun03,0,0,0	duplicate(tombstone_dup)	Tomb#18_mvp	565
+gld_dun04,0,0,0	duplicate(tombstone_dup)	Tomb#19_mvp	565
+gon_dun03,0,0,0	duplicate(tombstone_dup)	Tomb#20_mvp	565
+in_sphinx5,0,0,0	duplicate(tombstone_dup)	Tomb#21_mvp	565
+jupe_core,0,0,0	duplicate(tombstone_dup)	Tomb#23_mvp	565
+kh_dun02,0,0,0	duplicate(tombstone_dup)	Tomb#24_mvp	565
+lhz_dun02,0,0,0	duplicate(tombstone_dup)	Tomb#25_mvp	565
+lou_dun03,0,0,0	duplicate(tombstone_dup)	Tomb#26_mvp	565
+moc_pryd04,0,0,0	duplicate(tombstone_dup)	Tomb#27_mvp	565
+moc_pryd06,0,0,0	duplicate(tombstone_dup)	Tomb#28_mvp	565
+mosk_dun03,0,0,0	duplicate(tombstone_dup)	Tomb#29_mvp	565
+odin_tem03,0,0,0	duplicate(tombstone_dup)	Tomb#30_mvp	565
+pay_dun04,0,0,0	duplicate(tombstone_dup)	Tomb#31_mvp	565
+prt_maze03,0,0,0	duplicate(tombstone_dup)	Tomb#32_mvp	565
+prt_sewb4,0,0,0	duplicate(tombstone_dup)	Tomb#33_mvp	565
+ra_san05,0,0,0	duplicate(tombstone_dup)	Tomb#34_mvp	565
+thor_v03,0,0,0	duplicate(tombstone_dup)	Tomb#35_mvp	565
+treasure02,0,0,0	duplicate(tombstone_dup)	Tomb#36_mvp	565
+tur_dun04,0,0,0	duplicate(tombstone_dup)	Tomb#37_mvp	565
+xmas_dun02,0,0,0	duplicate(tombstone_dup)	Tomb#38_mvp	565
+gef_fild03,0,0,0	duplicate(tombstone_dup)	Tomb#40_mvp	565
+gef_fild10,0,0,0	duplicate(tombstone_dup)	Tomb#41_mvp	565
+xmas_fild01,0,0,0	duplicate(tombstone_dup)	Tomb#42_mvp	565
+mjolnir_04,0,0,0	duplicate(tombstone_dup)	Tomb#43_mvp	565
+moc_fild17,0,0,0	duplicate(tombstone_dup)	Tomb#44_mvp	565
+moc_fild22,0,0,0	duplicate(tombstone_dup)	Tomb#45_mvp	565
+pay_fild10,0,0,0	duplicate(tombstone_dup)	Tomb#46_mvp	565
+ra_fild03,0,0,0	duplicate(tombstone_dup)	Tomb#47_mvp	565
+ra_fild04,0,0,0	duplicate(tombstone_dup)	Tomb#48_mvp	565
+ve_fild01,0,0,0	duplicate(tombstone_dup)	Tomb#49_mvp	565
+ve_fild02,0,0,0	duplicate(tombstone_dup)	Tomb#50_mvp	565

@@ -1,0 +1,119 @@
+
+// warp portal back prontera
+pvp_n_1-1,113,72,0	warp	gold_room_back_prt	1,1,prontera,155,181
+
+// peco peco summon
+pvp_n_1-1,0,0,0,0	monster	Peco Peco	1369,600,60000,0,"gold_room_main::OnKill"
+pvp_n_1-1,0,0,0,0	monster	Peco Peco	1369,600,60000,0,"gold_room_main::OnKill"
+
+
+
+
+prontera,164,146,3	script	Gold Room	4_F_KAFRA1,{
+	doevent "gold_room_main::OnTalk";
+
+OnInit:
+delwaitingroom;
+waitingroom "  Gold Room",0;
+
+
+end;
+
+
+}
+
+
+
+-	script	gold_room_main	-1,{
+    
+    OnInit:
+        // gold room map
+        .map$ = "pvp_n_1-1";
+        // entrance fee
+        .zeny_cost = 250000;
+        // rate to get gold
+        .rate = 50;
+        // gold random amount
+        setarray .gold_amount,1,3;
+        
+
+        setmapflag .Map$,mf_nogo;
+        setmapflag .map$,mf_nobranch;
+        setmapflag .map$,mf_nosave;
+        setmapflag .map$,mf_nomemo;
+        setmapflag .map$,mf_noreturn;
+        setmapflag .map$,mf_nowarp;
+        setmapflag .map$,mf_nowarpto;
+        setmapflag .map$,mf_noskill;
+        setmapflag .Map$,mf_noloot;
+
+
+        end;
+    
+    OnTalk:
+        mes "Wasup, Low Class People! I know you want to become rich!";
+        mes "Well i have a place where you can find a very rare Birds.";
+    next;
+        mes "And if you kill those birthds you will gain a random amount of GOLD";
+        mes "Points or GP and you can ^FF0000TRADE^000000 it into real GOLD!";
+    next;
+        mes "But there is something you should know...";
+        mes "There are guardians that lurking around the map and they are strong!!!";
+    next;
+        mes "^FF0000All of your points will lose when you die!^000000 ";
+    next;
+        mes "I need";
+        if ( .zeny_cost ) 
+            mes F_InsertComma( .zeny_cost ) + " Zeny";
+        switch ( select( 
+            "Enter Gold Room",
+            "Exchange Gold Point",
+            "Cancel"
+        )) {
+            case 1:
+                if ( Zeny < .zeny_cost ) {
+                    mes "Not enough Zeny.";
+                }
+                else {
+                    Zeny -= .zeny_cost;
+                    warp .map$,153,153;
+                }
+                break;
+            case 2:    
+                mes "You got "+F_InsertComma( #GOLDPOINTS )+" Points";
+                input .@value,0,#GOLDPOINTS;
+                if ( checkweight( 969, .@value ) ) {
+                    #GOLDPOINTS -= .@value;
+                    getitem 969,.@value;
+                    mes "Gained "+.@value+" Gold.";
+                }
+                else {
+                    mes "You overweight.";
+                }
+            default:
+                break;
+        }
+        close;
+        
+    OnKill:
+        if ( .rate < rand( 100 ) ) {
+            .@point = rand( .gold_amount[0],.gold_amount[1] );
+            #GOLDPOINTS += .@point;
+            dispbottom "Gained "+.@point+" Point. You got "+F_InsertComma( #GOLDPOINTS )+" Points now.";
+        }
+        end;
+ 
+	OnPCDieEvent:
+		.@killerrid = killerrid;
+		if (strcharinfo(3) == .map$ && .@killerrid != getcharid(3)) {
+			.@total_gold_point = #GOLDPOINTS;
+			#GOLDPOINTS = 0;
+			dispbottom "You died, you lost all the points.";
+			
+			if (attachrid(.@killerrid)) {
+				#GOLDPOINTS += .@total_gold_point;
+				dispbottom "You gained "+.@total_gold_point+" gold points.";
+			}
+		}
+		end;
+}

@@ -1,0 +1,224 @@
+function	script	bg_items_shield	{
+	
+	if(Class==Job_Crusader||Class==Job_Paladin||Class==Job_Crusader2||Class==Job_Paladin2) {
+		
+		bonus2 bSkillAtk,"CR_SHIELDBOOMERANG",70;
+		
+		// Swordman spirit o sipirt of spirits
+		if(isequipped(18201)|| isequipped(18208)){
+			
+			bonus bMaxHPrate,10;
+			bonus bDelayRate,-10;
+			
+			if(readparam(bStr)>=150){
+				bonus2 bAddRace,RC_DemiHuman,10;
+				bonus bHit,50;
+			}
+			
+			if(readparam(bInt)>=150){
+				bonus bMatkRate,20;
+			}
+		}
+	}
+	
+	bonus2 bSubEle,Ele_Neutral,10;
+	bonus2 bSubEle,Ele_Poison,10;
+	bonus2 bSubEle,Ele_Water,10;
+	bonus2 bSubEle,Ele_Ghost,10;
+	bonus2 bSubEle,Ele_Wind,10;
+	bonus2 bSubEle,Ele_Earth,10;
+	bonus2 bSubEle,Ele_Fire,10;
+	bonus2 bSubEle,Ele_Dark,10;
+	bonus2 bSubEle,Ele_Holy,10;
+	bonus2 bSubEle,Ele_Undead,10;
+	
+	bonus bMDef,10;
+	bonus bDef,5;
+	
+	if( isequipped(18038) && isequipped(18063) && isequipped(18086) && isequipped(18250) && isequipped(18251) && isequipped(15277) && isequipped(15636) && isequipped(15904) ){
+		
+		bonus2 bSubRace,RC_DemiHuman,40;
+		bonus2 bSubRace2,5,60;
+		
+		bonus2 bIgnoreDefRate,RC_Demihuman,50; // No funciona con inca
+		bonus2 bIgnoreMDefRate,RC_Demihuman,50; // No funciona con HW
+		
+		bonus bAtkRate,190;
+		if(Class==Job_Whitesmith){
+			bonus bAtkRate,-120;
+		}
+		
+		bonus bMatkRate,120;
+		
+		bonus bNearAtkDef,20;
+		bonus bLongAtkDef,20;
+		bonus bMagicAtkDef,20;
+		bonus bMiscAtkDef,20;
+	}
+	
+	return;
+}
+
+function	script	bg_items_shoes	{
+	
+	bonus bDef,5;
+	bonus bMaxHPrate,30;
+	bonus bMaxSPrate,30;
+	bonus bSPrecovRate,20;
+	bonus bSpeedRate,20;
+	bonus4 bAutoSpellWhenHit,"PR_KYRIE",1,20,0;
+	
+	if( !Class==Job_Paladin && !Class==Job_Paladin2 && !Class==Job_Crusader && !Class==Job_Crusader2) {
+		bonus4 bAutoSpellWhenHit,"CR_AUTOGUARD",5,20,0;
+	}
+	
+	if( isequipped(18038) && isequipped(18063) && isequipped(18086) && isequipped(18250) && isequipped(18251) && isequipped(15277) && isequipped(15636) && isequipped(15904) ){
+		
+		bonus bMaxHPrate,40;
+		bonus bSpeedRate,15;
+		skill "MG_SIGHT",1;
+	}
+	
+	return;
+}
+
+function	script	bg_items_acce	{
+
+	if(isequipped(18204) || isequipped(18210) || isequipped(18211)|| isequipped(18208)|| isequipped(18212)){
+		
+		bonus bStr,20;
+		bonus bDex,20;
+		bonus bInt,20;
+		
+		if( isequipped(18038) && isequipped(18063) && isequipped(18086) && isequipped(18250) && isequipped(18251) && isequipped(15277) && isequipped(15636) && isequipped(15904) ){
+		
+			bonus bFlee2,20;
+		}
+		
+	} else {
+	
+		bonus bStr,10;
+		bonus bDex,10;
+		bonus bInt,10;
+		
+		if( isequipped(18038) && isequipped(18063) && isequipped(18086) && isequipped(18250) && isequipped(18251) && isequipped(15277) && isequipped(15636) && isequipped(15904) ){
+		
+			bonus bFlee2,10;
+		}
+	}
+	
+	return;
+}
+
+function	script	bg_items_manteau	{
+
+	bonus bMDef,7;
+	bonus bDef,5;
+	
+	if( isequipped(18038) && isequipped(18063) && isequipped(18086) && isequipped(18250) && isequipped(18251) && isequipped(15277) && isequipped(15636) && isequipped(15904) ){
+		
+		bonus2 bSubSize,Size_Medium,5;
+		bonus2 bSubSize,Size_Small,5;
+		
+		bonus2 bSubEle,Ele_Earth,25;
+		
+		sc_start SC_SLOWPOISON,90000000,10;
+		
+		bonus2 bSubEle,Ele_Undead,50;
+		bonus2 bSubEle,Ele_Dark,60;
+	}
+	
+	return;
+}
+
+function	script	bg_items_armor	{
+
+	bonus bDef,5;
+	bonus bMDef,10;
+	
+	bonus bBaseAtk,50;
+	bonus2 bResEff,Eff_Sleep,10000;
+	bonus2 bResEff,Eff_Stone,10000;
+	bonus2 bSubEle,Ele_Earth,15;
+	bonus2 bResEff,Eff_Stun,readparam(bVit)*50;
+	bonus2 bResEff,Eff_Silence,readparam(bVit)*50;
+	bonus2 bResEff,Eff_Confusion,readparam(bVit)*50;
+	bonus2 bResEff,Eff_Blind,readparam(bVit)*50;
+	bonus2 bResEff,Eff_Stone,readparam(bInt)*50;
+	bonus2 bResEff,Eff_Curse,readparam(bInt)*50;
+	
+	if( isequipped(18038) && isequipped(18063) && isequipped(18086) && isequipped(18250) && isequipped(18251) && isequipped(15277) && isequipped(15636) && isequipped(15904) ){
+		
+		bonus2 bSubEle,Ele_Poison,30;
+		bonus2 bResEff,Eff_Freeze,10000;
+		bonus bDefEle,Ele_Holy;
+	}
+	
+	return;
+}
+
+function	script	bg_items_wings	{
+	
+	bonus bMaxHPrate,10;
+	bonus bMatkRate,10;
+	bonus bAtkRate,10;
+	bonus bAllStats,10;
+	bonus2 bHPDrainRate,100,50;bonus2 bSPDrainRate,100,50; //10% de chance, 50% de daño
+	if( isequipped(18038) && isequipped(18063) && isequipped(18086) && isequipped(18250) && isequipped(18251) && isequipped(15277) && isequipped(15636) && isequipped(15904) ){
+		
+		bonus2 bSubEle,Ele_Neutral,20;
+		bonus2 bSubEle,Ele_Poison,20;
+		bonus2 bSubEle,Ele_Holy,20;
+		bonus2 bSubEle,Ele_Dark,20;
+		bonus2 bSubEle,Ele_Fire,20;
+		bonus2 bSubEle,Ele_Water,20;
+		bonus2 bSubEle,Ele_Wind,20;
+		bonus2 bSubEle,Ele_Earth,20;
+		bonus2 bSubEle,Ele_Undead,20;
+		bonus2 bSubEle,Ele_Ghost,20;
+		
+		bonus2 bSubEle,Ele_Fire,30;
+		bonus2 bSubEle,Ele_Water,30;
+	}
+
+	if(isequipped(17025)) {bonus2 bHPDrainRate,-50,-40;};
+	if(isequipped(9914) || isequipped(9998)) {bonus2 bHPDrainRate,-50,-50;bonus2 bSPDrainRate,-50,-50;};
+	if(Class==4016||Class==4038) {bonus2 bSpDrainRate,-50,-30;};
+	if(Class==Job_Knight||Class==Job_Lord_Knight||Class==Job_Rogue||Class==Job_Stalker) {bonus2 bHPDrainRate,-80,-25;bonus2 	bSPDrainRate,-80,-25;};
+	
+	return;
+}
+
+function	script	bg_items_helm	{
+	
+	bonus bDef,5;
+	bonus bUnstripableHelm,0;
+	bonus bStr,10;bonus bDex,10;bonus bAgi,10;bonus bInt,10;
+	bonus bMaxHPrate,20;
+	bonus bFlee2,10;
+	bonus2 bSubRace,RC_DemiHuman,5;
+	bonus bIntravision,0;
+	if( isequipped(18038) && isequipped(18063) && isequipped(18086) && isequipped(18250) && isequipped(18251) && isequipped(15277) && isequipped(15636) && isequipped(15904) ){
+		
+		bonus2 bSubEle,Ele_Ghost,30;
+		bonus2 bSubEle,Ele_Wind,30;
+	}
+	
+	return;
+}
+
+function	script	bg_items_mid	{
+	
+	bonus bAllStats,10;
+	bonus bAtkRate,10;
+	bonus bMatkRate,10;
+	
+	if( isequipped(18038) && isequipped(18063) && isequipped(18086) && isequipped(18250) && isequipped(18251) && isequipped(15277) && isequipped(15636) && isequipped(15904) ){
+		
+		bonus2 bSubEle,Ele_Neutral,50;
+		bonus bHit,200;
+		bonus bAspd,8;
+	}
+	
+	return;
+}

@@ -1,0 +1,173 @@
+
+guild_vs1	mapflag	noteleport
+guild_vs1	mapflag	nowarpto
+guild_vs1	mapflag	nomemo
+guild_vs1	mapflag	noskill
+guild_vs1	mapflag	nosave	SavePoint
+		
+guild_vs2	mapflag	noteleport
+guild_vs2	mapflag	nowarpto
+guild_vs2	mapflag	nomemo
+guild_vs2	mapflag	noskill
+guild_vs2	mapflag	nosave	SavePoint
+		
+guild_vs3	mapflag	noteleport
+guild_vs3	mapflag	nowarpto
+guild_vs3	mapflag	nomemo
+guild_vs3	mapflag	noskill
+guild_vs3	mapflag	nosave	SavePoint
+		
+prontera,151,179,4	script	Prong Search::EvPoringSearch	102,{
+
+	warp .map1$,0,0;
+	end;
+
+	OnInit:
+		.IdItemWinner = 503; //Item to give to the winner
+		.NbItemWinner = 3; //Number of the item to give to thed winner
+		
+		.IdItem1 = 501; //Reward for successfully finding one of the level 1 poring
+		.NbItem1 = 1; //Number of reward for successfully finding one of the level 1 poring
+		
+		.IdItem2 = 502; //Reward for successfully finding one of the level 2 poring
+		.NbItem2 = 2; //Number of reward for successfully finding one of the level 2 poring
+		
+		//Where to warp out
+		.Town$ = "prontera";
+		.TownX = 150;
+		.TownY = 150;
+		
+		.idPoring = 1002; //Make the maps no drop, or change to another custom poring that doesn't loot
+		
+		//maps
+		//If you edit this, edit the mapflags
+		.map1$ = "guild_vs1";
+		.map2$ = "guild_vs2";
+		.map3$ = "guild_vs3";
+		
+		.MaxLoop = 20; //Time limit for the event, each loop = 15 sec, 20 = 5 minutes -- message is split in minutes, make it a multiple of 4 for no weird behaviour.
+	end;
+	OnWhisperGlobal: //NPC:EvPoringSearch
+		if(getgmlevel() < 99)
+			end;
+	OnLaunch:
+		callsub OnEnd;
+		announce "The Poring Search started, you have "+(.MaxLoop/4)+" minutes to finish it!",bc_all;
+		set .TimerEvent,gettimetick(2);
+		set .NbPoring1,5;
+		set .NbPoring2,3;
+		initnpctimer;
+		monster .map1$,0,0,"Paring",.idPoring,30,"EvPoringSearch::OnMobDeadBAD1",0;
+		monster .map1$,0,0,"Porng",.idPoring,30,"EvPoringSearch::OnMobDeadBAD1",0;
+		monster .map1$,0,0,"Porinq",.idPoring,30,"EvPoringSearch::OnMobDeadBAD1",0;
+		monster .map1$,0,0,"Porimg",.idPoring,30,"EvPoringSearch::OnMobDeadBAD1",0;
+		monster .map1$,0,0,"Poriing",.idPoring,30,"EvPoringSearch::OnMobDeadBAD1",0;
+		
+		monster .map2$,0,0,"Paring",.idPoring,40,"EvPoringSearch::OnMobDeathBAD2",0;
+		monster .map2$,0,0,"Porng",.idPoring,40,"EvPoringSearch::OnMobDeathBAD2",0;
+		monster .map2$,0,0,"Porinq",.idPoring,40,"EvPoringSearch::OnMobDeathBAD2",0;
+		monster .map2$,0,0,"Porimg",.idPoring,40,"EvPoringSearch::OnMobDeathBAD2",0;
+		monster .map2$,0,0,"Poriing",.idPoring,40,"EvPoringSearch::OnMobDeathBAD2",0;
+		
+		monster .map3$,0,0,"Paring",.idPoring,40,"EvPoringSearch::OnMobDeathBAD3",0;
+		monster .map3$,0,0,"Porng",.idPoring,40,"EvPoringSearch::OnMobDeathBAD3",0;
+		monster .map3$,0,0,"Porinq",.idPoring,40,"EvPoringSearch::OnMobDeathBAD3",0;
+		monster .map3$,0,0,"Porimg",.idPoring,40,"EvPoringSearch::OnMobDeathBAD3",0;
+		monster .map3$,0,0,"Poriing",.idPoring,40,"EvPoringSearch::OnMobDeathBAD3",0;
+		
+		monster .map1$,0,0,"Poring",.idPoring,5,"EvPoringSearch::OnMobDeathGOOD1",0;
+		monster .map2$,0,0,"Poring",.idPoring,3,"EvPoringSearch::OnMobDeathGOOD2",0;	
+		monster .map3$,0,0,"Poring",.idPoring,1,"EvPoringSearch::OnMobDeathFINALE",0;
+	end;
+	
+	OnMobDeathGOOD1:
+		set .NbPoring1,.NbPoring1-1;
+		getitem .IdItem1,.NbItem1;
+		warp .map2$,0,0;
+	end;
+	
+	OnMobDeathGOOD2:
+		set .NbPoring2,.NbPoring2-1;
+		getitem .IdItem2,.NbItem2;
+		warp .map3$,0,0;
+	end;
+	
+	OnMobDeathFINALE:
+		set .EndedTimer,gettimetick(2);
+		stopnpctimer;
+		set .DiffTimer,(.EndedTimer-.TimerEvent);
+		set .minute,.DiffTimer / 60;
+		set .seconde,(.DiffTimer-.minute*60);
+		getitem .IdItemWinner,.NbItemWinner;
+		announce strcharinfo(0) +" won the poring search in "+.minute+" minutes and "+.seconde+" secondes.",bc_all;
+		callsub OnEnd;
+		end;
+		
+	OnMobDeadBAD1:
+		set @deathporing,.TimerEvent;
+		monster .map1$,0,0,"Porng",.idPoring,10,"EvPoringSearch::OnMobDeadBAD1",0;
+		warp .Town$,.TownX,.TownY;
+	end;
+	OnMobDeathBAD2:
+		set @deathporing,.TimerEvent;
+		monster .map2$,0,0,"Porng",.idPoring,10,"EvPoringSearch::OnMobDeathBAD2",0;
+		warp .Town$,.TownX,.TownY;
+	end;
+	OnMobDeathBAD3:
+		set @deathporing,.TimerEvent;
+		monster .map3$,0,0,"Porng",.idPoring,10,"EvPoringSearch::OnMobDeathBAD3",0;
+		warp .Town$,.TownX,.TownY;
+	end;
+		
+	OnTimer15000:
+		set .TimerLoop,.TimerLoop+1;
+		if(.TimerLoop>=.MaxLoop)
+		{
+			announce "Nobody found the last poring in "+(.MaxLoop/4)+" minutes! The event is over!",bc_all;
+			callsub OnEnd;
+		}else
+		{
+			//Spawn poring
+			if(.TimerLoop % 2 == 0)
+			{
+				monster .map1$,0,0,"Paring",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				monster .map1$,0,0,"Porng",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				monster .map1$,0,0,"Porinq",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				monster .map1$,0,0,"Porimg",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				monster .map1$,0,0,"Poriing",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				
+				monster .map2$,0,0,"Paring",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				monster .map2$,0,0,"Porng",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				monster .map2$,0,0,"Porinq",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				monster .map2$,0,0,"Porimg",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				monster .map2$,0,0,"Poriing",.idPoring,2,"EvPoringSearch::OnMobDeathBAD",0;
+				
+				monster .map1$,0,0,"Poring",.idPoring,2,"EvPoringSearch::OnMobDeathGOOD1",0;
+				monster .map2$,0,0,"Poring",.idPoring,1,"EvPoringSearch::OnMobDeathGOOD2",0;	
+				
+				set .NbPoring1,.NbPoring1+2;
+				set .NbPoring2,.NbPoring2+1;
+	
+			}
+			mapannounce .map1$,"There is "+.NbPoring1+" poring on this level, every 30 secondes 2 more are spawning.",bc_all;
+			mapannounce .map2$,"There is "+.NbPoring2+" poring on this level, every 30 secondes 1 more is spawning.",bc_all;
+			initnpctimer;
+		}
+	end;
+	
+	OnEnd:
+		stopnpctimer;
+		killmonsterall .map1$;
+		killmonsterall .map2$;
+		killmonsterall .map3$;
+		mapwarp .map1$,.Town$,.TownX,.TownY;
+		mapwarp .map2$,.Town$,.TownX,.TownY;
+		mapwarp .map3$,.Town$,.TownX,.TownY;
+		set .TimerLoop,0;
+		set .TimerEvent,0;
+		set .NbPoring1,0;
+		set .NbPoring2,0;
+	return;
+	
+	
+}
